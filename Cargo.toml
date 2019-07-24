@@ -1,0 +1,29 @@
+[package]
+name = "lpc11xx"
+edition = "2018"
+version = "0.1.0"
+authors = ["Thomas Bénéteau <thomas@bitwise.me>"]
+description = "Register mappings for the NXP LPC111x/LPC11Cxx/LPC11xxL/LPC11xxXL family of Cortex-M0 microcontrollers"
+documentation = "https://docs.rs/lpc11xx"
+repository = "https://github.com/TomCrypto/lpc11xx"
+license = "MIT"
+readme = "README.md"
+categories = ["embedded", "hardware-support", "no-std"]
+keywords = ["arm", "cortex-m", "nxp", "lpc", "svd2rust"]
+exclude = [".vscode/*", "svd/*", "generate.sh"]
+
+[dependencies.bare-metal]
+version = "0.2"
+
+[dependencies.cortex-m]
+version = "0.6"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.6"
+
+[dependencies.vcell]
+version = "0.1"
+
+[features]
+rt = ["cortex-m-rt/device"]

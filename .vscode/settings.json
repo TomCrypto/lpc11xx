@@ -1,0 +1,18 @@
+{
+    "[xml]": {
+      "editor.formatOnSave": true,
+      "editor.wordWrap": "bounded",
+      "editor.wordWrapColumn": 80,
+      "editor.tabSize": 2,
+    },
+  
+    "files.exclude": {
+      ".gitignore": true,
+      ".vscode": true,
+      "Cargo.lock": true,
+      "target": true,
+    },
+  
+    "files.insertFinalNewline": true,
+  }
+  
