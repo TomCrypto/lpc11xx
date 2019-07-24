@@ -48,7 +48,7 @@ pub enum FUNCR {
     #[doc = "Pin function PIO0_5 (open-drain pin)"]
     PIO0_5,
     #[doc = "Pin function SDA (open-drain pin)"]
-    I2C,
+    SDA,
     #[doc = r" Reserved"]
     _Reserved(u8),
 }
@@ -58,7 +58,7 @@ impl FUNCR {
     pub fn bits(&self) -> u8 {
         match *self {
             FUNCR::PIO0_5 => 0,
-            FUNCR::I2C => 1,
+            FUNCR::SDA => 1,
             FUNCR::_Reserved(bits) => bits,
         }
     }
@@ -68,7 +68,7 @@ impl FUNCR {
     pub fn _from(value: u8) -> FUNCR {
         match value {
             0 => FUNCR::PIO0_5,
-            1 => FUNCR::I2C,
+            1 => FUNCR::SDA,
             i => FUNCR::_Reserved(i),
         }
     }
@@ -77,10 +77,10 @@ impl FUNCR {
     pub fn is_pio0_5(&self) -> bool {
         *self == FUNCR::PIO0_5
     }
-    #[doc = "Checks if the value of the field is `I2C`"]
+    #[doc = "Checks if the value of the field is `SDA`"]
     #[inline]
-    pub fn is_i2c(&self) -> bool {
-        *self == FUNCR::I2C
+    pub fn is_sda(&self) -> bool {
+        *self == FUNCR::SDA
     }
 }
 #[doc = "Possible values of the field `I2CMODE`"]
@@ -138,7 +138,7 @@ pub enum FUNCW {
     #[doc = "Pin function PIO0_5 (open-drain pin)"]
     PIO0_5,
     #[doc = "Pin function SDA (open-drain pin)"]
-    I2C,
+    SDA,
 }
 impl FUNCW {
     #[allow(missing_docs)]
@@ -147,7 +147,7 @@ impl FUNCW {
     pub fn _bits(&self) -> u8 {
         match *self {
             FUNCW::PIO0_5 => 0,
-            FUNCW::I2C => 1,
+            FUNCW::SDA => 1,
         }
     }
 }
@@ -168,8 +168,8 @@ impl<'a> _FUNCW<'a> {
     }
     #[doc = "Pin function SDA (open-drain pin)"]
     #[inline]
-    pub fn i2c(self) -> &'a mut W {
-        self.variant(FUNCW::I2C)
+    pub fn sda(self) -> &'a mut W {
+        self.variant(FUNCW::SDA)
     }
     #[doc = r" Writes raw bits to the field"]
     #[inline]

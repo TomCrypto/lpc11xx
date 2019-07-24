@@ -36,7 +36,7 @@
       <registers>
         <register>
           <name>CONSET</name>
-          <description>I2C Control Set Register. When a one is written to a bit of this register, the corresponding bit in the I2C control register is set. Writing a zero has no effect on the corresponding bit in the I2C control register</description>
+          <description>I2C Control Set Register.</description>
           <addressOffset>0x000</addressOffset>
           <access>read-write</access>
           <resetValue>0x00</resetValue>
@@ -49,28 +49,68 @@
             </field>
             <field>
               <name>AA</name>
-              <description>Assert acknowledge flag</description>
+              <description>Assert Acknowledge flag</description>
               <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <name>ENUM</name>
+                <enumeratedValue>
+                  <name>SET</name>
+                  <description>Set the flag</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>SI</name>
-              <description>I2C interrupt flag</description>
+              <description>Interrupt flag</description>
               <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <name>ENUM</name>
+                <enumeratedValue>
+                  <name>SET</name>
+                  <description>Set the flag</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>STO</name>
               <description>STOP flag</description>
               <bitRange>[4:4]</bitRange>
+              <enumeratedValues>
+                <name>ENUM</name>
+                <enumeratedValue>
+                  <name>SET</name>
+                  <description>Set the flag</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>STA</name>
               <description>START flag</description>
               <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <name>ENUM</name>
+                <enumeratedValue>
+                  <name>SET</name>
+                  <description>Set the flag</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>I2EN</name>
-              <description>I2C interface enable</description>
+              <description>I2C Interface Enable bit</description>
               <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <name>ENUM</name>
+                <enumeratedValue>
+                  <name>ENABLE</name>
+                  <description>Enable the I2C interface</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>RESERVED</name>
@@ -114,8 +154,14 @@
           <fields>
             <field>
               <name>Data</name>
-              <description>This register holds data values that have been received or are to be transmitted</description>
+              <description>Data values that have been received or are to be transmitted</description>
               <bitRange>[7:0]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>RESERVED</name>
@@ -161,6 +207,12 @@
               <name>SCLH</name>
               <description>Count for SCL HIGH time period selection</description>
               <bitRange>[15:0]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>65535</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>RESERVED</name>
@@ -181,6 +233,12 @@
               <name>SCLL</name>
               <description>Count for SCL low time period selection</description>
               <bitRange>[15:0]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>65535</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>RESERVED</name>
@@ -191,7 +249,7 @@
         </register>
         <register>
           <name>CONCLR</name>
-          <description>I2C Control Clear Register. When a one is written to a bit of this register, the corresponding bit in the I2C control register is cleared. Writing a zero has no effect on the corresponding bit in the I2C control register</description>
+          <description>I2C Control Clear Register.</description>
           <addressOffset>0x018</addressOffset>
           <access>write-only</access>
           <resetValue>0</resetValue>
@@ -203,14 +261,30 @@
               <bitRange>[1:0]</bitRange>
             </field>
             <field>
-              <name>AAC</name>
-              <description>Assert acknowledge Clear bit</description>
+              <name>AA</name>
+              <description>Assert Acknowledge flag</description>
               <bitRange>[2:2]</bitRange>
+              <enumeratedValues>
+                <name>ENUM</name>
+                <enumeratedValue>
+                  <name>CLEAR</name>
+                  <description>Clear the flag</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>SIC</name>
-              <description>I2C interrupt Clear bit</description>
+              <name>SI</name>
+              <description>Interrupt flag</description>
               <bitRange>[3:3]</bitRange>
+              <enumeratedValues>
+                <name>ENUM</name>
+                <enumeratedValue>
+                  <name>CLEAR</name>
+                  <description>Clear the flag</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>RESERVED</name>
@@ -218,14 +292,30 @@
               <bitRange>[4:4]</bitRange>
             </field>
             <field>
-              <name>STAC</name>
-              <description>START flag Clear bit</description>
+              <name>STA</name>
+              <description>START flag</description>
               <bitRange>[5:5]</bitRange>
+              <enumeratedValues>
+                <name>ENUM</name>
+                <enumeratedValue>
+                  <name>CLEAR</name>
+                  <description>Clear the flag</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
-              <name>I2ENC</name>
-              <description>I2C interface Disable bit</description>
+              <name>I2EN</name>
+              <description>I2C Interface Disable bit</description>
               <bitRange>[6:6]</bitRange>
+              <enumeratedValues>
+                <name>ENUM</name>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Disable the I2C interface</description>
+                  <value>1</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>RESERVED</name>
@@ -630,6 +720,12 @@
               <name>THR</name>
               <description>Writing to the UART Transmit Holding Register causes the data to be stored in the UART transmit FIFO. The byte will be sent when it reaches the bottom of the FIFO and the transmitter is available</description>
               <bitRange>[7:0]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>RESERVED</name>
@@ -651,6 +747,12 @@
               <name>DLLSB</name>
               <description>The UART Divisor Latch LSB Register, along with the DLM register, determines the baud rate of the UART</description>
               <bitRange>[7:0]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>RESERVED</name>
@@ -671,6 +773,12 @@
               <name>DLMSB</name>
               <description>The UART Divisor Latch MSB Register, along with the DLL register, determines the baud rate of the UART</description>
               <bitRange>[7:0]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>RESERVED</name>
@@ -1611,11 +1719,23 @@
               <name>DIVADDVAL</name>
               <description>Baud rate generation pre-scaler divisor value. If this field is 0, fractional baud rate generator will not impact the UART baud rate</description>
               <bitRange>[3:0]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>15</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>MULVAL</name>
               <description>Baud rate pre-scaler multiplier value. This field must be greater or equal 1 for UART to operate properly, regardless of whether the fractional baud rate generator is used or not</description>
               <bitRange>[7:4]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>15</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>RESERVED</name>
@@ -5858,7 +5978,7 @@
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>I2C</name>
+                  <name>SDA</name>
                   <description>Pin function SDA (open-drain pin)</description>
                   <value>0x1</value>
                 </enumeratedValue>

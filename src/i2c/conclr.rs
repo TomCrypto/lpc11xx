@@ -14,11 +14,38 @@ impl super::CONCLR {
         self.register.set(w.bits);
     }
 }
+#[doc = "Values that can be written to the field `AA`"]
+pub enum AAW {
+    #[doc = "Clear the flag"]
+    CLEAR,
+}
+impl AAW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            AAW::CLEAR => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
-pub struct _AACW<'a> {
+pub struct _AAW<'a> {
     w: &'a mut W,
 }
-impl<'a> _AACW<'a> {
+impl<'a> _AAW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: AAW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Clear the flag"]
+    #[inline]
+    pub fn clear(self) -> &'a mut W {
+        self.variant(AAW::CLEAR)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -37,11 +64,38 @@ impl<'a> _AACW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `SI`"]
+pub enum SIW {
+    #[doc = "Clear the flag"]
+    CLEAR,
+}
+impl SIW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            SIW::CLEAR => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
-pub struct _SICW<'a> {
+pub struct _SIW<'a> {
     w: &'a mut W,
 }
-impl<'a> _SICW<'a> {
+impl<'a> _SIW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: SIW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Clear the flag"]
+    #[inline]
+    pub fn clear(self) -> &'a mut W {
+        self.variant(SIW::CLEAR)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -60,11 +114,38 @@ impl<'a> _SICW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `STA`"]
+pub enum STAW {
+    #[doc = "Clear the flag"]
+    CLEAR,
+}
+impl STAW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            STAW::CLEAR => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
-pub struct _STACW<'a> {
+pub struct _STAW<'a> {
     w: &'a mut W,
 }
-impl<'a> _STACW<'a> {
+impl<'a> _STAW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: STAW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Clear the flag"]
+    #[inline]
+    pub fn clear(self) -> &'a mut W {
+        self.variant(STAW::CLEAR)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -83,11 +164,38 @@ impl<'a> _STACW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `I2EN`"]
+pub enum I2ENW {
+    #[doc = "Disable the I2C interface"]
+    DISABLE,
+}
+impl I2ENW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            I2ENW::DISABLE => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
-pub struct _I2ENCW<'a> {
+pub struct _I2ENW<'a> {
     w: &'a mut W,
 }
-impl<'a> _I2ENCW<'a> {
+impl<'a> _I2ENW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: I2ENW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Disable the I2C interface"]
+    #[inline]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(I2ENW::DISABLE)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -118,24 +226,24 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 2 - Assert acknowledge Clear bit"]
+    #[doc = "Bit 2 - Assert Acknowledge flag"]
     #[inline]
-    pub fn aac(&mut self) -> _AACW {
-        _AACW { w: self }
+    pub fn aa(&mut self) -> _AAW {
+        _AAW { w: self }
     }
-    #[doc = "Bit 3 - I2C interrupt Clear bit"]
+    #[doc = "Bit 3 - Interrupt flag"]
     #[inline]
-    pub fn sic(&mut self) -> _SICW {
-        _SICW { w: self }
+    pub fn si(&mut self) -> _SIW {
+        _SIW { w: self }
     }
-    #[doc = "Bit 5 - START flag Clear bit"]
+    #[doc = "Bit 5 - START flag"]
     #[inline]
-    pub fn stac(&mut self) -> _STACW {
-        _STACW { w: self }
+    pub fn sta(&mut self) -> _STAW {
+        _STAW { w: self }
     }
-    #[doc = "Bit 6 - I2C interface Disable bit"]
+    #[doc = "Bit 6 - I2C Interface Disable bit"]
     #[inline]
-    pub fn i2enc(&mut self) -> _I2ENCW {
-        _I2ENCW { w: self }
+    pub fn i2en(&mut self) -> _I2ENW {
+        _I2ENW { w: self }
     }
 }

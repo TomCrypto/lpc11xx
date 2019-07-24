@@ -60,7 +60,7 @@ pub struct _DATAW<'a> {
 impl<'a> _DATAW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u32) << OFFSET);
@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - This register holds data values that have been received or are to be transmitted"]
+    #[doc = "Bits 0:7 - Data values that have been received or are to be transmitted"]
     #[inline]
     pub fn data(&self) -> DATAR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:7 - This register holds data values that have been received or are to be transmitted"]
+    #[doc = "Bits 0:7 - Data values that have been received or are to be transmitted"]
     #[inline]
     pub fn data(&mut self) -> _DATAW {
         _DATAW { w: self }

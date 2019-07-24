@@ -60,7 +60,7 @@ pub struct _SCLLW<'a> {
 impl<'a> _SCLLW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u16) -> &'a mut W {
+    pub fn bits(self, value: u16) -> &'a mut W {
         const MASK: u16 = 65535;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u32) << OFFSET);

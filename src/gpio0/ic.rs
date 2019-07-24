@@ -16,7 +16,7 @@ impl super::IC {
 }
 #[doc = "Values that can be written to the field `CLR0`"]
 pub enum CLR0W {
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     CLEAR_INTERRUPT,
 }
 impl CLR0W {
@@ -41,7 +41,7 @@ impl<'a> _CLR0W<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     #[inline]
     pub fn clear_interrupt(self) -> &'a mut W {
         self.variant(CLR0W::CLEAR_INTERRUPT)
@@ -66,7 +66,7 @@ impl<'a> _CLR0W<'a> {
 }
 #[doc = "Values that can be written to the field `CLR1`"]
 pub enum CLR1W {
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     CLEAR_INTERRUPT,
 }
 impl CLR1W {
@@ -91,7 +91,7 @@ impl<'a> _CLR1W<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     #[inline]
     pub fn clear_interrupt(self) -> &'a mut W {
         self.variant(CLR1W::CLEAR_INTERRUPT)
@@ -116,7 +116,7 @@ impl<'a> _CLR1W<'a> {
 }
 #[doc = "Values that can be written to the field `CLR2`"]
 pub enum CLR2W {
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     CLEAR_INTERRUPT,
 }
 impl CLR2W {
@@ -141,7 +141,7 @@ impl<'a> _CLR2W<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     #[inline]
     pub fn clear_interrupt(self) -> &'a mut W {
         self.variant(CLR2W::CLEAR_INTERRUPT)
@@ -166,7 +166,7 @@ impl<'a> _CLR2W<'a> {
 }
 #[doc = "Values that can be written to the field `CLR3`"]
 pub enum CLR3W {
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     CLEAR_INTERRUPT,
 }
 impl CLR3W {
@@ -191,7 +191,7 @@ impl<'a> _CLR3W<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     #[inline]
     pub fn clear_interrupt(self) -> &'a mut W {
         self.variant(CLR3W::CLEAR_INTERRUPT)
@@ -216,7 +216,7 @@ impl<'a> _CLR3W<'a> {
 }
 #[doc = "Values that can be written to the field `CLR4`"]
 pub enum CLR4W {
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     CLEAR_INTERRUPT,
 }
 impl CLR4W {
@@ -241,7 +241,7 @@ impl<'a> _CLR4W<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     #[inline]
     pub fn clear_interrupt(self) -> &'a mut W {
         self.variant(CLR4W::CLEAR_INTERRUPT)
@@ -266,7 +266,7 @@ impl<'a> _CLR4W<'a> {
 }
 #[doc = "Values that can be written to the field `CLR5`"]
 pub enum CLR5W {
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     CLEAR_INTERRUPT,
 }
 impl CLR5W {
@@ -291,7 +291,7 @@ impl<'a> _CLR5W<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     #[inline]
     pub fn clear_interrupt(self) -> &'a mut W {
         self.variant(CLR5W::CLEAR_INTERRUPT)
@@ -316,7 +316,7 @@ impl<'a> _CLR5W<'a> {
 }
 #[doc = "Values that can be written to the field `CLR6`"]
 pub enum CLR6W {
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     CLEAR_INTERRUPT,
 }
 impl CLR6W {
@@ -341,7 +341,7 @@ impl<'a> _CLR6W<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     #[inline]
     pub fn clear_interrupt(self) -> &'a mut W {
         self.variant(CLR6W::CLEAR_INTERRUPT)
@@ -366,7 +366,7 @@ impl<'a> _CLR6W<'a> {
 }
 #[doc = "Values that can be written to the field `CLR7`"]
 pub enum CLR7W {
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     CLEAR_INTERRUPT,
 }
 impl CLR7W {
@@ -391,7 +391,7 @@ impl<'a> _CLR7W<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     #[inline]
     pub fn clear_interrupt(self) -> &'a mut W {
         self.variant(CLR7W::CLEAR_INTERRUPT)
@@ -416,7 +416,7 @@ impl<'a> _CLR7W<'a> {
 }
 #[doc = "Values that can be written to the field `CLR8`"]
 pub enum CLR8W {
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     CLEAR_INTERRUPT,
 }
 impl CLR8W {
@@ -441,7 +441,7 @@ impl<'a> _CLR8W<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     #[inline]
     pub fn clear_interrupt(self) -> &'a mut W {
         self.variant(CLR8W::CLEAR_INTERRUPT)
@@ -466,7 +466,7 @@ impl<'a> _CLR8W<'a> {
 }
 #[doc = "Values that can be written to the field `CLR9`"]
 pub enum CLR9W {
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     CLEAR_INTERRUPT,
 }
 impl CLR9W {
@@ -491,7 +491,7 @@ impl<'a> _CLR9W<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     #[inline]
     pub fn clear_interrupt(self) -> &'a mut W {
         self.variant(CLR9W::CLEAR_INTERRUPT)
@@ -516,7 +516,7 @@ impl<'a> _CLR9W<'a> {
 }
 #[doc = "Values that can be written to the field `CLR10`"]
 pub enum CLR10W {
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     CLEAR_INTERRUPT,
 }
 impl CLR10W {
@@ -541,7 +541,7 @@ impl<'a> _CLR10W<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     #[inline]
     pub fn clear_interrupt(self) -> &'a mut W {
         self.variant(CLR10W::CLEAR_INTERRUPT)
@@ -566,7 +566,7 @@ impl<'a> _CLR10W<'a> {
 }
 #[doc = "Values that can be written to the field `CLR11`"]
 pub enum CLR11W {
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     CLEAR_INTERRUPT,
 }
 impl CLR11W {
@@ -591,7 +591,7 @@ impl<'a> _CLR11W<'a> {
             self.bit(variant._bits())
         }
     }
-    #[doc = "Clear pin interrupt. **NOTE**: the synchronizer between the GPIO and the NVIC blocks causes a delay of 2 clocks. It is recommended to add two NOPs after clearing the interrupt and before the exit of the interrupt service routine."]
+    #[doc = "Clear pin interrupt."]
     #[inline]
     pub fn clear_interrupt(self) -> &'a mut W {
         self.variant(CLR11W::CLEAR_INTERRUPT)

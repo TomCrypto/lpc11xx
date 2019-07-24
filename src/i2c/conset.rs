@@ -42,16 +42,15 @@ impl super::CONSET {
         self.write(|w| w)
     }
 }
-#[doc = r" Value of the field"]
-pub struct AAR {
-    bits: bool,
+#[doc = "Possible values of the field `AA`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum AAR {
+    #[doc = "Set the flag"]
+    SET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl AAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -62,17 +61,38 @@ impl AAR {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            AAR::SET => true,
+            AAR::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> AAR {
+        match value {
+            true => AAR::SET,
+            i => AAR::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `SET`"]
+    #[inline]
+    pub fn is_set(&self) -> bool {
+        *self == AAR::SET
+    }
 }
-#[doc = r" Value of the field"]
-pub struct SIR {
-    bits: bool,
+#[doc = "Possible values of the field `SI`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SIR {
+    #[doc = "Set the flag"]
+    SET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl SIR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -83,17 +103,38 @@ impl SIR {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            SIR::SET => true,
+            SIR::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> SIR {
+        match value {
+            true => SIR::SET,
+            i => SIR::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `SET`"]
+    #[inline]
+    pub fn is_set(&self) -> bool {
+        *self == SIR::SET
+    }
 }
-#[doc = r" Value of the field"]
-pub struct STOR {
-    bits: bool,
+#[doc = "Possible values of the field `STO`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STOR {
+    #[doc = "Set the flag"]
+    SET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl STOR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -104,17 +145,38 @@ impl STOR {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            STOR::SET => true,
+            STOR::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> STOR {
+        match value {
+            true => STOR::SET,
+            i => STOR::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `SET`"]
+    #[inline]
+    pub fn is_set(&self) -> bool {
+        *self == STOR::SET
+    }
 }
-#[doc = r" Value of the field"]
-pub struct STAR {
-    bits: bool,
+#[doc = "Possible values of the field `STA`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STAR {
+    #[doc = "Set the flag"]
+    SET,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl STAR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -125,17 +187,38 @@ impl STAR {
     pub fn bit_is_set(&self) -> bool {
         self.bit()
     }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            STAR::SET => true,
+            STAR::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> STAR {
+        match value {
+            true => STAR::SET,
+            i => STAR::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `SET`"]
+    #[inline]
+    pub fn is_set(&self) -> bool {
+        *self == STAR::SET
+    }
 }
-#[doc = r" Value of the field"]
-pub struct I2ENR {
-    bits: bool,
+#[doc = "Possible values of the field `I2EN`"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum I2ENR {
+    #[doc = "Enable the I2C interface"]
+    ENABLE,
+    #[doc = r" Reserved"]
+    _Reserved(bool),
 }
 impl I2ENR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
     #[doc = r" Returns `true` if the bit is clear (0)"]
     #[inline]
     pub fn bit_is_clear(&self) -> bool {
@@ -145,6 +228,43 @@ impl I2ENR {
     #[inline]
     pub fn bit_is_set(&self) -> bool {
         self.bit()
+    }
+    #[doc = r" Value of the field as raw bits"]
+    #[inline]
+    pub fn bit(&self) -> bool {
+        match *self {
+            I2ENR::ENABLE => true,
+            I2ENR::_Reserved(bits) => bits,
+        }
+    }
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _from(value: bool) -> I2ENR {
+        match value {
+            true => I2ENR::ENABLE,
+            i => I2ENR::_Reserved(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline]
+    pub fn is_enable(&self) -> bool {
+        *self == I2ENR::ENABLE
+    }
+}
+#[doc = "Values that can be written to the field `AA`"]
+pub enum AAW {
+    #[doc = "Set the flag"]
+    SET,
+}
+impl AAW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            AAW::SET => true,
+        }
     }
 }
 #[doc = r" Proxy"]
@@ -152,6 +272,18 @@ pub struct _AAW<'a> {
     w: &'a mut W,
 }
 impl<'a> _AAW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: AAW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Set the flag"]
+    #[inline]
+    pub fn set(self) -> &'a mut W {
+        self.variant(AAW::SET)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -170,11 +302,38 @@ impl<'a> _AAW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `SI`"]
+pub enum SIW {
+    #[doc = "Set the flag"]
+    SET,
+}
+impl SIW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            SIW::SET => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _SIW<'a> {
     w: &'a mut W,
 }
 impl<'a> _SIW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: SIW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Set the flag"]
+    #[inline]
+    pub fn set(self) -> &'a mut W {
+        self.variant(SIW::SET)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -193,11 +352,38 @@ impl<'a> _SIW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `STO`"]
+pub enum STOW {
+    #[doc = "Set the flag"]
+    SET,
+}
+impl STOW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            STOW::SET => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _STOW<'a> {
     w: &'a mut W,
 }
 impl<'a> _STOW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: STOW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Set the flag"]
+    #[inline]
+    pub fn set(self) -> &'a mut W {
+        self.variant(STOW::SET)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -216,11 +402,38 @@ impl<'a> _STOW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `STA`"]
+pub enum STAW {
+    #[doc = "Set the flag"]
+    SET,
+}
+impl STAW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            STAW::SET => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _STAW<'a> {
     w: &'a mut W,
 }
 impl<'a> _STAW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: STAW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Set the flag"]
+    #[inline]
+    pub fn set(self) -> &'a mut W {
+        self.variant(STAW::SET)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -239,11 +452,38 @@ impl<'a> _STAW<'a> {
         self.w
     }
 }
+#[doc = "Values that can be written to the field `I2EN`"]
+pub enum I2ENW {
+    #[doc = "Enable the I2C interface"]
+    ENABLE,
+}
+impl I2ENW {
+    #[allow(missing_docs)]
+    #[doc(hidden)]
+    #[inline]
+    pub fn _bits(&self) -> bool {
+        match *self {
+            I2ENW::ENABLE => true,
+        }
+    }
+}
 #[doc = r" Proxy"]
 pub struct _I2ENW<'a> {
     w: &'a mut W,
 }
 impl<'a> _I2ENW<'a> {
+    #[doc = r" Writes `variant` to the field"]
+    #[inline]
+    pub fn variant(self, variant: I2ENW) -> &'a mut W {
+        {
+            self.bit(variant._bits())
+        }
+    }
+    #[doc = "Enable the I2C interface"]
+    #[inline]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(I2ENW::ENABLE)
+    }
     #[doc = r" Sets the field bit"]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
@@ -268,55 +508,50 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 2 - Assert acknowledge flag"]
+    #[doc = "Bit 2 - Assert Acknowledge flag"]
     #[inline]
     pub fn aa(&self) -> AAR {
-        let bits = {
+        AAR::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 2;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        AAR { bits }
+        })
     }
-    #[doc = "Bit 3 - I2C interrupt flag"]
+    #[doc = "Bit 3 - Interrupt flag"]
     #[inline]
     pub fn si(&self) -> SIR {
-        let bits = {
+        SIR::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 3;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        SIR { bits }
+        })
     }
     #[doc = "Bit 4 - STOP flag"]
     #[inline]
     pub fn sto(&self) -> STOR {
-        let bits = {
+        STOR::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 4;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        STOR { bits }
+        })
     }
     #[doc = "Bit 5 - START flag"]
     #[inline]
     pub fn sta(&self) -> STAR {
-        let bits = {
+        STAR::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 5;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        STAR { bits }
+        })
     }
-    #[doc = "Bit 6 - I2C interface enable"]
+    #[doc = "Bit 6 - I2C Interface Enable bit"]
     #[inline]
     pub fn i2en(&self) -> I2ENR {
-        let bits = {
+        I2ENR::_from({
             const MASK: bool = true;
             const OFFSET: u8 = 6;
             ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        I2ENR { bits }
+        })
     }
 }
 impl W {
@@ -331,12 +566,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 2 - Assert acknowledge flag"]
+    #[doc = "Bit 2 - Assert Acknowledge flag"]
     #[inline]
     pub fn aa(&mut self) -> _AAW {
         _AAW { w: self }
     }
-    #[doc = "Bit 3 - I2C interrupt flag"]
+    #[doc = "Bit 3 - Interrupt flag"]
     #[inline]
     pub fn si(&mut self) -> _SIW {
         _SIW { w: self }
@@ -351,7 +586,7 @@ impl W {
     pub fn sta(&mut self) -> _STAW {
         _STAW { w: self }
     }
-    #[doc = "Bit 6 - I2C interface enable"]
+    #[doc = "Bit 6 - I2C Interface Enable bit"]
     #[inline]
     pub fn i2en(&mut self) -> _I2ENW {
         _I2ENW { w: self }
