@@ -136,6 +136,144 @@
               <name>Status</name>
               <description>These bits give the actual status information about the I2C interface</description>
               <bitRange>[7:3]</bitRange>
+              <enumeratedValues>
+                <name>ENUM</name>
+                <enumeratedValue>
+                  <name>BUS_ERROR</name>
+                  <description>Bus error during an I2C serial transfer.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>START_CONDITION_TRANSMITTED</name>
+                  <description>A START condition has been transmitted.</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>REPEATED_START_CONDITION_TRANSMITTED</name>
+                  <description>A Repeated START condition has been transmitted.</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>WRITE_ADDRESS_TRANSMITTED_ACK</name>
+                  <description>SLA+W has been transmitted; ACK has been received.</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>WRITE_ADDRESS_TRANSMITTED_NOT_ACK</name>
+                  <description>SLA+W has been transmitted; NOT ACK has been received.</description>
+                  <value>4</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DATA_BYTE_TRANSMITTED_ACK</name>
+                  <description>Data byte in DAT has been transmitted; ACK has been received.</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DATA_BYTE_TRANSMITTED_NOT_ACK</name>
+                  <description>Data byte in DAT has been transmitted; NOT ACK has been received.</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ARBITRATION_LOST</name>
+                  <description>In Master Transmitter mode, arbitration lost in SLA+R/W or Data bytes. In Master Receiver mode, arbitration lost in NOT ACK bit.</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>READ_ADDRESS_TRANSMITTED_ACK</name>
+                  <description>SLA+R has been transmitted; ACK has been received.</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>READ_ADDRESS_TRANSMITTED_NOT_ACK</name>
+                  <description>SLA+R has been transmitted; NOT ACK has been received.</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DATA_BYTE_RECEIVED_ACK</name>
+                  <description>Data byte has been received; ACK has been returned.</description>
+                  <value>10</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>DATA_BYTE_RECEIVED_NOT_ACK</name>
+                  <description>Data byte has been received; NOT ACK has been returned.</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OWN_WRITE_ADDRESS_RECEIVED_ACK</name>
+                  <description>Own SLA+W has been received; ACK has been returned.</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ARBITRATION_LOST_OWN_WRITE_ADDRESS_RECEIVED_ACK</name>
+                  <description>Arbitration lost in SLA+R/W as master; Own SLA+W has been received, ACK returned.</description>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GENERAL_CALL_RECEIVED_ACK</name>
+                  <description>General call address (0x00) has been received; ACK has been returned.</description>
+                  <value>14</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ARBITRATION_LOST_GENERAL_CALL_RECEIVED_ACK</name>
+                  <description>Arbitration lost in SLA+R/W as master; General call address has been received; ACK has been returned.</description>
+                  <value>15</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OWN_WRITE_ADDRESS_DATA_BYTE_RECEIVED_ACK</name>
+                  <description>Previously addressed with own SLV address; Data byte has been received; ACK has been returned.</description>
+                  <value>16</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OWN_WRITE_ADDRESS_DATA_BYTE_RECEIVED_NOT_ACK</name>
+                  <description>Previously addressed with own SLV address; Data byte has been received; NOT ACK has been returned.</description>
+                  <value>17</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GENERAL_CALL_DATA_BYTE_RECEIVED_ACK</name>
+                  <description>Previously addressed with General Call; Data byte has been received; ACK has been returned.</description>
+                  <value>18</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>GENERAL_CALL_DATA_BYTE_RECEIVED_NOT_ACK</name>
+                  <description>Previously addressed with General Call; Data byte has been received; NOT ACK has been returned.</description>
+                  <value>19</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>STOP_OR_REPEATED_START_CONDITION_RECEIVED_WHILE_ADDRESSED</name>
+                  <description>A STOP condition or Repeated START condition has been received while still addressed as SLV/REC or SLV/TRX.</description>
+                  <value>20</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>OWN_READ_ADDRESS_ACK</name>
+                  <description>Own SLA+R has been received; ACK has been returned.</description>
+                  <value>21</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ARBITRATION_LOST_OWN_READ_ADDRESS_RECEIVED_ACK</name>
+                  <description>Arbitration lost in SLA+R/W as master; Own SLA+R has been received; ACK has been returned.</description>
+                  <value>22</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SLAVE_DATA_BYTE_TRANSMITTED_ACK</name>
+                  <description>Data byte in DAT has been transmitted; ACK has been received.</description>
+                  <value>23</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>SLAVE_DATA_BYTE_TRANSMITTED_NOT_ACK</name>
+                  <description>Data byte in DAT has been transmitted; NOT ACK has been received.</description>
+                  <value>24</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>LAST_DATA_BYTE_TRANSMITTED_ACK_RECEIVED</name>
+                  <description>Last data byte in DAT has been transmitted (AA = 0); ACK has been received.</description>
+                  <value>25</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NOT_AVAILABLE</name>
+                  <description>There is no information available yet.</description>
+                  <value>31</value>
+                </enumeratedValue>
+              </enumeratedValues>
             </field>
             <field>
               <name>RESERVED</name>
