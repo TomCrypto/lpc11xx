@@ -185,7 +185,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Interrupt status. Note that IIR\\[0\\] is active low. The pending interrupt can be determined by evaluating IIR\\[3:1\\]"]
+    #[doc = "Bit 0 - Interrupt status. Note that IIR\\[0\\] is active low. The pending interrupt can be determined by evaluating IIR\\[3:1\\]."]
     #[inline]
     pub fn intstatus(&self) -> INTSTATUSR {
         INTSTATUSR::_from({
@@ -194,7 +194,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bits 1:3 - Interrupt identification. IER\\[3:1\\] identifies an interrupt corresponding to the UART Rx FIFO. All other combinations of IER\\[3:1\\] not listed below are reserved (100,101,111)"]
+    #[doc = "Bits 1:3 - Interrupt identification. IER\\[3:1\\] identifies an interrupt corresponding to the UART Rx FIFO. All other combinations of IER\\[3:1\\] not listed below are reserved (100,101,111)."]
     #[inline]
     pub fn intid(&self) -> INTIDR {
         INTIDR::_from({
@@ -203,7 +203,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 6:7 - These bits are equivalent to FCR\\[0\\]"]
+    #[doc = "Bits 6:7 - These bits are equivalent to FCR\\[0\\]."]
     #[inline]
     pub fn fifoenable(&self) -> FIFOENABLER {
         let bits = {
@@ -213,7 +213,7 @@ impl R {
         };
         FIFOENABLER { bits }
     }
-    #[doc = "Bit 8 - End of auto-baud interrupt. True if auto-baud has finished successfully and interrupt is enabled"]
+    #[doc = "Bit 8 - End of auto-baud interrupt. True if auto-baud has finished successfully and interrupt is enabled."]
     #[inline]
     pub fn abeoint(&self) -> ABEOINTR {
         let bits = {
@@ -223,7 +223,7 @@ impl R {
         };
         ABEOINTR { bits }
     }
-    #[doc = "Bit 9 - Auto-baud time-out interrupt. True if auto-baud has timed out and interrupt is enabled"]
+    #[doc = "Bit 9 - Auto-baud time-out interrupt. True if auto-baud has timed out and interrupt is enabled."]
     #[inline]
     pub fn abtoint(&self) -> ABTOINTR {
         let bits = {

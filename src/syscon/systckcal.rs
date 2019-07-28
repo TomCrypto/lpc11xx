@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:25 - System tick timer calibration value"]
+    #[doc = "Bits 0:25 - System tick timer calibration value."]
     #[inline]
     pub fn cal(&self) -> CALR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:25 - System tick timer calibration value"]
+    #[doc = "Bits 0:25 - System tick timer calibration value."]
     #[inline]
     pub fn cal(&mut self) -> _CALW {
         _CALW { w: self }

@@ -763,7 +763,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:2 - Last error code Type of the last error to occur on the CAN bus.The LEC field holds a code which indicates the type of the last error to occur on the CAN bus. This field will be cleared to 0 when a message has been transferred (reception or transmission) without error. The unused code 111 may be written by the CPU to check for updates"]
+    #[doc = "Bits 0:2 - Last error code Type of the last error to occur on the CAN bus.The LEC field holds a code which indicates the type of the last error to occur on the CAN bus. This field will be cleared to 0 when a message has been transferred (reception or transmission) without error. The unused code 111 may be written by the CPU to check for updates."]
     #[inline]
     pub fn lec(&self) -> LECR {
         LECR::_from({
@@ -772,7 +772,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bit 3 - Transmitted a message successfully This bit is reset by the CPU. It is never reset by the CAN controller"]
+    #[doc = "Bit 3 - Transmitted a message successfully This bit is reset by the CPU. It is never reset by the CAN controller."]
     #[inline]
     pub fn txok(&self) -> TXOKR {
         TXOKR::_from({
@@ -781,7 +781,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Received a message successfully This bit is reset by the CPU. It is never reset by the CAN controller"]
+    #[doc = "Bit 4 - Received a message successfully This bit is reset by the CPU. It is never reset by the CAN controller."]
     #[inline]
     pub fn rxok(&self) -> RXOKR {
         RXOKR::_from({
@@ -790,7 +790,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Error passive"]
+    #[doc = "Bit 5 - Error passive."]
     #[inline]
     pub fn epass(&self) -> EPASSR {
         EPASSR::_from({
@@ -799,7 +799,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - Warning status"]
+    #[doc = "Bit 6 - Warning status."]
     #[inline]
     pub fn ewarn(&self) -> EWARNR {
         EWARNR::_from({
@@ -808,7 +808,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Busoff status"]
+    #[doc = "Bit 7 - Busoff status."]
     #[inline]
     pub fn boff(&self) -> BOFFR {
         BOFFR::_from({
@@ -830,32 +830,32 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:2 - Last error code Type of the last error to occur on the CAN bus.The LEC field holds a code which indicates the type of the last error to occur on the CAN bus. This field will be cleared to 0 when a message has been transferred (reception or transmission) without error. The unused code 111 may be written by the CPU to check for updates"]
+    #[doc = "Bits 0:2 - Last error code Type of the last error to occur on the CAN bus.The LEC field holds a code which indicates the type of the last error to occur on the CAN bus. This field will be cleared to 0 when a message has been transferred (reception or transmission) without error. The unused code 111 may be written by the CPU to check for updates."]
     #[inline]
     pub fn lec(&mut self) -> _LECW {
         _LECW { w: self }
     }
-    #[doc = "Bit 3 - Transmitted a message successfully This bit is reset by the CPU. It is never reset by the CAN controller"]
+    #[doc = "Bit 3 - Transmitted a message successfully This bit is reset by the CPU. It is never reset by the CAN controller."]
     #[inline]
     pub fn txok(&mut self) -> _TXOKW {
         _TXOKW { w: self }
     }
-    #[doc = "Bit 4 - Received a message successfully This bit is reset by the CPU. It is never reset by the CAN controller"]
+    #[doc = "Bit 4 - Received a message successfully This bit is reset by the CPU. It is never reset by the CAN controller."]
     #[inline]
     pub fn rxok(&mut self) -> _RXOKW {
         _RXOKW { w: self }
     }
-    #[doc = "Bit 5 - Error passive"]
+    #[doc = "Bit 5 - Error passive."]
     #[inline]
     pub fn epass(&mut self) -> _EPASSW {
         _EPASSW { w: self }
     }
-    #[doc = "Bit 6 - Warning status"]
+    #[doc = "Bit 6 - Warning status."]
     #[inline]
     pub fn ewarn(&mut self) -> _EWARNW {
         _EWARNW { w: self }
     }
-    #[doc = "Bit 7 - Busoff status"]
+    #[doc = "Bit 7 - Busoff status."]
     #[inline]
     pub fn boff(&mut self) -> _BOFFW {
         _BOFFW { w: self }

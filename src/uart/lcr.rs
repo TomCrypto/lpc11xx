@@ -712,7 +712,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Word Length Select"]
+    #[doc = "Bits 0:1 - Word Length Select."]
     #[inline]
     pub fn wls(&self) -> WLSR {
         WLSR::_from({
@@ -721,7 +721,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bit 2 - Stop Bit Select"]
+    #[doc = "Bit 2 - Stop Bit Select."]
     #[inline]
     pub fn sbs(&self) -> SBSR {
         SBSR::_from({
@@ -730,7 +730,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Parity Enable"]
+    #[doc = "Bit 3 - Parity Enable."]
     #[inline]
     pub fn pe(&self) -> PER {
         PER::_from({
@@ -739,7 +739,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bits 4:5 - Parity Select"]
+    #[doc = "Bits 4:5 - Parity Select."]
     #[inline]
     pub fn ps(&self) -> PSR {
         PSR::_from({
@@ -748,7 +748,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bit 6 - Break Control"]
+    #[doc = "Bit 6 - Break Control."]
     #[inline]
     pub fn bc(&self) -> BCR {
         BCR::_from({
@@ -757,7 +757,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Divisor Latch Access Bit"]
+    #[doc = "Bit 7 - Divisor Latch Access Bit."]
     #[inline]
     pub fn dlab(&self) -> DLABR {
         DLABR::_from({
@@ -779,32 +779,32 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Word Length Select"]
+    #[doc = "Bits 0:1 - Word Length Select."]
     #[inline]
     pub fn wls(&mut self) -> _WLSW {
         _WLSW { w: self }
     }
-    #[doc = "Bit 2 - Stop Bit Select"]
+    #[doc = "Bit 2 - Stop Bit Select."]
     #[inline]
     pub fn sbs(&mut self) -> _SBSW {
         _SBSW { w: self }
     }
-    #[doc = "Bit 3 - Parity Enable"]
+    #[doc = "Bit 3 - Parity Enable."]
     #[inline]
     pub fn pe(&mut self) -> _PEW {
         _PEW { w: self }
     }
-    #[doc = "Bits 4:5 - Parity Select"]
+    #[doc = "Bits 4:5 - Parity Select."]
     #[inline]
     pub fn ps(&mut self) -> _PSW {
         _PSW { w: self }
     }
-    #[doc = "Bit 6 - Break Control"]
+    #[doc = "Bit 6 - Break Control."]
     #[inline]
     pub fn bc(&mut self) -> _BCW {
         _BCW { w: self }
     }
-    #[doc = "Bit 7 - Divisor Latch Access Bit"]
+    #[doc = "Bit 7 - Divisor Latch Access Bit."]
     #[inline]
     pub fn dlab(&mut self) -> _DLABW {
         _DLABW { w: self }

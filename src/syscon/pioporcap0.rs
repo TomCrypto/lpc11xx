@@ -50,7 +50,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:11 - Raw reset status input PIO0_n: PIO0_11 to PIO0_0"]
+    #[doc = "Bits 0:11 - Raw reset status input PIO0_n: PIO0_11 to PIO0_0."]
     #[inline]
     pub fn cappio0_n(&self) -> CAPPIO0_NR {
         let bits = {
@@ -60,7 +60,7 @@ impl R {
         };
         CAPPIO0_NR { bits }
     }
-    #[doc = "Bits 12:23 - Raw reset status input PIO1_n: PIO1_11 to PIO1_0"]
+    #[doc = "Bits 12:23 - Raw reset status input PIO1_n: PIO1_11 to PIO1_0."]
     #[inline]
     pub fn cappio1_n(&self) -> CAPPIO1_NR {
         let bits = {
@@ -70,7 +70,7 @@ impl R {
         };
         CAPPIO1_NR { bits }
     }
-    #[doc = "Bits 24:31 - Raw reset status input PIO2_n: PIO2_7 to PIO2_0"]
+    #[doc = "Bits 24:31 - Raw reset status input PIO2_n: PIO2_7 to PIO2_0."]
     #[inline]
     pub fn cappio2_n(&self) -> CAPPIO2_NR {
         let bits = {

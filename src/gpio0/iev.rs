@@ -1308,7 +1308,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - PIOn_0"]
+    #[doc = "Bit 0 - PIOn_0."]
     #[inline]
     pub fn iev0(&self) -> IEV0R {
         IEV0R::_from({
@@ -1317,7 +1317,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - PIOn_1"]
+    #[doc = "Bit 1 - PIOn_1."]
     #[inline]
     pub fn iev1(&self) -> IEV1R {
         IEV1R::_from({
@@ -1326,7 +1326,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - PIOn_2"]
+    #[doc = "Bit 2 - PIOn_2."]
     #[inline]
     pub fn iev2(&self) -> IEV2R {
         IEV2R::_from({
@@ -1335,7 +1335,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - PIOn_3"]
+    #[doc = "Bit 3 - PIOn_3."]
     #[inline]
     pub fn iev3(&self) -> IEV3R {
         IEV3R::_from({
@@ -1344,7 +1344,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - PIOn_4"]
+    #[doc = "Bit 4 - PIOn_4."]
     #[inline]
     pub fn iev4(&self) -> IEV4R {
         IEV4R::_from({
@@ -1353,7 +1353,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - PIOn_5"]
+    #[doc = "Bit 5 - PIOn_5."]
     #[inline]
     pub fn iev5(&self) -> IEV5R {
         IEV5R::_from({
@@ -1362,7 +1362,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - PIOn_6"]
+    #[doc = "Bit 6 - PIOn_6."]
     #[inline]
     pub fn iev6(&self) -> IEV6R {
         IEV6R::_from({
@@ -1371,7 +1371,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - PIOn_7"]
+    #[doc = "Bit 7 - PIOn_7."]
     #[inline]
     pub fn iev7(&self) -> IEV7R {
         IEV7R::_from({
@@ -1380,7 +1380,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 8 - PIOn_8"]
+    #[doc = "Bit 8 - PIOn_8."]
     #[inline]
     pub fn iev8(&self) -> IEV8R {
         IEV8R::_from({
@@ -1389,7 +1389,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 9 - PIOn_9"]
+    #[doc = "Bit 9 - PIOn_9."]
     #[inline]
     pub fn iev9(&self) -> IEV9R {
         IEV9R::_from({
@@ -1398,7 +1398,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 10 - PIOn_10"]
+    #[doc = "Bit 10 - PIOn_10."]
     #[inline]
     pub fn iev10(&self) -> IEV10R {
         IEV10R::_from({
@@ -1407,7 +1407,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 11 - PIOn_11"]
+    #[doc = "Bit 11 - PIOn_11."]
     #[inline]
     pub fn iev11(&self) -> IEV11R {
         IEV11R::_from({
@@ -1429,62 +1429,62 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - PIOn_0"]
+    #[doc = "Bit 0 - PIOn_0."]
     #[inline]
     pub fn iev0(&mut self) -> _IEV0W {
         _IEV0W { w: self }
     }
-    #[doc = "Bit 1 - PIOn_1"]
+    #[doc = "Bit 1 - PIOn_1."]
     #[inline]
     pub fn iev1(&mut self) -> _IEV1W {
         _IEV1W { w: self }
     }
-    #[doc = "Bit 2 - PIOn_2"]
+    #[doc = "Bit 2 - PIOn_2."]
     #[inline]
     pub fn iev2(&mut self) -> _IEV2W {
         _IEV2W { w: self }
     }
-    #[doc = "Bit 3 - PIOn_3"]
+    #[doc = "Bit 3 - PIOn_3."]
     #[inline]
     pub fn iev3(&mut self) -> _IEV3W {
         _IEV3W { w: self }
     }
-    #[doc = "Bit 4 - PIOn_4"]
+    #[doc = "Bit 4 - PIOn_4."]
     #[inline]
     pub fn iev4(&mut self) -> _IEV4W {
         _IEV4W { w: self }
     }
-    #[doc = "Bit 5 - PIOn_5"]
+    #[doc = "Bit 5 - PIOn_5."]
     #[inline]
     pub fn iev5(&mut self) -> _IEV5W {
         _IEV5W { w: self }
     }
-    #[doc = "Bit 6 - PIOn_6"]
+    #[doc = "Bit 6 - PIOn_6."]
     #[inline]
     pub fn iev6(&mut self) -> _IEV6W {
         _IEV6W { w: self }
     }
-    #[doc = "Bit 7 - PIOn_7"]
+    #[doc = "Bit 7 - PIOn_7."]
     #[inline]
     pub fn iev7(&mut self) -> _IEV7W {
         _IEV7W { w: self }
     }
-    #[doc = "Bit 8 - PIOn_8"]
+    #[doc = "Bit 8 - PIOn_8."]
     #[inline]
     pub fn iev8(&mut self) -> _IEV8W {
         _IEV8W { w: self }
     }
-    #[doc = "Bit 9 - PIOn_9"]
+    #[doc = "Bit 9 - PIOn_9."]
     #[inline]
     pub fn iev9(&mut self) -> _IEV9W {
         _IEV9W { w: self }
     }
-    #[doc = "Bit 10 - PIOn_10"]
+    #[doc = "Bit 10 - PIOn_10."]
     #[inline]
     pub fn iev10(&mut self) -> _IEV10W {
         _IEV10W { w: self }
     }
-    #[doc = "Bit 11 - PIOn_11"]
+    #[doc = "Bit 11 - PIOn_11."]
     #[inline]
     pub fn iev11(&mut self) -> _IEV11W {
         _IEV11W { w: self }

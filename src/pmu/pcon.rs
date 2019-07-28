@@ -363,7 +363,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 1 - Deep power-down mode enable"]
+    #[doc = "Bit 1 - Deep power-down mode enable."]
     #[inline]
     pub fn dpden(&self) -> DPDENR {
         DPDENR::_from({
@@ -372,7 +372,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 8 - Sleep mode flag"]
+    #[doc = "Bit 8 - Sleep mode flag."]
     #[inline]
     pub fn sleepflag(&self) -> SLEEPFLAGR {
         SLEEPFLAGR::_from({
@@ -381,7 +381,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 11 - Deep power-down flag"]
+    #[doc = "Bit 11 - Deep power-down flag."]
     #[inline]
     pub fn dpdflag(&self) -> DPDFLAGR {
         DPDFLAGR::_from({
@@ -403,17 +403,17 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 1 - Deep power-down mode enable"]
+    #[doc = "Bit 1 - Deep power-down mode enable."]
     #[inline]
     pub fn dpden(&mut self) -> _DPDENW {
         _DPDENW { w: self }
     }
-    #[doc = "Bit 8 - Sleep mode flag"]
+    #[doc = "Bit 8 - Sleep mode flag."]
     #[inline]
     pub fn sleepflag(&mut self) -> _SLEEPFLAGW {
         _SLEEPFLAGW { w: self }
     }
-    #[doc = "Bit 11 - Deep power-down flag"]
+    #[doc = "Bit 11 - Deep power-down flag."]
     #[inline]
     pub fn dpdflag(&mut self) -> _DPDFLAGW {
         _DPDFLAGW { w: self }

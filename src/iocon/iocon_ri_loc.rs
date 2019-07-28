@@ -137,7 +137,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Selects pin location for RI function"]
+    #[doc = "Bits 0:1 - Selects pin location for RI function."]
     #[inline]
     pub fn riloc(&self) -> RILOCR {
         RILOCR::_from({
@@ -159,7 +159,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Selects pin location for RI function"]
+    #[doc = "Bits 0:1 - Selects pin location for RI function."]
     #[inline]
     pub fn riloc(&mut self) -> _RILOCW {
         _RILOCW { w: self }

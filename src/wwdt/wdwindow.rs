@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:23 - Watchdog window value"]
+    #[doc = "Bits 0:23 - Watchdog window value."]
     #[inline]
     pub fn window(&self) -> WINDOWR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:23 - Watchdog window value"]
+    #[doc = "Bits 0:23 - Watchdog window value."]
     #[inline]
     pub fn window(&mut self) -> _WINDOWW {
         _WINDOWW { w: self }

@@ -783,7 +783,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Initialization"]
+    #[doc = "Bit 0 - Initialization."]
     #[inline]
     pub fn init(&self) -> INITR {
         INITR::_from({
@@ -792,7 +792,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Module interrupt enable"]
+    #[doc = "Bit 1 - Module interrupt enable."]
     #[inline]
     pub fn ie(&self) -> IER {
         IER::_from({
@@ -801,7 +801,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Status change interrupt enable"]
+    #[doc = "Bit 2 - Status change interrupt enable."]
     #[inline]
     pub fn sie(&self) -> SIER {
         SIER::_from({
@@ -810,7 +810,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Error interrupt enable"]
+    #[doc = "Bit 3 - Error interrupt enable."]
     #[inline]
     pub fn eie(&self) -> EIER {
         EIER::_from({
@@ -819,7 +819,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Disable automatic retransmission"]
+    #[doc = "Bit 5 - Disable automatic retransmission."]
     #[inline]
     pub fn dar(&self) -> DARR {
         DARR::_from({
@@ -828,7 +828,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - Configuration change enable"]
+    #[doc = "Bit 6 - Configuration change enable."]
     #[inline]
     pub fn cce(&self) -> CCER {
         CCER::_from({
@@ -837,7 +837,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Test mode enable"]
+    #[doc = "Bit 7 - Test mode enable."]
     #[inline]
     pub fn test(&self) -> TESTR {
         TESTR::_from({
@@ -859,37 +859,37 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Initialization"]
+    #[doc = "Bit 0 - Initialization."]
     #[inline]
     pub fn init(&mut self) -> _INITW {
         _INITW { w: self }
     }
-    #[doc = "Bit 1 - Module interrupt enable"]
+    #[doc = "Bit 1 - Module interrupt enable."]
     #[inline]
     pub fn ie(&mut self) -> _IEW {
         _IEW { w: self }
     }
-    #[doc = "Bit 2 - Status change interrupt enable"]
+    #[doc = "Bit 2 - Status change interrupt enable."]
     #[inline]
     pub fn sie(&mut self) -> _SIEW {
         _SIEW { w: self }
     }
-    #[doc = "Bit 3 - Error interrupt enable"]
+    #[doc = "Bit 3 - Error interrupt enable."]
     #[inline]
     pub fn eie(&mut self) -> _EIEW {
         _EIEW { w: self }
     }
-    #[doc = "Bit 5 - Disable automatic retransmission"]
+    #[doc = "Bit 5 - Disable automatic retransmission."]
     #[inline]
     pub fn dar(&mut self) -> _DARW {
         _DARW { w: self }
     }
-    #[doc = "Bit 6 - Configuration change enable"]
+    #[doc = "Bit 6 - Configuration change enable."]
     #[inline]
     pub fn cce(&mut self) -> _CCEW {
         _CCEW { w: self }
     }
-    #[doc = "Bit 7 - Test mode enable"]
+    #[doc = "Bit 7 - Test mode enable."]
     #[inline]
     pub fn test(&mut self) -> _TESTW {
         _TESTW { w: self }

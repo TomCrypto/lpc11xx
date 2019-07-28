@@ -451,7 +451,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Watchdog enable bit. This bit is Set Only. Setting this bit to one also locks the watchdog clock source. Once the watchdog timer is enabled, the watchdog timer clock source cannot be changed. If the watchdog timer is needed in Deep-sleep mode, the watchdog clock source must be changed to the watchdog oscillator before setting this bit to one"]
+    #[doc = "Bit 0 - Watchdog enable bit. This bit is Set Only. Setting this bit to one also locks the watchdog clock source. Once the watchdog timer is enabled, the watchdog timer clock source cannot be changed. If the watchdog timer is needed in Deep-sleep mode, the watchdog clock source must be changed to the watchdog oscillator before setting this bit to one."]
     #[inline]
     pub fn wden(&self) -> WDENR {
         WDENR::_from({
@@ -460,7 +460,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Watchdog reset enable bit. This bit is Set Only"]
+    #[doc = "Bit 1 - Watchdog reset enable bit. This bit is Set Only."]
     #[inline]
     pub fn wdreset(&self) -> WDRESETR {
         WDRESETR::_from({
@@ -469,7 +469,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Watchdog time-out flag. Set when the watchdog timer times out, by a feed error, or by events associated with WDPROTECT, cleared by software. Causes a chip reset if WDRESET = 1"]
+    #[doc = "Bit 2 - Watchdog time-out flag. Set when the watchdog timer times out, by a feed error, or by events associated with WDPROTECT, cleared by software. Causes a chip reset if WDRESET = 1."]
     #[inline]
     pub fn wdtof(&self) -> WDTOFR {
         let bits = {
@@ -479,7 +479,7 @@ impl R {
         };
         WDTOFR { bits }
     }
-    #[doc = "Bit 3 - Watchdog interrupt flag. Set when the timer reaches the value in WDWARNINT. Cleared by software"]
+    #[doc = "Bit 3 - Watchdog interrupt flag. Set when the timer reaches the value in WDWARNINT. Cleared by software."]
     #[inline]
     pub fn wdint(&self) -> WDINTR {
         let bits = {
@@ -489,7 +489,7 @@ impl R {
         };
         WDINTR { bits }
     }
-    #[doc = "Bit 4 - Watchdog update mode. This bit is Set Only"]
+    #[doc = "Bit 4 - Watchdog update mode. This bit is Set Only."]
     #[inline]
     pub fn wdprotect(&self) -> WDPROTECTR {
         WDPROTECTR::_from({
@@ -511,27 +511,27 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Watchdog enable bit. This bit is Set Only. Setting this bit to one also locks the watchdog clock source. Once the watchdog timer is enabled, the watchdog timer clock source cannot be changed. If the watchdog timer is needed in Deep-sleep mode, the watchdog clock source must be changed to the watchdog oscillator before setting this bit to one"]
+    #[doc = "Bit 0 - Watchdog enable bit. This bit is Set Only. Setting this bit to one also locks the watchdog clock source. Once the watchdog timer is enabled, the watchdog timer clock source cannot be changed. If the watchdog timer is needed in Deep-sleep mode, the watchdog clock source must be changed to the watchdog oscillator before setting this bit to one."]
     #[inline]
     pub fn wden(&mut self) -> _WDENW {
         _WDENW { w: self }
     }
-    #[doc = "Bit 1 - Watchdog reset enable bit. This bit is Set Only"]
+    #[doc = "Bit 1 - Watchdog reset enable bit. This bit is Set Only."]
     #[inline]
     pub fn wdreset(&mut self) -> _WDRESETW {
         _WDRESETW { w: self }
     }
-    #[doc = "Bit 2 - Watchdog time-out flag. Set when the watchdog timer times out, by a feed error, or by events associated with WDPROTECT, cleared by software. Causes a chip reset if WDRESET = 1"]
+    #[doc = "Bit 2 - Watchdog time-out flag. Set when the watchdog timer times out, by a feed error, or by events associated with WDPROTECT, cleared by software. Causes a chip reset if WDRESET = 1."]
     #[inline]
     pub fn wdtof(&mut self) -> _WDTOFW {
         _WDTOFW { w: self }
     }
-    #[doc = "Bit 3 - Watchdog interrupt flag. Set when the timer reaches the value in WDWARNINT. Cleared by software"]
+    #[doc = "Bit 3 - Watchdog interrupt flag. Set when the timer reaches the value in WDWARNINT. Cleared by software."]
     #[inline]
     pub fn wdint(&mut self) -> _WDINTW {
         _WDINTW { w: self }
     }
-    #[doc = "Bit 4 - Watchdog update mode. This bit is Set Only"]
+    #[doc = "Bit 4 - Watchdog update mode. This bit is Set Only."]
     #[inline]
     pub fn wdprotect(&mut self) -> _WDPROTECTW {
         _WDPROTECTW { w: self }

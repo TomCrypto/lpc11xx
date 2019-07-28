@@ -28,7 +28,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:23 - Counter timer value"]
+    #[doc = "Bits 0:23 - Counter timer value."]
     #[inline]
     pub fn count(&self) -> COUNTR {
         let bits = {

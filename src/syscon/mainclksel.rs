@@ -170,7 +170,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Clock source for main clock"]
+    #[doc = "Bits 0:1 - Clock source for main clock."]
     #[inline]
     pub fn sel(&self) -> SELR {
         SELR::_from({
@@ -192,7 +192,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Clock source for main clock"]
+    #[doc = "Bits 0:1 - Clock source for main clock."]
     #[inline]
     pub fn sel(&mut self) -> _SELW {
         _SELW { w: self }

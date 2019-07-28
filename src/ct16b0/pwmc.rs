@@ -468,7 +468,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - PWM channel0 enable"]
+    #[doc = "Bit 0 - PWM channel0 enable."]
     #[inline]
     pub fn pwmen0(&self) -> PWMEN0R {
         PWMEN0R::_from({
@@ -477,7 +477,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - PWM channel1 enable"]
+    #[doc = "Bit 1 - PWM channel1 enable."]
     #[inline]
     pub fn pwmen1(&self) -> PWMEN1R {
         PWMEN1R::_from({
@@ -486,7 +486,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - PWM channel2 enable"]
+    #[doc = "Bit 2 - PWM channel2 enable."]
     #[inline]
     pub fn pwmen2(&self) -> PWMEN2R {
         PWMEN2R::_from({
@@ -495,7 +495,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - PWM channel3 enable Note: It is recommended to use match channel 3 to set the PWM cycle because it is not pinned out"]
+    #[doc = "Bit 3 - PWM channel3 enable Note: It is recommended to use match channel 3 to set the PWM cycle because it is not pinned out."]
     #[inline]
     pub fn pwmen3(&self) -> PWMEN3R {
         PWMEN3R::_from({
@@ -517,22 +517,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - PWM channel0 enable"]
+    #[doc = "Bit 0 - PWM channel0 enable."]
     #[inline]
     pub fn pwmen0(&mut self) -> _PWMEN0W {
         _PWMEN0W { w: self }
     }
-    #[doc = "Bit 1 - PWM channel1 enable"]
+    #[doc = "Bit 1 - PWM channel1 enable."]
     #[inline]
     pub fn pwmen1(&mut self) -> _PWMEN1W {
         _PWMEN1W { w: self }
     }
-    #[doc = "Bit 2 - PWM channel2 enable"]
+    #[doc = "Bit 2 - PWM channel2 enable."]
     #[inline]
     pub fn pwmen2(&mut self) -> _PWMEN2W {
         _PWMEN2W { w: self }
     }
-    #[doc = "Bit 3 - PWM channel3 enable Note: It is recommended to use match channel 3 to set the PWM cycle because it is not pinned out"]
+    #[doc = "Bit 3 - PWM channel3 enable Note: It is recommended to use match channel 3 to set the PWM cycle because it is not pinned out."]
     #[inline]
     pub fn pwmen3(&mut self) -> _PWMEN3W {
         _PWMEN3W { w: self }

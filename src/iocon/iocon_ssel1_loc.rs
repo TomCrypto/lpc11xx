@@ -137,7 +137,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Selects pin location for SSEL1 function"]
+    #[doc = "Bits 0:1 - Selects pin location for SSEL1 function."]
     #[inline]
     pub fn ssel1loc(&self) -> SSEL1LOCR {
         SSEL1LOCR::_from({
@@ -159,7 +159,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Selects pin location for SSEL1 function"]
+    #[doc = "Bits 0:1 - Selects pin location for SSEL1 function."]
     #[inline]
     pub fn ssel1loc(&mut self) -> _SSEL1LOCW {
         _SSEL1LOCW { w: self }

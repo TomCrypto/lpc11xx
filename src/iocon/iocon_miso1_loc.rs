@@ -137,7 +137,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Selects pin location for the MISO1 function"]
+    #[doc = "Bits 0:1 - Selects pin location for the MISO1 function."]
     #[inline]
     pub fn miso1loc(&self) -> MISO1LOCR {
         MISO1LOCR::_from({
@@ -159,7 +159,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Selects pin location for the MISO1 function"]
+    #[doc = "Bits 0:1 - Selects pin location for the MISO1 function."]
     #[inline]
     pub fn miso1loc(&mut self) -> _MISO1LOCW {
         _MISO1LOCW { w: self }

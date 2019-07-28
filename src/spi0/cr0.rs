@@ -663,7 +663,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:3 - Data Size Select. This field controls the number of bits transferred in each frame. Values 0000-0010 are not supported and should not be used"]
+    #[doc = "Bits 0:3 - Data Size Select. This field controls the number of bits transferred in each frame. Values 0000-0010 are not supported and should not be used."]
     #[inline]
     pub fn dss(&self) -> DSSR {
         DSSR::_from({
@@ -672,7 +672,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 4:5 - Frame Format"]
+    #[doc = "Bits 4:5 - Frame Format."]
     #[inline]
     pub fn frf(&self) -> FRFR {
         FRFR::_from({
@@ -681,7 +681,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bit 6 - Clock Out Polarity. This bit is only used in SPI mode"]
+    #[doc = "Bit 6 - Clock Out Polarity. This bit is only used in SPI mode."]
     #[inline]
     pub fn cpol(&self) -> CPOLR {
         CPOLR::_from({
@@ -690,7 +690,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Clock Out Phase. This bit is only used in SPI mode"]
+    #[doc = "Bit 7 - Clock Out Phase. This bit is only used in SPI mode."]
     #[inline]
     pub fn cpha(&self) -> CPHAR {
         CPHAR::_from({
@@ -699,7 +699,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bits 8:15 - Serial Clock Rate. The number of prescaler output clocks per bit on the bus, minus one. Given that CPSDVSR is the prescale divider, and the APB clock PCLK clocks the prescaler, the bit frequency is PCLK / (CPSDVSR X \\[SCR+1\\])"]
+    #[doc = "Bits 8:15 - Serial Clock Rate. The number of prescaler output clocks per bit on the bus, minus one. Given that CPSDVSR is the prescale divider, and the APB clock PCLK clocks the prescaler, the bit frequency is PCLK / (CPSDVSR X \\[SCR+1\\])."]
     #[inline]
     pub fn scr(&self) -> SCRR {
         let bits = {
@@ -722,27 +722,27 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:3 - Data Size Select. This field controls the number of bits transferred in each frame. Values 0000-0010 are not supported and should not be used"]
+    #[doc = "Bits 0:3 - Data Size Select. This field controls the number of bits transferred in each frame. Values 0000-0010 are not supported and should not be used."]
     #[inline]
     pub fn dss(&mut self) -> _DSSW {
         _DSSW { w: self }
     }
-    #[doc = "Bits 4:5 - Frame Format"]
+    #[doc = "Bits 4:5 - Frame Format."]
     #[inline]
     pub fn frf(&mut self) -> _FRFW {
         _FRFW { w: self }
     }
-    #[doc = "Bit 6 - Clock Out Polarity. This bit is only used in SPI mode"]
+    #[doc = "Bit 6 - Clock Out Polarity. This bit is only used in SPI mode."]
     #[inline]
     pub fn cpol(&mut self) -> _CPOLW {
         _CPOLW { w: self }
     }
-    #[doc = "Bit 7 - Clock Out Phase. This bit is only used in SPI mode"]
+    #[doc = "Bit 7 - Clock Out Phase. This bit is only used in SPI mode."]
     #[inline]
     pub fn cpha(&mut self) -> _CPHAW {
         _CPHAW { w: self }
     }
-    #[doc = "Bits 8:15 - Serial Clock Rate. The number of prescaler output clocks per bit on the bus, minus one. Given that CPSDVSR is the prescale divider, and the APB clock PCLK clocks the prescaler, the bit frequency is PCLK / (CPSDVSR X \\[SCR+1\\])"]
+    #[doc = "Bits 8:15 - Serial Clock Rate. The number of prescaler output clocks per bit on the bus, minus one. Given that CPSDVSR is the prescale divider, and the APB clock PCLK clocks the prescaler, the bit frequency is PCLK / (CPSDVSR X \\[SCR+1\\])."]
     #[inline]
     pub fn scr(&mut self) -> _SCRW {
         _SCRW { w: self }

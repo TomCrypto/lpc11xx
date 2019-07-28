@@ -250,22 +250,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - FIFO Enable"]
+    #[doc = "Bit 0 - FIFO Enable."]
     #[inline]
     pub fn fifoen(&mut self) -> _FIFOENW {
         _FIFOENW { w: self }
     }
-    #[doc = "Bit 1 - RX FIFO Reset"]
+    #[doc = "Bit 1 - RX FIFO Reset."]
     #[inline]
     pub fn rxfifores(&mut self) -> _RXFIFORESW {
         _RXFIFORESW { w: self }
     }
-    #[doc = "Bit 2 - TX FIFO Reset"]
+    #[doc = "Bit 2 - TX FIFO Reset."]
     #[inline]
     pub fn txfifores(&mut self) -> _TXFIFORESW {
         _TXFIFORESW { w: self }
     }
-    #[doc = "Bits 6:7 - RX Trigger Level. These two bits determine how many receiver UART FIFO characters must be written before an interrupt is activated"]
+    #[doc = "Bits 6:7 - RX Trigger Level. These two bits determine how many receiver UART FIFO characters must be written before an interrupt is activated."]
     #[inline]
     pub fn rxtl(&mut self) -> _RXTLW {
         _RXTLW { w: self }

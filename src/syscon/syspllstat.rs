@@ -64,7 +64,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - PLL lock status"]
+    #[doc = "Bit 0 - PLL lock status."]
     #[inline]
     pub fn lock(&self) -> LOCKR {
         LOCKR::_from({

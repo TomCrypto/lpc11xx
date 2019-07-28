@@ -1019,7 +1019,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:3 - Data length code The Data Length Code of a Message Object must be defined the same as in all the corresponding objects with the same identifier at other nodes. When the Message Handler stores a data frame, it will write the DLC to the value given by the received message. 0000 - 1000 = Data frame has 0 - 8 data bytes. 1001 - 1111 = Data frame has 8 data bytes"]
+    #[doc = "Bits 0:3 - Data length code The Data Length Code of a Message Object must be defined the same as in all the corresponding objects with the same identifier at other nodes. When the Message Handler stores a data frame, it will write the DLC to the value given by the received message. 0000 - 1000 = Data frame has 0 - 8 data bytes. 1001 - 1111 = Data frame has 8 data bytes."]
     #[inline]
     pub fn dlc_3_0(&self) -> DLC_3_0R {
         let bits = {
@@ -1029,7 +1029,7 @@ impl R {
         };
         DLC_3_0R { bits }
     }
-    #[doc = "Bit 7 - End of buffer"]
+    #[doc = "Bit 7 - End of buffer."]
     #[inline]
     pub fn eob(&self) -> EOBR {
         EOBR::_from({
@@ -1038,7 +1038,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 8 - Transmit request"]
+    #[doc = "Bit 8 - Transmit request."]
     #[inline]
     pub fn txrqst(&self) -> TXRQSTR {
         TXRQSTR::_from({
@@ -1047,7 +1047,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 9 - Remote enable"]
+    #[doc = "Bit 9 - Remote enable."]
     #[inline]
     pub fn rmten(&self) -> RMTENR {
         RMTENR::_from({
@@ -1056,7 +1056,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 10 - Receive interrupt enable"]
+    #[doc = "Bit 10 - Receive interrupt enable."]
     #[inline]
     pub fn rxie(&self) -> RXIER {
         RXIER::_from({
@@ -1065,7 +1065,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 11 - Transmit interrupt enable"]
+    #[doc = "Bit 11 - Transmit interrupt enable."]
     #[inline]
     pub fn txie(&self) -> TXIER {
         TXIER::_from({
@@ -1074,7 +1074,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 12 - Use acceptance mask If UMASK is set to 1, the message object's mask bits have to be programmed during initialization of the message object before MAGVAL is set to 1"]
+    #[doc = "Bit 12 - Use acceptance mask If UMASK is set to 1, the message object's mask bits have to be programmed during initialization of the message object before MAGVAL is set to 1."]
     #[inline]
     pub fn umask(&self) -> UMASKR {
         UMASKR::_from({
@@ -1083,7 +1083,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 13 - Interrupt pending"]
+    #[doc = "Bit 13 - Interrupt pending."]
     #[inline]
     pub fn intpnd(&self) -> INTPNDR {
         INTPNDR::_from({
@@ -1092,7 +1092,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 14 - Message lost (only valid for message objects in the direction receive)"]
+    #[doc = "Bit 14 - Message lost (only valid for message objects in the direction receive)."]
     #[inline]
     pub fn msglst(&self) -> MSGLSTR {
         MSGLSTR::_from({
@@ -1101,7 +1101,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 15 - New data"]
+    #[doc = "Bit 15 - New data."]
     #[inline]
     pub fn newdat(&self) -> NEWDATR {
         NEWDATR::_from({
@@ -1123,52 +1123,52 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:3 - Data length code The Data Length Code of a Message Object must be defined the same as in all the corresponding objects with the same identifier at other nodes. When the Message Handler stores a data frame, it will write the DLC to the value given by the received message. 0000 - 1000 = Data frame has 0 - 8 data bytes. 1001 - 1111 = Data frame has 8 data bytes"]
+    #[doc = "Bits 0:3 - Data length code The Data Length Code of a Message Object must be defined the same as in all the corresponding objects with the same identifier at other nodes. When the Message Handler stores a data frame, it will write the DLC to the value given by the received message. 0000 - 1000 = Data frame has 0 - 8 data bytes. 1001 - 1111 = Data frame has 8 data bytes."]
     #[inline]
     pub fn dlc_3_0(&mut self) -> _DLC_3_0W {
         _DLC_3_0W { w: self }
     }
-    #[doc = "Bit 7 - End of buffer"]
+    #[doc = "Bit 7 - End of buffer."]
     #[inline]
     pub fn eob(&mut self) -> _EOBW {
         _EOBW { w: self }
     }
-    #[doc = "Bit 8 - Transmit request"]
+    #[doc = "Bit 8 - Transmit request."]
     #[inline]
     pub fn txrqst(&mut self) -> _TXRQSTW {
         _TXRQSTW { w: self }
     }
-    #[doc = "Bit 9 - Remote enable"]
+    #[doc = "Bit 9 - Remote enable."]
     #[inline]
     pub fn rmten(&mut self) -> _RMTENW {
         _RMTENW { w: self }
     }
-    #[doc = "Bit 10 - Receive interrupt enable"]
+    #[doc = "Bit 10 - Receive interrupt enable."]
     #[inline]
     pub fn rxie(&mut self) -> _RXIEW {
         _RXIEW { w: self }
     }
-    #[doc = "Bit 11 - Transmit interrupt enable"]
+    #[doc = "Bit 11 - Transmit interrupt enable."]
     #[inline]
     pub fn txie(&mut self) -> _TXIEW {
         _TXIEW { w: self }
     }
-    #[doc = "Bit 12 - Use acceptance mask If UMASK is set to 1, the message object's mask bits have to be programmed during initialization of the message object before MAGVAL is set to 1"]
+    #[doc = "Bit 12 - Use acceptance mask If UMASK is set to 1, the message object's mask bits have to be programmed during initialization of the message object before MAGVAL is set to 1."]
     #[inline]
     pub fn umask(&mut self) -> _UMASKW {
         _UMASKW { w: self }
     }
-    #[doc = "Bit 13 - Interrupt pending"]
+    #[doc = "Bit 13 - Interrupt pending."]
     #[inline]
     pub fn intpnd(&mut self) -> _INTPNDW {
         _INTPNDW { w: self }
     }
-    #[doc = "Bit 14 - Message lost (only valid for message objects in the direction receive)"]
+    #[doc = "Bit 14 - Message lost (only valid for message objects in the direction receive)."]
     #[inline]
     pub fn msglst(&mut self) -> _MSGLSTW {
         _MSGLSTW { w: self }
     }
-    #[doc = "Bit 15 - New data"]
+    #[doc = "Bit 15 - New data."]
     #[inline]
     pub fn newdat(&mut self) -> _NEWDATW {
         _NEWDATW { w: self }

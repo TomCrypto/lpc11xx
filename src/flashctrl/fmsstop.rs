@@ -179,7 +179,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:16 - BIST stop address divided by 16 (corresponds to AHB byte address \\[20:4\\])"]
+    #[doc = "Bits 0:16 - BIST stop address divided by 16 (corresponds to AHB byte address \\[20:4\\])."]
     #[inline]
     pub fn stop(&self) -> STOPR {
         let bits = {
@@ -189,7 +189,7 @@ impl R {
         };
         STOPR { bits }
     }
-    #[doc = "Bit 17 - Start control bit for signature generation"]
+    #[doc = "Bit 17 - Start control bit for signature generation."]
     #[inline]
     pub fn sig_start(&self) -> SIG_STARTR {
         SIG_STARTR::_from({
@@ -211,12 +211,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:16 - BIST stop address divided by 16 (corresponds to AHB byte address \\[20:4\\])"]
+    #[doc = "Bits 0:16 - BIST stop address divided by 16 (corresponds to AHB byte address \\[20:4\\])."]
     #[inline]
     pub fn stop(&mut self) -> _STOPW {
         _STOPW { w: self }
     }
-    #[doc = "Bit 17 - Start control bit for signature generation"]
+    #[doc = "Bit 17 - Start control bit for signature generation."]
     #[inline]
     pub fn sig_start(&mut self) -> _SIG_STARTW {
         _SIG_STARTW { w: self }

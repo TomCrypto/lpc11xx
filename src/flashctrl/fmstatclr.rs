@@ -49,7 +49,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 2 - Writing a 1 to this bits clears the signature generation completion flag (SIG_DONE) in the FMSTAT register"]
+    #[doc = "Bit 2 - Writing a 1 to this bits clears the signature generation completion flag (SIG_DONE) in the FMSTAT register."]
     #[inline]
     pub fn sig_done_clr(&mut self) -> _SIG_DONE_CLRW {
         _SIG_DONE_CLRW { w: self }

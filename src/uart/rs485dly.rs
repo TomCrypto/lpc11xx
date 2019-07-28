@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - Contains the direction control (RTS or DTR) delay value. This register works in conjunction with an 8-bit counter"]
+    #[doc = "Bits 0:7 - Contains the direction control (RTS or DTR) delay value. This register works in conjunction with an 8-bit counter."]
     #[inline]
     pub fn dly(&self) -> DLYR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:7 - Contains the direction control (RTS or DTR) delay value. This register works in conjunction with an 8-bit counter"]
+    #[doc = "Bits 0:7 - Contains the direction control (RTS or DTR) delay value. This register works in conjunction with an 8-bit counter."]
     #[inline]
     pub fn dly(&mut self) -> _DLYW {
         _DLYW { w: self }

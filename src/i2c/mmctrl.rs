@@ -94,7 +94,7 @@ impl MM_ENAR {
 pub enum ENA_SCLR {
     #[doc = "When this bit is cleared to 0, the SCL output will be forced high when the module is in monitor mode. As described above, this will prevent the module from having any control over the I2C clock line"]
     HIGH,
-    #[doc = "When this bit is set, the I2C module may exercise the same control over the clock line that it would in normal operation. This means that, acting as a slave peripheral, the I2C module can stretch the clock line (hold it low) until it has had time to respond to an I2C interrupt.\\[1\\]"]
+    #[doc = "When this bit is set, the I2C module may exercise the same control over the clock line that it would in normal operation. This means that, acting as a slave peripheral, the I2C module can stretch the clock line (hold it low) until it has had time to respond to an I2C interrupt."]
     NORMAL,
 }
 impl ENA_SCLR {
@@ -245,7 +245,7 @@ impl<'a> _MM_ENAW<'a> {
 pub enum ENA_SCLW {
     #[doc = "When this bit is cleared to 0, the SCL output will be forced high when the module is in monitor mode. As described above, this will prevent the module from having any control over the I2C clock line"]
     HIGH,
-    #[doc = "When this bit is set, the I2C module may exercise the same control over the clock line that it would in normal operation. This means that, acting as a slave peripheral, the I2C module can stretch the clock line (hold it low) until it has had time to respond to an I2C interrupt.\\[1\\]"]
+    #[doc = "When this bit is set, the I2C module may exercise the same control over the clock line that it would in normal operation. This means that, acting as a slave peripheral, the I2C module can stretch the clock line (hold it low) until it has had time to respond to an I2C interrupt."]
     NORMAL,
 }
 impl ENA_SCLW {
@@ -276,7 +276,7 @@ impl<'a> _ENA_SCLW<'a> {
     pub fn high(self) -> &'a mut W {
         self.variant(ENA_SCLW::HIGH)
     }
-    #[doc = "When this bit is set, the I2C module may exercise the same control over the clock line that it would in normal operation. This means that, acting as a slave peripheral, the I2C module can stretch the clock line (hold it low) until it has had time to respond to an I2C interrupt.\\[1\\]"]
+    #[doc = "When this bit is set, the I2C module may exercise the same control over the clock line that it would in normal operation. This means that, acting as a slave peripheral, the I2C module can stretch the clock line (hold it low) until it has had time to respond to an I2C interrupt."]
     #[inline]
     pub fn normal(self) -> &'a mut W {
         self.variant(ENA_SCLW::NORMAL)
@@ -363,7 +363,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Monitor mode enable"]
+    #[doc = "Bit 0 - Monitor mode enable."]
     #[inline]
     pub fn mm_ena(&self) -> MM_ENAR {
         MM_ENAR::_from({
@@ -372,7 +372,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - SCL output enable"]
+    #[doc = "Bit 1 - SCL output enable."]
     #[inline]
     pub fn ena_scl(&self) -> ENA_SCLR {
         ENA_SCLR::_from({
@@ -381,7 +381,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Select interrupt register match"]
+    #[doc = "Bit 2 - Select interrupt register match."]
     #[inline]
     pub fn match_all(&self) -> MATCH_ALLR {
         MATCH_ALLR::_from({
@@ -403,17 +403,17 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Monitor mode enable"]
+    #[doc = "Bit 0 - Monitor mode enable."]
     #[inline]
     pub fn mm_ena(&mut self) -> _MM_ENAW {
         _MM_ENAW { w: self }
     }
-    #[doc = "Bit 1 - SCL output enable"]
+    #[doc = "Bit 1 - SCL output enable."]
     #[inline]
     pub fn ena_scl(&mut self) -> _ENA_SCLW {
         _ENA_SCLW { w: self }
     }
-    #[doc = "Bit 2 - Select interrupt register match"]
+    #[doc = "Bit 2 - Select interrupt register match."]
     #[inline]
     pub fn match_all(&mut self) -> _MATCH_ALLW {
         _MATCH_ALLW { w: self }

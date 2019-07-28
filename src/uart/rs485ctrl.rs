@@ -678,7 +678,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - NMM enable"]
+    #[doc = "Bit 0 - NMM enable."]
     #[inline]
     pub fn nmmen(&self) -> NMMENR {
         NMMENR::_from({
@@ -687,7 +687,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Receiver enable"]
+    #[doc = "Bit 1 - Receiver enable."]
     #[inline]
     pub fn rxdis(&self) -> RXDISR {
         RXDISR::_from({
@@ -696,7 +696,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - AAD enable"]
+    #[doc = "Bit 2 - AAD enable."]
     #[inline]
     pub fn aaden(&self) -> AADENR {
         AADENR::_from({
@@ -705,7 +705,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Select direction control pin"]
+    #[doc = "Bit 3 - Select direction control pin."]
     #[inline]
     pub fn sel(&self) -> SELR {
         SELR::_from({
@@ -714,7 +714,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Auto direction control enable"]
+    #[doc = "Bit 4 - Auto direction control enable."]
     #[inline]
     pub fn dctrl(&self) -> DCTRLR {
         DCTRLR::_from({
@@ -723,7 +723,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Polarity control. This bit reverses the polarity of the direction control signal on the RTS (or DTR) pin"]
+    #[doc = "Bit 5 - Polarity control. This bit reverses the polarity of the direction control signal on the RTS (or DTR) pin."]
     #[inline]
     pub fn oinv(&self) -> OINVR {
         OINVR::_from({
@@ -745,32 +745,32 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - NMM enable"]
+    #[doc = "Bit 0 - NMM enable."]
     #[inline]
     pub fn nmmen(&mut self) -> _NMMENW {
         _NMMENW { w: self }
     }
-    #[doc = "Bit 1 - Receiver enable"]
+    #[doc = "Bit 1 - Receiver enable."]
     #[inline]
     pub fn rxdis(&mut self) -> _RXDISW {
         _RXDISW { w: self }
     }
-    #[doc = "Bit 2 - AAD enable"]
+    #[doc = "Bit 2 - AAD enable."]
     #[inline]
     pub fn aaden(&mut self) -> _AADENW {
         _AADENW { w: self }
     }
-    #[doc = "Bit 3 - Select direction control pin"]
+    #[doc = "Bit 3 - Select direction control pin."]
     #[inline]
     pub fn sel(&mut self) -> _SELW {
         _SELW { w: self }
     }
-    #[doc = "Bit 4 - Auto direction control enable"]
+    #[doc = "Bit 4 - Auto direction control enable."]
     #[inline]
     pub fn dctrl(&mut self) -> _DCTRLW {
         _DCTRLW { w: self }
     }
-    #[doc = "Bit 5 - Polarity control. This bit reverses the polarity of the direction control signal on the RTS (or DTR) pin"]
+    #[doc = "Bit 5 - Polarity control. This bit reverses the polarity of the direction control signal on the RTS (or DTR) pin."]
     #[inline]
     pub fn oinv(&mut self) -> _OINVW {
         _OINVW { w: self }

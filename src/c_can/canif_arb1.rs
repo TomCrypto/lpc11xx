@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:15 - Message identifier 29-bit identifier (extended frame) 11-bit identifier (standard frame)"]
+    #[doc = "Bits 0:15 - Message identifier 29-bit identifier (extended frame) 11-bit identifier (standard frame)."]
     #[inline]
     pub fn id_15_0(&self) -> ID_15_0R {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:15 - Message identifier 29-bit identifier (extended frame) 11-bit identifier (standard frame)"]
+    #[doc = "Bits 0:15 - Message identifier 29-bit identifier (extended frame) 11-bit identifier (standard frame)."]
     #[inline]
     pub fn id_15_0(&mut self) -> _ID_15_0W {
         _ID_15_0W { w: self }

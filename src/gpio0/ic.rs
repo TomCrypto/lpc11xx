@@ -626,62 +626,62 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - PIOn_0"]
+    #[doc = "Bit 0 - PIOn_0."]
     #[inline]
     pub fn clr0(&mut self) -> _CLR0W {
         _CLR0W { w: self }
     }
-    #[doc = "Bit 1 - PIOn_1"]
+    #[doc = "Bit 1 - PIOn_1."]
     #[inline]
     pub fn clr1(&mut self) -> _CLR1W {
         _CLR1W { w: self }
     }
-    #[doc = "Bit 2 - PIOn_2"]
+    #[doc = "Bit 2 - PIOn_2."]
     #[inline]
     pub fn clr2(&mut self) -> _CLR2W {
         _CLR2W { w: self }
     }
-    #[doc = "Bit 3 - PIOn_3"]
+    #[doc = "Bit 3 - PIOn_3."]
     #[inline]
     pub fn clr3(&mut self) -> _CLR3W {
         _CLR3W { w: self }
     }
-    #[doc = "Bit 4 - PIOn_4"]
+    #[doc = "Bit 4 - PIOn_4."]
     #[inline]
     pub fn clr4(&mut self) -> _CLR4W {
         _CLR4W { w: self }
     }
-    #[doc = "Bit 5 - PIOn_5"]
+    #[doc = "Bit 5 - PIOn_5."]
     #[inline]
     pub fn clr5(&mut self) -> _CLR5W {
         _CLR5W { w: self }
     }
-    #[doc = "Bit 6 - PIOn_6"]
+    #[doc = "Bit 6 - PIOn_6."]
     #[inline]
     pub fn clr6(&mut self) -> _CLR6W {
         _CLR6W { w: self }
     }
-    #[doc = "Bit 7 - PIOn_7"]
+    #[doc = "Bit 7 - PIOn_7."]
     #[inline]
     pub fn clr7(&mut self) -> _CLR7W {
         _CLR7W { w: self }
     }
-    #[doc = "Bit 8 - PIOn_8"]
+    #[doc = "Bit 8 - PIOn_8."]
     #[inline]
     pub fn clr8(&mut self) -> _CLR8W {
         _CLR8W { w: self }
     }
-    #[doc = "Bit 9 - PIOn_9"]
+    #[doc = "Bit 9 - PIOn_9."]
     #[inline]
     pub fn clr9(&mut self) -> _CLR9W {
         _CLR9W { w: self }
     }
-    #[doc = "Bit 10 - PIOn_10"]
+    #[doc = "Bit 10 - PIOn_10."]
     #[inline]
     pub fn clr10(&mut self) -> _CLR10W {
         _CLR10W { w: self }
     }
-    #[doc = "Bit 11 - PIOn_11"]
+    #[doc = "Bit 11 - PIOn_11."]
     #[inline]
     pub fn clr11(&mut self) -> _CLR11W {
         _CLR11W { w: self }

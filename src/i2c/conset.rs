@@ -508,7 +508,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 2 - Assert Acknowledge flag"]
+    #[doc = "Bit 2 - Assert Acknowledge flag."]
     #[inline]
     pub fn aa(&self) -> AAR {
         AAR::_from({
@@ -517,7 +517,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Interrupt flag"]
+    #[doc = "Bit 3 - Interrupt flag."]
     #[inline]
     pub fn si(&self) -> SIR {
         SIR::_from({
@@ -526,7 +526,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - STOP flag"]
+    #[doc = "Bit 4 - STOP flag."]
     #[inline]
     pub fn sto(&self) -> STOR {
         STOR::_from({
@@ -535,7 +535,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - START flag"]
+    #[doc = "Bit 5 - START flag."]
     #[inline]
     pub fn sta(&self) -> STAR {
         STAR::_from({
@@ -544,7 +544,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - I2C Interface Enable bit"]
+    #[doc = "Bit 6 - I2C Interface Enable bit."]
     #[inline]
     pub fn i2en(&self) -> I2ENR {
         I2ENR::_from({
@@ -566,27 +566,27 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 2 - Assert Acknowledge flag"]
+    #[doc = "Bit 2 - Assert Acknowledge flag."]
     #[inline]
     pub fn aa(&mut self) -> _AAW {
         _AAW { w: self }
     }
-    #[doc = "Bit 3 - Interrupt flag"]
+    #[doc = "Bit 3 - Interrupt flag."]
     #[inline]
     pub fn si(&mut self) -> _SIW {
         _SIW { w: self }
     }
-    #[doc = "Bit 4 - STOP flag"]
+    #[doc = "Bit 4 - STOP flag."]
     #[inline]
     pub fn sto(&mut self) -> _STOW {
         _STOW { w: self }
     }
-    #[doc = "Bit 5 - START flag"]
+    #[doc = "Bit 5 - START flag."]
     #[inline]
     pub fn sta(&mut self) -> _STAW {
         _STAW { w: self }
     }
-    #[doc = "Bit 6 - I2C Interface Enable bit"]
+    #[doc = "Bit 6 - I2C Interface Enable bit."]
     #[inline]
     pub fn i2en(&mut self) -> _I2ENW {
         _I2ENW { w: self }

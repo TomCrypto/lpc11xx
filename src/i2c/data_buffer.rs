@@ -28,7 +28,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - This register holds contents of the 8 MSBs of the DAT shift register"]
+    #[doc = "Bits 0:7 - This register holds contents of the 8 MSBs of the DAT shift register."]
     #[inline]
     pub fn data(&self) -> DATAR {
         let bits = {

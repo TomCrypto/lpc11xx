@@ -118,7 +118,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - General Call enable bit"]
+    #[doc = "Bit 0 - General Call enable bit."]
     #[inline]
     pub fn gc(&self) -> GCR {
         let bits = {
@@ -128,7 +128,7 @@ impl R {
         };
         GCR { bits }
     }
-    #[doc = "Bits 1:7 - The I2C device address for slave mode"]
+    #[doc = "Bits 1:7 - The I2C device address for slave mode."]
     #[inline]
     pub fn address(&self) -> ADDRESSR {
         let bits = {
@@ -151,12 +151,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - General Call enable bit"]
+    #[doc = "Bit 0 - General Call enable bit."]
     #[inline]
     pub fn gc(&mut self) -> _GCW {
         _GCW { w: self }
     }
-    #[doc = "Bits 1:7 - The I2C device address for slave mode"]
+    #[doc = "Bits 1:7 - The I2C device address for slave mode."]
     #[inline]
     pub fn address(&mut self) -> _ADDRESSW {
         _ADDRESSW { w: self }

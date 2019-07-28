@@ -440,7 +440,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Counter/Timer Mode. This field selects which rising PCLK edges can increment Timer's Prescale Counter (PC), or clear PC and increment Timer Counter (TC). Timer Mode: every rising PCLK edge"]
+    #[doc = "Bits 0:1 - Counter/Timer Mode. This field selects which rising PCLK edges can increment Timer's Prescale Counter (PC), or clear PC and increment Timer Counter (TC). Timer Mode: every rising PCLK edge."]
     #[inline]
     pub fn ctm(&self) -> CTMR {
         CTMR::_from({
@@ -449,7 +449,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 2:3 - Count Input Select. When bits 1:0 in this register are not 00, these bits select which CAP pin is sampled for clocking:"]
+    #[doc = "Bits 2:3 - Count Input Select. When bits 1:0 in this register are not 00, these bits select which CAP pin is sampled for clocking:."]
     #[inline]
     pub fn cis(&self) -> CISR {
         CISR::_from({
@@ -458,7 +458,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bit 4 - Setting this bit to one enables clearing of the timer and the prescaler when the capture-edge event specified in bits 7:5 occurs"]
+    #[doc = "Bit 4 - Setting this bit to one enables clearing of the timer and the prescaler when the capture-edge event specified in bits 7:5 occurs."]
     #[inline]
     pub fn encc(&self) -> ENCCR {
         let bits = {
@@ -468,7 +468,7 @@ impl R {
         };
         ENCCR { bits }
     }
-    #[doc = "Bits 5:7 - When bit 4 is one, these bits select which capture input edge will cause the timer and prescaler to be cleared. These bits have no effect when bit 4 is zero"]
+    #[doc = "Bits 5:7 - When bit 4 is one, these bits select which capture input edge will cause the timer and prescaler to be cleared. These bits have no effect when bit 4 is zero."]
     #[inline]
     pub fn selcc(&self) -> SELCCR {
         SELCCR::_from({
@@ -490,22 +490,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Counter/Timer Mode. This field selects which rising PCLK edges can increment Timer's Prescale Counter (PC), or clear PC and increment Timer Counter (TC). Timer Mode: every rising PCLK edge"]
+    #[doc = "Bits 0:1 - Counter/Timer Mode. This field selects which rising PCLK edges can increment Timer's Prescale Counter (PC), or clear PC and increment Timer Counter (TC). Timer Mode: every rising PCLK edge."]
     #[inline]
     pub fn ctm(&mut self) -> _CTMW {
         _CTMW { w: self }
     }
-    #[doc = "Bits 2:3 - Count Input Select. When bits 1:0 in this register are not 00, these bits select which CAP pin is sampled for clocking:"]
+    #[doc = "Bits 2:3 - Count Input Select. When bits 1:0 in this register are not 00, these bits select which CAP pin is sampled for clocking:."]
     #[inline]
     pub fn cis(&mut self) -> _CISW {
         _CISW { w: self }
     }
-    #[doc = "Bit 4 - Setting this bit to one enables clearing of the timer and the prescaler when the capture-edge event specified in bits 7:5 occurs"]
+    #[doc = "Bit 4 - Setting this bit to one enables clearing of the timer and the prescaler when the capture-edge event specified in bits 7:5 occurs."]
     #[inline]
     pub fn encc(&mut self) -> _ENCCW {
         _ENCCW { w: self }
     }
-    #[doc = "Bits 5:7 - When bit 4 is one, these bits select which capture input edge will cause the timer and prescaler to be cleared. These bits have no effect when bit 4 is zero"]
+    #[doc = "Bits 5:7 - When bit 4 is one, these bits select which capture input edge will cause the timer and prescaler to be cleared. These bits have no effect when bit 4 is zero."]
     #[inline]
     pub fn selcc(&mut self) -> _SELCCW {
         _SELCCW { w: self }

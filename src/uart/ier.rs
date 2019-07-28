@@ -573,7 +573,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - RBR Interrupt Enable. Enables the Receive Data Available interrupt for UART. It also controls the Character Receive Time-out interrupt"]
+    #[doc = "Bit 0 - RBR Interrupt Enable. Enables the Receive Data Available interrupt for UART. It also controls the Character Receive Time-out interrupt."]
     #[inline]
     pub fn rbrie(&self) -> RBRIER {
         RBRIER::_from({
@@ -582,7 +582,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - THRE Interrupt Enable. Enables the THRE interrupt for UART. The status of this interrupt can be read from LSR\\[5\\]"]
+    #[doc = "Bit 1 - THRE Interrupt Enable. Enables the THRE interrupt for UART. The status of this interrupt can be read from LSR\\[5\\]."]
     #[inline]
     pub fn threie(&self) -> THREIER {
         THREIER::_from({
@@ -591,7 +591,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - RX Line Interrupt Enable. Enables the UART RX line status interrupts. The status of this interrupt can be read from LSR\\[4:1\\]"]
+    #[doc = "Bit 2 - RX Line Interrupt Enable. Enables the UART RX line status interrupts. The status of this interrupt can be read from LSR\\[4:1\\]."]
     #[inline]
     pub fn rxlie(&self) -> RXLIER {
         RXLIER::_from({
@@ -600,7 +600,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 8 - Enables the end of auto-baud interrupt"]
+    #[doc = "Bit 8 - Enables the end of auto-baud interrupt."]
     #[inline]
     pub fn abeointen(&self) -> ABEOINTENR {
         ABEOINTENR::_from({
@@ -609,7 +609,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 9 - Enables the auto-baud time-out interrupt"]
+    #[doc = "Bit 9 - Enables the auto-baud time-out interrupt."]
     #[inline]
     pub fn abtointen(&self) -> ABTOINTENR {
         ABTOINTENR::_from({
@@ -631,27 +631,27 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - RBR Interrupt Enable. Enables the Receive Data Available interrupt for UART. It also controls the Character Receive Time-out interrupt"]
+    #[doc = "Bit 0 - RBR Interrupt Enable. Enables the Receive Data Available interrupt for UART. It also controls the Character Receive Time-out interrupt."]
     #[inline]
     pub fn rbrie(&mut self) -> _RBRIEW {
         _RBRIEW { w: self }
     }
-    #[doc = "Bit 1 - THRE Interrupt Enable. Enables the THRE interrupt for UART. The status of this interrupt can be read from LSR\\[5\\]"]
+    #[doc = "Bit 1 - THRE Interrupt Enable. Enables the THRE interrupt for UART. The status of this interrupt can be read from LSR\\[5\\]."]
     #[inline]
     pub fn threie(&mut self) -> _THREIEW {
         _THREIEW { w: self }
     }
-    #[doc = "Bit 2 - RX Line Interrupt Enable. Enables the UART RX line status interrupts. The status of this interrupt can be read from LSR\\[4:1\\]"]
+    #[doc = "Bit 2 - RX Line Interrupt Enable. Enables the UART RX line status interrupts. The status of this interrupt can be read from LSR\\[4:1\\]."]
     #[inline]
     pub fn rxlie(&mut self) -> _RXLIEW {
         _RXLIEW { w: self }
     }
-    #[doc = "Bit 8 - Enables the end of auto-baud interrupt"]
+    #[doc = "Bit 8 - Enables the end of auto-baud interrupt."]
     #[inline]
     pub fn abeointen(&mut self) -> _ABEOINTENW {
         _ABEOINTENW { w: self }
     }
-    #[doc = "Bit 9 - Enables the auto-baud time-out interrupt"]
+    #[doc = "Bit 9 - Enables the auto-baud time-out interrupt."]
     #[inline]
     pub fn abtointen(&mut self) -> _ABTOINTENW {
         _ABTOINTENW { w: self }

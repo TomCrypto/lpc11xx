@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - SPI1_PCLK clock divider values 0: Disable SPI1_PCLK. 1: Divide by 1. to 255: Divide by 255"]
+    #[doc = "Bits 0:7 - SPI1_PCLK clock divider values 0: Disable SPI1_PCLK. 1: Divide by 1. to 255: Divide by 255."]
     #[inline]
     pub fn div(&self) -> DIVR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:7 - SPI1_PCLK clock divider values 0: Disable SPI1_PCLK. 1: Divide by 1. to 255: Divide by 255"]
+    #[doc = "Bits 0:7 - SPI1_PCLK clock divider values 0: Disable SPI1_PCLK. 1: Divide by 1. to 255: Divide by 255."]
     #[inline]
     pub fn div(&mut self) -> _DIVW {
         _DIVW { w: self }

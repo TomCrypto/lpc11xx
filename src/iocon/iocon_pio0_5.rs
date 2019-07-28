@@ -243,7 +243,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:2 - Configure pin function"]
+    #[doc = "Bits 0:2 - Configure pin function."]
     #[inline]
     pub fn func(&self) -> FUNCR {
         FUNCR::_from({
@@ -252,7 +252,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 8:9 - Selects I2C mode. Select Standard mode (I2CMODE = 00, default) or Standard I/O functionality (I2CMODE = 01) if the pin function is GPIO (FUNC = 000)"]
+    #[doc = "Bits 8:9 - Selects I2C mode. Select Standard mode (I2CMODE = 00, default) or Standard I/O functionality (I2CMODE = 01) if the pin function is GPIO (FUNC = 000)."]
     #[inline]
     pub fn i2cmode(&self) -> I2CMODER {
         I2CMODER::_from({
@@ -274,12 +274,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:2 - Configure pin function"]
+    #[doc = "Bits 0:2 - Configure pin function."]
     #[inline]
     pub fn func(&mut self) -> _FUNCW {
         _FUNCW { w: self }
     }
-    #[doc = "Bits 8:9 - Selects I2C mode. Select Standard mode (I2CMODE = 00, default) or Standard I/O functionality (I2CMODE = 01) if the pin function is GPIO (FUNC = 000)"]
+    #[doc = "Bits 8:9 - Selects I2C mode. Select Standard mode (I2CMODE = 00, default) or Standard I/O functionality (I2CMODE = 01) if the pin function is GPIO (FUNC = 000)."]
     #[inline]
     pub fn i2cmode(&mut self) -> _I2CMODEW {
         _I2CMODEW { w: self }

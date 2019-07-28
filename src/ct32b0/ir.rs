@@ -312,7 +312,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Interrupt flag for match channel 0"]
+    #[doc = "Bit 0 - Interrupt flag for match channel 0."]
     #[inline]
     pub fn mr0int(&self) -> MR0INTR {
         let bits = {
@@ -322,7 +322,7 @@ impl R {
         };
         MR0INTR { bits }
     }
-    #[doc = "Bit 1 - Interrupt flag for match channel 1"]
+    #[doc = "Bit 1 - Interrupt flag for match channel 1."]
     #[inline]
     pub fn mr1int(&self) -> MR1INTR {
         let bits = {
@@ -332,7 +332,7 @@ impl R {
         };
         MR1INTR { bits }
     }
-    #[doc = "Bit 2 - Interrupt flag for match channel 2"]
+    #[doc = "Bit 2 - Interrupt flag for match channel 2."]
     #[inline]
     pub fn mr2int(&self) -> MR2INTR {
         let bits = {
@@ -342,7 +342,7 @@ impl R {
         };
         MR2INTR { bits }
     }
-    #[doc = "Bit 3 - Interrupt flag for match channel 3"]
+    #[doc = "Bit 3 - Interrupt flag for match channel 3."]
     #[inline]
     pub fn mr3int(&self) -> MR3INTR {
         let bits = {
@@ -352,7 +352,7 @@ impl R {
         };
         MR3INTR { bits }
     }
-    #[doc = "Bit 4 - Interrupt flag for capture channel 0 event"]
+    #[doc = "Bit 4 - Interrupt flag for capture channel 0 event."]
     #[inline]
     pub fn cr0int(&self) -> CR0INTR {
         let bits = {
@@ -362,7 +362,7 @@ impl R {
         };
         CR0INTR { bits }
     }
-    #[doc = "Bit 5 - Interrupt flag for capture channel 1 event"]
+    #[doc = "Bit 5 - Interrupt flag for capture channel 1 event."]
     #[inline]
     pub fn cr1int(&self) -> CR1INTR {
         let bits = {
@@ -385,32 +385,32 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Interrupt flag for match channel 0"]
+    #[doc = "Bit 0 - Interrupt flag for match channel 0."]
     #[inline]
     pub fn mr0int(&mut self) -> _MR0INTW {
         _MR0INTW { w: self }
     }
-    #[doc = "Bit 1 - Interrupt flag for match channel 1"]
+    #[doc = "Bit 1 - Interrupt flag for match channel 1."]
     #[inline]
     pub fn mr1int(&mut self) -> _MR1INTW {
         _MR1INTW { w: self }
     }
-    #[doc = "Bit 2 - Interrupt flag for match channel 2"]
+    #[doc = "Bit 2 - Interrupt flag for match channel 2."]
     #[inline]
     pub fn mr2int(&mut self) -> _MR2INTW {
         _MR2INTW { w: self }
     }
-    #[doc = "Bit 3 - Interrupt flag for match channel 3"]
+    #[doc = "Bit 3 - Interrupt flag for match channel 3."]
     #[inline]
     pub fn mr3int(&mut self) -> _MR3INTW {
         _MR3INTW { w: self }
     }
-    #[doc = "Bit 4 - Interrupt flag for capture channel 0 event"]
+    #[doc = "Bit 4 - Interrupt flag for capture channel 0 event."]
     #[inline]
     pub fn cr0int(&mut self) -> _CR0INTW {
         _CR0INTW { w: self }
     }
-    #[doc = "Bit 5 - Interrupt flag for capture channel 1 event"]
+    #[doc = "Bit 5 - Interrupt flag for capture channel 1 event."]
     #[inline]
     pub fn cr1int(&mut self) -> _CR1INTW {
         _CR1INTW { w: self }

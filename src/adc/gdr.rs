@@ -188,7 +188,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 6:15 - When DONE is 1, this field contains a binary fraction representing the voltage on the ADn pin selected by the SEL field, divided by the voltage on the VDD pin. Zero in the field indicates that the voltage on the ADn pin was less than, equal to, or close to that on VSS, while 0x3FF indicates that the voltage on ADn was close to, equal to, or greater than that on VREF"]
+    #[doc = "Bits 6:15 - When DONE is 1, this field contains a binary fraction representing the voltage on the ADn pin selected by the SEL field, divided by the voltage on the VDD pin. Zero in the field indicates that the voltage on the ADn pin was less than, equal to, or close to that on VSS, while 0x3FF indicates that the voltage on ADn was close to, equal to, or greater than that on VREF."]
     #[inline]
     pub fn v_vref(&self) -> V_VREFR {
         let bits = {
@@ -198,7 +198,7 @@ impl R {
         };
         V_VREFR { bits }
     }
-    #[doc = "Bits 24:26 - These bits contain the channel from which the result bits V_VREF were converted"]
+    #[doc = "Bits 24:26 - These bits contain the channel from which the result bits V_VREF were converted."]
     #[inline]
     pub fn chn(&self) -> CHNR {
         let bits = {
@@ -208,7 +208,7 @@ impl R {
         };
         CHNR { bits }
     }
-    #[doc = "Bit 30 - This bit is 1 in burst mode if the results of one or more conversions was (were) lost and overwritten before the conversion that produced the result in the V_VREF bits"]
+    #[doc = "Bit 30 - This bit is 1 in burst mode if the results of one or more conversions was (were) lost and overwritten before the conversion that produced the result in the V_VREF bits."]
     #[inline]
     pub fn overrun(&self) -> OVERRUNR {
         let bits = {
@@ -218,7 +218,7 @@ impl R {
         };
         OVERRUNR { bits }
     }
-    #[doc = "Bit 31 - This bit is set to 1 when an A/D conversion completes. It is cleared when this register is read and when the ADCR is written. If the ADCR is written while a conversion is still in progress, this bit is set and a new conversion is started"]
+    #[doc = "Bit 31 - This bit is set to 1 when an A/D conversion completes. It is cleared when this register is read and when the ADCR is written. If the ADCR is written while a conversion is still in progress, this bit is set and a new conversion is started."]
     #[inline]
     pub fn done(&self) -> DONER {
         let bits = {
@@ -241,22 +241,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 6:15 - When DONE is 1, this field contains a binary fraction representing the voltage on the ADn pin selected by the SEL field, divided by the voltage on the VDD pin. Zero in the field indicates that the voltage on the ADn pin was less than, equal to, or close to that on VSS, while 0x3FF indicates that the voltage on ADn was close to, equal to, or greater than that on VREF"]
+    #[doc = "Bits 6:15 - When DONE is 1, this field contains a binary fraction representing the voltage on the ADn pin selected by the SEL field, divided by the voltage on the VDD pin. Zero in the field indicates that the voltage on the ADn pin was less than, equal to, or close to that on VSS, while 0x3FF indicates that the voltage on ADn was close to, equal to, or greater than that on VREF."]
     #[inline]
     pub fn v_vref(&mut self) -> _V_VREFW {
         _V_VREFW { w: self }
     }
-    #[doc = "Bits 24:26 - These bits contain the channel from which the result bits V_VREF were converted"]
+    #[doc = "Bits 24:26 - These bits contain the channel from which the result bits V_VREF were converted."]
     #[inline]
     pub fn chn(&mut self) -> _CHNW {
         _CHNW { w: self }
     }
-    #[doc = "Bit 30 - This bit is 1 in burst mode if the results of one or more conversions was (were) lost and overwritten before the conversion that produced the result in the V_VREF bits"]
+    #[doc = "Bit 30 - This bit is 1 in burst mode if the results of one or more conversions was (were) lost and overwritten before the conversion that produced the result in the V_VREF bits."]
     #[inline]
     pub fn overrun(&mut self) -> _OVERRUNW {
         _OVERRUNW { w: self }
     }
-    #[doc = "Bit 31 - This bit is set to 1 when an A/D conversion completes. It is cleared when this register is read and when the ADCR is written. If the ADCR is written while a conversion is still in progress, this bit is set and a new conversion is started"]
+    #[doc = "Bit 31 - This bit is set to 1 when an A/D conversion completes. It is cleared when this register is read and when the ADCR is written. If the ADCR is written while a conversion is still in progress, this bit is set and a new conversion is started."]
     #[inline]
     pub fn done(&mut self) -> _DONEW {
         _DONEW { w: self }

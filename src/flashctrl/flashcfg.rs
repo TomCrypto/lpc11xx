@@ -154,7 +154,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Flash memory access time. FLASHTIM +1 is equal to the number of system clocks used for flash access"]
+    #[doc = "Bits 0:1 - Flash memory access time. FLASHTIM +1 is equal to the number of system clocks used for flash access."]
     #[inline]
     pub fn flashtim(&self) -> FLASHTIMR {
         FLASHTIMR::_from({
@@ -176,7 +176,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Flash memory access time. FLASHTIM +1 is equal to the number of system clocks used for flash access"]
+    #[doc = "Bits 0:1 - Flash memory access time. FLASHTIM +1 is equal to the number of system clocks used for flash access."]
     #[inline]
     pub fn flashtim(&mut self) -> _FLASHTIMW {
         _FLASHTIMW { w: self }

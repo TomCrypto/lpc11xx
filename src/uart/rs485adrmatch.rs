@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - Contains the address match value"]
+    #[doc = "Bits 0:7 - Contains the address match value."]
     #[inline]
     pub fn adrmatch(&self) -> ADRMATCHR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:7 - Contains the address match value"]
+    #[doc = "Bits 0:7 - Contains the address match value."]
     #[inline]
     pub fn adrmatch(&mut self) -> _ADRMATCHW {
         _ADRMATCHW { w: self }

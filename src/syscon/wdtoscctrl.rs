@@ -384,7 +384,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:4 - Select divider for Fclkana. wdt_osc_clk = Fclkana/ (2 x (1 + DIVSEL)) 00000: 2 x (1 + DIVSEL) = 2 00001: 2 x (1 + DIVSEL) = 4 to 11111: 2 x (1 + DIVSEL) = 64"]
+    #[doc = "Bits 0:4 - Select divider for Fclkana. wdt_osc_clk = Fclkana/ (2 x (1 + DIVSEL)) 00000: 2 x (1 + DIVSEL) = 2 00001: 2 x (1 + DIVSEL) = 4 to 11111: 2 x (1 + DIVSEL) = 64."]
     #[inline]
     pub fn divsel(&self) -> DIVSELR {
         let bits = {
@@ -394,7 +394,7 @@ impl R {
         };
         DIVSELR { bits }
     }
-    #[doc = "Bits 5:8 - Select watchdog oscillator analog output frequency (Fclkana)"]
+    #[doc = "Bits 5:8 - Select watchdog oscillator analog output frequency (Fclkana)."]
     #[inline]
     pub fn freqsel(&self) -> FREQSELR {
         FREQSELR::_from({
@@ -416,12 +416,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:4 - Select divider for Fclkana. wdt_osc_clk = Fclkana/ (2 x (1 + DIVSEL)) 00000: 2 x (1 + DIVSEL) = 2 00001: 2 x (1 + DIVSEL) = 4 to 11111: 2 x (1 + DIVSEL) = 64"]
+    #[doc = "Bits 0:4 - Select divider for Fclkana. wdt_osc_clk = Fclkana/ (2 x (1 + DIVSEL)) 00000: 2 x (1 + DIVSEL) = 2 00001: 2 x (1 + DIVSEL) = 4 to 11111: 2 x (1 + DIVSEL) = 64."]
     #[inline]
     pub fn divsel(&mut self) -> _DIVSELW {
         _DIVSELW { w: self }
     }
-    #[doc = "Bits 5:8 - Select watchdog oscillator analog output frequency (Fclkana)"]
+    #[doc = "Bits 5:8 - Select watchdog oscillator analog output frequency (Fclkana)."]
     #[inline]
     pub fn freqsel(&mut self) -> _FREQSELW {
         _FREQSELW { w: self }

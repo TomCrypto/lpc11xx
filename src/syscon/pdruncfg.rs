@@ -1134,7 +1134,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - IRC oscillator output power-down"]
+    #[doc = "Bit 0 - IRC oscillator output power-down."]
     #[inline]
     pub fn ircout_pd(&self) -> IRCOUT_PDR {
         IRCOUT_PDR::_from({
@@ -1143,7 +1143,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - IRC oscillator power-down"]
+    #[doc = "Bit 1 - IRC oscillator power-down."]
     #[inline]
     pub fn irc_pd(&self) -> IRC_PDR {
         IRC_PDR::_from({
@@ -1152,7 +1152,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Flash power-down"]
+    #[doc = "Bit 2 - Flash power-down."]
     #[inline]
     pub fn flash_pd(&self) -> FLASH_PDR {
         FLASH_PDR::_from({
@@ -1161,7 +1161,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - BOD power-down"]
+    #[doc = "Bit 3 - BOD power-down."]
     #[inline]
     pub fn bod_pd(&self) -> BOD_PDR {
         BOD_PDR::_from({
@@ -1170,7 +1170,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - ADC power-down"]
+    #[doc = "Bit 4 - ADC power-down."]
     #[inline]
     pub fn adc_pd(&self) -> ADC_PDR {
         ADC_PDR::_from({
@@ -1179,7 +1179,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - System oscillator power-down"]
+    #[doc = "Bit 5 - System oscillator power-down."]
     #[inline]
     pub fn sysosc_pd(&self) -> SYSOSC_PDR {
         SYSOSC_PDR::_from({
@@ -1188,7 +1188,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - Watchdog oscillator power-down"]
+    #[doc = "Bit 6 - Watchdog oscillator power-down."]
     #[inline]
     pub fn wdtosc_pd(&self) -> WDTOSC_PDR {
         WDTOSC_PDR::_from({
@@ -1197,7 +1197,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - System PLL power-down"]
+    #[doc = "Bit 7 - System PLL power-down."]
     #[inline]
     pub fn syspll_pd(&self) -> SYSPLL_PDR {
         SYSPLL_PDR::_from({
@@ -1206,7 +1206,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 8 - Reserved. Always write this bit as 1"]
+    #[doc = "Bit 8 - Reserved. Always write this bit as 1."]
     #[inline]
     pub fn notused0(&self) -> NOTUSED0R {
         let bits = {
@@ -1216,7 +1216,7 @@ impl R {
         };
         NOTUSED0R { bits }
     }
-    #[doc = "Bit 9 - Reserved. Always write this bit as 0"]
+    #[doc = "Bit 9 - Reserved. Always write this bit as 0."]
     #[inline]
     pub fn notused1(&self) -> NOTUSED1R {
         let bits = {
@@ -1226,7 +1226,7 @@ impl R {
         };
         NOTUSED1R { bits }
     }
-    #[doc = "Bit 10 - Reserved. Always write this bit as 1"]
+    #[doc = "Bit 10 - Reserved. Always write this bit as 1."]
     #[inline]
     pub fn notused2(&self) -> NOTUSED2R {
         let bits = {
@@ -1236,7 +1236,7 @@ impl R {
         };
         NOTUSED2R { bits }
     }
-    #[doc = "Bit 11 - Reserved. Always write this bit as 1"]
+    #[doc = "Bit 11 - Reserved. Always write this bit as 1."]
     #[inline]
     pub fn notused3(&self) -> NOTUSED3R {
         let bits = {
@@ -1246,7 +1246,7 @@ impl R {
         };
         NOTUSED3R { bits }
     }
-    #[doc = "Bit 12 - Reserved. Always write this bit as 0"]
+    #[doc = "Bit 12 - Reserved. Always write this bit as 0."]
     #[inline]
     pub fn notused4(&self) -> NOTUSED4R {
         let bits = {
@@ -1256,7 +1256,7 @@ impl R {
         };
         NOTUSED4R { bits }
     }
-    #[doc = "Bits 13:15 - Reserved. Always write these bits as 111"]
+    #[doc = "Bits 13:15 - Reserved. Always write these bits as 111."]
     #[inline]
     pub fn notused5(&self) -> NOTUSED5R {
         let bits = {
@@ -1279,72 +1279,72 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - IRC oscillator output power-down"]
+    #[doc = "Bit 0 - IRC oscillator output power-down."]
     #[inline]
     pub fn ircout_pd(&mut self) -> _IRCOUT_PDW {
         _IRCOUT_PDW { w: self }
     }
-    #[doc = "Bit 1 - IRC oscillator power-down"]
+    #[doc = "Bit 1 - IRC oscillator power-down."]
     #[inline]
     pub fn irc_pd(&mut self) -> _IRC_PDW {
         _IRC_PDW { w: self }
     }
-    #[doc = "Bit 2 - Flash power-down"]
+    #[doc = "Bit 2 - Flash power-down."]
     #[inline]
     pub fn flash_pd(&mut self) -> _FLASH_PDW {
         _FLASH_PDW { w: self }
     }
-    #[doc = "Bit 3 - BOD power-down"]
+    #[doc = "Bit 3 - BOD power-down."]
     #[inline]
     pub fn bod_pd(&mut self) -> _BOD_PDW {
         _BOD_PDW { w: self }
     }
-    #[doc = "Bit 4 - ADC power-down"]
+    #[doc = "Bit 4 - ADC power-down."]
     #[inline]
     pub fn adc_pd(&mut self) -> _ADC_PDW {
         _ADC_PDW { w: self }
     }
-    #[doc = "Bit 5 - System oscillator power-down"]
+    #[doc = "Bit 5 - System oscillator power-down."]
     #[inline]
     pub fn sysosc_pd(&mut self) -> _SYSOSC_PDW {
         _SYSOSC_PDW { w: self }
     }
-    #[doc = "Bit 6 - Watchdog oscillator power-down"]
+    #[doc = "Bit 6 - Watchdog oscillator power-down."]
     #[inline]
     pub fn wdtosc_pd(&mut self) -> _WDTOSC_PDW {
         _WDTOSC_PDW { w: self }
     }
-    #[doc = "Bit 7 - System PLL power-down"]
+    #[doc = "Bit 7 - System PLL power-down."]
     #[inline]
     pub fn syspll_pd(&mut self) -> _SYSPLL_PDW {
         _SYSPLL_PDW { w: self }
     }
-    #[doc = "Bit 8 - Reserved. Always write this bit as 1"]
+    #[doc = "Bit 8 - Reserved. Always write this bit as 1."]
     #[inline]
     pub fn notused0(&mut self) -> _NOTUSED0W {
         _NOTUSED0W { w: self }
     }
-    #[doc = "Bit 9 - Reserved. Always write this bit as 0"]
+    #[doc = "Bit 9 - Reserved. Always write this bit as 0."]
     #[inline]
     pub fn notused1(&mut self) -> _NOTUSED1W {
         _NOTUSED1W { w: self }
     }
-    #[doc = "Bit 10 - Reserved. Always write this bit as 1"]
+    #[doc = "Bit 10 - Reserved. Always write this bit as 1."]
     #[inline]
     pub fn notused2(&mut self) -> _NOTUSED2W {
         _NOTUSED2W { w: self }
     }
-    #[doc = "Bit 11 - Reserved. Always write this bit as 1"]
+    #[doc = "Bit 11 - Reserved. Always write this bit as 1."]
     #[inline]
     pub fn notused3(&mut self) -> _NOTUSED3W {
         _NOTUSED3W { w: self }
     }
-    #[doc = "Bit 12 - Reserved. Always write this bit as 0"]
+    #[doc = "Bit 12 - Reserved. Always write this bit as 0."]
     #[inline]
     pub fn notused4(&mut self) -> _NOTUSED4W {
         _NOTUSED4W { w: self }
     }
-    #[doc = "Bits 13:15 - Reserved. Always write these bits as 111"]
+    #[doc = "Bits 13:15 - Reserved. Always write these bits as 111."]
     #[inline]
     pub fn notused5(&mut self) -> _NOTUSED5W {
         _NOTUSED5W { w: self }

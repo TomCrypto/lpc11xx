@@ -137,7 +137,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:15 - Identifier mask"]
+    #[doc = "Bits 0:15 - Identifier mask."]
     #[inline]
     pub fn msk_15_0(&self) -> MSK_15_0R {
         MSK_15_0R::_from({
@@ -159,7 +159,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:15 - Identifier mask"]
+    #[doc = "Bits 0:15 - Identifier mask."]
     #[inline]
     pub fn msk_15_0(&mut self) -> _MSK_15_0W {
         _MSK_15_0W { w: self }

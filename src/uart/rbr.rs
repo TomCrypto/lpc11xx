@@ -28,7 +28,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - The UART Receiver Buffer Register contains the oldest received byte in the UART RX FIFO"]
+    #[doc = "Bits 0:7 - The UART Receiver Buffer Register contains the oldest received byte in the UART RX FIFO."]
     #[inline]
     pub fn rbr(&self) -> RBRR {
         let bits = {

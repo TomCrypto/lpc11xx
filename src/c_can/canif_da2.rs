@@ -100,7 +100,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - Data byte 2"]
+    #[doc = "Bits 0:7 - Data byte 2."]
     #[inline]
     pub fn data2(&self) -> DATA2R {
         let bits = {
@@ -110,7 +110,7 @@ impl R {
         };
         DATA2R { bits }
     }
-    #[doc = "Bits 8:15 - Data byte 3"]
+    #[doc = "Bits 8:15 - Data byte 3."]
     #[inline]
     pub fn data3(&self) -> DATA3R {
         let bits = {
@@ -133,12 +133,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:7 - Data byte 2"]
+    #[doc = "Bits 0:7 - Data byte 2."]
     #[inline]
     pub fn data2(&mut self) -> _DATA2W {
         _DATA2W { w: self }
     }
-    #[doc = "Bits 8:15 - Data byte 3"]
+    #[doc = "Bits 8:15 - Data byte 3."]
     #[inline]
     pub fn data3(&mut self) -> _DATA3W {
         _DATA3W { w: self }

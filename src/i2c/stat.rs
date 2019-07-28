@@ -283,7 +283,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 3:7 - These bits give the actual status information about the I2C interface"]
+    #[doc = "Bits 3:7 - These bits give the actual status information about the I2C interface."]
     #[inline]
     pub fn status(&self) -> STATUSR {
         STATUSR::_from({

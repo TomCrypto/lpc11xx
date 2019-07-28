@@ -227,7 +227,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Raw reset status input PIO2_8"]
+    #[doc = "Bit 0 - Raw reset status input PIO2_8."]
     #[inline]
     pub fn cappio2_8(&self) -> CAPPIO2_8R {
         let bits = {
@@ -237,7 +237,7 @@ impl R {
         };
         CAPPIO2_8R { bits }
     }
-    #[doc = "Bit 1 - Raw reset status input PIO2_9"]
+    #[doc = "Bit 1 - Raw reset status input PIO2_9."]
     #[inline]
     pub fn cappio2_9(&self) -> CAPPIO2_9R {
         let bits = {
@@ -247,7 +247,7 @@ impl R {
         };
         CAPPIO2_9R { bits }
     }
-    #[doc = "Bit 2 - Raw reset status input PIO2_10"]
+    #[doc = "Bit 2 - Raw reset status input PIO2_10."]
     #[inline]
     pub fn cappio2_10(&self) -> CAPPIO2_10R {
         let bits = {
@@ -257,7 +257,7 @@ impl R {
         };
         CAPPIO2_10R { bits }
     }
-    #[doc = "Bit 3 - Raw reset status input PIO2_11"]
+    #[doc = "Bit 3 - Raw reset status input PIO2_11."]
     #[inline]
     pub fn cappio2_11(&self) -> CAPPIO2_11R {
         let bits = {
@@ -267,7 +267,7 @@ impl R {
         };
         CAPPIO2_11R { bits }
     }
-    #[doc = "Bit 4 - Raw reset status input PIO3_0"]
+    #[doc = "Bit 4 - Raw reset status input PIO3_0."]
     #[inline]
     pub fn cappio3_0(&self) -> CAPPIO3_0R {
         let bits = {
@@ -277,7 +277,7 @@ impl R {
         };
         CAPPIO3_0R { bits }
     }
-    #[doc = "Bit 5 - Raw reset status input PIO3_1"]
+    #[doc = "Bit 5 - Raw reset status input PIO3_1."]
     #[inline]
     pub fn cappio3_1(&self) -> CAPPIO3_1R {
         let bits = {
@@ -287,7 +287,7 @@ impl R {
         };
         CAPPIO3_1R { bits }
     }
-    #[doc = "Bit 6 - Raw reset status input PIO3_2"]
+    #[doc = "Bit 6 - Raw reset status input PIO3_2."]
     #[inline]
     pub fn cappio3_2(&self) -> CAPPIO3_2R {
         let bits = {
@@ -297,7 +297,7 @@ impl R {
         };
         CAPPIO3_2R { bits }
     }
-    #[doc = "Bit 7 - Raw reset status input PIO3_3"]
+    #[doc = "Bit 7 - Raw reset status input PIO3_3."]
     #[inline]
     pub fn cappio3_3(&self) -> CAPPIO3_3R {
         let bits = {
@@ -307,7 +307,7 @@ impl R {
         };
         CAPPIO3_3R { bits }
     }
-    #[doc = "Bit 8 - Raw reset status input PIO3_4"]
+    #[doc = "Bit 8 - Raw reset status input PIO3_4."]
     #[inline]
     pub fn cappio3_4(&self) -> CAPPIO3_4R {
         let bits = {
@@ -317,7 +317,7 @@ impl R {
         };
         CAPPIO3_4R { bits }
     }
-    #[doc = "Bit 9 - Raw reset status input PIO3_5"]
+    #[doc = "Bit 9 - Raw reset status input PIO3_5."]
     #[inline]
     pub fn cappio3_5(&self) -> CAPPIO3_5R {
         let bits = {

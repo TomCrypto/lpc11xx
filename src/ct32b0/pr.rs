@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:31 - Prescale value"]
+    #[doc = "Bits 0:31 - Prescale value."]
     #[inline]
     pub fn pr(&self) -> PRR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:31 - Prescale value"]
+    #[doc = "Bits 0:31 - Prescale value."]
     #[inline]
     pub fn pr(&mut self) -> _PRW {
         _PRW { w: self }

@@ -179,7 +179,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:5 - Message number 0x01 - 0x20 = Valid message numbers. The message object in the message RAM is selected for data transfer. 0x00 = Not a valid message number. This value is interpreted as 0x20.\\[1\\] 0x21 - 0x3F = Not a valid message number. This value is interpreted as 0x01 - 0x1F.\\[1\\]"]
+    #[doc = "Bits 0:5 - Message number 0x01 - 0x20 = Valid message numbers. The message object in the message RAM is selected for data transfer. 0x00 = Not a valid message number. This value is interpreted as 0x20.\\[1\\] 0x21 - 0x3F = Not a valid message number. This value is interpreted as 0x01 - 0x1F."]
     #[inline]
     pub fn mn(&self) -> MNR {
         let bits = {
@@ -189,7 +189,7 @@ impl R {
         };
         MNR { bits }
     }
-    #[doc = "Bit 15 - BUSY flag"]
+    #[doc = "Bit 15 - BUSY flag."]
     #[inline]
     pub fn busy(&self) -> BUSYR {
         BUSYR::_from({
@@ -211,12 +211,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:5 - Message number 0x01 - 0x20 = Valid message numbers. The message object in the message RAM is selected for data transfer. 0x00 = Not a valid message number. This value is interpreted as 0x20.\\[1\\] 0x21 - 0x3F = Not a valid message number. This value is interpreted as 0x01 - 0x1F.\\[1\\]"]
+    #[doc = "Bits 0:5 - Message number 0x01 - 0x20 = Valid message numbers. The message object in the message RAM is selected for data transfer. 0x00 = Not a valid message number. This value is interpreted as 0x20.\\[1\\] 0x21 - 0x3F = Not a valid message number. This value is interpreted as 0x01 - 0x1F."]
     #[inline]
     pub fn mn(&mut self) -> _MNW {
         _MNW { w: self }
     }
-    #[doc = "Bit 15 - BUSY flag"]
+    #[doc = "Bit 15 - BUSY flag."]
     #[inline]
     pub fn busy(&mut self) -> _BUSYW {
         _BUSYW { w: self }

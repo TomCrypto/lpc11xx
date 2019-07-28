@@ -690,7 +690,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - Selects which of the AD7:0 pins is (are) to be sampled and converted. Bit 0 selects Pin AD0, bit 1 selects pin AD1,..., and bit 7 selects pin AD7. In software-controlled mode (BURST = 0), only one channel can be selected, i.e. only one of these bits should be 1. In hardware scan mode (BURST = 1), any numbers of channels can be selected, i.e any or all bits can be set to 1. If all bits are set to 0, channel 0 is selected automatically (SEL = 0x01)"]
+    #[doc = "Bits 0:7 - Selects which of the AD7:0 pins is (are) to be sampled and converted. Bit 0 selects Pin AD0, bit 1 selects pin AD1,..., and bit 7 selects pin AD7. In software-controlled mode (BURST = 0), only one channel can be selected, i.e. only one of these bits should be 1. In hardware scan mode (BURST = 1), any numbers of channels can be selected, i.e any or all bits can be set to 1. If all bits are set to 0, channel 0 is selected automatically (SEL = 0x01)."]
     #[inline]
     pub fn sel(&self) -> SELR {
         let bits = {
@@ -700,7 +700,7 @@ impl R {
         };
         SELR { bits }
     }
-    #[doc = "Bits 8:15 - The APB clock (PCLK) is divided by CLKDIV +1 to produce the clock for the ADC, which should be less than or equal to 4.5 MHz. Typically, software should program the smallest value in this field that yields a clock of 4.5 MHz or slightly less, but in certain cases (such as a high-impedance analog source) a slower clock may be desirable"]
+    #[doc = "Bits 8:15 - The APB clock (PCLK) is divided by CLKDIV +1 to produce the clock for the ADC, which should be less than or equal to 4.5 MHz. Typically, software should program the smallest value in this field that yields a clock of 4.5 MHz or slightly less, but in certain cases (such as a high-impedance analog source) a slower clock may be desirable."]
     #[inline]
     pub fn clkdiv(&self) -> CLKDIVR {
         let bits = {
@@ -710,7 +710,7 @@ impl R {
         };
         CLKDIVR { bits }
     }
-    #[doc = "Bit 16 - Burst mode"]
+    #[doc = "Bit 16 - Burst mode."]
     #[inline]
     pub fn burst(&self) -> BURSTR {
         BURSTR::_from({
@@ -719,7 +719,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bits 17:19 - This field selects the number of clocks used for each conversion in Burst mode, and the number of bits of accuracy of the result in the LS bits of ADDR, between 11 clocks (10 bits) and 4 clocks (3 bits)"]
+    #[doc = "Bits 17:19 - This field selects the number of clocks used for each conversion in Burst mode, and the number of bits of accuracy of the result in the LS bits of ADDR, between 11 clocks (10 bits) and 4 clocks (3 bits)."]
     #[inline]
     pub fn clks(&self) -> CLKSR {
         CLKSR::_from({
@@ -728,7 +728,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 24:26 - When the BURST bit is 0, these bits control whether and when an A/D conversion is started"]
+    #[doc = "Bits 24:26 - When the BURST bit is 0, these bits control whether and when an A/D conversion is started."]
     #[inline]
     pub fn start(&self) -> STARTR {
         STARTR::_from({
@@ -737,7 +737,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bit 27 - This bit is significant only when the START field contains 010-111. In these cases: Start conversion on a falling edge on the selected CAP/MAT signal"]
+    #[doc = "Bit 27 - This bit is significant only when the START field contains 010-111. In these cases: Start conversion on a falling edge on the selected CAP/MAT signal."]
     #[inline]
     pub fn edge(&self) -> EDGER {
         EDGER::_from({
@@ -759,32 +759,32 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:7 - Selects which of the AD7:0 pins is (are) to be sampled and converted. Bit 0 selects Pin AD0, bit 1 selects pin AD1,..., and bit 7 selects pin AD7. In software-controlled mode (BURST = 0), only one channel can be selected, i.e. only one of these bits should be 1. In hardware scan mode (BURST = 1), any numbers of channels can be selected, i.e any or all bits can be set to 1. If all bits are set to 0, channel 0 is selected automatically (SEL = 0x01)"]
+    #[doc = "Bits 0:7 - Selects which of the AD7:0 pins is (are) to be sampled and converted. Bit 0 selects Pin AD0, bit 1 selects pin AD1,..., and bit 7 selects pin AD7. In software-controlled mode (BURST = 0), only one channel can be selected, i.e. only one of these bits should be 1. In hardware scan mode (BURST = 1), any numbers of channels can be selected, i.e any or all bits can be set to 1. If all bits are set to 0, channel 0 is selected automatically (SEL = 0x01)."]
     #[inline]
     pub fn sel(&mut self) -> _SELW {
         _SELW { w: self }
     }
-    #[doc = "Bits 8:15 - The APB clock (PCLK) is divided by CLKDIV +1 to produce the clock for the ADC, which should be less than or equal to 4.5 MHz. Typically, software should program the smallest value in this field that yields a clock of 4.5 MHz or slightly less, but in certain cases (such as a high-impedance analog source) a slower clock may be desirable"]
+    #[doc = "Bits 8:15 - The APB clock (PCLK) is divided by CLKDIV +1 to produce the clock for the ADC, which should be less than or equal to 4.5 MHz. Typically, software should program the smallest value in this field that yields a clock of 4.5 MHz or slightly less, but in certain cases (such as a high-impedance analog source) a slower clock may be desirable."]
     #[inline]
     pub fn clkdiv(&mut self) -> _CLKDIVW {
         _CLKDIVW { w: self }
     }
-    #[doc = "Bit 16 - Burst mode"]
+    #[doc = "Bit 16 - Burst mode."]
     #[inline]
     pub fn burst(&mut self) -> _BURSTW {
         _BURSTW { w: self }
     }
-    #[doc = "Bits 17:19 - This field selects the number of clocks used for each conversion in Burst mode, and the number of bits of accuracy of the result in the LS bits of ADDR, between 11 clocks (10 bits) and 4 clocks (3 bits)"]
+    #[doc = "Bits 17:19 - This field selects the number of clocks used for each conversion in Burst mode, and the number of bits of accuracy of the result in the LS bits of ADDR, between 11 clocks (10 bits) and 4 clocks (3 bits)."]
     #[inline]
     pub fn clks(&mut self) -> _CLKSW {
         _CLKSW { w: self }
     }
-    #[doc = "Bits 24:26 - When the BURST bit is 0, these bits control whether and when an A/D conversion is started"]
+    #[doc = "Bits 24:26 - When the BURST bit is 0, these bits control whether and when an A/D conversion is started."]
     #[inline]
     pub fn start(&mut self) -> _STARTW {
         _STARTW { w: self }
     }
-    #[doc = "Bit 27 - This bit is significant only when the START field contains 010-111. In these cases: Start conversion on a falling edge on the selected CAP/MAT signal"]
+    #[doc = "Bit 27 - This bit is significant only when the START field contains 010-111. In these cases: Start conversion on a falling edge on the selected CAP/MAT signal."]
     #[inline]
     pub fn edge(&mut self) -> _EDGEW {
         _EDGEW { w: self }

@@ -224,7 +224,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Software should set this bit to enable interrupt when a Receive Overrun occurs, that is, when the Rx FIFO is full and another frame is completely received. The ARM spec implies that the preceding frame data is overwritten by the new frame data when this occurs"]
+    #[doc = "Bit 0 - Software should set this bit to enable interrupt when a Receive Overrun occurs, that is, when the Rx FIFO is full and another frame is completely received. The ARM spec implies that the preceding frame data is overwritten by the new frame data when this occurs."]
     #[inline]
     pub fn rorim(&self) -> RORIMR {
         let bits = {
@@ -234,7 +234,7 @@ impl R {
         };
         RORIMR { bits }
     }
-    #[doc = "Bit 1 - Software should set this bit to enable interrupt when a Receive Time-out condition occurs. A Receive Time-out occurs when the Rx FIFO is not empty, and no has not been read for a time-out period. The time-out period is the same for master and slave modes and is determined by the SSP bit rate: 32 bits at PCLK / (CPSDVSR x \\[SCR+1\\])"]
+    #[doc = "Bit 1 - Software should set this bit to enable interrupt when a Receive Time-out condition occurs. A Receive Time-out occurs when the Rx FIFO is not empty, and no has not been read for a time-out period. The time-out period is the same for master and slave modes and is determined by the SSP bit rate: 32 bits at PCLK / (CPSDVSR x \\[SCR+1\\])."]
     #[inline]
     pub fn rtim(&self) -> RTIMR {
         let bits = {
@@ -244,7 +244,7 @@ impl R {
         };
         RTIMR { bits }
     }
-    #[doc = "Bit 2 - Software should set this bit to enable interrupt when the Rx FIFO is at least half full"]
+    #[doc = "Bit 2 - Software should set this bit to enable interrupt when the Rx FIFO is at least half full."]
     #[inline]
     pub fn rxim(&self) -> RXIMR {
         let bits = {
@@ -254,7 +254,7 @@ impl R {
         };
         RXIMR { bits }
     }
-    #[doc = "Bit 3 - Software should set this bit to enable interrupt when the Tx FIFO is at least half empty"]
+    #[doc = "Bit 3 - Software should set this bit to enable interrupt when the Tx FIFO is at least half empty."]
     #[inline]
     pub fn txim(&self) -> TXIMR {
         let bits = {
@@ -277,22 +277,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Software should set this bit to enable interrupt when a Receive Overrun occurs, that is, when the Rx FIFO is full and another frame is completely received. The ARM spec implies that the preceding frame data is overwritten by the new frame data when this occurs"]
+    #[doc = "Bit 0 - Software should set this bit to enable interrupt when a Receive Overrun occurs, that is, when the Rx FIFO is full and another frame is completely received. The ARM spec implies that the preceding frame data is overwritten by the new frame data when this occurs."]
     #[inline]
     pub fn rorim(&mut self) -> _RORIMW {
         _RORIMW { w: self }
     }
-    #[doc = "Bit 1 - Software should set this bit to enable interrupt when a Receive Time-out condition occurs. A Receive Time-out occurs when the Rx FIFO is not empty, and no has not been read for a time-out period. The time-out period is the same for master and slave modes and is determined by the SSP bit rate: 32 bits at PCLK / (CPSDVSR x \\[SCR+1\\])"]
+    #[doc = "Bit 1 - Software should set this bit to enable interrupt when a Receive Time-out condition occurs. A Receive Time-out occurs when the Rx FIFO is not empty, and no has not been read for a time-out period. The time-out period is the same for master and slave modes and is determined by the SSP bit rate: 32 bits at PCLK / (CPSDVSR x \\[SCR+1\\])."]
     #[inline]
     pub fn rtim(&mut self) -> _RTIMW {
         _RTIMW { w: self }
     }
-    #[doc = "Bit 2 - Software should set this bit to enable interrupt when the Rx FIFO is at least half full"]
+    #[doc = "Bit 2 - Software should set this bit to enable interrupt when the Rx FIFO is at least half full."]
     #[inline]
     pub fn rxim(&mut self) -> _RXIMW {
         _RXIMW { w: self }
     }
-    #[doc = "Bit 3 - Software should set this bit to enable interrupt when the Tx FIFO is at least half empty"]
+    #[doc = "Bit 3 - Software should set this bit to enable interrupt when the Tx FIFO is at least half empty."]
     #[inline]
     pub fn txim(&mut self) -> _TXIMW {
         _TXIMW { w: self }

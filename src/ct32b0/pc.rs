@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:31 - Prescale counter value"]
+    #[doc = "Bits 0:31 - Prescale counter value."]
     #[inline]
     pub fn pc(&self) -> PCR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:31 - Prescale counter value"]
+    #[doc = "Bits 0:31 - Prescale counter value."]
     #[inline]
     pub fn pc(&mut self) -> _PCW {
         _PCW { w: self }

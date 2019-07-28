@@ -573,7 +573,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Start bit. This bit is automatically cleared after auto-baud completion"]
+    #[doc = "Bit 0 - Start bit. This bit is automatically cleared after auto-baud completion."]
     #[inline]
     pub fn start(&self) -> STARTR {
         STARTR::_from({
@@ -582,7 +582,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Auto-baud mode select"]
+    #[doc = "Bit 1 - Auto-baud mode select."]
     #[inline]
     pub fn mode(&self) -> MODER {
         MODER::_from({
@@ -591,7 +591,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Restart enable"]
+    #[doc = "Bit 2 - Restart enable."]
     #[inline]
     pub fn autorestart(&self) -> AUTORESTARTR {
         AUTORESTARTR::_from({
@@ -600,7 +600,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 8 - End of auto-baud interrupt clear (write only accessible)"]
+    #[doc = "Bit 8 - End of auto-baud interrupt clear (write only accessible)."]
     #[inline]
     pub fn abeointclr(&self) -> ABEOINTCLRR {
         ABEOINTCLRR::_from({
@@ -609,7 +609,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 9 - Auto-baud time-out interrupt clear (write only accessible)"]
+    #[doc = "Bit 9 - Auto-baud time-out interrupt clear (write only accessible)."]
     #[inline]
     pub fn abtointclr(&self) -> ABTOINTCLRR {
         ABTOINTCLRR::_from({
@@ -631,27 +631,27 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Start bit. This bit is automatically cleared after auto-baud completion"]
+    #[doc = "Bit 0 - Start bit. This bit is automatically cleared after auto-baud completion."]
     #[inline]
     pub fn start(&mut self) -> _STARTW {
         _STARTW { w: self }
     }
-    #[doc = "Bit 1 - Auto-baud mode select"]
+    #[doc = "Bit 1 - Auto-baud mode select."]
     #[inline]
     pub fn mode(&mut self) -> _MODEW {
         _MODEW { w: self }
     }
-    #[doc = "Bit 2 - Restart enable"]
+    #[doc = "Bit 2 - Restart enable."]
     #[inline]
     pub fn autorestart(&mut self) -> _AUTORESTARTW {
         _AUTORESTARTW { w: self }
     }
-    #[doc = "Bit 8 - End of auto-baud interrupt clear (write only accessible)"]
+    #[doc = "Bit 8 - End of auto-baud interrupt clear (write only accessible)."]
     #[inline]
     pub fn abeointclr(&mut self) -> _ABEOINTCLRW {
         _ABEOINTCLRW { w: self }
     }
-    #[doc = "Bit 9 - Auto-baud time-out interrupt clear (write only accessible)"]
+    #[doc = "Bit 9 - Auto-baud time-out interrupt clear (write only accessible)."]
     #[inline]
     pub fn abtointclr(&mut self) -> _ABTOINTCLRW {
         _ABTOINTCLRW { w: self }

@@ -258,7 +258,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Bypass system oscillator"]
+    #[doc = "Bit 0 - Bypass system oscillator."]
     #[inline]
     pub fn bypass(&self) -> BYPASSR {
         BYPASSR::_from({
@@ -267,7 +267,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Determines frequency range for Low-power oscillator"]
+    #[doc = "Bit 1 - Determines frequency range for Low-power oscillator."]
     #[inline]
     pub fn freqrange(&self) -> FREQRANGER {
         FREQRANGER::_from({
@@ -289,12 +289,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Bypass system oscillator"]
+    #[doc = "Bit 0 - Bypass system oscillator."]
     #[inline]
     pub fn bypass(&mut self) -> _BYPASSW {
         _BYPASSW { w: self }
     }
-    #[doc = "Bit 1 - Determines frequency range for Low-power oscillator"]
+    #[doc = "Bit 1 - Determines frequency range for Low-power oscillator."]
     #[inline]
     pub fn freqrange(&mut self) -> _FREQRANGEW {
         _FREQRANGEW { w: self }

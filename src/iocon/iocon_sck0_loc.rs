@@ -154,7 +154,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Selects pin location for SCK0 function"]
+    #[doc = "Bits 0:1 - Selects pin location for SCK0 function."]
     #[inline]
     pub fn sckloc(&self) -> SCKLOCR {
         SCKLOCR::_from({
@@ -176,7 +176,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Selects pin location for SCK0 function"]
+    #[doc = "Bits 0:1 - Selects pin location for SCK0 function."]
     #[inline]
     pub fn sckloc(&mut self) -> _SCKLOCW {
         _SCKLOCW { w: self }

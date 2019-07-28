@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:23 - Watchdog time-out interval"]
+    #[doc = "Bits 0:23 - Watchdog time-out interval."]
     #[inline]
     pub fn count(&self) -> COUNTR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:23 - Watchdog time-out interval"]
+    #[doc = "Bits 0:23 - Watchdog time-out interval."]
     #[inline]
     pub fn count(&mut self) -> _COUNTW {
         _COUNTW { w: self }

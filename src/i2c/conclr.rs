@@ -226,22 +226,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 2 - Assert Acknowledge flag"]
+    #[doc = "Bit 2 - Assert Acknowledge flag."]
     #[inline]
     pub fn aa(&mut self) -> _AAW {
         _AAW { w: self }
     }
-    #[doc = "Bit 3 - Interrupt flag"]
+    #[doc = "Bit 3 - Interrupt flag."]
     #[inline]
     pub fn si(&mut self) -> _SIW {
         _SIW { w: self }
     }
-    #[doc = "Bit 5 - START flag"]
+    #[doc = "Bit 5 - START flag."]
     #[inline]
     pub fn sta(&mut self) -> _STAW {
         _STAW { w: self }
     }
-    #[doc = "Bit 6 - I2C Interface Disable bit"]
+    #[doc = "Bit 6 - I2C Interface Disable bit."]
     #[inline]
     pub fn i2en(&mut self) -> _I2ENW {
         _I2ENW { w: self }

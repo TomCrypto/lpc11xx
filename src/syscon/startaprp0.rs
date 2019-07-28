@@ -620,7 +620,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 0 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_0(&self) -> APRPIO0_0R {
         let bits = {
@@ -630,7 +630,7 @@ impl R {
         };
         APRPIO0_0R { bits }
     }
-    #[doc = "Bit 1 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 1 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_1(&self) -> APRPIO0_1R {
         let bits = {
@@ -640,7 +640,7 @@ impl R {
         };
         APRPIO0_1R { bits }
     }
-    #[doc = "Bit 2 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 2 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_2(&self) -> APRPIO0_2R {
         let bits = {
@@ -650,7 +650,7 @@ impl R {
         };
         APRPIO0_2R { bits }
     }
-    #[doc = "Bit 3 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 3 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_3(&self) -> APRPIO0_3R {
         let bits = {
@@ -660,7 +660,7 @@ impl R {
         };
         APRPIO0_3R { bits }
     }
-    #[doc = "Bit 4 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 4 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_4(&self) -> APRPIO0_4R {
         let bits = {
@@ -670,7 +670,7 @@ impl R {
         };
         APRPIO0_4R { bits }
     }
-    #[doc = "Bit 5 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 5 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_5(&self) -> APRPIO0_5R {
         let bits = {
@@ -680,7 +680,7 @@ impl R {
         };
         APRPIO0_5R { bits }
     }
-    #[doc = "Bit 6 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 6 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_6(&self) -> APRPIO0_6R {
         let bits = {
@@ -690,7 +690,7 @@ impl R {
         };
         APRPIO0_6R { bits }
     }
-    #[doc = "Bit 7 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 7 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_7(&self) -> APRPIO0_7R {
         let bits = {
@@ -700,7 +700,7 @@ impl R {
         };
         APRPIO0_7R { bits }
     }
-    #[doc = "Bit 8 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 8 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_8(&self) -> APRPIO0_8R {
         let bits = {
@@ -710,7 +710,7 @@ impl R {
         };
         APRPIO0_8R { bits }
     }
-    #[doc = "Bit 9 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 9 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_9(&self) -> APRPIO0_9R {
         let bits = {
@@ -720,7 +720,7 @@ impl R {
         };
         APRPIO0_9R { bits }
     }
-    #[doc = "Bit 10 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 10 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_10(&self) -> APRPIO0_10R {
         let bits = {
@@ -730,7 +730,7 @@ impl R {
         };
         APRPIO0_10R { bits }
     }
-    #[doc = "Bit 11 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 11 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_11(&self) -> APRPIO0_11R {
         let bits = {
@@ -740,7 +740,7 @@ impl R {
         };
         APRPIO0_11R { bits }
     }
-    #[doc = "Bit 12 - Edge select for start logic input PIO1_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 12 - Edge select for start logic input PIO1_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio1_0(&self) -> APRPIO1_0R {
         let bits = {
@@ -763,67 +763,67 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 0 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_0(&mut self) -> _APRPIO0_0W {
         _APRPIO0_0W { w: self }
     }
-    #[doc = "Bit 1 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 1 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_1(&mut self) -> _APRPIO0_1W {
         _APRPIO0_1W { w: self }
     }
-    #[doc = "Bit 2 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 2 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_2(&mut self) -> _APRPIO0_2W {
         _APRPIO0_2W { w: self }
     }
-    #[doc = "Bit 3 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 3 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_3(&mut self) -> _APRPIO0_3W {
         _APRPIO0_3W { w: self }
     }
-    #[doc = "Bit 4 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 4 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_4(&mut self) -> _APRPIO0_4W {
         _APRPIO0_4W { w: self }
     }
-    #[doc = "Bit 5 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 5 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_5(&mut self) -> _APRPIO0_5W {
         _APRPIO0_5W { w: self }
     }
-    #[doc = "Bit 6 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 6 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_6(&mut self) -> _APRPIO0_6W {
         _APRPIO0_6W { w: self }
     }
-    #[doc = "Bit 7 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 7 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_7(&mut self) -> _APRPIO0_7W {
         _APRPIO0_7W { w: self }
     }
-    #[doc = "Bit 8 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 8 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_8(&mut self) -> _APRPIO0_8W {
         _APRPIO0_8W { w: self }
     }
-    #[doc = "Bit 9 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 9 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_9(&mut self) -> _APRPIO0_9W {
         _APRPIO0_9W { w: self }
     }
-    #[doc = "Bit 10 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 10 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_10(&mut self) -> _APRPIO0_10W {
         _APRPIO0_10W { w: self }
     }
-    #[doc = "Bit 11 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 11 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio0_11(&mut self) -> _APRPIO0_11W {
         _APRPIO0_11W { w: self }
     }
-    #[doc = "Bit 12 - Edge select for start logic input PIO1_0 0 = Falling edge 1 = Rising edge"]
+    #[doc = "Bit 12 - Edge select for start logic input PIO1_0 0 = Falling edge 1 = Rising edge."]
     #[inline]
     pub fn aprpio1_0(&mut self) -> _APRPIO1_0W {
         _APRPIO1_0W { w: self }

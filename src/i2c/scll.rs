@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:15 - Count for SCL low time period selection"]
+    #[doc = "Bits 0:15 - Count for SCL low time period selection."]
     #[inline]
     pub fn scll(&self) -> SCLLR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:15 - Count for SCL low time period selection"]
+    #[doc = "Bits 0:15 - Count for SCL low time period selection."]
     #[inline]
     pub fn scll(&mut self) -> _SCLLW {
         _SCLLW { w: self }

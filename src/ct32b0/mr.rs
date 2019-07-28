@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:31 - Timer counter match value"]
+    #[doc = "Bits 0:31 - Timer counter match value."]
     #[inline]
     pub fn match_(&self) -> MATCHR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:31 - Timer counter match value"]
+    #[doc = "Bits 0:31 - Timer counter match value."]
     #[inline]
     pub fn match_(&mut self) -> _MATCHW {
         _MATCHW { w: self }

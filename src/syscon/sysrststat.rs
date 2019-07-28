@@ -252,7 +252,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - POR reset status"]
+    #[doc = "Bit 0 - POR reset status."]
     #[inline]
     pub fn por(&self) -> PORR {
         PORR::_from({
@@ -261,7 +261,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Status of the external RESET pin"]
+    #[doc = "Bit 1 - Status of the external RESET pin."]
     #[inline]
     pub fn extrst(&self) -> EXTRSTR {
         EXTRSTR::_from({
@@ -270,7 +270,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Status of the Watchdog reset"]
+    #[doc = "Bit 2 - Status of the Watchdog reset."]
     #[inline]
     pub fn wdt(&self) -> WDTR {
         WDTR::_from({
@@ -279,7 +279,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Status of the Brown-out detect reset"]
+    #[doc = "Bit 3 - Status of the Brown-out detect reset."]
     #[inline]
     pub fn bod(&self) -> BODR {
         BODR::_from({
@@ -288,7 +288,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Status of the software system reset"]
+    #[doc = "Bit 4 - Status of the software system reset."]
     #[inline]
     pub fn sysrst(&self) -> SYSRSTR {
         SYSRSTR::_from({

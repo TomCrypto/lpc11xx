@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - The UART Divisor Latch MSB Register, along with the DLL register, determines the baud rate of the UART"]
+    #[doc = "Bits 0:7 - The UART Divisor Latch MSB Register, along with the DLL register, determines the baud rate of the UART."]
     #[inline]
     pub fn dlmsb(&self) -> DLMSBR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:7 - The UART Divisor Latch MSB Register, along with the DLL register, determines the baud rate of the UART"]
+    #[doc = "Bits 0:7 - The UART Divisor Latch MSB Register, along with the DLL register, determines the baud rate of the UART."]
     #[inline]
     pub fn dlmsb(&mut self) -> _DLMSBW {
         _DLMSBW { w: self }

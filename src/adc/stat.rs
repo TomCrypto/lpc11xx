@@ -60,7 +60,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - These bits mirror the DONE status flags that appear in the result register for each A/D channel n"]
+    #[doc = "Bits 0:7 - These bits mirror the DONE status flags that appear in the result register for each A/D channel n."]
     #[inline]
     pub fn done(&self) -> DONER {
         let bits = {
@@ -70,7 +70,7 @@ impl R {
         };
         DONER { bits }
     }
-    #[doc = "Bits 8:15 - These bits mirror the OVERRRUN status flags that appear in the result register for each A/D channel n. Reading ADSTAT allows checking the status of all A/D channels simultaneously"]
+    #[doc = "Bits 8:15 - These bits mirror the OVERRRUN status flags that appear in the result register for each A/D channel n. Reading ADSTAT allows checking the status of all A/D channels simultaneously."]
     #[inline]
     pub fn overrun(&self) -> OVERRUNR {
         let bits = {
@@ -80,7 +80,7 @@ impl R {
         };
         OVERRUNR { bits }
     }
-    #[doc = "Bit 16 - This bit is the A/D interrupt flag. It is one when any of the individual A/D channel Done flags is asserted and enabled to contribute to the A/D interrupt via the ADINTEN register"]
+    #[doc = "Bit 16 - This bit is the A/D interrupt flag. It is one when any of the individual A/D channel Done flags is asserted and enabled to contribute to the A/D interrupt via the ADINTEN register."]
     #[inline]
     pub fn adint(&self) -> ADINTR {
         let bits = {

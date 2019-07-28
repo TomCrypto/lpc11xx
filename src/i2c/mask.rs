@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 1:7 - Mask bits"]
+    #[doc = "Bits 1:7 - Mask bits."]
     #[inline]
     pub fn mask(&self) -> MASKR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 1:7 - Mask bits"]
+    #[doc = "Bits 1:7 - Mask bits."]
     #[inline]
     pub fn mask(&mut self) -> _MASKW {
         _MASKW { w: self }

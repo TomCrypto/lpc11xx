@@ -86,7 +86,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - Transmit error counter Current value of the transmit error counter (maximum value 255)"]
+    #[doc = "Bits 0:7 - Transmit error counter Current value of the transmit error counter (maximum value 255)."]
     #[inline]
     pub fn tec_7_0(&self) -> TEC_7_0R {
         let bits = {
@@ -96,7 +96,7 @@ impl R {
         };
         TEC_7_0R { bits }
     }
-    #[doc = "Bits 8:14 - Receive error counter Current value of the receive error counter (maximum value 127)"]
+    #[doc = "Bits 8:14 - Receive error counter Current value of the receive error counter (maximum value 127)."]
     #[inline]
     pub fn rec_6_0(&self) -> REC_6_0R {
         let bits = {
@@ -106,7 +106,7 @@ impl R {
         };
         REC_6_0R { bits }
     }
-    #[doc = "Bit 15 - Receive error passive"]
+    #[doc = "Bit 15 - Receive error passive."]
     #[inline]
     pub fn rp(&self) -> RPR {
         RPR::_from({

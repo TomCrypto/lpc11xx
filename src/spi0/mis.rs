@@ -101,7 +101,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - This bit is 1 if another frame was completely received while the RxFIFO was full, and this interrupt is enabled"]
+    #[doc = "Bit 0 - This bit is 1 if another frame was completely received while the RxFIFO was full, and this interrupt is enabled."]
     #[inline]
     pub fn rormis(&self) -> RORMISR {
         let bits = {
@@ -111,7 +111,7 @@ impl R {
         };
         RORMISR { bits }
     }
-    #[doc = "Bit 1 - This bit is 1 if the Rx FIFO is not empty, has not been read for a time-out period, and this interrupt is enabled. The time-out period is the same for master and slave modes and is determined by the SSP bit rate: 32 bits at PCLK / (CPSDVSR x \\[SCR+1\\])"]
+    #[doc = "Bit 1 - This bit is 1 if the Rx FIFO is not empty, has not been read for a time-out period, and this interrupt is enabled. The time-out period is the same for master and slave modes and is determined by the SSP bit rate: 32 bits at PCLK / (CPSDVSR x \\[SCR+1\\])."]
     #[inline]
     pub fn rtmis(&self) -> RTMISR {
         let bits = {
@@ -121,7 +121,7 @@ impl R {
         };
         RTMISR { bits }
     }
-    #[doc = "Bit 2 - This bit is 1 if the Rx FIFO is at least half full, and this interrupt is enabled"]
+    #[doc = "Bit 2 - This bit is 1 if the Rx FIFO is at least half full, and this interrupt is enabled."]
     #[inline]
     pub fn rxmis(&self) -> RXMISR {
         let bits = {
@@ -131,7 +131,7 @@ impl R {
         };
         RXMISR { bits }
     }
-    #[doc = "Bit 3 - This bit is 1 if the Tx FIFO is at least half empty, and this interrupt is enabled"]
+    #[doc = "Bit 3 - This bit is 1 if the Tx FIFO is at least half empty, and this interrupt is enabled."]
     #[inline]
     pub fn txmis(&self) -> TXMISR {
         let bits = {

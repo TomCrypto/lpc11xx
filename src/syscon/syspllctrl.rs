@@ -196,7 +196,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:4 - Feedback divider value. The division value M is the programmed MSEL value + 1. 00000: Division ratio M = 1 to 11111: Division ratio M = 32"]
+    #[doc = "Bits 0:4 - Feedback divider value. The division value M is the programmed MSEL value + 1. 00000: Division ratio M = 1 to 11111: Division ratio M = 32."]
     #[inline]
     pub fn msel(&self) -> MSELR {
         let bits = {
@@ -206,7 +206,7 @@ impl R {
         };
         MSELR { bits }
     }
-    #[doc = "Bits 5:6 - Post divider ratio P. The division ratio is 2 x P"]
+    #[doc = "Bits 5:6 - Post divider ratio P. The division ratio is 2 x P."]
     #[inline]
     pub fn psel(&self) -> PSELR {
         PSELR::_from({
@@ -228,12 +228,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:4 - Feedback divider value. The division value M is the programmed MSEL value + 1. 00000: Division ratio M = 1 to 11111: Division ratio M = 32"]
+    #[doc = "Bits 0:4 - Feedback divider value. The division value M is the programmed MSEL value + 1. 00000: Division ratio M = 1 to 11111: Division ratio M = 32."]
     #[inline]
     pub fn msel(&mut self) -> _MSELW {
         _MSELW { w: self }
     }
-    #[doc = "Bits 5:6 - Post divider ratio P. The division ratio is 2 x P"]
+    #[doc = "Bits 5:6 - Post divider ratio P. The division ratio is 2 x P."]
     #[inline]
     pub fn psel(&mut self) -> _PSELW {
         _PSELW { w: self }

@@ -179,7 +179,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 10 - WAKEUP pin hysteresis enable"]
+    #[doc = "Bit 10 - WAKEUP pin hysteresis enable."]
     #[inline]
     pub fn wakeuphys(&self) -> WAKEUPHYSR {
         WAKEUPHYSR::_from({
@@ -188,7 +188,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bits 11:31 - Data retained during Deep power-down mode"]
+    #[doc = "Bits 11:31 - Data retained during Deep power-down mode."]
     #[inline]
     pub fn gpdata(&self) -> GPDATAR {
         let bits = {
@@ -211,12 +211,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 10 - WAKEUP pin hysteresis enable"]
+    #[doc = "Bit 10 - WAKEUP pin hysteresis enable."]
     #[inline]
     pub fn wakeuphys(&mut self) -> _WAKEUPHYSW {
         _WAKEUPHYSW { w: self }
     }
-    #[doc = "Bits 11:31 - Data retained during Deep power-down mode"]
+    #[doc = "Bits 11:31 - Data retained during Deep power-down mode."]
     #[inline]
     pub fn gpdata(&mut self) -> _GPDATAW {
         _GPDATAW { w: self }

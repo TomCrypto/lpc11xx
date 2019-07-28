@@ -390,7 +390,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - DTR Control. Source for modem output pin, DTR. This bit reads as 0 when modem loopback mode is active"]
+    #[doc = "Bit 0 - DTR Control. Source for modem output pin, DTR. This bit reads as 0 when modem loopback mode is active."]
     #[inline]
     pub fn dtrc(&self) -> DTRCR {
         let bits = {
@@ -400,7 +400,7 @@ impl R {
         };
         DTRCR { bits }
     }
-    #[doc = "Bit 1 - RTS Control. Source for modem output pin RTS. This bit reads as 0 when modem loopback mode is active"]
+    #[doc = "Bit 1 - RTS Control. Source for modem output pin RTS. This bit reads as 0 when modem loopback mode is active."]
     #[inline]
     pub fn rtsc(&self) -> RTSCR {
         let bits = {
@@ -410,7 +410,7 @@ impl R {
         };
         RTSCR { bits }
     }
-    #[doc = "Bit 4 - Loopback Mode Select. The modem loopback mode provides a mechanism to perform diagnostic loopback testing. Serial data from the transmitter is connected internally to serial input of the receiver. Input pin, RXD, has no effect on loopback and output pin, TXD is held in marking state. The four modem inputs (CTS, DSR, RI and DCD) are disconnected externally. Externally, the modem outputs (RTS, DTR) are set inactive. Internally, the four modem outputs are connected to the four modem inputs. As a result of these connections, the upper four bits of the MSR will be driven by the lower four bits of the MCR rather than the four modem inputs in normal mode. This permits modem status interrupts to be generated in loopback mode by writing the lower four bits of MCR"]
+    #[doc = "Bit 4 - Loopback Mode Select. The modem loopback mode provides a mechanism to perform diagnostic loopback testing. Serial data from the transmitter is connected internally to serial input of the receiver. Input pin, RXD, has no effect on loopback and output pin, TXD is held in marking state. The four modem inputs (CTS, DSR, RI and DCD) are disconnected externally. Externally, the modem outputs (RTS, DTR) are set inactive. Internally, the four modem outputs are connected to the four modem inputs. As a result of these connections, the upper four bits of the MSR will be driven by the lower four bits of the MCR rather than the four modem inputs in normal mode. This permits modem status interrupts to be generated in loopback mode by writing the lower four bits of MCR."]
     #[inline]
     pub fn lms(&self) -> LMSR {
         let bits = {
@@ -420,7 +420,7 @@ impl R {
         };
         LMSR { bits }
     }
-    #[doc = "Bit 6 - RTS flow control"]
+    #[doc = "Bit 6 - RTS flow control."]
     #[inline]
     pub fn rtsen(&self) -> RTSENR {
         RTSENR::_from({
@@ -429,7 +429,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - CTS flow control"]
+    #[doc = "Bit 7 - CTS flow control."]
     #[inline]
     pub fn ctsen(&self) -> CTSENR {
         CTSENR::_from({
@@ -451,27 +451,27 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - DTR Control. Source for modem output pin, DTR. This bit reads as 0 when modem loopback mode is active"]
+    #[doc = "Bit 0 - DTR Control. Source for modem output pin, DTR. This bit reads as 0 when modem loopback mode is active."]
     #[inline]
     pub fn dtrc(&mut self) -> _DTRCW {
         _DTRCW { w: self }
     }
-    #[doc = "Bit 1 - RTS Control. Source for modem output pin RTS. This bit reads as 0 when modem loopback mode is active"]
+    #[doc = "Bit 1 - RTS Control. Source for modem output pin RTS. This bit reads as 0 when modem loopback mode is active."]
     #[inline]
     pub fn rtsc(&mut self) -> _RTSCW {
         _RTSCW { w: self }
     }
-    #[doc = "Bit 4 - Loopback Mode Select. The modem loopback mode provides a mechanism to perform diagnostic loopback testing. Serial data from the transmitter is connected internally to serial input of the receiver. Input pin, RXD, has no effect on loopback and output pin, TXD is held in marking state. The four modem inputs (CTS, DSR, RI and DCD) are disconnected externally. Externally, the modem outputs (RTS, DTR) are set inactive. Internally, the four modem outputs are connected to the four modem inputs. As a result of these connections, the upper four bits of the MSR will be driven by the lower four bits of the MCR rather than the four modem inputs in normal mode. This permits modem status interrupts to be generated in loopback mode by writing the lower four bits of MCR"]
+    #[doc = "Bit 4 - Loopback Mode Select. The modem loopback mode provides a mechanism to perform diagnostic loopback testing. Serial data from the transmitter is connected internally to serial input of the receiver. Input pin, RXD, has no effect on loopback and output pin, TXD is held in marking state. The four modem inputs (CTS, DSR, RI and DCD) are disconnected externally. Externally, the modem outputs (RTS, DTR) are set inactive. Internally, the four modem outputs are connected to the four modem inputs. As a result of these connections, the upper four bits of the MSR will be driven by the lower four bits of the MCR rather than the four modem inputs in normal mode. This permits modem status interrupts to be generated in loopback mode by writing the lower four bits of MCR."]
     #[inline]
     pub fn lms(&mut self) -> _LMSW {
         _LMSW { w: self }
     }
-    #[doc = "Bit 6 - RTS flow control"]
+    #[doc = "Bit 6 - RTS flow control."]
     #[inline]
     pub fn rtsen(&mut self) -> _RTSENW {
         _RTSENW { w: self }
     }
-    #[doc = "Bit 7 - CTS flow control"]
+    #[doc = "Bit 7 - CTS flow control."]
     #[inline]
     pub fn ctsen(&mut self) -> _CTSENW {
         _CTSENW { w: self }

@@ -1308,7 +1308,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - PIOn_0"]
+    #[doc = "Bit 0 - PIOn_0."]
     #[inline]
     pub fn ibe0(&self) -> IBE0R {
         IBE0R::_from({
@@ -1317,7 +1317,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - PIOn_1"]
+    #[doc = "Bit 1 - PIOn_1."]
     #[inline]
     pub fn ibe1(&self) -> IBE1R {
         IBE1R::_from({
@@ -1326,7 +1326,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - PIOn_2"]
+    #[doc = "Bit 2 - PIOn_2."]
     #[inline]
     pub fn ibe2(&self) -> IBE2R {
         IBE2R::_from({
@@ -1335,7 +1335,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - PIOn_3"]
+    #[doc = "Bit 3 - PIOn_3."]
     #[inline]
     pub fn ibe3(&self) -> IBE3R {
         IBE3R::_from({
@@ -1344,7 +1344,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - PIOn_4"]
+    #[doc = "Bit 4 - PIOn_4."]
     #[inline]
     pub fn ibe4(&self) -> IBE4R {
         IBE4R::_from({
@@ -1353,7 +1353,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - PIOn_5"]
+    #[doc = "Bit 5 - PIOn_5."]
     #[inline]
     pub fn ibe5(&self) -> IBE5R {
         IBE5R::_from({
@@ -1362,7 +1362,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - PIOn_6"]
+    #[doc = "Bit 6 - PIOn_6."]
     #[inline]
     pub fn ibe6(&self) -> IBE6R {
         IBE6R::_from({
@@ -1371,7 +1371,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - PIOn_7"]
+    #[doc = "Bit 7 - PIOn_7."]
     #[inline]
     pub fn ibe7(&self) -> IBE7R {
         IBE7R::_from({
@@ -1380,7 +1380,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 8 - PIOn_8"]
+    #[doc = "Bit 8 - PIOn_8."]
     #[inline]
     pub fn ibe8(&self) -> IBE8R {
         IBE8R::_from({
@@ -1389,7 +1389,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 9 - PIOn_9"]
+    #[doc = "Bit 9 - PIOn_9."]
     #[inline]
     pub fn ibe9(&self) -> IBE9R {
         IBE9R::_from({
@@ -1398,7 +1398,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 10 - PIOn_10"]
+    #[doc = "Bit 10 - PIOn_10."]
     #[inline]
     pub fn ibe10(&self) -> IBE10R {
         IBE10R::_from({
@@ -1407,7 +1407,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 11 - PIOn_11"]
+    #[doc = "Bit 11 - PIOn_11."]
     #[inline]
     pub fn ibe11(&self) -> IBE11R {
         IBE11R::_from({
@@ -1429,62 +1429,62 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - PIOn_0"]
+    #[doc = "Bit 0 - PIOn_0."]
     #[inline]
     pub fn ibe0(&mut self) -> _IBE0W {
         _IBE0W { w: self }
     }
-    #[doc = "Bit 1 - PIOn_1"]
+    #[doc = "Bit 1 - PIOn_1."]
     #[inline]
     pub fn ibe1(&mut self) -> _IBE1W {
         _IBE1W { w: self }
     }
-    #[doc = "Bit 2 - PIOn_2"]
+    #[doc = "Bit 2 - PIOn_2."]
     #[inline]
     pub fn ibe2(&mut self) -> _IBE2W {
         _IBE2W { w: self }
     }
-    #[doc = "Bit 3 - PIOn_3"]
+    #[doc = "Bit 3 - PIOn_3."]
     #[inline]
     pub fn ibe3(&mut self) -> _IBE3W {
         _IBE3W { w: self }
     }
-    #[doc = "Bit 4 - PIOn_4"]
+    #[doc = "Bit 4 - PIOn_4."]
     #[inline]
     pub fn ibe4(&mut self) -> _IBE4W {
         _IBE4W { w: self }
     }
-    #[doc = "Bit 5 - PIOn_5"]
+    #[doc = "Bit 5 - PIOn_5."]
     #[inline]
     pub fn ibe5(&mut self) -> _IBE5W {
         _IBE5W { w: self }
     }
-    #[doc = "Bit 6 - PIOn_6"]
+    #[doc = "Bit 6 - PIOn_6."]
     #[inline]
     pub fn ibe6(&mut self) -> _IBE6W {
         _IBE6W { w: self }
     }
-    #[doc = "Bit 7 - PIOn_7"]
+    #[doc = "Bit 7 - PIOn_7."]
     #[inline]
     pub fn ibe7(&mut self) -> _IBE7W {
         _IBE7W { w: self }
     }
-    #[doc = "Bit 8 - PIOn_8"]
+    #[doc = "Bit 8 - PIOn_8."]
     #[inline]
     pub fn ibe8(&mut self) -> _IBE8W {
         _IBE8W { w: self }
     }
-    #[doc = "Bit 9 - PIOn_9"]
+    #[doc = "Bit 9 - PIOn_9."]
     #[inline]
     pub fn ibe9(&mut self) -> _IBE9W {
         _IBE9W { w: self }
     }
-    #[doc = "Bit 10 - PIOn_10"]
+    #[doc = "Bit 10 - PIOn_10."]
     #[inline]
     pub fn ibe10(&mut self) -> _IBE10W {
         _IBE10W { w: self }
     }
-    #[doc = "Bit 11 - PIOn_11"]
+    #[doc = "Bit 11 - PIOn_11."]
     #[inline]
     pub fn ibe11(&mut self) -> _IBE11W {
         _IBE11W { w: self }

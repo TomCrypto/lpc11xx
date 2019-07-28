@@ -100,7 +100,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:3 - Baud rate generation pre-scaler divisor value. If this field is 0, fractional baud rate generator will not impact the UART baud rate"]
+    #[doc = "Bits 0:3 - Baud rate generation pre-scaler divisor value. If this field is 0, fractional baud rate generator will not impact the UART baud rate."]
     #[inline]
     pub fn divaddval(&self) -> DIVADDVALR {
         let bits = {
@@ -110,7 +110,7 @@ impl R {
         };
         DIVADDVALR { bits }
     }
-    #[doc = "Bits 4:7 - Baud rate pre-scaler multiplier value. This field must be greater or equal 1 for UART to operate properly, regardless of whether the fractional baud rate generator is used or not"]
+    #[doc = "Bits 4:7 - Baud rate pre-scaler multiplier value. This field must be greater or equal 1 for UART to operate properly, regardless of whether the fractional baud rate generator is used or not."]
     #[inline]
     pub fn mulval(&self) -> MULVALR {
         let bits = {
@@ -133,12 +133,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:3 - Baud rate generation pre-scaler divisor value. If this field is 0, fractional baud rate generator will not impact the UART baud rate"]
+    #[doc = "Bits 0:3 - Baud rate generation pre-scaler divisor value. If this field is 0, fractional baud rate generator will not impact the UART baud rate."]
     #[inline]
     pub fn divaddval(&mut self) -> _DIVADDVALW {
         _DIVADDVALW { w: self }
     }
-    #[doc = "Bits 4:7 - Baud rate pre-scaler multiplier value. This field must be greater or equal 1 for UART to operate properly, regardless of whether the fractional baud rate generator is used or not"]
+    #[doc = "Bits 4:7 - Baud rate pre-scaler multiplier value. This field must be greater or equal 1 for UART to operate properly, regardless of whether the fractional baud rate generator is used or not."]
     #[inline]
     pub fn mulval(&mut self) -> _MULVALW {
         _MULVALW { w: self }

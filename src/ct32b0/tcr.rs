@@ -136,7 +136,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - When one, the Timer Counter and Prescale Counter are enabled for counting. When zero, the counters are disabled"]
+    #[doc = "Bit 0 - When one, the Timer Counter and Prescale Counter are enabled for counting. When zero, the counters are disabled."]
     #[inline]
     pub fn cen(&self) -> CENR {
         let bits = {
@@ -146,7 +146,7 @@ impl R {
         };
         CENR { bits }
     }
-    #[doc = "Bit 1 - When one, the Timer Counter and the Prescale Counter are synchronously reset on the next positive edge of PCLK. The counters remain reset until TCR\\[1\\] is returned to zero"]
+    #[doc = "Bit 1 - When one, the Timer Counter and the Prescale Counter are synchronously reset on the next positive edge of PCLK. The counters remain reset until TCR\\[1\\] is returned to zero."]
     #[inline]
     pub fn crst(&self) -> CRSTR {
         let bits = {
@@ -169,12 +169,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - When one, the Timer Counter and Prescale Counter are enabled for counting. When zero, the counters are disabled"]
+    #[doc = "Bit 0 - When one, the Timer Counter and Prescale Counter are enabled for counting. When zero, the counters are disabled."]
     #[inline]
     pub fn cen(&mut self) -> _CENW {
         _CENW { w: self }
     }
-    #[doc = "Bit 1 - When one, the Timer Counter and the Prescale Counter are synchronously reset on the next positive edge of PCLK. The counters remain reset until TCR\\[1\\] is returned to zero"]
+    #[doc = "Bit 1 - When one, the Timer Counter and the Prescale Counter are synchronously reset on the next positive edge of PCLK. The counters remain reset until TCR\\[1\\] is returned to zero."]
     #[inline]
     pub fn crst(&mut self) -> _CRSTW {
         _CRSTW { w: self }

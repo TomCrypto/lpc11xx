@@ -325,67 +325,67 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal"]
+    #[doc = "Bit 0 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal."]
     #[inline]
     pub fn rsrpio0_0(&mut self) -> _RSRPIO0_0W {
         _RSRPIO0_0W { w: self }
     }
-    #[doc = "Bit 1 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal"]
+    #[doc = "Bit 1 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal."]
     #[inline]
     pub fn rsrpio0_1(&mut self) -> _RSRPIO0_1W {
         _RSRPIO0_1W { w: self }
     }
-    #[doc = "Bit 2 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal"]
+    #[doc = "Bit 2 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal."]
     #[inline]
     pub fn rsrpio0_2(&mut self) -> _RSRPIO0_2W {
         _RSRPIO0_2W { w: self }
     }
-    #[doc = "Bit 3 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal"]
+    #[doc = "Bit 3 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal."]
     #[inline]
     pub fn rsrpio0_3(&mut self) -> _RSRPIO0_3W {
         _RSRPIO0_3W { w: self }
     }
-    #[doc = "Bit 4 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal"]
+    #[doc = "Bit 4 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal."]
     #[inline]
     pub fn rsrpio0_4(&mut self) -> _RSRPIO0_4W {
         _RSRPIO0_4W { w: self }
     }
-    #[doc = "Bit 5 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal"]
+    #[doc = "Bit 5 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal."]
     #[inline]
     pub fn rsrpio0_5(&mut self) -> _RSRPIO0_5W {
         _RSRPIO0_5W { w: self }
     }
-    #[doc = "Bit 6 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal"]
+    #[doc = "Bit 6 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal."]
     #[inline]
     pub fn rsrpio0_6(&mut self) -> _RSRPIO0_6W {
         _RSRPIO0_6W { w: self }
     }
-    #[doc = "Bit 7 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal"]
+    #[doc = "Bit 7 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal."]
     #[inline]
     pub fn rsrpio0_7(&mut self) -> _RSRPIO0_7W {
         _RSRPIO0_7W { w: self }
     }
-    #[doc = "Bit 8 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal"]
+    #[doc = "Bit 8 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal."]
     #[inline]
     pub fn rsrpio0_8(&mut self) -> _RSRPIO0_8W {
         _RSRPIO0_8W { w: self }
     }
-    #[doc = "Bit 9 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal"]
+    #[doc = "Bit 9 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal."]
     #[inline]
     pub fn rsrpio0_9(&mut self) -> _RSRPIO0_9W {
         _RSRPIO0_9W { w: self }
     }
-    #[doc = "Bit 10 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal"]
+    #[doc = "Bit 10 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal."]
     #[inline]
     pub fn rsrpio0_10(&mut self) -> _RSRPIO0_10W {
         _RSRPIO0_10W { w: self }
     }
-    #[doc = "Bit 11 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal"]
+    #[doc = "Bit 11 - Start signal reset for start logic input PIO0_n:PIO0_11 to PIO0_0 0 = Do nothing. 1 = Writing 1 resets the start signal."]
     #[inline]
     pub fn rsrpio0_11(&mut self) -> _RSRPIO0_11W {
         _RSRPIO0_11W { w: self }
     }
-    #[doc = "Bit 12 - Start signal reset for start logic input PIO1_0 0 = Do nothing. 1 = Writing 1 resets the start signal"]
+    #[doc = "Bit 12 - Start signal reset for start logic input PIO1_0 0 = Do nothing. 1 = Writing 1 resets the start signal."]
     #[inline]
     pub fn rsrpio1_0(&mut self) -> _RSRPIO1_0W {
         _RSRPIO1_0W { w: self }

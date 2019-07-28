@@ -590,7 +590,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 2 - Basic mode"]
+    #[doc = "Bit 2 - Basic mode."]
     #[inline]
     pub fn basic(&self) -> BASICR {
         BASICR::_from({
@@ -599,7 +599,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Silent mode"]
+    #[doc = "Bit 3 - Silent mode."]
     #[inline]
     pub fn silent(&self) -> SILENTR {
         SILENTR::_from({
@@ -608,7 +608,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Loop back mode"]
+    #[doc = "Bit 4 - Loop back mode."]
     #[inline]
     pub fn lback(&self) -> LBACKR {
         LBACKR::_from({
@@ -617,7 +617,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bits 5:6 - Control of CAN_TXD pins"]
+    #[doc = "Bits 5:6 - Control of CAN_TXD pins."]
     #[inline]
     pub fn tx(&self) -> TXR {
         TXR::_from({
@@ -626,7 +626,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bit 7 - Monitors the actual value of the CAN_RXD pin"]
+    #[doc = "Bit 7 - Monitors the actual value of the CAN_RXD pin."]
     #[inline]
     pub fn rx(&self) -> RXR {
         RXR::_from({
@@ -648,27 +648,27 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 2 - Basic mode"]
+    #[doc = "Bit 2 - Basic mode."]
     #[inline]
     pub fn basic(&mut self) -> _BASICW {
         _BASICW { w: self }
     }
-    #[doc = "Bit 3 - Silent mode"]
+    #[doc = "Bit 3 - Silent mode."]
     #[inline]
     pub fn silent(&mut self) -> _SILENTW {
         _SILENTW { w: self }
     }
-    #[doc = "Bit 4 - Loop back mode"]
+    #[doc = "Bit 4 - Loop back mode."]
     #[inline]
     pub fn lback(&mut self) -> _LBACKW {
         _LBACKW { w: self }
     }
-    #[doc = "Bits 5:6 - Control of CAN_TXD pins"]
+    #[doc = "Bits 5:6 - Control of CAN_TXD pins."]
     #[inline]
     pub fn tx(&mut self) -> _TXW {
         _TXW { w: self }
     }
-    #[doc = "Bit 7 - Monitors the actual value of the CAN_RXD pin"]
+    #[doc = "Bit 7 - Monitors the actual value of the CAN_RXD pin."]
     #[inline]
     pub fn rx(&mut self) -> _RXW {
         _RXW { w: self }

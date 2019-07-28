@@ -1922,7 +1922,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Clock control for AHB to APB bridge, to the AHB matrix, to the Cortex-M0 FCLK and HCLK, to the SysCon, and to the PMU (this bit is read-only)"]
+    #[doc = "Bit 0 - Clock control for AHB to APB bridge, to the AHB matrix, to the Cortex-M0 FCLK and HCLK, to the SysCon, and to the PMU (this bit is read-only)."]
     #[inline]
     pub fn sys(&self) -> SYSR {
         SYSR::_from({
@@ -1931,7 +1931,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Clock control for ROM"]
+    #[doc = "Bit 1 - Clock control for ROM."]
     #[inline]
     pub fn rom(&self) -> ROMR {
         ROMR::_from({
@@ -1940,7 +1940,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Clock control for RAM"]
+    #[doc = "Bit 2 - Clock control for RAM."]
     #[inline]
     pub fn ram(&self) -> RAMR {
         RAMR::_from({
@@ -1949,7 +1949,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Clock control for the flash register interface"]
+    #[doc = "Bit 3 - Clock control for the flash register interface."]
     #[inline]
     pub fn flashreg(&self) -> FLASHREGR {
         FLASHREGR::_from({
@@ -1958,7 +1958,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Clock control for flash array access"]
+    #[doc = "Bit 4 - Clock control for flash array access."]
     #[inline]
     pub fn flasharray(&self) -> FLASHARRAYR {
         FLASHARRAYR::_from({
@@ -1967,7 +1967,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Clock control for I2C"]
+    #[doc = "Bit 5 - Clock control for I2C."]
     #[inline]
     pub fn i2c(&self) -> I2CR {
         I2CR::_from({
@@ -1976,7 +1976,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - Clock control for GPIO"]
+    #[doc = "Bit 6 - Clock control for GPIO."]
     #[inline]
     pub fn gpio(&self) -> GPIOR {
         GPIOR::_from({
@@ -1985,7 +1985,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Clock control for CT16B0"]
+    #[doc = "Bit 7 - Clock control for CT16B0."]
     #[inline]
     pub fn ct16b0(&self) -> CT16B0R {
         CT16B0R::_from({
@@ -1994,7 +1994,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 8 - Clock control for CT16B1"]
+    #[doc = "Bit 8 - Clock control for CT16B1."]
     #[inline]
     pub fn ct16b1(&self) -> CT16B1R {
         CT16B1R::_from({
@@ -2003,7 +2003,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 9 - Clock control for CT32B0"]
+    #[doc = "Bit 9 - Clock control for CT32B0."]
     #[inline]
     pub fn ct32b0(&self) -> CT32B0R {
         CT32B0R::_from({
@@ -2012,7 +2012,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 10 - Clock control for CT32B1"]
+    #[doc = "Bit 10 - Clock control for CT32B1."]
     #[inline]
     pub fn ct32b1(&self) -> CT32B1R {
         CT32B1R::_from({
@@ -2021,7 +2021,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 11 - Clock control for SPI0"]
+    #[doc = "Bit 11 - Clock control for SPI0."]
     #[inline]
     pub fn ssp0(&self) -> SSP0R {
         SSP0R::_from({
@@ -2030,7 +2030,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 12 - Clock control for UART"]
+    #[doc = "Bit 12 - Clock control for UART."]
     #[inline]
     pub fn uart(&self) -> UARTR {
         UARTR::_from({
@@ -2039,7 +2039,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 13 - Clock control for ADC"]
+    #[doc = "Bit 13 - Clock control for ADC."]
     #[inline]
     pub fn adc(&self) -> ADCR {
         ADCR::_from({
@@ -2048,7 +2048,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 15 - Clock control for WDT"]
+    #[doc = "Bit 15 - Clock control for WDT."]
     #[inline]
     pub fn wdt(&self) -> WDTR {
         WDTR::_from({
@@ -2057,7 +2057,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 16 - Clock control for the I/O configuration block"]
+    #[doc = "Bit 16 - Clock control for the I/O configuration block."]
     #[inline]
     pub fn iocon(&self) -> IOCONR {
         IOCONR::_from({
@@ -2066,7 +2066,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 17 - Clock control for C_CAN"]
+    #[doc = "Bit 17 - Clock control for C_CAN."]
     #[inline]
     pub fn can(&self) -> CANR {
         CANR::_from({
@@ -2075,7 +2075,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 18 - Clock control for SPI1"]
+    #[doc = "Bit 18 - Clock control for SPI1."]
     #[inline]
     pub fn ssp1(&self) -> SSP1R {
         SSP1R::_from({
@@ -2097,92 +2097,92 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Clock control for AHB to APB bridge, to the AHB matrix, to the Cortex-M0 FCLK and HCLK, to the SysCon, and to the PMU (this bit is read-only)"]
+    #[doc = "Bit 0 - Clock control for AHB to APB bridge, to the AHB matrix, to the Cortex-M0 FCLK and HCLK, to the SysCon, and to the PMU (this bit is read-only)."]
     #[inline]
     pub fn sys(&mut self) -> _SYSW {
         _SYSW { w: self }
     }
-    #[doc = "Bit 1 - Clock control for ROM"]
+    #[doc = "Bit 1 - Clock control for ROM."]
     #[inline]
     pub fn rom(&mut self) -> _ROMW {
         _ROMW { w: self }
     }
-    #[doc = "Bit 2 - Clock control for RAM"]
+    #[doc = "Bit 2 - Clock control for RAM."]
     #[inline]
     pub fn ram(&mut self) -> _RAMW {
         _RAMW { w: self }
     }
-    #[doc = "Bit 3 - Clock control for the flash register interface"]
+    #[doc = "Bit 3 - Clock control for the flash register interface."]
     #[inline]
     pub fn flashreg(&mut self) -> _FLASHREGW {
         _FLASHREGW { w: self }
     }
-    #[doc = "Bit 4 - Clock control for flash array access"]
+    #[doc = "Bit 4 - Clock control for flash array access."]
     #[inline]
     pub fn flasharray(&mut self) -> _FLASHARRAYW {
         _FLASHARRAYW { w: self }
     }
-    #[doc = "Bit 5 - Clock control for I2C"]
+    #[doc = "Bit 5 - Clock control for I2C."]
     #[inline]
     pub fn i2c(&mut self) -> _I2CW {
         _I2CW { w: self }
     }
-    #[doc = "Bit 6 - Clock control for GPIO"]
+    #[doc = "Bit 6 - Clock control for GPIO."]
     #[inline]
     pub fn gpio(&mut self) -> _GPIOW {
         _GPIOW { w: self }
     }
-    #[doc = "Bit 7 - Clock control for CT16B0"]
+    #[doc = "Bit 7 - Clock control for CT16B0."]
     #[inline]
     pub fn ct16b0(&mut self) -> _CT16B0W {
         _CT16B0W { w: self }
     }
-    #[doc = "Bit 8 - Clock control for CT16B1"]
+    #[doc = "Bit 8 - Clock control for CT16B1."]
     #[inline]
     pub fn ct16b1(&mut self) -> _CT16B1W {
         _CT16B1W { w: self }
     }
-    #[doc = "Bit 9 - Clock control for CT32B0"]
+    #[doc = "Bit 9 - Clock control for CT32B0."]
     #[inline]
     pub fn ct32b0(&mut self) -> _CT32B0W {
         _CT32B0W { w: self }
     }
-    #[doc = "Bit 10 - Clock control for CT32B1"]
+    #[doc = "Bit 10 - Clock control for CT32B1."]
     #[inline]
     pub fn ct32b1(&mut self) -> _CT32B1W {
         _CT32B1W { w: self }
     }
-    #[doc = "Bit 11 - Clock control for SPI0"]
+    #[doc = "Bit 11 - Clock control for SPI0."]
     #[inline]
     pub fn ssp0(&mut self) -> _SSP0W {
         _SSP0W { w: self }
     }
-    #[doc = "Bit 12 - Clock control for UART"]
+    #[doc = "Bit 12 - Clock control for UART."]
     #[inline]
     pub fn uart(&mut self) -> _UARTW {
         _UARTW { w: self }
     }
-    #[doc = "Bit 13 - Clock control for ADC"]
+    #[doc = "Bit 13 - Clock control for ADC."]
     #[inline]
     pub fn adc(&mut self) -> _ADCW {
         _ADCW { w: self }
     }
-    #[doc = "Bit 15 - Clock control for WDT"]
+    #[doc = "Bit 15 - Clock control for WDT."]
     #[inline]
     pub fn wdt(&mut self) -> _WDTW {
         _WDTW { w: self }
     }
-    #[doc = "Bit 16 - Clock control for the I/O configuration block"]
+    #[doc = "Bit 16 - Clock control for the I/O configuration block."]
     #[inline]
     pub fn iocon(&mut self) -> _IOCONW {
         _IOCONW { w: self }
     }
-    #[doc = "Bit 17 - Clock control for C_CAN"]
+    #[doc = "Bit 17 - Clock control for C_CAN."]
     #[inline]
     pub fn can(&mut self) -> _CANW {
         _CANW { w: self }
     }
-    #[doc = "Bit 18 - Clock control for SPI1"]
+    #[doc = "Bit 18 - Clock control for SPI1."]
     #[inline]
     pub fn ssp1(&mut self) -> _SSP1W {
         _SSP1W { w: self }

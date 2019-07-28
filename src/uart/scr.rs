@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - A readable, writable byte"]
+    #[doc = "Bits 0:7 - A readable, writable byte."]
     #[inline]
     pub fn pad(&self) -> PADR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:7 - A readable, writable byte"]
+    #[doc = "Bits 0:7 - A readable, writable byte."]
     #[inline]
     pub fn pad(&mut self) -> _PADW {
         _PADW { w: self }

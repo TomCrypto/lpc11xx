@@ -137,7 +137,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Selects pin location for the CT32B0_CAP0 function"]
+    #[doc = "Bits 0:1 - Selects pin location for the CT32B0_CAP0 function."]
     #[inline]
     pub fn ct32b0_cap0loc(&self) -> CT32B0_CAP0LOCR {
         CT32B0_CAP0LOCR::_from({
@@ -159,7 +159,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Selects pin location for the CT32B0_CAP0 function"]
+    #[doc = "Bits 0:1 - Selects pin location for the CT32B0_CAP0 function."]
     #[inline]
     pub fn ct32b0_cap0loc(&mut self) -> _CT32B0_CAP0LOCW {
         _CT32B0_CAP0LOCW { w: self }

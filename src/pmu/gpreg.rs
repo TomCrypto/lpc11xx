@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:31 - Data retained during Deep power-down mode"]
+    #[doc = "Bits 0:31 - Data retained during Deep power-down mode."]
     #[inline]
     pub fn gpdata(&self) -> GPDATAR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:31 - Data retained during Deep power-down mode"]
+    #[doc = "Bits 0:31 - Data retained during Deep power-down mode."]
     #[inline]
     pub fn gpdata(&mut self) -> _GPDATAW {
         _GPDATAW { w: self }

@@ -170,7 +170,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Selects pin location for the RXD function"]
+    #[doc = "Bits 0:1 - Selects pin location for the RXD function."]
     #[inline]
     pub fn rxdloc(&self) -> RXDLOCR {
         RXDLOCR::_from({
@@ -192,7 +192,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Selects pin location for the RXD function"]
+    #[doc = "Bits 0:1 - Selects pin location for the RXD function."]
     #[inline]
     pub fn rxdloc(&mut self) -> _RXDLOCW {
         _RXDLOCW { w: self }

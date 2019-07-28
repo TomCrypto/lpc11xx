@@ -347,7 +347,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:12 - Identifier mask"]
+    #[doc = "Bits 0:12 - Identifier mask."]
     #[inline]
     pub fn msk_28_16(&self) -> MSK_28_16R {
         MSK_28_16R::_from({
@@ -356,7 +356,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u16
         })
     }
-    #[doc = "Bit 14 - Mask message direction"]
+    #[doc = "Bit 14 - Mask message direction."]
     #[inline]
     pub fn mdir(&self) -> MDIRR {
         MDIRR::_from({
@@ -365,7 +365,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 15 - Mask extend identifier"]
+    #[doc = "Bit 15 - Mask extend identifier."]
     #[inline]
     pub fn mxtd(&self) -> MXTDR {
         MXTDR::_from({
@@ -387,17 +387,17 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:12 - Identifier mask"]
+    #[doc = "Bits 0:12 - Identifier mask."]
     #[inline]
     pub fn msk_28_16(&mut self) -> _MSK_28_16W {
         _MSK_28_16W { w: self }
     }
-    #[doc = "Bit 14 - Mask message direction"]
+    #[doc = "Bit 14 - Mask message direction."]
     #[inline]
     pub fn mdir(&mut self) -> _MDIRW {
         _MDIRW { w: self }
     }
-    #[doc = "Bit 15 - Mask extend identifier"]
+    #[doc = "Bit 15 - Mask extend identifier."]
     #[inline]
     pub fn mxtd(&mut self) -> _MXTDW {
         _MXTDW { w: self }

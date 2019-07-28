@@ -41,7 +41,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:7 - Feed value should be 0xAA followed by 0x55"]
+    #[doc = "Bits 0:7 - Feed value should be 0xAA followed by 0x55."]
     #[inline]
     pub fn feed(&mut self) -> _FEEDW {
         _FEEDW { w: self }

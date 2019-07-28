@@ -154,7 +154,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - System memory remap"]
+    #[doc = "Bits 0:1 - System memory remap."]
     #[inline]
     pub fn map(&self) -> MAPR {
         MAPR::_from({
@@ -176,7 +176,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - System memory remap"]
+    #[doc = "Bits 0:1 - System memory remap."]
     #[inline]
     pub fn map(&mut self) -> _MAPW {
         _MAPW { w: self }

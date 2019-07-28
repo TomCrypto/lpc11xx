@@ -468,7 +468,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - SPI0 reset control"]
+    #[doc = "Bit 0 - SPI0 reset control."]
     #[inline]
     pub fn ssp0_rst_n(&self) -> SSP0_RST_NR {
         SSP0_RST_NR::_from({
@@ -477,7 +477,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - I2C reset control"]
+    #[doc = "Bit 1 - I2C reset control."]
     #[inline]
     pub fn i2c_rst_n(&self) -> I2C_RST_NR {
         I2C_RST_NR::_from({
@@ -486,7 +486,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - SPI1 reset control"]
+    #[doc = "Bit 2 - SPI1 reset control."]
     #[inline]
     pub fn ssp1_rst_n(&self) -> SSP1_RST_NR {
         SSP1_RST_NR::_from({
@@ -495,7 +495,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - C_CAN reset control. See Section 3.1 for part specific details"]
+    #[doc = "Bit 3 - C_CAN reset control. See Section 3.1 for part specific details."]
     #[inline]
     pub fn can_rst_n(&self) -> CAN_RST_NR {
         CAN_RST_NR::_from({
@@ -517,22 +517,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - SPI0 reset control"]
+    #[doc = "Bit 0 - SPI0 reset control."]
     #[inline]
     pub fn ssp0_rst_n(&mut self) -> _SSP0_RST_NW {
         _SSP0_RST_NW { w: self }
     }
-    #[doc = "Bit 1 - I2C reset control"]
+    #[doc = "Bit 1 - I2C reset control."]
     #[inline]
     pub fn i2c_rst_n(&mut self) -> _I2C_RST_NW {
         _I2C_RST_NW { w: self }
     }
-    #[doc = "Bit 2 - SPI1 reset control"]
+    #[doc = "Bit 2 - SPI1 reset control."]
     #[inline]
     pub fn ssp1_rst_n(&mut self) -> _SSP1_RST_NW {
         _SSP1_RST_NW { w: self }
     }
-    #[doc = "Bit 3 - C_CAN reset control. See Section 3.1 for part specific details"]
+    #[doc = "Bit 3 - C_CAN reset control. See Section 3.1 for part specific details."]
     #[inline]
     pub fn can_rst_n(&mut self) -> _CAN_RST_NW {
         _CAN_RST_NW { w: self }

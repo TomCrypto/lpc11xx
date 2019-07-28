@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:15 - Timer counter value"]
+    #[doc = "Bits 0:15 - Timer counter value."]
     #[inline]
     pub fn tc(&self) -> TCR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:15 - Timer counter value"]
+    #[doc = "Bits 0:15 - Timer counter value."]
     #[inline]
     pub fn tc(&mut self) -> _TCW {
         _TCW { w: self }

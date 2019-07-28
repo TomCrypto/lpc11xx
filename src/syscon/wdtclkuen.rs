@@ -153,7 +153,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Enable WDT clock source update"]
+    #[doc = "Bit 0 - Enable WDT clock source update."]
     #[inline]
     pub fn ena(&self) -> ENAR {
         ENAR::_from({
@@ -175,7 +175,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Enable WDT clock source update"]
+    #[doc = "Bit 0 - Enable WDT clock source update."]
     #[inline]
     pub fn ena(&mut self) -> _ENAW {
         _ENAW { w: self }

@@ -1308,7 +1308,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - PIOn_0"]
+    #[doc = "Bit 0 - PIOn_0."]
     #[inline]
     pub fn data0(&self) -> DATA0R {
         DATA0R::_from({
@@ -1317,7 +1317,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - PIOn_1"]
+    #[doc = "Bit 1 - PIOn_1."]
     #[inline]
     pub fn data1(&self) -> DATA1R {
         DATA1R::_from({
@@ -1326,7 +1326,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - PIOn_2"]
+    #[doc = "Bit 2 - PIOn_2."]
     #[inline]
     pub fn data2(&self) -> DATA2R {
         DATA2R::_from({
@@ -1335,7 +1335,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - PIOn_3"]
+    #[doc = "Bit 3 - PIOn_3."]
     #[inline]
     pub fn data3(&self) -> DATA3R {
         DATA3R::_from({
@@ -1344,7 +1344,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - PIOn_4"]
+    #[doc = "Bit 4 - PIOn_4."]
     #[inline]
     pub fn data4(&self) -> DATA4R {
         DATA4R::_from({
@@ -1353,7 +1353,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - PIOn_5"]
+    #[doc = "Bit 5 - PIOn_5."]
     #[inline]
     pub fn data5(&self) -> DATA5R {
         DATA5R::_from({
@@ -1362,7 +1362,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - PIOn_6"]
+    #[doc = "Bit 6 - PIOn_6."]
     #[inline]
     pub fn data6(&self) -> DATA6R {
         DATA6R::_from({
@@ -1371,7 +1371,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - PIOn_7"]
+    #[doc = "Bit 7 - PIOn_7."]
     #[inline]
     pub fn data7(&self) -> DATA7R {
         DATA7R::_from({
@@ -1380,7 +1380,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 8 - PIOn_8"]
+    #[doc = "Bit 8 - PIOn_8."]
     #[inline]
     pub fn data8(&self) -> DATA8R {
         DATA8R::_from({
@@ -1389,7 +1389,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 9 - PIOn_9"]
+    #[doc = "Bit 9 - PIOn_9."]
     #[inline]
     pub fn data9(&self) -> DATA9R {
         DATA9R::_from({
@@ -1398,7 +1398,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 10 - PIOn_10"]
+    #[doc = "Bit 10 - PIOn_10."]
     #[inline]
     pub fn data10(&self) -> DATA10R {
         DATA10R::_from({
@@ -1407,7 +1407,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 11 - PIOn_11"]
+    #[doc = "Bit 11 - PIOn_11."]
     #[inline]
     pub fn data11(&self) -> DATA11R {
         DATA11R::_from({
@@ -1429,62 +1429,62 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - PIOn_0"]
+    #[doc = "Bit 0 - PIOn_0."]
     #[inline]
     pub fn data0(&mut self) -> _DATA0W {
         _DATA0W { w: self }
     }
-    #[doc = "Bit 1 - PIOn_1"]
+    #[doc = "Bit 1 - PIOn_1."]
     #[inline]
     pub fn data1(&mut self) -> _DATA1W {
         _DATA1W { w: self }
     }
-    #[doc = "Bit 2 - PIOn_2"]
+    #[doc = "Bit 2 - PIOn_2."]
     #[inline]
     pub fn data2(&mut self) -> _DATA2W {
         _DATA2W { w: self }
     }
-    #[doc = "Bit 3 - PIOn_3"]
+    #[doc = "Bit 3 - PIOn_3."]
     #[inline]
     pub fn data3(&mut self) -> _DATA3W {
         _DATA3W { w: self }
     }
-    #[doc = "Bit 4 - PIOn_4"]
+    #[doc = "Bit 4 - PIOn_4."]
     #[inline]
     pub fn data4(&mut self) -> _DATA4W {
         _DATA4W { w: self }
     }
-    #[doc = "Bit 5 - PIOn_5"]
+    #[doc = "Bit 5 - PIOn_5."]
     #[inline]
     pub fn data5(&mut self) -> _DATA5W {
         _DATA5W { w: self }
     }
-    #[doc = "Bit 6 - PIOn_6"]
+    #[doc = "Bit 6 - PIOn_6."]
     #[inline]
     pub fn data6(&mut self) -> _DATA6W {
         _DATA6W { w: self }
     }
-    #[doc = "Bit 7 - PIOn_7"]
+    #[doc = "Bit 7 - PIOn_7."]
     #[inline]
     pub fn data7(&mut self) -> _DATA7W {
         _DATA7W { w: self }
     }
-    #[doc = "Bit 8 - PIOn_8"]
+    #[doc = "Bit 8 - PIOn_8."]
     #[inline]
     pub fn data8(&mut self) -> _DATA8W {
         _DATA8W { w: self }
     }
-    #[doc = "Bit 9 - PIOn_9"]
+    #[doc = "Bit 9 - PIOn_9."]
     #[inline]
     pub fn data9(&mut self) -> _DATA9W {
         _DATA9W { w: self }
     }
-    #[doc = "Bit 10 - PIOn_10"]
+    #[doc = "Bit 10 - PIOn_10."]
     #[inline]
     pub fn data10(&mut self) -> _DATA10W {
         _DATA10W { w: self }
     }
-    #[doc = "Bit 11 - PIOn_11"]
+    #[doc = "Bit 11 - PIOn_11."]
     #[inline]
     pub fn data11(&mut self) -> _DATA11W {
         _DATA11W { w: self }

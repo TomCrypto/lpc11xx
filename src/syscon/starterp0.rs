@@ -620,7 +620,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 0 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_0(&self) -> ERPIO0_0R {
         let bits = {
@@ -630,7 +630,7 @@ impl R {
         };
         ERPIO0_0R { bits }
     }
-    #[doc = "Bit 1 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 1 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_1(&self) -> ERPIO0_1R {
         let bits = {
@@ -640,7 +640,7 @@ impl R {
         };
         ERPIO0_1R { bits }
     }
-    #[doc = "Bit 2 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 2 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_2(&self) -> ERPIO0_2R {
         let bits = {
@@ -650,7 +650,7 @@ impl R {
         };
         ERPIO0_2R { bits }
     }
-    #[doc = "Bit 3 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 3 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_3(&self) -> ERPIO0_3R {
         let bits = {
@@ -660,7 +660,7 @@ impl R {
         };
         ERPIO0_3R { bits }
     }
-    #[doc = "Bit 4 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 4 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_4(&self) -> ERPIO0_4R {
         let bits = {
@@ -670,7 +670,7 @@ impl R {
         };
         ERPIO0_4R { bits }
     }
-    #[doc = "Bit 5 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 5 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_5(&self) -> ERPIO0_5R {
         let bits = {
@@ -680,7 +680,7 @@ impl R {
         };
         ERPIO0_5R { bits }
     }
-    #[doc = "Bit 6 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 6 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_6(&self) -> ERPIO0_6R {
         let bits = {
@@ -690,7 +690,7 @@ impl R {
         };
         ERPIO0_6R { bits }
     }
-    #[doc = "Bit 7 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 7 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_7(&self) -> ERPIO0_7R {
         let bits = {
@@ -700,7 +700,7 @@ impl R {
         };
         ERPIO0_7R { bits }
     }
-    #[doc = "Bit 8 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 8 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_8(&self) -> ERPIO0_8R {
         let bits = {
@@ -710,7 +710,7 @@ impl R {
         };
         ERPIO0_8R { bits }
     }
-    #[doc = "Bit 9 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 9 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_9(&self) -> ERPIO0_9R {
         let bits = {
@@ -720,7 +720,7 @@ impl R {
         };
         ERPIO0_9R { bits }
     }
-    #[doc = "Bit 10 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 10 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_10(&self) -> ERPIO0_10R {
         let bits = {
@@ -730,7 +730,7 @@ impl R {
         };
         ERPIO0_10R { bits }
     }
-    #[doc = "Bit 11 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 11 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_11(&self) -> ERPIO0_11R {
         let bits = {
@@ -740,7 +740,7 @@ impl R {
         };
         ERPIO0_11R { bits }
     }
-    #[doc = "Bit 12 - Enable start signal for start logic input PIO1_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 12 - Enable start signal for start logic input PIO1_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio1_0(&self) -> ERPIO1_0R {
         let bits = {
@@ -763,67 +763,67 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 0 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_0(&mut self) -> _ERPIO0_0W {
         _ERPIO0_0W { w: self }
     }
-    #[doc = "Bit 1 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 1 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_1(&mut self) -> _ERPIO0_1W {
         _ERPIO0_1W { w: self }
     }
-    #[doc = "Bit 2 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 2 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_2(&mut self) -> _ERPIO0_2W {
         _ERPIO0_2W { w: self }
     }
-    #[doc = "Bit 3 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 3 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_3(&mut self) -> _ERPIO0_3W {
         _ERPIO0_3W { w: self }
     }
-    #[doc = "Bit 4 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 4 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_4(&mut self) -> _ERPIO0_4W {
         _ERPIO0_4W { w: self }
     }
-    #[doc = "Bit 5 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 5 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_5(&mut self) -> _ERPIO0_5W {
         _ERPIO0_5W { w: self }
     }
-    #[doc = "Bit 6 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 6 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_6(&mut self) -> _ERPIO0_6W {
         _ERPIO0_6W { w: self }
     }
-    #[doc = "Bit 7 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 7 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_7(&mut self) -> _ERPIO0_7W {
         _ERPIO0_7W { w: self }
     }
-    #[doc = "Bit 8 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 8 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_8(&mut self) -> _ERPIO0_8W {
         _ERPIO0_8W { w: self }
     }
-    #[doc = "Bit 9 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 9 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_9(&mut self) -> _ERPIO0_9W {
         _ERPIO0_9W { w: self }
     }
-    #[doc = "Bit 10 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 10 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_10(&mut self) -> _ERPIO0_10W {
         _ERPIO0_10W { w: self }
     }
-    #[doc = "Bit 11 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 11 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio0_11(&mut self) -> _ERPIO0_11W {
         _ERPIO0_11W { w: self }
     }
-    #[doc = "Bit 12 - Enable start signal for start logic input PIO1_0 0 = Disabled 1 = Enabled"]
+    #[doc = "Bit 12 - Enable start signal for start logic input PIO1_0 0 = Disabled 1 = Enabled."]
     #[inline]
     pub fn erpio1_0(&mut self) -> _ERPIO1_0W {
         _ERPIO1_0W { w: self }

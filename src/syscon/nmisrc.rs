@@ -118,7 +118,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:4 - The IRQ number of the interrupt that acts as the Non-Maskable Interrupt (NMI) if bit 31 in this register is 1. See Table 54 for the list of interrupt sources and their IRQ numbers"]
+    #[doc = "Bits 0:4 - The IRQ number of the interrupt that acts as the Non-Maskable Interrupt (NMI) if bit 31 in this register is 1. See Table 54 for the list of interrupt sources and their IRQ numbers."]
     #[inline]
     pub fn irqno(&self) -> IRQNOR {
         let bits = {
@@ -128,7 +128,7 @@ impl R {
         };
         IRQNOR { bits }
     }
-    #[doc = "Bit 31 - Write a 1 to this bit to enable the Non-Maskable Interrupt (NMI) source selected by bits 4:0"]
+    #[doc = "Bit 31 - Write a 1 to this bit to enable the Non-Maskable Interrupt (NMI) source selected by bits 4:0."]
     #[inline]
     pub fn nmien(&self) -> NMIENR {
         let bits = {
@@ -151,12 +151,12 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:4 - The IRQ number of the interrupt that acts as the Non-Maskable Interrupt (NMI) if bit 31 in this register is 1. See Table 54 for the list of interrupt sources and their IRQ numbers"]
+    #[doc = "Bits 0:4 - The IRQ number of the interrupt that acts as the Non-Maskable Interrupt (NMI) if bit 31 in this register is 1. See Table 54 for the list of interrupt sources and their IRQ numbers."]
     #[inline]
     pub fn irqno(&mut self) -> _IRQNOW {
         _IRQNOW { w: self }
     }
-    #[doc = "Bit 31 - Write a 1 to this bit to enable the Non-Maskable Interrupt (NMI) source selected by bits 4:0"]
+    #[doc = "Bit 31 - Write a 1 to this bit to enable the Non-Maskable Interrupt (NMI) source selected by bits 4:0."]
     #[inline]
     pub fn nmien(&mut self) -> _NMIENW {
         _NMIENW { w: self }

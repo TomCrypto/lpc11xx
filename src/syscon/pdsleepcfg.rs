@@ -406,7 +406,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:2 - Reserved. Always write these bits as 111"]
+    #[doc = "Bits 0:2 - Reserved. Always write these bits as 111."]
     #[inline]
     pub fn notused0(&self) -> NOTUSED0R {
         let bits = {
@@ -416,7 +416,7 @@ impl R {
         };
         NOTUSED0R { bits }
     }
-    #[doc = "Bit 3 - BOD power-down control in Deep-sleep mode, see Table 40"]
+    #[doc = "Bit 3 - BOD power-down control in Deep-sleep mode, see Table 40."]
     #[inline]
     pub fn bod_pd(&self) -> BOD_PDR {
         BOD_PDR::_from({
@@ -425,7 +425,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bits 4:5 - Reserved. Always write these bits as 11"]
+    #[doc = "Bits 4:5 - Reserved. Always write these bits as 11."]
     #[inline]
     pub fn notused1(&self) -> NOTUSED1R {
         let bits = {
@@ -435,7 +435,7 @@ impl R {
         };
         NOTUSED1R { bits }
     }
-    #[doc = "Bit 6 - Watchdog oscillator power control in Deep-sleep mode, see Table 40"]
+    #[doc = "Bit 6 - Watchdog oscillator power control in Deep-sleep mode, see Table 40."]
     #[inline]
     pub fn wdtosc_pd(&self) -> WDTOSC_PDR {
         WDTOSC_PDR::_from({
@@ -444,7 +444,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Reserved. Always write this bit as 1"]
+    #[doc = "Bit 7 - Reserved. Always write this bit as 1."]
     #[inline]
     pub fn notused2(&self) -> NOTUSED2R {
         let bits = {
@@ -454,7 +454,7 @@ impl R {
         };
         NOTUSED2R { bits }
     }
-    #[doc = "Bits 8:10 - Reserved. Always write these bits as 000"]
+    #[doc = "Bits 8:10 - Reserved. Always write these bits as 000."]
     #[inline]
     pub fn notused3(&self) -> NOTUSED3R {
         let bits = {
@@ -464,7 +464,7 @@ impl R {
         };
         NOTUSED3R { bits }
     }
-    #[doc = "Bits 11:12 - Reserved. Always write these bits as 11"]
+    #[doc = "Bits 11:12 - Reserved. Always write these bits as 11."]
     #[inline]
     pub fn notused4(&self) -> NOTUSED4R {
         let bits = {
@@ -487,37 +487,37 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:2 - Reserved. Always write these bits as 111"]
+    #[doc = "Bits 0:2 - Reserved. Always write these bits as 111."]
     #[inline]
     pub fn notused0(&mut self) -> _NOTUSED0W {
         _NOTUSED0W { w: self }
     }
-    #[doc = "Bit 3 - BOD power-down control in Deep-sleep mode, see Table 40"]
+    #[doc = "Bit 3 - BOD power-down control in Deep-sleep mode, see Table 40."]
     #[inline]
     pub fn bod_pd(&mut self) -> _BOD_PDW {
         _BOD_PDW { w: self }
     }
-    #[doc = "Bits 4:5 - Reserved. Always write these bits as 11"]
+    #[doc = "Bits 4:5 - Reserved. Always write these bits as 11."]
     #[inline]
     pub fn notused1(&mut self) -> _NOTUSED1W {
         _NOTUSED1W { w: self }
     }
-    #[doc = "Bit 6 - Watchdog oscillator power control in Deep-sleep mode, see Table 40"]
+    #[doc = "Bit 6 - Watchdog oscillator power control in Deep-sleep mode, see Table 40."]
     #[inline]
     pub fn wdtosc_pd(&mut self) -> _WDTOSC_PDW {
         _WDTOSC_PDW { w: self }
     }
-    #[doc = "Bit 7 - Reserved. Always write this bit as 1"]
+    #[doc = "Bit 7 - Reserved. Always write this bit as 1."]
     #[inline]
     pub fn notused2(&mut self) -> _NOTUSED2W {
         _NOTUSED2W { w: self }
     }
-    #[doc = "Bits 8:10 - Reserved. Always write these bits as 000"]
+    #[doc = "Bits 8:10 - Reserved. Always write these bits as 000."]
     #[inline]
     pub fn notused3(&mut self) -> _NOTUSED3W {
         _NOTUSED3W { w: self }
     }
-    #[doc = "Bits 11:12 - Reserved. Always write these bits as 11"]
+    #[doc = "Bits 11:12 - Reserved. Always write these bits as 11."]
     #[inline]
     pub fn notused4(&mut self) -> _NOTUSED4W {
         _NOTUSED4W { w: self }

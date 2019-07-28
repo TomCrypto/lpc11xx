@@ -28,7 +28,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:31 - Word 0 of 128-bit signature (bits 31 to 0)"]
+    #[doc = "Bits 0:31 - Word 0 of 128-bit signature (bits 31 to 0)."]
     #[inline]
     pub fn sw0_31_0(&self) -> SW0_31_0R {
         let bits = {

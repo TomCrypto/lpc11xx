@@ -152,7 +152,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:5 - Baud rate prescaler The value by which the oscillator frequency is divided for generating the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values for the Baud Rate Prescaler are 0 to 63.\\[1\\]"]
+    #[doc = "Bits 0:5 - Baud rate prescaler The value by which the oscillator frequency is divided for generating the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values for the Baud Rate Prescaler are 0 to 63."]
     #[inline]
     pub fn brp(&self) -> BRPR {
         let bits = {
@@ -162,7 +162,7 @@ impl R {
         };
         BRPR { bits }
     }
-    #[doc = "Bits 6:7 - (Re)synchronization jump width Valid programmed values are 0 to 3.\\[1\\]"]
+    #[doc = "Bits 6:7 - (Re)synchronization jump width Valid programmed values are 0 to 3."]
     #[inline]
     pub fn sjw(&self) -> SJWR {
         let bits = {
@@ -172,7 +172,7 @@ impl R {
         };
         SJWR { bits }
     }
-    #[doc = "Bits 8:11 - Time segment before the sample point Valid values are 1 to 15.\\[1\\]"]
+    #[doc = "Bits 8:11 - Time segment before the sample point Valid values are 1 to 15."]
     #[inline]
     pub fn tseg1(&self) -> TSEG1R {
         let bits = {
@@ -182,7 +182,7 @@ impl R {
         };
         TSEG1R { bits }
     }
-    #[doc = "Bits 12:14 - Time segment after the sample point Valid values are 0 to 7.\\[1\\]"]
+    #[doc = "Bits 12:14 - Time segment after the sample point Valid values are 0 to 7."]
     #[inline]
     pub fn tseg2(&self) -> TSEG2R {
         let bits = {
@@ -205,22 +205,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:5 - Baud rate prescaler The value by which the oscillator frequency is divided for generating the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values for the Baud Rate Prescaler are 0 to 63.\\[1\\]"]
+    #[doc = "Bits 0:5 - Baud rate prescaler The value by which the oscillator frequency is divided for generating the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values for the Baud Rate Prescaler are 0 to 63."]
     #[inline]
     pub fn brp(&mut self) -> _BRPW {
         _BRPW { w: self }
     }
-    #[doc = "Bits 6:7 - (Re)synchronization jump width Valid programmed values are 0 to 3.\\[1\\]"]
+    #[doc = "Bits 6:7 - (Re)synchronization jump width Valid programmed values are 0 to 3."]
     #[inline]
     pub fn sjw(&mut self) -> _SJWW {
         _SJWW { w: self }
     }
-    #[doc = "Bits 8:11 - Time segment before the sample point Valid values are 1 to 15.\\[1\\]"]
+    #[doc = "Bits 8:11 - Time segment before the sample point Valid values are 1 to 15."]
     #[inline]
     pub fn tseg1(&mut self) -> _TSEG1W {
         _TSEG1W { w: self }
     }
-    #[doc = "Bits 12:14 - Time segment after the sample point Valid values are 0 to 7.\\[1\\]"]
+    #[doc = "Bits 12:14 - Time segment after the sample point Valid values are 0 to 7."]
     #[inline]
     pub fn tseg2(&mut self) -> _TSEG2W {
         _TSEG2W { w: self }

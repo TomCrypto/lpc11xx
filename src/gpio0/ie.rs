@@ -576,7 +576,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - PIOn_0"]
+    #[doc = "Bit 0 - PIOn_0."]
     #[inline]
     pub fn mask0(&self) -> MASK0R {
         let bits = {
@@ -586,7 +586,7 @@ impl R {
         };
         MASK0R { bits }
     }
-    #[doc = "Bit 1 - PIOn_1"]
+    #[doc = "Bit 1 - PIOn_1."]
     #[inline]
     pub fn mask1(&self) -> MASK1R {
         let bits = {
@@ -596,7 +596,7 @@ impl R {
         };
         MASK1R { bits }
     }
-    #[doc = "Bit 2 - PIOn_2"]
+    #[doc = "Bit 2 - PIOn_2."]
     #[inline]
     pub fn mask2(&self) -> MASK2R {
         let bits = {
@@ -606,7 +606,7 @@ impl R {
         };
         MASK2R { bits }
     }
-    #[doc = "Bit 3 - PIOn_3"]
+    #[doc = "Bit 3 - PIOn_3."]
     #[inline]
     pub fn mask3(&self) -> MASK3R {
         let bits = {
@@ -616,7 +616,7 @@ impl R {
         };
         MASK3R { bits }
     }
-    #[doc = "Bit 4 - PIOn_4"]
+    #[doc = "Bit 4 - PIOn_4."]
     #[inline]
     pub fn mask4(&self) -> MASK4R {
         let bits = {
@@ -626,7 +626,7 @@ impl R {
         };
         MASK4R { bits }
     }
-    #[doc = "Bit 5 - PIOn_5"]
+    #[doc = "Bit 5 - PIOn_5."]
     #[inline]
     pub fn mask5(&self) -> MASK5R {
         let bits = {
@@ -636,7 +636,7 @@ impl R {
         };
         MASK5R { bits }
     }
-    #[doc = "Bit 6 - PIOn_6"]
+    #[doc = "Bit 6 - PIOn_6."]
     #[inline]
     pub fn mask6(&self) -> MASK6R {
         let bits = {
@@ -646,7 +646,7 @@ impl R {
         };
         MASK6R { bits }
     }
-    #[doc = "Bit 7 - PIOn_7"]
+    #[doc = "Bit 7 - PIOn_7."]
     #[inline]
     pub fn mask7(&self) -> MASK7R {
         let bits = {
@@ -656,7 +656,7 @@ impl R {
         };
         MASK7R { bits }
     }
-    #[doc = "Bit 8 - PIOn_8"]
+    #[doc = "Bit 8 - PIOn_8."]
     #[inline]
     pub fn mask8(&self) -> MASK8R {
         let bits = {
@@ -666,7 +666,7 @@ impl R {
         };
         MASK8R { bits }
     }
-    #[doc = "Bit 9 - PIOn_9"]
+    #[doc = "Bit 9 - PIOn_9."]
     #[inline]
     pub fn mask9(&self) -> MASK9R {
         let bits = {
@@ -676,7 +676,7 @@ impl R {
         };
         MASK9R { bits }
     }
-    #[doc = "Bit 10 - PIOn_10"]
+    #[doc = "Bit 10 - PIOn_10."]
     #[inline]
     pub fn mask10(&self) -> MASK10R {
         let bits = {
@@ -686,7 +686,7 @@ impl R {
         };
         MASK10R { bits }
     }
-    #[doc = "Bit 11 - PIOn_11"]
+    #[doc = "Bit 11 - PIOn_11."]
     #[inline]
     pub fn mask11(&self) -> MASK11R {
         let bits = {
@@ -709,62 +709,62 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - PIOn_0"]
+    #[doc = "Bit 0 - PIOn_0."]
     #[inline]
     pub fn mask0(&mut self) -> _MASK0W {
         _MASK0W { w: self }
     }
-    #[doc = "Bit 1 - PIOn_1"]
+    #[doc = "Bit 1 - PIOn_1."]
     #[inline]
     pub fn mask1(&mut self) -> _MASK1W {
         _MASK1W { w: self }
     }
-    #[doc = "Bit 2 - PIOn_2"]
+    #[doc = "Bit 2 - PIOn_2."]
     #[inline]
     pub fn mask2(&mut self) -> _MASK2W {
         _MASK2W { w: self }
     }
-    #[doc = "Bit 3 - PIOn_3"]
+    #[doc = "Bit 3 - PIOn_3."]
     #[inline]
     pub fn mask3(&mut self) -> _MASK3W {
         _MASK3W { w: self }
     }
-    #[doc = "Bit 4 - PIOn_4"]
+    #[doc = "Bit 4 - PIOn_4."]
     #[inline]
     pub fn mask4(&mut self) -> _MASK4W {
         _MASK4W { w: self }
     }
-    #[doc = "Bit 5 - PIOn_5"]
+    #[doc = "Bit 5 - PIOn_5."]
     #[inline]
     pub fn mask5(&mut self) -> _MASK5W {
         _MASK5W { w: self }
     }
-    #[doc = "Bit 6 - PIOn_6"]
+    #[doc = "Bit 6 - PIOn_6."]
     #[inline]
     pub fn mask6(&mut self) -> _MASK6W {
         _MASK6W { w: self }
     }
-    #[doc = "Bit 7 - PIOn_7"]
+    #[doc = "Bit 7 - PIOn_7."]
     #[inline]
     pub fn mask7(&mut self) -> _MASK7W {
         _MASK7W { w: self }
     }
-    #[doc = "Bit 8 - PIOn_8"]
+    #[doc = "Bit 8 - PIOn_8."]
     #[inline]
     pub fn mask8(&mut self) -> _MASK8W {
         _MASK8W { w: self }
     }
-    #[doc = "Bit 9 - PIOn_9"]
+    #[doc = "Bit 9 - PIOn_9."]
     #[inline]
     pub fn mask9(&mut self) -> _MASK9W {
         _MASK9W { w: self }
     }
-    #[doc = "Bit 10 - PIOn_10"]
+    #[doc = "Bit 10 - PIOn_10."]
     #[inline]
     pub fn mask10(&mut self) -> _MASK10W {
         _MASK10W { w: self }
     }
-    #[doc = "Bit 11 - PIOn_11"]
+    #[doc = "Bit 11 - PIOn_11."]
     #[inline]
     pub fn mask11(&mut self) -> _MASK11W {
         _MASK11W { w: self }

@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - Trim value"]
+    #[doc = "Bits 0:7 - Trim value."]
     #[inline]
     pub fn trim(&self) -> TRIMR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:7 - Trim value"]
+    #[doc = "Bits 0:7 - Trim value."]
     #[inline]
     pub fn trim(&mut self) -> _TRIMW {
         _TRIMW { w: self }

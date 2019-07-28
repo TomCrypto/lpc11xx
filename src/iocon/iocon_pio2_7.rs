@@ -486,7 +486,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:2 - Configure pin function"]
+    #[doc = "Bits 0:2 - Configure pin function."]
     #[inline]
     pub fn func(&self) -> FUNCR {
         FUNCR::_from({
@@ -495,7 +495,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 3:4 - Pin function mode (on-chip pull-up/pull-down resistor control)"]
+    #[doc = "Bits 3:4 - Pin function mode (on-chip pull-up/pull-down resistor control)."]
     #[inline]
     pub fn mode(&self) -> MODER {
         MODER::_from({
@@ -504,7 +504,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bit 5 - Hysteresis"]
+    #[doc = "Bit 5 - Hysteresis."]
     #[inline]
     pub fn hysteresis(&self) -> HYSTERESISR {
         HYSTERESISR::_from({
@@ -513,7 +513,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 10 - Selects pseudo open-drain mode"]
+    #[doc = "Bit 10 - Selects pseudo open-drain mode."]
     #[inline]
     pub fn open_drain(&self) -> OPEN_DRAINR {
         OPEN_DRAINR::_from({
@@ -535,22 +535,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:2 - Configure pin function"]
+    #[doc = "Bits 0:2 - Configure pin function."]
     #[inline]
     pub fn func(&mut self) -> _FUNCW {
         _FUNCW { w: self }
     }
-    #[doc = "Bits 3:4 - Pin function mode (on-chip pull-up/pull-down resistor control)"]
+    #[doc = "Bits 3:4 - Pin function mode (on-chip pull-up/pull-down resistor control)."]
     #[inline]
     pub fn mode(&mut self) -> _MODEW {
         _MODEW { w: self }
     }
-    #[doc = "Bit 5 - Hysteresis"]
+    #[doc = "Bit 5 - Hysteresis."]
     #[inline]
     pub fn hysteresis(&mut self) -> _HYSTERESISW {
         _HYSTERESISW { w: self }
     }
-    #[doc = "Bit 10 - Selects pseudo open-drain mode"]
+    #[doc = "Bit 10 - Selects pseudo open-drain mode."]
     #[inline]
     pub fn open_drain(&mut self) -> _OPEN_DRAINW {
         _OPEN_DRAINW { w: self }

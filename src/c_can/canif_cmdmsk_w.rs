@@ -766,7 +766,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Access data bytes 4-7"]
+    #[doc = "Bit 0 - Access data bytes 4-7."]
     #[inline]
     pub fn data_b(&self) -> DATA_BR {
         DATA_BR::_from({
@@ -775,7 +775,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Access data bytes 0-3"]
+    #[doc = "Bit 1 - Access data bytes 0-3."]
     #[inline]
     pub fn data_a(&self) -> DATA_AR {
         DATA_AR::_from({
@@ -784,7 +784,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Access transmission request bit"]
+    #[doc = "Bit 2 - Access transmission request bit."]
     #[inline]
     pub fn txrqst(&self) -> TXRQSTR {
         TXRQSTR::_from({
@@ -793,7 +793,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - This bit is ignored in the write direction"]
+    #[doc = "Bit 3 - This bit is ignored in the write direction."]
     #[inline]
     pub fn clrintpnd(&self) -> CLRINTPNDR {
         let bits = {
@@ -803,7 +803,7 @@ impl R {
         };
         CLRINTPNDR { bits }
     }
-    #[doc = "Bit 4 - Access control bits"]
+    #[doc = "Bit 4 - Access control bits."]
     #[inline]
     pub fn ctrl(&self) -> CTRLR {
         CTRLR::_from({
@@ -812,7 +812,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Access arbitration bits"]
+    #[doc = "Bit 5 - Access arbitration bits."]
     #[inline]
     pub fn arb(&self) -> ARBR {
         ARBR::_from({
@@ -821,7 +821,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - Access mask bits"]
+    #[doc = "Bit 6 - Access mask bits."]
     #[inline]
     pub fn mask(&self) -> MASKR {
         MASKR::_from({
@@ -830,7 +830,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Write transfer Transfer data from the selected message buffer registers to the message object addressed by the command request register CANIFn_CMDREQ"]
+    #[doc = "Bit 7 - Write transfer Transfer data from the selected message buffer registers to the message object addressed by the command request register CANIFn_CMDREQ."]
     #[inline]
     pub fn wr_rd(&self) -> WR_RDR {
         let bits = {
@@ -853,42 +853,42 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Access data bytes 4-7"]
+    #[doc = "Bit 0 - Access data bytes 4-7."]
     #[inline]
     pub fn data_b(&mut self) -> _DATA_BW {
         _DATA_BW { w: self }
     }
-    #[doc = "Bit 1 - Access data bytes 0-3"]
+    #[doc = "Bit 1 - Access data bytes 0-3."]
     #[inline]
     pub fn data_a(&mut self) -> _DATA_AW {
         _DATA_AW { w: self }
     }
-    #[doc = "Bit 2 - Access transmission request bit"]
+    #[doc = "Bit 2 - Access transmission request bit."]
     #[inline]
     pub fn txrqst(&mut self) -> _TXRQSTW {
         _TXRQSTW { w: self }
     }
-    #[doc = "Bit 3 - This bit is ignored in the write direction"]
+    #[doc = "Bit 3 - This bit is ignored in the write direction."]
     #[inline]
     pub fn clrintpnd(&mut self) -> _CLRINTPNDW {
         _CLRINTPNDW { w: self }
     }
-    #[doc = "Bit 4 - Access control bits"]
+    #[doc = "Bit 4 - Access control bits."]
     #[inline]
     pub fn ctrl(&mut self) -> _CTRLW {
         _CTRLW { w: self }
     }
-    #[doc = "Bit 5 - Access arbitration bits"]
+    #[doc = "Bit 5 - Access arbitration bits."]
     #[inline]
     pub fn arb(&mut self) -> _ARBW {
         _ARBW { w: self }
     }
-    #[doc = "Bit 6 - Access mask bits"]
+    #[doc = "Bit 6 - Access mask bits."]
     #[inline]
     pub fn mask(&mut self) -> _MASKW {
         _MASKW { w: self }
     }
-    #[doc = "Bit 7 - Write transfer Transfer data from the selected message buffer registers to the message object addressed by the command request register CANIFn_CMDREQ"]
+    #[doc = "Bit 7 - Write transfer Transfer data from the selected message buffer registers to the message object addressed by the command request register CANIFn_CMDREQ."]
     #[inline]
     pub fn wr_rd(&mut self) -> _WR_RDW {
         _WR_RDW { w: self }

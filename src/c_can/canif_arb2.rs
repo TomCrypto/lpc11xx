@@ -389,7 +389,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:12 - Message identifier 29-bit identifier (extended frame) 11-bit identifier (standard frame)"]
+    #[doc = "Bits 0:12 - Message identifier 29-bit identifier (extended frame) 11-bit identifier (standard frame)."]
     #[inline]
     pub fn id_28_16(&self) -> ID_28_16R {
         let bits = {
@@ -399,7 +399,7 @@ impl R {
         };
         ID_28_16R { bits }
     }
-    #[doc = "Bit 13 - Message direction"]
+    #[doc = "Bit 13 - Message direction."]
     #[inline]
     pub fn dir(&self) -> DIRR {
         DIRR::_from({
@@ -408,7 +408,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 14 - Extend identifier"]
+    #[doc = "Bit 14 - Extend identifier."]
     #[inline]
     pub fn xtd(&self) -> XTDR {
         XTDR::_from({
@@ -417,7 +417,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 15 - Message valid The CPU must reset the MSGVAL bit of all unused Messages Objects during the initialization before it resets bit INIT in the CAN Control Register. This bit must also be reset before the identifier ID28:0, the control bits XTD, DIR, or the Data Length Code DLC3:0 are modified, or if the Messages Object is no longer required"]
+    #[doc = "Bit 15 - Message valid The CPU must reset the MSGVAL bit of all unused Messages Objects during the initialization before it resets bit INIT in the CAN Control Register. This bit must also be reset before the identifier ID28:0, the control bits XTD, DIR, or the Data Length Code DLC3:0 are modified, or if the Messages Object is no longer required."]
     #[inline]
     pub fn msgval(&self) -> MSGVALR {
         MSGVALR::_from({
@@ -439,22 +439,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:12 - Message identifier 29-bit identifier (extended frame) 11-bit identifier (standard frame)"]
+    #[doc = "Bits 0:12 - Message identifier 29-bit identifier (extended frame) 11-bit identifier (standard frame)."]
     #[inline]
     pub fn id_28_16(&mut self) -> _ID_28_16W {
         _ID_28_16W { w: self }
     }
-    #[doc = "Bit 13 - Message direction"]
+    #[doc = "Bit 13 - Message direction."]
     #[inline]
     pub fn dir(&mut self) -> _DIRW {
         _DIRW { w: self }
     }
-    #[doc = "Bit 14 - Extend identifier"]
+    #[doc = "Bit 14 - Extend identifier."]
     #[inline]
     pub fn xtd(&mut self) -> _XTDW {
         _XTDW { w: self }
     }
-    #[doc = "Bit 15 - Message valid The CPU must reset the MSGVAL bit of all unused Messages Objects during the initialization before it resets bit INIT in the CAN Control Register. This bit must also be reset before the identifier ID28:0, the control bits XTD, DIR, or the Data Length Code DLC3:0 are modified, or if the Messages Object is no longer required"]
+    #[doc = "Bit 15 - Message valid The CPU must reset the MSGVAL bit of all unused Messages Objects during the initialization before it resets bit INIT in the CAN Control Register. This bit must also be reset before the identifier ID28:0, the control bits XTD, DIR, or the Data Length Code DLC3:0 are modified, or if the Messages Object is no longer required."]
     #[inline]
     pub fn msgval(&mut self) -> _MSGVALW {
         _MSGVALW { w: self }

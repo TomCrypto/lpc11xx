@@ -74,7 +74,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:7 - Data values that have been received or are to be transmitted"]
+    #[doc = "Bits 0:7 - Data values that have been received or are to be transmitted."]
     #[inline]
     pub fn data(&self) -> DATAR {
         let bits = {
@@ -97,7 +97,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:7 - Data values that have been received or are to be transmitted"]
+    #[doc = "Bits 0:7 - Data values that have been received or are to be transmitted."]
     #[inline]
     pub fn data(&mut self) -> _DATAW {
         _DATAW { w: self }

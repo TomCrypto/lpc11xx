@@ -28,7 +28,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:31 - Timer counter capture value"]
+    #[doc = "Bits 0:31 - Timer counter capture value."]
     #[inline]
     pub fn cap(&self) -> CAPR {
         let bits = {

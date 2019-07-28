@@ -137,7 +137,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - Selects pin location for DCD function"]
+    #[doc = "Bits 0:1 - Selects pin location for DCD function."]
     #[inline]
     pub fn dcdloc(&self) -> DCDLOCR {
         DCDLOCR::_from({
@@ -159,7 +159,7 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - Selects pin location for DCD function"]
+    #[doc = "Bits 0:1 - Selects pin location for DCD function."]
     #[inline]
     pub fn dcdloc(&mut self) -> _DCDLOCW {
         _DCDLOCW { w: self }

@@ -678,7 +678,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Capture on CT16Bn_CAP0 rising edge: a sequence of 0 then 1 on CT16Bn_CAP0 will cause CR0 to be loaded with the contents of TC"]
+    #[doc = "Bit 0 - Capture on CT16Bn_CAP0 rising edge: a sequence of 0 then 1 on CT16Bn_CAP0 will cause CR0 to be loaded with the contents of TC."]
     #[inline]
     pub fn cap0re(&self) -> CAP0RER {
         CAP0RER::_from({
@@ -687,7 +687,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Capture on CT16Bn_CAP0 falling edge: a sequence of 1 then 0 on CT16Bn_CAP0 will cause CR0 to be loaded with the contents of TC"]
+    #[doc = "Bit 1 - Capture on CT16Bn_CAP0 falling edge: a sequence of 1 then 0 on CT16Bn_CAP0 will cause CR0 to be loaded with the contents of TC."]
     #[inline]
     pub fn cap0fe(&self) -> CAP0FER {
         CAP0FER::_from({
@@ -696,7 +696,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Interrupt on CT16Bn_CAP0 event: a CR0 load due to a CT16Bn_CAP0 event will generate an interrupt"]
+    #[doc = "Bit 2 - Interrupt on CT16Bn_CAP0 event: a CR0 load due to a CT16Bn_CAP0 event will generate an interrupt."]
     #[inline]
     pub fn cap0i(&self) -> CAP0IR {
         CAP0IR::_from({
@@ -705,7 +705,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Capture on CT16Bn_CAP1 rising edge: a sequence of 0 then 1 on CT16Bn_CAP1 will cause CR1 to be loaded with the contents of TC"]
+    #[doc = "Bit 3 - Capture on CT16Bn_CAP1 rising edge: a sequence of 0 then 1 on CT16Bn_CAP1 will cause CR1 to be loaded with the contents of TC."]
     #[inline]
     pub fn cap1re(&self) -> CAP1RER {
         CAP1RER::_from({
@@ -714,7 +714,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Capture on CT16Bn_CAP1 falling edge: a sequence of 1 then 0 on CT16Bn_CAP1 will cause CR1 to be loaded with the contents of TC"]
+    #[doc = "Bit 4 - Capture on CT16Bn_CAP1 falling edge: a sequence of 1 then 0 on CT16Bn_CAP1 will cause CR1 to be loaded with the contents of TC."]
     #[inline]
     pub fn cap1fe(&self) -> CAP1FER {
         CAP1FER::_from({
@@ -723,7 +723,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Interrupt on CT16Bn_CAP1 event: a CR1 load due to a CT16Bn_CAP1 event will generate an interrupt"]
+    #[doc = "Bit 5 - Interrupt on CT16Bn_CAP1 event: a CR1 load due to a CT16Bn_CAP1 event will generate an interrupt."]
     #[inline]
     pub fn cap1i(&self) -> CAP1IR {
         CAP1IR::_from({
@@ -745,32 +745,32 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Capture on CT16Bn_CAP0 rising edge: a sequence of 0 then 1 on CT16Bn_CAP0 will cause CR0 to be loaded with the contents of TC"]
+    #[doc = "Bit 0 - Capture on CT16Bn_CAP0 rising edge: a sequence of 0 then 1 on CT16Bn_CAP0 will cause CR0 to be loaded with the contents of TC."]
     #[inline]
     pub fn cap0re(&mut self) -> _CAP0REW {
         _CAP0REW { w: self }
     }
-    #[doc = "Bit 1 - Capture on CT16Bn_CAP0 falling edge: a sequence of 1 then 0 on CT16Bn_CAP0 will cause CR0 to be loaded with the contents of TC"]
+    #[doc = "Bit 1 - Capture on CT16Bn_CAP0 falling edge: a sequence of 1 then 0 on CT16Bn_CAP0 will cause CR0 to be loaded with the contents of TC."]
     #[inline]
     pub fn cap0fe(&mut self) -> _CAP0FEW {
         _CAP0FEW { w: self }
     }
-    #[doc = "Bit 2 - Interrupt on CT16Bn_CAP0 event: a CR0 load due to a CT16Bn_CAP0 event will generate an interrupt"]
+    #[doc = "Bit 2 - Interrupt on CT16Bn_CAP0 event: a CR0 load due to a CT16Bn_CAP0 event will generate an interrupt."]
     #[inline]
     pub fn cap0i(&mut self) -> _CAP0IW {
         _CAP0IW { w: self }
     }
-    #[doc = "Bit 3 - Capture on CT16Bn_CAP1 rising edge: a sequence of 0 then 1 on CT16Bn_CAP1 will cause CR1 to be loaded with the contents of TC"]
+    #[doc = "Bit 3 - Capture on CT16Bn_CAP1 rising edge: a sequence of 0 then 1 on CT16Bn_CAP1 will cause CR1 to be loaded with the contents of TC."]
     #[inline]
     pub fn cap1re(&mut self) -> _CAP1REW {
         _CAP1REW { w: self }
     }
-    #[doc = "Bit 4 - Capture on CT16Bn_CAP1 falling edge: a sequence of 1 then 0 on CT16Bn_CAP1 will cause CR1 to be loaded with the contents of TC"]
+    #[doc = "Bit 4 - Capture on CT16Bn_CAP1 falling edge: a sequence of 1 then 0 on CT16Bn_CAP1 will cause CR1 to be loaded with the contents of TC."]
     #[inline]
     pub fn cap1fe(&mut self) -> _CAP1FEW {
         _CAP1FEW { w: self }
     }
-    #[doc = "Bit 5 - Interrupt on CT16Bn_CAP1 event: a CR1 load due to a CT16Bn_CAP1 event will generate an interrupt"]
+    #[doc = "Bit 5 - Interrupt on CT16Bn_CAP1 event: a CR1 load due to a CT16Bn_CAP1 event will generate an interrupt."]
     #[inline]
     pub fn cap1i(&mut self) -> _CAP1IW {
         _CAP1IW { w: self }

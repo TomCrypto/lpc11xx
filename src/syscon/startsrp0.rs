@@ -290,7 +290,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending"]
+    #[doc = "Bit 0 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending."]
     #[inline]
     pub fn srpio0_0(&self) -> SRPIO0_0R {
         let bits = {
@@ -300,7 +300,7 @@ impl R {
         };
         SRPIO0_0R { bits }
     }
-    #[doc = "Bit 1 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending"]
+    #[doc = "Bit 1 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending."]
     #[inline]
     pub fn srpio0_1(&self) -> SRPIO0_1R {
         let bits = {
@@ -310,7 +310,7 @@ impl R {
         };
         SRPIO0_1R { bits }
     }
-    #[doc = "Bit 2 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending"]
+    #[doc = "Bit 2 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending."]
     #[inline]
     pub fn srpio0_2(&self) -> SRPIO0_2R {
         let bits = {
@@ -320,7 +320,7 @@ impl R {
         };
         SRPIO0_2R { bits }
     }
-    #[doc = "Bit 3 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending"]
+    #[doc = "Bit 3 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending."]
     #[inline]
     pub fn srpio0_3(&self) -> SRPIO0_3R {
         let bits = {
@@ -330,7 +330,7 @@ impl R {
         };
         SRPIO0_3R { bits }
     }
-    #[doc = "Bit 4 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending"]
+    #[doc = "Bit 4 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending."]
     #[inline]
     pub fn srpio0_4(&self) -> SRPIO0_4R {
         let bits = {
@@ -340,7 +340,7 @@ impl R {
         };
         SRPIO0_4R { bits }
     }
-    #[doc = "Bit 5 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending"]
+    #[doc = "Bit 5 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending."]
     #[inline]
     pub fn srpio0_5(&self) -> SRPIO0_5R {
         let bits = {
@@ -350,7 +350,7 @@ impl R {
         };
         SRPIO0_5R { bits }
     }
-    #[doc = "Bit 6 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending"]
+    #[doc = "Bit 6 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending."]
     #[inline]
     pub fn srpio0_6(&self) -> SRPIO0_6R {
         let bits = {
@@ -360,7 +360,7 @@ impl R {
         };
         SRPIO0_6R { bits }
     }
-    #[doc = "Bit 7 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending"]
+    #[doc = "Bit 7 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending."]
     #[inline]
     pub fn srpio0_7(&self) -> SRPIO0_7R {
         let bits = {
@@ -370,7 +370,7 @@ impl R {
         };
         SRPIO0_7R { bits }
     }
-    #[doc = "Bit 8 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending"]
+    #[doc = "Bit 8 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending."]
     #[inline]
     pub fn srpio0_8(&self) -> SRPIO0_8R {
         let bits = {
@@ -380,7 +380,7 @@ impl R {
         };
         SRPIO0_8R { bits }
     }
-    #[doc = "Bit 9 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending"]
+    #[doc = "Bit 9 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending."]
     #[inline]
     pub fn srpio0_9(&self) -> SRPIO0_9R {
         let bits = {
@@ -390,7 +390,7 @@ impl R {
         };
         SRPIO0_9R { bits }
     }
-    #[doc = "Bit 10 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending"]
+    #[doc = "Bit 10 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending."]
     #[inline]
     pub fn srpio0_10(&self) -> SRPIO0_10R {
         let bits = {
@@ -400,7 +400,7 @@ impl R {
         };
         SRPIO0_10R { bits }
     }
-    #[doc = "Bit 11 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending"]
+    #[doc = "Bit 11 - Start signal status for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = No start signal received. 1 = Start signal pending."]
     #[inline]
     pub fn srpio0_11(&self) -> SRPIO0_11R {
         let bits = {
@@ -410,7 +410,7 @@ impl R {
         };
         SRPIO0_11R { bits }
     }
-    #[doc = "Bit 12 - Start signal status for start logic input PIO1_0 0 = No start signal received. 1 = Start signal pending"]
+    #[doc = "Bit 12 - Start signal status for start logic input PIO1_0 0 = No start signal received. 1 = Start signal pending."]
     #[inline]
     pub fn srpio1_0(&self) -> SRPIO1_0R {
         let bits = {

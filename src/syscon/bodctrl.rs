@@ -397,7 +397,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bits 0:1 - BOD reset level"]
+    #[doc = "Bits 0:1 - BOD reset level."]
     #[inline]
     pub fn bodrstlev(&self) -> BODRSTLEVR {
         BODRSTLEVR::_from({
@@ -406,7 +406,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 2:3 - BOD interrupt level"]
+    #[doc = "Bits 2:3 - BOD interrupt level."]
     #[inline]
     pub fn bodintval(&self) -> BODINTVALR {
         BODINTVALR::_from({
@@ -415,7 +415,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bit 4 - BOD reset enable"]
+    #[doc = "Bit 4 - BOD reset enable."]
     #[inline]
     pub fn bodrstena(&self) -> BODRSTENAR {
         BODRSTENAR::_from({
@@ -437,17 +437,17 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bits 0:1 - BOD reset level"]
+    #[doc = "Bits 0:1 - BOD reset level."]
     #[inline]
     pub fn bodrstlev(&mut self) -> _BODRSTLEVW {
         _BODRSTLEVW { w: self }
     }
-    #[doc = "Bits 2:3 - BOD interrupt level"]
+    #[doc = "Bits 2:3 - BOD interrupt level."]
     #[inline]
     pub fn bodintval(&mut self) -> _BODINTVALW {
         _BODINTVALW { w: self }
     }
-    #[doc = "Bit 4 - BOD reset enable"]
+    #[doc = "Bit 4 - BOD reset enable."]
     #[inline]
     pub fn bodrstena(&mut self) -> _BODRSTENAW {
         _BODRSTENAW { w: self }

@@ -1308,7 +1308,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Interrupt on MR0: an interrupt is generated when MR0 matches the value in the TC"]
+    #[doc = "Bit 0 - Interrupt on MR0: an interrupt is generated when MR0 matches the value in the TC."]
     #[inline]
     pub fn mr0i(&self) -> MR0IR {
         MR0IR::_from({
@@ -1317,7 +1317,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - Reset on MR0: the TC will be reset if MR0 matches it"]
+    #[doc = "Bit 1 - Reset on MR0: the TC will be reset if MR0 matches it."]
     #[inline]
     pub fn mr0r(&self) -> MR0RR {
         MR0RR::_from({
@@ -1326,7 +1326,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Stop on MR0: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR0 matches the TC"]
+    #[doc = "Bit 2 - Stop on MR0: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR0 matches the TC."]
     #[inline]
     pub fn mr0s(&self) -> MR0SR {
         MR0SR::_from({
@@ -1335,7 +1335,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Interrupt on MR1: an interrupt is generated when MR1 matches the value in the TC"]
+    #[doc = "Bit 3 - Interrupt on MR1: an interrupt is generated when MR1 matches the value in the TC."]
     #[inline]
     pub fn mr1i(&self) -> MR1IR {
         MR1IR::_from({
@@ -1344,7 +1344,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 4 - Reset on MR1: the TC will be reset if MR1 matches it"]
+    #[doc = "Bit 4 - Reset on MR1: the TC will be reset if MR1 matches it."]
     #[inline]
     pub fn mr1r(&self) -> MR1RR {
         MR1RR::_from({
@@ -1353,7 +1353,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 5 - Stop on MR1: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR1 matches the TC"]
+    #[doc = "Bit 5 - Stop on MR1: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR1 matches the TC."]
     #[inline]
     pub fn mr1s(&self) -> MR1SR {
         MR1SR::_from({
@@ -1362,7 +1362,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 6 - Interrupt on MR2: an interrupt is generated when MR2 matches the value in the TC"]
+    #[doc = "Bit 6 - Interrupt on MR2: an interrupt is generated when MR2 matches the value in the TC."]
     #[inline]
     pub fn mr2i(&self) -> MR2IR {
         MR2IR::_from({
@@ -1371,7 +1371,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 7 - Reset on MR2: the TC will be reset if MR2 matches it"]
+    #[doc = "Bit 7 - Reset on MR2: the TC will be reset if MR2 matches it."]
     #[inline]
     pub fn mr2r(&self) -> MR2RR {
         MR2RR::_from({
@@ -1380,7 +1380,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 8 - Stop on MR2: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR2 matches the TC"]
+    #[doc = "Bit 8 - Stop on MR2: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR2 matches the TC."]
     #[inline]
     pub fn mr2s(&self) -> MR2SR {
         MR2SR::_from({
@@ -1389,7 +1389,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 9 - Interrupt on MR3: an interrupt is generated when MR3 matches the value in the TC"]
+    #[doc = "Bit 9 - Interrupt on MR3: an interrupt is generated when MR3 matches the value in the TC."]
     #[inline]
     pub fn mr3i(&self) -> MR3IR {
         MR3IR::_from({
@@ -1398,7 +1398,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 10 - Reset on MR3: the TC will be reset if MR3 matches it"]
+    #[doc = "Bit 10 - Reset on MR3: the TC will be reset if MR3 matches it."]
     #[inline]
     pub fn mr3r(&self) -> MR3RR {
         MR3RR::_from({
@@ -1407,7 +1407,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 11 - Stop on MR3: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR3 matches the TC"]
+    #[doc = "Bit 11 - Stop on MR3: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR3 matches the TC."]
     #[inline]
     pub fn mr3s(&self) -> MR3SR {
         MR3SR::_from({
@@ -1429,62 +1429,62 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Interrupt on MR0: an interrupt is generated when MR0 matches the value in the TC"]
+    #[doc = "Bit 0 - Interrupt on MR0: an interrupt is generated when MR0 matches the value in the TC."]
     #[inline]
     pub fn mr0i(&mut self) -> _MR0IW {
         _MR0IW { w: self }
     }
-    #[doc = "Bit 1 - Reset on MR0: the TC will be reset if MR0 matches it"]
+    #[doc = "Bit 1 - Reset on MR0: the TC will be reset if MR0 matches it."]
     #[inline]
     pub fn mr0r(&mut self) -> _MR0RW {
         _MR0RW { w: self }
     }
-    #[doc = "Bit 2 - Stop on MR0: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR0 matches the TC"]
+    #[doc = "Bit 2 - Stop on MR0: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR0 matches the TC."]
     #[inline]
     pub fn mr0s(&mut self) -> _MR0SW {
         _MR0SW { w: self }
     }
-    #[doc = "Bit 3 - Interrupt on MR1: an interrupt is generated when MR1 matches the value in the TC"]
+    #[doc = "Bit 3 - Interrupt on MR1: an interrupt is generated when MR1 matches the value in the TC."]
     #[inline]
     pub fn mr1i(&mut self) -> _MR1IW {
         _MR1IW { w: self }
     }
-    #[doc = "Bit 4 - Reset on MR1: the TC will be reset if MR1 matches it"]
+    #[doc = "Bit 4 - Reset on MR1: the TC will be reset if MR1 matches it."]
     #[inline]
     pub fn mr1r(&mut self) -> _MR1RW {
         _MR1RW { w: self }
     }
-    #[doc = "Bit 5 - Stop on MR1: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR1 matches the TC"]
+    #[doc = "Bit 5 - Stop on MR1: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR1 matches the TC."]
     #[inline]
     pub fn mr1s(&mut self) -> _MR1SW {
         _MR1SW { w: self }
     }
-    #[doc = "Bit 6 - Interrupt on MR2: an interrupt is generated when MR2 matches the value in the TC"]
+    #[doc = "Bit 6 - Interrupt on MR2: an interrupt is generated when MR2 matches the value in the TC."]
     #[inline]
     pub fn mr2i(&mut self) -> _MR2IW {
         _MR2IW { w: self }
     }
-    #[doc = "Bit 7 - Reset on MR2: the TC will be reset if MR2 matches it"]
+    #[doc = "Bit 7 - Reset on MR2: the TC will be reset if MR2 matches it."]
     #[inline]
     pub fn mr2r(&mut self) -> _MR2RW {
         _MR2RW { w: self }
     }
-    #[doc = "Bit 8 - Stop on MR2: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR2 matches the TC"]
+    #[doc = "Bit 8 - Stop on MR2: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR2 matches the TC."]
     #[inline]
     pub fn mr2s(&mut self) -> _MR2SW {
         _MR2SW { w: self }
     }
-    #[doc = "Bit 9 - Interrupt on MR3: an interrupt is generated when MR3 matches the value in the TC"]
+    #[doc = "Bit 9 - Interrupt on MR3: an interrupt is generated when MR3 matches the value in the TC."]
     #[inline]
     pub fn mr3i(&mut self) -> _MR3IW {
         _MR3IW { w: self }
     }
-    #[doc = "Bit 10 - Reset on MR3: the TC will be reset if MR3 matches it"]
+    #[doc = "Bit 10 - Reset on MR3: the TC will be reset if MR3 matches it."]
     #[inline]
     pub fn mr3r(&mut self) -> _MR3RW {
         _MR3RW { w: self }
     }
-    #[doc = "Bit 11 - Stop on MR3: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR3 matches the TC"]
+    #[doc = "Bit 11 - Stop on MR3: the TC and PC will be stopped and TCR\\[0\\] will be set to 0 if MR3 matches the TC."]
     #[inline]
     pub fn mr3s(&mut self) -> _MR3SW {
         _MR3SW { w: self }

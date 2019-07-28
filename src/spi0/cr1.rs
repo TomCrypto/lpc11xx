@@ -407,7 +407,7 @@ impl R {
     pub fn bits(&self) -> u32 {
         self.bits
     }
-    #[doc = "Bit 0 - Loop Back Mode"]
+    #[doc = "Bit 0 - Loop Back Mode."]
     #[inline]
     pub fn lbm(&self) -> LBMR {
         LBMR::_from({
@@ -416,7 +416,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 1 - SPI Enable"]
+    #[doc = "Bit 1 - SPI Enable."]
     #[inline]
     pub fn sse(&self) -> SSER {
         SSER::_from({
@@ -425,7 +425,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 2 - Master/Slave Mode.This bit can only be written when the SSE bit is 0"]
+    #[doc = "Bit 2 - Master/Slave Mode.This bit can only be written when the SSE bit is 0."]
     #[inline]
     pub fn ms(&self) -> MSR {
         MSR::_from({
@@ -434,7 +434,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) != 0
         })
     }
-    #[doc = "Bit 3 - Slave Output Disable. This bit is relevant only in slave mode (MS = 1). If it is 1, this blocks this SPI controller from driving the transmit data line (MISO)"]
+    #[doc = "Bit 3 - Slave Output Disable. This bit is relevant only in slave mode (MS = 1). If it is 1, this blocks this SPI controller from driving the transmit data line (MISO)."]
     #[inline]
     pub fn sod(&self) -> SODR {
         let bits = {
@@ -457,22 +457,22 @@ impl W {
         self.bits = bits;
         self
     }
-    #[doc = "Bit 0 - Loop Back Mode"]
+    #[doc = "Bit 0 - Loop Back Mode."]
     #[inline]
     pub fn lbm(&mut self) -> _LBMW {
         _LBMW { w: self }
     }
-    #[doc = "Bit 1 - SPI Enable"]
+    #[doc = "Bit 1 - SPI Enable."]
     #[inline]
     pub fn sse(&mut self) -> _SSEW {
         _SSEW { w: self }
     }
-    #[doc = "Bit 2 - Master/Slave Mode.This bit can only be written when the SSE bit is 0"]
+    #[doc = "Bit 2 - Master/Slave Mode.This bit can only be written when the SSE bit is 0."]
     #[inline]
     pub fn ms(&mut self) -> _MSW {
         _MSW { w: self }
     }
-    #[doc = "Bit 3 - Slave Output Disable. This bit is relevant only in slave mode (MS = 1). If it is 1, this blocks this SPI controller from driving the transmit data line (MISO)"]
+    #[doc = "Bit 3 - Slave Output Disable. This bit is relevant only in slave mode (MS = 1). If it is 1, this blocks this SPI controller from driving the transmit data line (MISO)."]
     #[inline]
     pub fn sod(&mut self) -> _SODW {
         _SODW { w: self }
