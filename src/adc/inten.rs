@@ -43,10 +43,10 @@ impl super::INTEN {
     }
 }
 #[doc = r" Value of the field"]
-pub struct ADINTENNR {
+pub struct ADINTENR {
     bits: u8,
 }
-impl ADINTENNR {
+impl ADINTENR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
@@ -75,13 +75,13 @@ impl ADGINTENR {
     }
 }
 #[doc = r" Proxy"]
-pub struct _ADINTENNW<'a> {
+pub struct _ADINTENW<'a> {
     w: &'a mut W,
 }
-impl<'a> _ADINTENNW<'a> {
+impl<'a> _ADINTENW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u32) << OFFSET);
@@ -120,13 +120,13 @@ impl R {
     }
     #[doc = "Bits 0:7 - These bits allow control over which A/D channels generate interrupts for conversion completion. When bit 0 is one, completion of a conversion on A/D channel 0 will generate an interrupt, when bit 1 is one, completion of a conversion on A/D channel 1 will generate an interrupt, etc"]
     #[inline]
-    pub fn adintenn(&self) -> ADINTENNR {
+    pub fn adinten(&self) -> ADINTENR {
         let bits = {
             const MASK: u8 = 255;
             const OFFSET: u8 = 0;
             ((self.bits >> OFFSET) & MASK as u32) as u8
         };
-        ADINTENNR { bits }
+        ADINTENR { bits }
     }
     #[doc = "Bit 8 - When 1, enables the global DONE flag in ADDR to generate an interrupt. When 0, only the individual A/D channels enabled by ADINTEN 7:0 will generate interrupts"]
     #[inline]
@@ -153,8 +153,8 @@ impl W {
     }
     #[doc = "Bits 0:7 - These bits allow control over which A/D channels generate interrupts for conversion completion. When bit 0 is one, completion of a conversion on A/D channel 0 will generate an interrupt, when bit 1 is one, completion of a conversion on A/D channel 1 will generate an interrupt, etc"]
     #[inline]
-    pub fn adintenn(&mut self) -> _ADINTENNW {
-        _ADINTENNW { w: self }
+    pub fn adinten(&mut self) -> _ADINTENW {
+        _ADINTENW { w: self }
     }
     #[doc = "Bit 8 - When 1, enables the global DONE flag in ADDR to generate an interrupt. When 0, only the individual A/D channels enabled by ADINTEN 7:0 will generate interrupts"]
     #[inline]

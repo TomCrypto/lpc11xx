@@ -115,35 +115,35 @@ impl BURSTR {
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CLKSR {
     #[doc = "11 clocks / 10 bits"]
-    _10BIT,
+    TEN_BIT,
     #[doc = "10 clocks / 9 bits"]
-    _9BIT,
+    NINE_BIT,
     #[doc = "9 clocks / 8 bits"]
-    _8BIT,
+    EIGHT_BIT,
     #[doc = "8 clocks / 7 bits"]
-    _7BIT,
+    SEVEN_BIT,
     #[doc = "7 clocks / 6 bits"]
-    _6BIT,
+    SIX_BIT,
     #[doc = "6 clocks / 5 bits"]
-    _5BIT,
+    FIVE_BIT,
     #[doc = "5 clocks / 4 bits"]
-    _4BIT,
+    FOUR_BIT,
     #[doc = "4 clocks / 3 bits"]
-    _3BIT,
+    THREE_BIT,
 }
 impl CLKSR {
     #[doc = r" Value of the field as raw bits"]
     #[inline]
     pub fn bits(&self) -> u8 {
         match *self {
-            CLKSR::_10BIT => 0,
-            CLKSR::_9BIT => 1,
-            CLKSR::_8BIT => 2,
-            CLKSR::_7BIT => 3,
-            CLKSR::_6BIT => 4,
-            CLKSR::_5BIT => 5,
-            CLKSR::_4BIT => 6,
-            CLKSR::_3BIT => 7,
+            CLKSR::TEN_BIT => 0,
+            CLKSR::NINE_BIT => 1,
+            CLKSR::EIGHT_BIT => 2,
+            CLKSR::SEVEN_BIT => 3,
+            CLKSR::SIX_BIT => 4,
+            CLKSR::FIVE_BIT => 5,
+            CLKSR::FOUR_BIT => 6,
+            CLKSR::THREE_BIT => 7,
         }
     }
     #[allow(missing_docs)]
@@ -151,56 +151,56 @@ impl CLKSR {
     #[inline]
     pub fn _from(value: u8) -> CLKSR {
         match value {
-            0 => CLKSR::_10BIT,
-            1 => CLKSR::_9BIT,
-            2 => CLKSR::_8BIT,
-            3 => CLKSR::_7BIT,
-            4 => CLKSR::_6BIT,
-            5 => CLKSR::_5BIT,
-            6 => CLKSR::_4BIT,
-            7 => CLKSR::_3BIT,
+            0 => CLKSR::TEN_BIT,
+            1 => CLKSR::NINE_BIT,
+            2 => CLKSR::EIGHT_BIT,
+            3 => CLKSR::SEVEN_BIT,
+            4 => CLKSR::SIX_BIT,
+            5 => CLKSR::FIVE_BIT,
+            6 => CLKSR::FOUR_BIT,
+            7 => CLKSR::THREE_BIT,
             _ => unreachable!(),
         }
     }
-    #[doc = "Checks if the value of the field is `_10BIT`"]
+    #[doc = "Checks if the value of the field is `TEN_BIT`"]
     #[inline]
-    pub fn is_10bit(&self) -> bool {
-        *self == CLKSR::_10BIT
+    pub fn is_ten_bit(&self) -> bool {
+        *self == CLKSR::TEN_BIT
     }
-    #[doc = "Checks if the value of the field is `_9BIT`"]
+    #[doc = "Checks if the value of the field is `NINE_BIT`"]
     #[inline]
-    pub fn is_9bit(&self) -> bool {
-        *self == CLKSR::_9BIT
+    pub fn is_nine_bit(&self) -> bool {
+        *self == CLKSR::NINE_BIT
     }
-    #[doc = "Checks if the value of the field is `_8BIT`"]
+    #[doc = "Checks if the value of the field is `EIGHT_BIT`"]
     #[inline]
-    pub fn is_8bit(&self) -> bool {
-        *self == CLKSR::_8BIT
+    pub fn is_eight_bit(&self) -> bool {
+        *self == CLKSR::EIGHT_BIT
     }
-    #[doc = "Checks if the value of the field is `_7BIT`"]
+    #[doc = "Checks if the value of the field is `SEVEN_BIT`"]
     #[inline]
-    pub fn is_7bit(&self) -> bool {
-        *self == CLKSR::_7BIT
+    pub fn is_seven_bit(&self) -> bool {
+        *self == CLKSR::SEVEN_BIT
     }
-    #[doc = "Checks if the value of the field is `_6BIT`"]
+    #[doc = "Checks if the value of the field is `SIX_BIT`"]
     #[inline]
-    pub fn is_6bit(&self) -> bool {
-        *self == CLKSR::_6BIT
+    pub fn is_six_bit(&self) -> bool {
+        *self == CLKSR::SIX_BIT
     }
-    #[doc = "Checks if the value of the field is `_5BIT`"]
+    #[doc = "Checks if the value of the field is `FIVE_BIT`"]
     #[inline]
-    pub fn is_5bit(&self) -> bool {
-        *self == CLKSR::_5BIT
+    pub fn is_five_bit(&self) -> bool {
+        *self == CLKSR::FIVE_BIT
     }
-    #[doc = "Checks if the value of the field is `_4BIT`"]
+    #[doc = "Checks if the value of the field is `FOUR_BIT`"]
     #[inline]
-    pub fn is_4bit(&self) -> bool {
-        *self == CLKSR::_4BIT
+    pub fn is_four_bit(&self) -> bool {
+        *self == CLKSR::FOUR_BIT
     }
-    #[doc = "Checks if the value of the field is `_3BIT`"]
+    #[doc = "Checks if the value of the field is `THREE_BIT`"]
     #[inline]
-    pub fn is_3bit(&self) -> bool {
-        *self == CLKSR::_3BIT
+    pub fn is_three_bit(&self) -> bool {
+        *self == CLKSR::THREE_BIT
     }
 }
 #[doc = "Possible values of the field `START`"]
@@ -211,17 +211,17 @@ pub enum STARTR {
     #[doc = "Start conversion now"]
     START,
     #[doc = "Start conversion when the edge selected by bit 27 occurs on PIO0_2/SSEL/CT16B0_CAP0"]
-    EDGEPIO0_2,
+    EDGE_ON_PIO0_2,
     #[doc = "Start conversion when the edge selected by bit 27 occurs on PIO1_5/DIR/CT32B0_CAP0"]
-    EDGEPIO1_5,
-    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT0\\[1\\]"]
-    EDGECT32B0_MAT0_1,
-    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT1\\[1\\]"]
-    EDGECT32B0_MAT1_1,
-    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT0\\[1\\]"]
-    EDGECT16B0_MAT0_1,
-    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT1\\[1\\]"]
-    EDGECT16B0_MAT1_1,
+    EDGE_ON_PIO1_5,
+    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT0"]
+    EDGE_ON_CT32B0_MAT0,
+    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT1"]
+    EDGE_ON_CT32B0_MAT1,
+    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT0"]
+    EDGE_ON_CT16B0_MAT0,
+    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT1"]
+    EDGE_ON_CT16B0_MAT1,
 }
 impl STARTR {
     #[doc = r" Value of the field as raw bits"]
@@ -230,12 +230,12 @@ impl STARTR {
         match *self {
             STARTR::STOP => 0,
             STARTR::START => 1,
-            STARTR::EDGEPIO0_2 => 2,
-            STARTR::EDGEPIO1_5 => 3,
-            STARTR::EDGECT32B0_MAT0_1 => 4,
-            STARTR::EDGECT32B0_MAT1_1 => 5,
-            STARTR::EDGECT16B0_MAT0_1 => 6,
-            STARTR::EDGECT16B0_MAT1_1 => 7,
+            STARTR::EDGE_ON_PIO0_2 => 2,
+            STARTR::EDGE_ON_PIO1_5 => 3,
+            STARTR::EDGE_ON_CT32B0_MAT0 => 4,
+            STARTR::EDGE_ON_CT32B0_MAT1 => 5,
+            STARTR::EDGE_ON_CT16B0_MAT0 => 6,
+            STARTR::EDGE_ON_CT16B0_MAT1 => 7,
         }
     }
     #[allow(missing_docs)]
@@ -245,12 +245,12 @@ impl STARTR {
         match value {
             0 => STARTR::STOP,
             1 => STARTR::START,
-            2 => STARTR::EDGEPIO0_2,
-            3 => STARTR::EDGEPIO1_5,
-            4 => STARTR::EDGECT32B0_MAT0_1,
-            5 => STARTR::EDGECT32B0_MAT1_1,
-            6 => STARTR::EDGECT16B0_MAT0_1,
-            7 => STARTR::EDGECT16B0_MAT1_1,
+            2 => STARTR::EDGE_ON_PIO0_2,
+            3 => STARTR::EDGE_ON_PIO1_5,
+            4 => STARTR::EDGE_ON_CT32B0_MAT0,
+            5 => STARTR::EDGE_ON_CT32B0_MAT1,
+            6 => STARTR::EDGE_ON_CT16B0_MAT0,
+            7 => STARTR::EDGE_ON_CT16B0_MAT1,
             _ => unreachable!(),
         }
     }
@@ -264,35 +264,35 @@ impl STARTR {
     pub fn is_start(&self) -> bool {
         *self == STARTR::START
     }
-    #[doc = "Checks if the value of the field is `EDGEPIO0_2`"]
+    #[doc = "Checks if the value of the field is `EDGE_ON_PIO0_2`"]
     #[inline]
-    pub fn is_edgepio0_2(&self) -> bool {
-        *self == STARTR::EDGEPIO0_2
+    pub fn is_edge_on_pio0_2(&self) -> bool {
+        *self == STARTR::EDGE_ON_PIO0_2
     }
-    #[doc = "Checks if the value of the field is `EDGEPIO1_5`"]
+    #[doc = "Checks if the value of the field is `EDGE_ON_PIO1_5`"]
     #[inline]
-    pub fn is_edgepio1_5(&self) -> bool {
-        *self == STARTR::EDGEPIO1_5
+    pub fn is_edge_on_pio1_5(&self) -> bool {
+        *self == STARTR::EDGE_ON_PIO1_5
     }
-    #[doc = "Checks if the value of the field is `EDGECT32B0_MAT0_1`"]
+    #[doc = "Checks if the value of the field is `EDGE_ON_CT32B0_MAT0`"]
     #[inline]
-    pub fn is_edgect32b0_mat0_1(&self) -> bool {
-        *self == STARTR::EDGECT32B0_MAT0_1
+    pub fn is_edge_on_ct32b0_mat0(&self) -> bool {
+        *self == STARTR::EDGE_ON_CT32B0_MAT0
     }
-    #[doc = "Checks if the value of the field is `EDGECT32B0_MAT1_1`"]
+    #[doc = "Checks if the value of the field is `EDGE_ON_CT32B0_MAT1`"]
     #[inline]
-    pub fn is_edgect32b0_mat1_1(&self) -> bool {
-        *self == STARTR::EDGECT32B0_MAT1_1
+    pub fn is_edge_on_ct32b0_mat1(&self) -> bool {
+        *self == STARTR::EDGE_ON_CT32B0_MAT1
     }
-    #[doc = "Checks if the value of the field is `EDGECT16B0_MAT0_1`"]
+    #[doc = "Checks if the value of the field is `EDGE_ON_CT16B0_MAT0`"]
     #[inline]
-    pub fn is_edgect16b0_mat0_1(&self) -> bool {
-        *self == STARTR::EDGECT16B0_MAT0_1
+    pub fn is_edge_on_ct16b0_mat0(&self) -> bool {
+        *self == STARTR::EDGE_ON_CT16B0_MAT0
     }
-    #[doc = "Checks if the value of the field is `EDGECT16B0_MAT1_1`"]
+    #[doc = "Checks if the value of the field is `EDGE_ON_CT16B0_MAT1`"]
     #[inline]
-    pub fn is_edgect16b0_mat1_1(&self) -> bool {
-        *self == STARTR::EDGECT16B0_MAT1_1
+    pub fn is_edge_on_ct16b0_mat1(&self) -> bool {
+        *self == STARTR::EDGE_ON_CT16B0_MAT1
     }
 }
 #[doc = "Possible values of the field `EDGE`"]
@@ -349,7 +349,7 @@ pub struct _SELW<'a> {
 impl<'a> _SELW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 0;
         self.w.bits &= !((MASK as u32) << OFFSET);
@@ -364,7 +364,7 @@ pub struct _CLKDIVW<'a> {
 impl<'a> _CLKDIVW<'a> {
     #[doc = r" Writes raw bits to the field"]
     #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+    pub fn bits(self, value: u8) -> &'a mut W {
         const MASK: u8 = 255;
         const OFFSET: u8 = 8;
         self.w.bits &= !((MASK as u32) << OFFSET);
@@ -433,21 +433,21 @@ impl<'a> _BURSTW<'a> {
 #[doc = "Values that can be written to the field `CLKS`"]
 pub enum CLKSW {
     #[doc = "11 clocks / 10 bits"]
-    _10BIT,
+    TEN_BIT,
     #[doc = "10 clocks / 9 bits"]
-    _9BIT,
+    NINE_BIT,
     #[doc = "9 clocks / 8 bits"]
-    _8BIT,
+    EIGHT_BIT,
     #[doc = "8 clocks / 7 bits"]
-    _7BIT,
+    SEVEN_BIT,
     #[doc = "7 clocks / 6 bits"]
-    _6BIT,
+    SIX_BIT,
     #[doc = "6 clocks / 5 bits"]
-    _5BIT,
+    FIVE_BIT,
     #[doc = "5 clocks / 4 bits"]
-    _4BIT,
+    FOUR_BIT,
     #[doc = "4 clocks / 3 bits"]
-    _3BIT,
+    THREE_BIT,
 }
 impl CLKSW {
     #[allow(missing_docs)]
@@ -455,14 +455,14 @@ impl CLKSW {
     #[inline]
     pub fn _bits(&self) -> u8 {
         match *self {
-            CLKSW::_10BIT => 0,
-            CLKSW::_9BIT => 1,
-            CLKSW::_8BIT => 2,
-            CLKSW::_7BIT => 3,
-            CLKSW::_6BIT => 4,
-            CLKSW::_5BIT => 5,
-            CLKSW::_4BIT => 6,
-            CLKSW::_3BIT => 7,
+            CLKSW::TEN_BIT => 0,
+            CLKSW::NINE_BIT => 1,
+            CLKSW::EIGHT_BIT => 2,
+            CLKSW::SEVEN_BIT => 3,
+            CLKSW::SIX_BIT => 4,
+            CLKSW::FIVE_BIT => 5,
+            CLKSW::FOUR_BIT => 6,
+            CLKSW::THREE_BIT => 7,
         }
     }
 }
@@ -480,43 +480,43 @@ impl<'a> _CLKSW<'a> {
     }
     #[doc = "11 clocks / 10 bits"]
     #[inline]
-    pub fn _10bit(self) -> &'a mut W {
-        self.variant(CLKSW::_10BIT)
+    pub fn ten_bit(self) -> &'a mut W {
+        self.variant(CLKSW::TEN_BIT)
     }
     #[doc = "10 clocks / 9 bits"]
     #[inline]
-    pub fn _9bit(self) -> &'a mut W {
-        self.variant(CLKSW::_9BIT)
+    pub fn nine_bit(self) -> &'a mut W {
+        self.variant(CLKSW::NINE_BIT)
     }
     #[doc = "9 clocks / 8 bits"]
     #[inline]
-    pub fn _8bit(self) -> &'a mut W {
-        self.variant(CLKSW::_8BIT)
+    pub fn eight_bit(self) -> &'a mut W {
+        self.variant(CLKSW::EIGHT_BIT)
     }
     #[doc = "8 clocks / 7 bits"]
     #[inline]
-    pub fn _7bit(self) -> &'a mut W {
-        self.variant(CLKSW::_7BIT)
+    pub fn seven_bit(self) -> &'a mut W {
+        self.variant(CLKSW::SEVEN_BIT)
     }
     #[doc = "7 clocks / 6 bits"]
     #[inline]
-    pub fn _6bit(self) -> &'a mut W {
-        self.variant(CLKSW::_6BIT)
+    pub fn six_bit(self) -> &'a mut W {
+        self.variant(CLKSW::SIX_BIT)
     }
     #[doc = "6 clocks / 5 bits"]
     #[inline]
-    pub fn _5bit(self) -> &'a mut W {
-        self.variant(CLKSW::_5BIT)
+    pub fn five_bit(self) -> &'a mut W {
+        self.variant(CLKSW::FIVE_BIT)
     }
     #[doc = "5 clocks / 4 bits"]
     #[inline]
-    pub fn _4bit(self) -> &'a mut W {
-        self.variant(CLKSW::_4BIT)
+    pub fn four_bit(self) -> &'a mut W {
+        self.variant(CLKSW::FOUR_BIT)
     }
     #[doc = "4 clocks / 3 bits"]
     #[inline]
-    pub fn _3bit(self) -> &'a mut W {
-        self.variant(CLKSW::_3BIT)
+    pub fn three_bit(self) -> &'a mut W {
+        self.variant(CLKSW::THREE_BIT)
     }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
@@ -535,17 +535,17 @@ pub enum STARTW {
     #[doc = "Start conversion now"]
     START,
     #[doc = "Start conversion when the edge selected by bit 27 occurs on PIO0_2/SSEL/CT16B0_CAP0"]
-    EDGEPIO0_2,
+    EDGE_ON_PIO0_2,
     #[doc = "Start conversion when the edge selected by bit 27 occurs on PIO1_5/DIR/CT32B0_CAP0"]
-    EDGEPIO1_5,
-    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT0\\[1\\]"]
-    EDGECT32B0_MAT0_1,
-    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT1\\[1\\]"]
-    EDGECT32B0_MAT1_1,
-    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT0\\[1\\]"]
-    EDGECT16B0_MAT0_1,
-    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT1\\[1\\]"]
-    EDGECT16B0_MAT1_1,
+    EDGE_ON_PIO1_5,
+    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT0"]
+    EDGE_ON_CT32B0_MAT0,
+    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT1"]
+    EDGE_ON_CT32B0_MAT1,
+    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT0"]
+    EDGE_ON_CT16B0_MAT0,
+    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT1"]
+    EDGE_ON_CT16B0_MAT1,
 }
 impl STARTW {
     #[allow(missing_docs)]
@@ -555,12 +555,12 @@ impl STARTW {
         match *self {
             STARTW::STOP => 0,
             STARTW::START => 1,
-            STARTW::EDGEPIO0_2 => 2,
-            STARTW::EDGEPIO1_5 => 3,
-            STARTW::EDGECT32B0_MAT0_1 => 4,
-            STARTW::EDGECT32B0_MAT1_1 => 5,
-            STARTW::EDGECT16B0_MAT0_1 => 6,
-            STARTW::EDGECT16B0_MAT1_1 => 7,
+            STARTW::EDGE_ON_PIO0_2 => 2,
+            STARTW::EDGE_ON_PIO1_5 => 3,
+            STARTW::EDGE_ON_CT32B0_MAT0 => 4,
+            STARTW::EDGE_ON_CT32B0_MAT1 => 5,
+            STARTW::EDGE_ON_CT16B0_MAT0 => 6,
+            STARTW::EDGE_ON_CT16B0_MAT1 => 7,
         }
     }
 }
@@ -588,33 +588,33 @@ impl<'a> _STARTW<'a> {
     }
     #[doc = "Start conversion when the edge selected by bit 27 occurs on PIO0_2/SSEL/CT16B0_CAP0"]
     #[inline]
-    pub fn edgepio0_2(self) -> &'a mut W {
-        self.variant(STARTW::EDGEPIO0_2)
+    pub fn edge_on_pio0_2(self) -> &'a mut W {
+        self.variant(STARTW::EDGE_ON_PIO0_2)
     }
     #[doc = "Start conversion when the edge selected by bit 27 occurs on PIO1_5/DIR/CT32B0_CAP0"]
     #[inline]
-    pub fn edgepio1_5(self) -> &'a mut W {
-        self.variant(STARTW::EDGEPIO1_5)
+    pub fn edge_on_pio1_5(self) -> &'a mut W {
+        self.variant(STARTW::EDGE_ON_PIO1_5)
     }
-    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT0\\[1\\]"]
+    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT0"]
     #[inline]
-    pub fn edgect32b0_mat0_1(self) -> &'a mut W {
-        self.variant(STARTW::EDGECT32B0_MAT0_1)
+    pub fn edge_on_ct32b0_mat0(self) -> &'a mut W {
+        self.variant(STARTW::EDGE_ON_CT32B0_MAT0)
     }
-    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT1\\[1\\]"]
+    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT1"]
     #[inline]
-    pub fn edgect32b0_mat1_1(self) -> &'a mut W {
-        self.variant(STARTW::EDGECT32B0_MAT1_1)
+    pub fn edge_on_ct32b0_mat1(self) -> &'a mut W {
+        self.variant(STARTW::EDGE_ON_CT32B0_MAT1)
     }
-    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT0\\[1\\]"]
+    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT0"]
     #[inline]
-    pub fn edgect16b0_mat0_1(self) -> &'a mut W {
-        self.variant(STARTW::EDGECT16B0_MAT0_1)
+    pub fn edge_on_ct16b0_mat0(self) -> &'a mut W {
+        self.variant(STARTW::EDGE_ON_CT16B0_MAT0)
     }
-    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT1\\[1\\]"]
+    #[doc = "Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT1"]
     #[inline]
-    pub fn edgect16b0_mat1_1(self) -> &'a mut W {
-        self.variant(STARTW::EDGECT16B0_MAT1_1)
+    pub fn edge_on_ct16b0_mat1(self) -> &'a mut W {
+        self.variant(STARTW::EDGE_ON_CT16B0_MAT1)
     }
     #[doc = r" Writes raw bits to the field"]
     #[inline]
@@ -728,7 +728,7 @@ impl R {
             ((self.bits >> OFFSET) & MASK as u32) as u8
         })
     }
-    #[doc = "Bits 24:26 - When the BURST bit is 0, these bits control whether and when an A/D conversion is started:"]
+    #[doc = "Bits 24:26 - When the BURST bit is 0, these bits control whether and when an A/D conversion is started"]
     #[inline]
     pub fn start(&self) -> STARTR {
         STARTR::_from({
@@ -779,7 +779,7 @@ impl W {
     pub fn clks(&mut self) -> _CLKSW {
         _CLKSW { w: self }
     }
-    #[doc = "Bits 24:26 - When the BURST bit is 0, these bits control whether and when an A/D conversion is started:"]
+    #[doc = "Bits 24:26 - When the BURST bit is 0, these bits control whether and when an A/D conversion is started"]
     #[inline]
     pub fn start(&mut self) -> _STARTW {
         _STARTW { w: self }

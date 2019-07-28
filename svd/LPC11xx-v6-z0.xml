@@ -3860,18 +3860,30 @@
               <name>SEL</name>
               <description>Selects which of the AD7:0 pins is (are) to be sampled and converted. Bit 0 selects Pin AD0, bit 1 selects pin AD1,..., and bit 7 selects pin AD7. In software-controlled mode (BURST = 0), only one channel can be selected, i.e. only one of these bits should be 1. In hardware scan mode (BURST = 1), any numbers of channels can be selected, i.e any or all bits can be set to 1. If all bits are set to 0, channel 0 is selected automatically (SEL = 0x01)</description>
               <bitRange>[7:0]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>CLKDIV</name>
               <description>The APB clock (PCLK) is divided by CLKDIV +1 to produce the clock for the ADC, which should be less than or equal to 4.5 MHz. Typically, software should program the smallest value in this field that yields a clock of 4.5 MHz or slightly less, but in certain cases (such as a high-impedance analog source) a slower clock may be desirable</description>
               <bitRange>[15:8]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>BURST</name>
               <description>Burst mode</description>
               <bitRange>[16:16]</bitRange>
               <enumeratedValues>
-                <name>test</name>
+                <name>ENUM</name>
                 <enumeratedValue>
                   <name>SWMODE</name>
                   <description>Software-controlled mode: Conversions are software-controlled and require 11 clocks</description>
@@ -3889,44 +3901,44 @@
               <description>This field selects the number of clocks used for each conversion in Burst mode, and the number of bits of accuracy of the result in the LS bits of ADDR, between 11 clocks (10 bits) and 4 clocks (3 bits)</description>
               <bitRange>[19:17]</bitRange>
               <enumeratedValues>
-                <name>test</name>
+                <name>ENUM</name>
                 <enumeratedValue>
-                  <name>10BIT</name>
+                  <name>TEN_BIT</name>
                   <description>11 clocks / 10 bits</description>
                   <value>0x0</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>9BIT</name>
+                  <name>NINE_BIT</name>
                   <description>10 clocks / 9 bits</description>
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>8BIT</name>
+                  <name>EIGHT_BIT</name>
                   <description>9 clocks / 8 bits</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>7BIT</name>
+                  <name>SEVEN_BIT</name>
                   <description>8 clocks / 7 bits</description>
                   <value>0x3</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>6BIT</name>
+                  <name>SIX_BIT</name>
                   <description>7 clocks / 6 bits</description>
                   <value>0x4</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>5BIT</name>
+                  <name>FIVE_BIT</name>
                   <description>6 clocks / 5 bits</description>
                   <value>0x5</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>4BIT</name>
+                  <name>FOUR_BIT</name>
                   <description>5 clocks / 4 bits</description>
                   <value>0x6</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>3BIT</name>
+                  <name>THREE_BIT</name>
                   <description>4 clocks / 3 bits</description>
                   <value>0x7</value>
                 </enumeratedValue>
@@ -3939,10 +3951,10 @@
             </field>
             <field>
               <name>START</name>
-              <description>When the BURST bit is 0, these bits control whether and when an A/D conversion is started:</description>
+              <description>When the BURST bit is 0, these bits control whether and when an A/D conversion is started</description>
               <bitRange>[26:24]</bitRange>
               <enumeratedValues>
-                <name>test</name>
+                <name>ENUM</name>
                 <enumeratedValue>
                   <name>STOP</name>
                   <description>No start (this value should be used when clearing PDN to 0)</description>
@@ -3954,33 +3966,33 @@
                   <value>0x1</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>EDGEPIO0_2</name>
+                  <name>EDGE_ON_PIO0_2</name>
                   <description>Start conversion when the edge selected by bit 27 occurs on PIO0_2/SSEL/CT16B0_CAP0</description>
                   <value>0x2</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>EDGEPIO1_5</name>
+                  <name>EDGE_ON_PIO1_5</name>
                   <description>Start conversion when the edge selected by bit 27 occurs on PIO1_5/DIR/CT32B0_CAP0</description>
                   <value>0x3</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>EDGECT32B0_MAT0_1</name>
-                  <description>Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT0[1]</description>
+                  <name>EDGE_ON_CT32B0_MAT0</name>
+                  <description>Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT0</description>
                   <value>0x4</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>EDGECT32B0_MAT1_1</name>
-                  <description>Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT1[1]</description>
+                  <name>EDGE_ON_CT32B0_MAT1</name>
+                  <description>Start conversion when the edge selected by bit 27 occurs on CT32B0_MAT1</description>
                   <value>0x5</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>EDGECT16B0_MAT0_1</name>
-                  <description>Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT0[1]</description>
+                  <name>EDGE_ON_CT16B0_MAT0</name>
+                  <description>Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT0</description>
                   <value>0x6</value>
                 </enumeratedValue>
                 <enumeratedValue>
-                  <name>EDGECT16B0_MAT1_1</name>
-                  <description>Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT1[1]</description>
+                  <name>EDGE_ON_CT16B0_MAT1</name>
+                  <description>Start conversion when the edge selected by bit 27 occurs on CT16B0_MAT1</description>
                   <value>0x7</value>
                 </enumeratedValue>
               </enumeratedValues>
@@ -3990,7 +4002,7 @@
               <description>This bit is significant only when the START field contains 010-111. In these cases: Start conversion on a falling edge on the selected CAP/MAT signal</description>
               <bitRange>[27:27]</bitRange>
               <enumeratedValues>
-                <name>test</name>
+                <name>ENUM</name>
                 <enumeratedValue>
                   <name>RISING</name>
                   <description>Start conversion on a rising edge on the selected CAP/MAT signal</description>
@@ -4094,9 +4106,15 @@
           <resetMask>0xFFFFFFFF</resetMask>
           <fields>
             <field>
-              <name>ADINTENn</name>
+              <name>ADINTEN</name>
               <description>These bits allow control over which A/D channels generate interrupts for conversion completion. When bit 0 is one, completion of a conversion on A/D channel 0 will generate an interrupt, when bit 1 is one, completion of a conversion on A/D channel 1 will generate an interrupt, etc</description>
               <bitRange>[7:0]</bitRange>
+              <writeConstraint>
+                <range>
+                  <minimum>0</minimum>
+                  <maximum>255</maximum>
+                </range>
+              </writeConstraint>
             </field>
             <field>
               <name>ADGINTEN</name>
@@ -4138,7 +4156,7 @@
             </field>
             <field>
               <name>OVERRUN</name>
-              <description>This bit is 1 in burst mode if the results of one or more conversions was (were) lost and overwritten before the conversion that produced the result in the V_VREF bits.This bit is cleared by reading this register</description>
+              <description>This bit is 1 in burst mode if the results of one or more conversions was (were) lost and overwritten before the conversion that produced the result in the V_VREF bits. This bit is cleared by reading this register</description>
               <bitRange>[30:30]</bitRange>
             </field>
             <field>

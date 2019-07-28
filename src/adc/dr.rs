@@ -172,7 +172,7 @@ impl R {
         };
         V_VREFR { bits }
     }
-    #[doc = "Bit 30 - This bit is 1 in burst mode if the results of one or more conversions was (were) lost and overwritten before the conversion that produced the result in the V_VREF bits.This bit is cleared by reading this register"]
+    #[doc = "Bit 30 - This bit is 1 in burst mode if the results of one or more conversions was (were) lost and overwritten before the conversion that produced the result in the V_VREF bits. This bit is cleared by reading this register"]
     #[inline]
     pub fn overrun(&self) -> OVERRUNR {
         let bits = {
@@ -210,7 +210,7 @@ impl W {
     pub fn v_vref(&mut self) -> _V_VREFW {
         _V_VREFW { w: self }
     }
-    #[doc = "Bit 30 - This bit is 1 in burst mode if the results of one or more conversions was (were) lost and overwritten before the conversion that produced the result in the V_VREF bits.This bit is cleared by reading this register"]
+    #[doc = "Bit 30 - This bit is 1 in burst mode if the results of one or more conversions was (were) lost and overwritten before the conversion that produced the result in the V_VREF bits. This bit is cleared by reading this register"]
     #[inline]
     pub fn overrun(&mut self) -> _OVERRUNW {
         _OVERRUNW { w: self }
