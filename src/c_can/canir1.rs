@@ -1,41 +1,11 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-impl super::CANIR1 {
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-}
-#[doc = r" Value of the field"]
-pub struct INTPND_16_1R {
-    bits: u16,
-}
-impl INTPND_16_1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        self.bits
-    }
-}
+#[doc = "Reader of register CANIR1"]
+pub type R = crate::R<u32, super::CANIR1>;
+#[doc = "Reader of field `INTPND_16_1`"]
+pub type INTPND_16_1_R = crate::R<u16, u16>;
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Interrupt pending bits of message objects 16 to 1. 0 = This message object is ignored by the message handler. 1 = This message object is the source of an interrupt."]
-    #[inline]
-    pub fn intpnd_16_1(&self) -> INTPND_16_1R {
-        let bits = {
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        };
-        INTPND_16_1R { bits }
+    #[inline(always)]
+    pub fn intpnd_16_1(&self) -> INTPND_16_1_R {
+        INTPND_16_1_R::new((self.bits & 0xffff) as u16)
     }
 }

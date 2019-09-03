@@ -1,1492 +1,1072 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::IS {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register IS"]
+pub type R = crate::R<u32, super::IS>;
+#[doc = "Writer for register IS"]
+pub type W = crate::W<u32, super::IS>;
+#[doc = "Register IS `reset()`'s with value 0"]
+impl crate::ResetValue for super::IS {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `ISENSE0`"]
+#[doc = "PIOn_0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISENSE0R {
-    #[doc = "Pin interrupt is edge-sensitive"]
+pub enum ISENSE0_A {
+    #[doc = "0: Pin interrupt is edge-sensitive"]
     EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
+    #[doc = "1: Pin interrupt is level-sensitive"]
     LEVEL,
 }
-impl ISENSE0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ISENSE0R::EDGE => false,
-            ISENSE0R::LEVEL => true,
+impl From<ISENSE0_A> for bool {
+    #[inline(always)]
+    fn from(variant: ISENSE0_A) -> Self {
+        match variant {
+            ISENSE0_A::EDGE => false,
+            ISENSE0_A::LEVEL => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ISENSE0R {
-        match value {
-            false => ISENSE0R::EDGE,
-            true => ISENSE0R::LEVEL,
+}
+#[doc = "Reader of field `ISENSE0`"]
+pub type ISENSE0_R = crate::R<bool, ISENSE0_A>;
+impl ISENSE0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ISENSE0_A {
+        match self.bits {
+            false => ISENSE0_A::EDGE,
+            true => ISENSE0_A::LEVEL,
         }
     }
     #[doc = "Checks if the value of the field is `EDGE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_edge(&self) -> bool {
-        *self == ISENSE0R::EDGE
+        *self == ISENSE0_A::EDGE
     }
     #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_level(&self) -> bool {
-        *self == ISENSE0R::LEVEL
+        *self == ISENSE0_A::LEVEL
     }
 }
-#[doc = "Possible values of the field `ISENSE1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISENSE1R {
-    #[doc = "Pin interrupt is edge-sensitive"]
-    EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
-    LEVEL,
-}
-impl ISENSE1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ISENSE1R::EDGE => false,
-            ISENSE1R::LEVEL => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ISENSE1R {
-        match value {
-            false => ISENSE1R::EDGE,
-            true => ISENSE1R::LEVEL,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EDGE`"]
-    #[inline]
-    pub fn is_edge(&self) -> bool {
-        *self == ISENSE1R::EDGE
-    }
-    #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
-    pub fn is_level(&self) -> bool {
-        *self == ISENSE1R::LEVEL
-    }
-}
-#[doc = "Possible values of the field `ISENSE2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISENSE2R {
-    #[doc = "Pin interrupt is edge-sensitive"]
-    EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
-    LEVEL,
-}
-impl ISENSE2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ISENSE2R::EDGE => false,
-            ISENSE2R::LEVEL => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ISENSE2R {
-        match value {
-            false => ISENSE2R::EDGE,
-            true => ISENSE2R::LEVEL,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EDGE`"]
-    #[inline]
-    pub fn is_edge(&self) -> bool {
-        *self == ISENSE2R::EDGE
-    }
-    #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
-    pub fn is_level(&self) -> bool {
-        *self == ISENSE2R::LEVEL
-    }
-}
-#[doc = "Possible values of the field `ISENSE3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISENSE3R {
-    #[doc = "Pin interrupt is edge-sensitive"]
-    EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
-    LEVEL,
-}
-impl ISENSE3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ISENSE3R::EDGE => false,
-            ISENSE3R::LEVEL => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ISENSE3R {
-        match value {
-            false => ISENSE3R::EDGE,
-            true => ISENSE3R::LEVEL,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EDGE`"]
-    #[inline]
-    pub fn is_edge(&self) -> bool {
-        *self == ISENSE3R::EDGE
-    }
-    #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
-    pub fn is_level(&self) -> bool {
-        *self == ISENSE3R::LEVEL
-    }
-}
-#[doc = "Possible values of the field `ISENSE4`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISENSE4R {
-    #[doc = "Pin interrupt is edge-sensitive"]
-    EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
-    LEVEL,
-}
-impl ISENSE4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ISENSE4R::EDGE => false,
-            ISENSE4R::LEVEL => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ISENSE4R {
-        match value {
-            false => ISENSE4R::EDGE,
-            true => ISENSE4R::LEVEL,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EDGE`"]
-    #[inline]
-    pub fn is_edge(&self) -> bool {
-        *self == ISENSE4R::EDGE
-    }
-    #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
-    pub fn is_level(&self) -> bool {
-        *self == ISENSE4R::LEVEL
-    }
-}
-#[doc = "Possible values of the field `ISENSE5`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISENSE5R {
-    #[doc = "Pin interrupt is edge-sensitive"]
-    EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
-    LEVEL,
-}
-impl ISENSE5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ISENSE5R::EDGE => false,
-            ISENSE5R::LEVEL => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ISENSE5R {
-        match value {
-            false => ISENSE5R::EDGE,
-            true => ISENSE5R::LEVEL,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EDGE`"]
-    #[inline]
-    pub fn is_edge(&self) -> bool {
-        *self == ISENSE5R::EDGE
-    }
-    #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
-    pub fn is_level(&self) -> bool {
-        *self == ISENSE5R::LEVEL
-    }
-}
-#[doc = "Possible values of the field `ISENSE6`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISENSE6R {
-    #[doc = "Pin interrupt is edge-sensitive"]
-    EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
-    LEVEL,
-}
-impl ISENSE6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ISENSE6R::EDGE => false,
-            ISENSE6R::LEVEL => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ISENSE6R {
-        match value {
-            false => ISENSE6R::EDGE,
-            true => ISENSE6R::LEVEL,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EDGE`"]
-    #[inline]
-    pub fn is_edge(&self) -> bool {
-        *self == ISENSE6R::EDGE
-    }
-    #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
-    pub fn is_level(&self) -> bool {
-        *self == ISENSE6R::LEVEL
-    }
-}
-#[doc = "Possible values of the field `ISENSE7`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISENSE7R {
-    #[doc = "Pin interrupt is edge-sensitive"]
-    EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
-    LEVEL,
-}
-impl ISENSE7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ISENSE7R::EDGE => false,
-            ISENSE7R::LEVEL => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ISENSE7R {
-        match value {
-            false => ISENSE7R::EDGE,
-            true => ISENSE7R::LEVEL,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EDGE`"]
-    #[inline]
-    pub fn is_edge(&self) -> bool {
-        *self == ISENSE7R::EDGE
-    }
-    #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
-    pub fn is_level(&self) -> bool {
-        *self == ISENSE7R::LEVEL
-    }
-}
-#[doc = "Possible values of the field `ISENSE8`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISENSE8R {
-    #[doc = "Pin interrupt is edge-sensitive"]
-    EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
-    LEVEL,
-}
-impl ISENSE8R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ISENSE8R::EDGE => false,
-            ISENSE8R::LEVEL => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ISENSE8R {
-        match value {
-            false => ISENSE8R::EDGE,
-            true => ISENSE8R::LEVEL,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EDGE`"]
-    #[inline]
-    pub fn is_edge(&self) -> bool {
-        *self == ISENSE8R::EDGE
-    }
-    #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
-    pub fn is_level(&self) -> bool {
-        *self == ISENSE8R::LEVEL
-    }
-}
-#[doc = "Possible values of the field `ISENSE9`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISENSE9R {
-    #[doc = "Pin interrupt is edge-sensitive"]
-    EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
-    LEVEL,
-}
-impl ISENSE9R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ISENSE9R::EDGE => false,
-            ISENSE9R::LEVEL => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ISENSE9R {
-        match value {
-            false => ISENSE9R::EDGE,
-            true => ISENSE9R::LEVEL,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EDGE`"]
-    #[inline]
-    pub fn is_edge(&self) -> bool {
-        *self == ISENSE9R::EDGE
-    }
-    #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
-    pub fn is_level(&self) -> bool {
-        *self == ISENSE9R::LEVEL
-    }
-}
-#[doc = "Possible values of the field `ISENSE10`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISENSE10R {
-    #[doc = "Pin interrupt is edge-sensitive"]
-    EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
-    LEVEL,
-}
-impl ISENSE10R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ISENSE10R::EDGE => false,
-            ISENSE10R::LEVEL => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ISENSE10R {
-        match value {
-            false => ISENSE10R::EDGE,
-            true => ISENSE10R::LEVEL,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EDGE`"]
-    #[inline]
-    pub fn is_edge(&self) -> bool {
-        *self == ISENSE10R::EDGE
-    }
-    #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
-    pub fn is_level(&self) -> bool {
-        *self == ISENSE10R::LEVEL
-    }
-}
-#[doc = "Possible values of the field `ISENSE11`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ISENSE11R {
-    #[doc = "Pin interrupt is edge-sensitive"]
-    EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
-    LEVEL,
-}
-impl ISENSE11R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ISENSE11R::EDGE => false,
-            ISENSE11R::LEVEL => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ISENSE11R {
-        match value {
-            false => ISENSE11R::EDGE,
-            true => ISENSE11R::LEVEL,
-        }
-    }
-    #[doc = "Checks if the value of the field is `EDGE`"]
-    #[inline]
-    pub fn is_edge(&self) -> bool {
-        *self == ISENSE11R::EDGE
-    }
-    #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
-    pub fn is_level(&self) -> bool {
-        *self == ISENSE11R::LEVEL
-    }
-}
-#[doc = "Values that can be written to the field `ISENSE0`"]
-pub enum ISENSE0W {
-    #[doc = "Pin interrupt is edge-sensitive"]
-    EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
-    LEVEL,
-}
-impl ISENSE0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ISENSE0W::EDGE => false,
-            ISENSE0W::LEVEL => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ISENSE0W<'a> {
+#[doc = "Write proxy for field `ISENSE0`"]
+pub struct ISENSE0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISENSE0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ISENSE0W) -> &'a mut W {
+impl<'a> ISENSE0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ISENSE0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is edge-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn edge(self) -> &'a mut W {
-        self.variant(ISENSE0W::EDGE)
+        self.variant(ISENSE0_A::EDGE)
     }
     #[doc = "Pin interrupt is level-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn level(self) -> &'a mut W {
-        self.variant(ISENSE0W::LEVEL)
+        self.variant(ISENSE0_A::LEVEL)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ISENSE1`"]
-pub enum ISENSE1W {
-    #[doc = "Pin interrupt is edge-sensitive"]
+#[doc = "PIOn_1.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ISENSE1_A {
+    #[doc = "0: Pin interrupt is edge-sensitive"]
     EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
+    #[doc = "1: Pin interrupt is level-sensitive"]
     LEVEL,
 }
-impl ISENSE1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ISENSE1W::EDGE => false,
-            ISENSE1W::LEVEL => true,
+impl From<ISENSE1_A> for bool {
+    #[inline(always)]
+    fn from(variant: ISENSE1_A) -> Self {
+        match variant {
+            ISENSE1_A::EDGE => false,
+            ISENSE1_A::LEVEL => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISENSE1W<'a> {
+#[doc = "Reader of field `ISENSE1`"]
+pub type ISENSE1_R = crate::R<bool, ISENSE1_A>;
+impl ISENSE1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ISENSE1_A {
+        match self.bits {
+            false => ISENSE1_A::EDGE,
+            true => ISENSE1_A::LEVEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EDGE`"]
+    #[inline(always)]
+    pub fn is_edge(&self) -> bool {
+        *self == ISENSE1_A::EDGE
+    }
+    #[doc = "Checks if the value of the field is `LEVEL`"]
+    #[inline(always)]
+    pub fn is_level(&self) -> bool {
+        *self == ISENSE1_A::LEVEL
+    }
+}
+#[doc = "Write proxy for field `ISENSE1`"]
+pub struct ISENSE1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISENSE1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ISENSE1W) -> &'a mut W {
+impl<'a> ISENSE1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ISENSE1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is edge-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn edge(self) -> &'a mut W {
-        self.variant(ISENSE1W::EDGE)
+        self.variant(ISENSE1_A::EDGE)
     }
     #[doc = "Pin interrupt is level-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn level(self) -> &'a mut W {
-        self.variant(ISENSE1W::LEVEL)
+        self.variant(ISENSE1_A::LEVEL)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ISENSE2`"]
-pub enum ISENSE2W {
-    #[doc = "Pin interrupt is edge-sensitive"]
+#[doc = "PIOn_2.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ISENSE2_A {
+    #[doc = "0: Pin interrupt is edge-sensitive"]
     EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
+    #[doc = "1: Pin interrupt is level-sensitive"]
     LEVEL,
 }
-impl ISENSE2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ISENSE2W::EDGE => false,
-            ISENSE2W::LEVEL => true,
+impl From<ISENSE2_A> for bool {
+    #[inline(always)]
+    fn from(variant: ISENSE2_A) -> Self {
+        match variant {
+            ISENSE2_A::EDGE => false,
+            ISENSE2_A::LEVEL => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISENSE2W<'a> {
+#[doc = "Reader of field `ISENSE2`"]
+pub type ISENSE2_R = crate::R<bool, ISENSE2_A>;
+impl ISENSE2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ISENSE2_A {
+        match self.bits {
+            false => ISENSE2_A::EDGE,
+            true => ISENSE2_A::LEVEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EDGE`"]
+    #[inline(always)]
+    pub fn is_edge(&self) -> bool {
+        *self == ISENSE2_A::EDGE
+    }
+    #[doc = "Checks if the value of the field is `LEVEL`"]
+    #[inline(always)]
+    pub fn is_level(&self) -> bool {
+        *self == ISENSE2_A::LEVEL
+    }
+}
+#[doc = "Write proxy for field `ISENSE2`"]
+pub struct ISENSE2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISENSE2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ISENSE2W) -> &'a mut W {
+impl<'a> ISENSE2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ISENSE2_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is edge-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn edge(self) -> &'a mut W {
-        self.variant(ISENSE2W::EDGE)
+        self.variant(ISENSE2_A::EDGE)
     }
     #[doc = "Pin interrupt is level-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn level(self) -> &'a mut W {
-        self.variant(ISENSE2W::LEVEL)
+        self.variant(ISENSE2_A::LEVEL)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ISENSE3`"]
-pub enum ISENSE3W {
-    #[doc = "Pin interrupt is edge-sensitive"]
+#[doc = "PIOn_3.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ISENSE3_A {
+    #[doc = "0: Pin interrupt is edge-sensitive"]
     EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
+    #[doc = "1: Pin interrupt is level-sensitive"]
     LEVEL,
 }
-impl ISENSE3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ISENSE3W::EDGE => false,
-            ISENSE3W::LEVEL => true,
+impl From<ISENSE3_A> for bool {
+    #[inline(always)]
+    fn from(variant: ISENSE3_A) -> Self {
+        match variant {
+            ISENSE3_A::EDGE => false,
+            ISENSE3_A::LEVEL => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISENSE3W<'a> {
+#[doc = "Reader of field `ISENSE3`"]
+pub type ISENSE3_R = crate::R<bool, ISENSE3_A>;
+impl ISENSE3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ISENSE3_A {
+        match self.bits {
+            false => ISENSE3_A::EDGE,
+            true => ISENSE3_A::LEVEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EDGE`"]
+    #[inline(always)]
+    pub fn is_edge(&self) -> bool {
+        *self == ISENSE3_A::EDGE
+    }
+    #[doc = "Checks if the value of the field is `LEVEL`"]
+    #[inline(always)]
+    pub fn is_level(&self) -> bool {
+        *self == ISENSE3_A::LEVEL
+    }
+}
+#[doc = "Write proxy for field `ISENSE3`"]
+pub struct ISENSE3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISENSE3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ISENSE3W) -> &'a mut W {
+impl<'a> ISENSE3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ISENSE3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is edge-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn edge(self) -> &'a mut W {
-        self.variant(ISENSE3W::EDGE)
+        self.variant(ISENSE3_A::EDGE)
     }
     #[doc = "Pin interrupt is level-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn level(self) -> &'a mut W {
-        self.variant(ISENSE3W::LEVEL)
+        self.variant(ISENSE3_A::LEVEL)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ISENSE4`"]
-pub enum ISENSE4W {
-    #[doc = "Pin interrupt is edge-sensitive"]
+#[doc = "PIOn_4.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ISENSE4_A {
+    #[doc = "0: Pin interrupt is edge-sensitive"]
     EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
+    #[doc = "1: Pin interrupt is level-sensitive"]
     LEVEL,
 }
-impl ISENSE4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ISENSE4W::EDGE => false,
-            ISENSE4W::LEVEL => true,
+impl From<ISENSE4_A> for bool {
+    #[inline(always)]
+    fn from(variant: ISENSE4_A) -> Self {
+        match variant {
+            ISENSE4_A::EDGE => false,
+            ISENSE4_A::LEVEL => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISENSE4W<'a> {
+#[doc = "Reader of field `ISENSE4`"]
+pub type ISENSE4_R = crate::R<bool, ISENSE4_A>;
+impl ISENSE4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ISENSE4_A {
+        match self.bits {
+            false => ISENSE4_A::EDGE,
+            true => ISENSE4_A::LEVEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EDGE`"]
+    #[inline(always)]
+    pub fn is_edge(&self) -> bool {
+        *self == ISENSE4_A::EDGE
+    }
+    #[doc = "Checks if the value of the field is `LEVEL`"]
+    #[inline(always)]
+    pub fn is_level(&self) -> bool {
+        *self == ISENSE4_A::LEVEL
+    }
+}
+#[doc = "Write proxy for field `ISENSE4`"]
+pub struct ISENSE4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISENSE4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ISENSE4W) -> &'a mut W {
+impl<'a> ISENSE4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ISENSE4_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is edge-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn edge(self) -> &'a mut W {
-        self.variant(ISENSE4W::EDGE)
+        self.variant(ISENSE4_A::EDGE)
     }
     #[doc = "Pin interrupt is level-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn level(self) -> &'a mut W {
-        self.variant(ISENSE4W::LEVEL)
+        self.variant(ISENSE4_A::LEVEL)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ISENSE5`"]
-pub enum ISENSE5W {
-    #[doc = "Pin interrupt is edge-sensitive"]
+#[doc = "PIOn_5.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ISENSE5_A {
+    #[doc = "0: Pin interrupt is edge-sensitive"]
     EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
+    #[doc = "1: Pin interrupt is level-sensitive"]
     LEVEL,
 }
-impl ISENSE5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ISENSE5W::EDGE => false,
-            ISENSE5W::LEVEL => true,
+impl From<ISENSE5_A> for bool {
+    #[inline(always)]
+    fn from(variant: ISENSE5_A) -> Self {
+        match variant {
+            ISENSE5_A::EDGE => false,
+            ISENSE5_A::LEVEL => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISENSE5W<'a> {
+#[doc = "Reader of field `ISENSE5`"]
+pub type ISENSE5_R = crate::R<bool, ISENSE5_A>;
+impl ISENSE5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ISENSE5_A {
+        match self.bits {
+            false => ISENSE5_A::EDGE,
+            true => ISENSE5_A::LEVEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EDGE`"]
+    #[inline(always)]
+    pub fn is_edge(&self) -> bool {
+        *self == ISENSE5_A::EDGE
+    }
+    #[doc = "Checks if the value of the field is `LEVEL`"]
+    #[inline(always)]
+    pub fn is_level(&self) -> bool {
+        *self == ISENSE5_A::LEVEL
+    }
+}
+#[doc = "Write proxy for field `ISENSE5`"]
+pub struct ISENSE5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISENSE5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ISENSE5W) -> &'a mut W {
+impl<'a> ISENSE5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ISENSE5_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is edge-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn edge(self) -> &'a mut W {
-        self.variant(ISENSE5W::EDGE)
+        self.variant(ISENSE5_A::EDGE)
     }
     #[doc = "Pin interrupt is level-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn level(self) -> &'a mut W {
-        self.variant(ISENSE5W::LEVEL)
+        self.variant(ISENSE5_A::LEVEL)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ISENSE6`"]
-pub enum ISENSE6W {
-    #[doc = "Pin interrupt is edge-sensitive"]
+#[doc = "PIOn_6.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ISENSE6_A {
+    #[doc = "0: Pin interrupt is edge-sensitive"]
     EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
+    #[doc = "1: Pin interrupt is level-sensitive"]
     LEVEL,
 }
-impl ISENSE6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ISENSE6W::EDGE => false,
-            ISENSE6W::LEVEL => true,
+impl From<ISENSE6_A> for bool {
+    #[inline(always)]
+    fn from(variant: ISENSE6_A) -> Self {
+        match variant {
+            ISENSE6_A::EDGE => false,
+            ISENSE6_A::LEVEL => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISENSE6W<'a> {
+#[doc = "Reader of field `ISENSE6`"]
+pub type ISENSE6_R = crate::R<bool, ISENSE6_A>;
+impl ISENSE6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ISENSE6_A {
+        match self.bits {
+            false => ISENSE6_A::EDGE,
+            true => ISENSE6_A::LEVEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EDGE`"]
+    #[inline(always)]
+    pub fn is_edge(&self) -> bool {
+        *self == ISENSE6_A::EDGE
+    }
+    #[doc = "Checks if the value of the field is `LEVEL`"]
+    #[inline(always)]
+    pub fn is_level(&self) -> bool {
+        *self == ISENSE6_A::LEVEL
+    }
+}
+#[doc = "Write proxy for field `ISENSE6`"]
+pub struct ISENSE6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISENSE6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ISENSE6W) -> &'a mut W {
+impl<'a> ISENSE6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ISENSE6_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is edge-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn edge(self) -> &'a mut W {
-        self.variant(ISENSE6W::EDGE)
+        self.variant(ISENSE6_A::EDGE)
     }
     #[doc = "Pin interrupt is level-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn level(self) -> &'a mut W {
-        self.variant(ISENSE6W::LEVEL)
+        self.variant(ISENSE6_A::LEVEL)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ISENSE7`"]
-pub enum ISENSE7W {
-    #[doc = "Pin interrupt is edge-sensitive"]
+#[doc = "PIOn_7.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ISENSE7_A {
+    #[doc = "0: Pin interrupt is edge-sensitive"]
     EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
+    #[doc = "1: Pin interrupt is level-sensitive"]
     LEVEL,
 }
-impl ISENSE7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ISENSE7W::EDGE => false,
-            ISENSE7W::LEVEL => true,
+impl From<ISENSE7_A> for bool {
+    #[inline(always)]
+    fn from(variant: ISENSE7_A) -> Self {
+        match variant {
+            ISENSE7_A::EDGE => false,
+            ISENSE7_A::LEVEL => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISENSE7W<'a> {
+#[doc = "Reader of field `ISENSE7`"]
+pub type ISENSE7_R = crate::R<bool, ISENSE7_A>;
+impl ISENSE7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ISENSE7_A {
+        match self.bits {
+            false => ISENSE7_A::EDGE,
+            true => ISENSE7_A::LEVEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EDGE`"]
+    #[inline(always)]
+    pub fn is_edge(&self) -> bool {
+        *self == ISENSE7_A::EDGE
+    }
+    #[doc = "Checks if the value of the field is `LEVEL`"]
+    #[inline(always)]
+    pub fn is_level(&self) -> bool {
+        *self == ISENSE7_A::LEVEL
+    }
+}
+#[doc = "Write proxy for field `ISENSE7`"]
+pub struct ISENSE7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISENSE7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ISENSE7W) -> &'a mut W {
+impl<'a> ISENSE7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ISENSE7_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is edge-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn edge(self) -> &'a mut W {
-        self.variant(ISENSE7W::EDGE)
+        self.variant(ISENSE7_A::EDGE)
     }
     #[doc = "Pin interrupt is level-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn level(self) -> &'a mut W {
-        self.variant(ISENSE7W::LEVEL)
+        self.variant(ISENSE7_A::LEVEL)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ISENSE8`"]
-pub enum ISENSE8W {
-    #[doc = "Pin interrupt is edge-sensitive"]
+#[doc = "PIOn_8.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ISENSE8_A {
+    #[doc = "0: Pin interrupt is edge-sensitive"]
     EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
+    #[doc = "1: Pin interrupt is level-sensitive"]
     LEVEL,
 }
-impl ISENSE8W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ISENSE8W::EDGE => false,
-            ISENSE8W::LEVEL => true,
+impl From<ISENSE8_A> for bool {
+    #[inline(always)]
+    fn from(variant: ISENSE8_A) -> Self {
+        match variant {
+            ISENSE8_A::EDGE => false,
+            ISENSE8_A::LEVEL => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISENSE8W<'a> {
+#[doc = "Reader of field `ISENSE8`"]
+pub type ISENSE8_R = crate::R<bool, ISENSE8_A>;
+impl ISENSE8_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ISENSE8_A {
+        match self.bits {
+            false => ISENSE8_A::EDGE,
+            true => ISENSE8_A::LEVEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EDGE`"]
+    #[inline(always)]
+    pub fn is_edge(&self) -> bool {
+        *self == ISENSE8_A::EDGE
+    }
+    #[doc = "Checks if the value of the field is `LEVEL`"]
+    #[inline(always)]
+    pub fn is_level(&self) -> bool {
+        *self == ISENSE8_A::LEVEL
+    }
+}
+#[doc = "Write proxy for field `ISENSE8`"]
+pub struct ISENSE8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISENSE8W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ISENSE8W) -> &'a mut W {
+impl<'a> ISENSE8_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ISENSE8_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is edge-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn edge(self) -> &'a mut W {
-        self.variant(ISENSE8W::EDGE)
+        self.variant(ISENSE8_A::EDGE)
     }
     #[doc = "Pin interrupt is level-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn level(self) -> &'a mut W {
-        self.variant(ISENSE8W::LEVEL)
+        self.variant(ISENSE8_A::LEVEL)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ISENSE9`"]
-pub enum ISENSE9W {
-    #[doc = "Pin interrupt is edge-sensitive"]
+#[doc = "PIOn_9.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ISENSE9_A {
+    #[doc = "0: Pin interrupt is edge-sensitive"]
     EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
+    #[doc = "1: Pin interrupt is level-sensitive"]
     LEVEL,
 }
-impl ISENSE9W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ISENSE9W::EDGE => false,
-            ISENSE9W::LEVEL => true,
+impl From<ISENSE9_A> for bool {
+    #[inline(always)]
+    fn from(variant: ISENSE9_A) -> Self {
+        match variant {
+            ISENSE9_A::EDGE => false,
+            ISENSE9_A::LEVEL => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISENSE9W<'a> {
+#[doc = "Reader of field `ISENSE9`"]
+pub type ISENSE9_R = crate::R<bool, ISENSE9_A>;
+impl ISENSE9_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ISENSE9_A {
+        match self.bits {
+            false => ISENSE9_A::EDGE,
+            true => ISENSE9_A::LEVEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EDGE`"]
+    #[inline(always)]
+    pub fn is_edge(&self) -> bool {
+        *self == ISENSE9_A::EDGE
+    }
+    #[doc = "Checks if the value of the field is `LEVEL`"]
+    #[inline(always)]
+    pub fn is_level(&self) -> bool {
+        *self == ISENSE9_A::LEVEL
+    }
+}
+#[doc = "Write proxy for field `ISENSE9`"]
+pub struct ISENSE9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISENSE9W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ISENSE9W) -> &'a mut W {
+impl<'a> ISENSE9_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ISENSE9_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is edge-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn edge(self) -> &'a mut W {
-        self.variant(ISENSE9W::EDGE)
+        self.variant(ISENSE9_A::EDGE)
     }
     #[doc = "Pin interrupt is level-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn level(self) -> &'a mut W {
-        self.variant(ISENSE9W::LEVEL)
+        self.variant(ISENSE9_A::LEVEL)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ISENSE10`"]
-pub enum ISENSE10W {
-    #[doc = "Pin interrupt is edge-sensitive"]
+#[doc = "PIOn_10.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ISENSE10_A {
+    #[doc = "0: Pin interrupt is edge-sensitive"]
     EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
+    #[doc = "1: Pin interrupt is level-sensitive"]
     LEVEL,
 }
-impl ISENSE10W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ISENSE10W::EDGE => false,
-            ISENSE10W::LEVEL => true,
+impl From<ISENSE10_A> for bool {
+    #[inline(always)]
+    fn from(variant: ISENSE10_A) -> Self {
+        match variant {
+            ISENSE10_A::EDGE => false,
+            ISENSE10_A::LEVEL => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISENSE10W<'a> {
+#[doc = "Reader of field `ISENSE10`"]
+pub type ISENSE10_R = crate::R<bool, ISENSE10_A>;
+impl ISENSE10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ISENSE10_A {
+        match self.bits {
+            false => ISENSE10_A::EDGE,
+            true => ISENSE10_A::LEVEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EDGE`"]
+    #[inline(always)]
+    pub fn is_edge(&self) -> bool {
+        *self == ISENSE10_A::EDGE
+    }
+    #[doc = "Checks if the value of the field is `LEVEL`"]
+    #[inline(always)]
+    pub fn is_level(&self) -> bool {
+        *self == ISENSE10_A::LEVEL
+    }
+}
+#[doc = "Write proxy for field `ISENSE10`"]
+pub struct ISENSE10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISENSE10W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ISENSE10W) -> &'a mut W {
+impl<'a> ISENSE10_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ISENSE10_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is edge-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn edge(self) -> &'a mut W {
-        self.variant(ISENSE10W::EDGE)
+        self.variant(ISENSE10_A::EDGE)
     }
     #[doc = "Pin interrupt is level-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn level(self) -> &'a mut W {
-        self.variant(ISENSE10W::LEVEL)
+        self.variant(ISENSE10_A::LEVEL)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `ISENSE11`"]
-pub enum ISENSE11W {
-    #[doc = "Pin interrupt is edge-sensitive"]
+#[doc = "PIOn_11.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ISENSE11_A {
+    #[doc = "0: Pin interrupt is edge-sensitive"]
     EDGE,
-    #[doc = "Pin interrupt is level-sensitive"]
+    #[doc = "1: Pin interrupt is level-sensitive"]
     LEVEL,
 }
-impl ISENSE11W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ISENSE11W::EDGE => false,
-            ISENSE11W::LEVEL => true,
+impl From<ISENSE11_A> for bool {
+    #[inline(always)]
+    fn from(variant: ISENSE11_A) -> Self {
+        match variant {
+            ISENSE11_A::EDGE => false,
+            ISENSE11_A::LEVEL => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _ISENSE11W<'a> {
+#[doc = "Reader of field `ISENSE11`"]
+pub type ISENSE11_R = crate::R<bool, ISENSE11_A>;
+impl ISENSE11_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ISENSE11_A {
+        match self.bits {
+            false => ISENSE11_A::EDGE,
+            true => ISENSE11_A::LEVEL,
+        }
+    }
+    #[doc = "Checks if the value of the field is `EDGE`"]
+    #[inline(always)]
+    pub fn is_edge(&self) -> bool {
+        *self == ISENSE11_A::EDGE
+    }
+    #[doc = "Checks if the value of the field is `LEVEL`"]
+    #[inline(always)]
+    pub fn is_level(&self) -> bool {
+        *self == ISENSE11_A::LEVEL
+    }
+}
+#[doc = "Write proxy for field `ISENSE11`"]
+pub struct ISENSE11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ISENSE11W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ISENSE11W) -> &'a mut W {
+impl<'a> ISENSE11_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ISENSE11_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is edge-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn edge(self) -> &'a mut W {
-        self.variant(ISENSE11W::EDGE)
+        self.variant(ISENSE11_A::EDGE)
     }
     #[doc = "Pin interrupt is level-sensitive"]
-    #[inline]
+    #[inline(always)]
     pub fn level(self) -> &'a mut W {
-        self.variant(ISENSE11W::LEVEL)
+        self.variant(ISENSE11_A::LEVEL)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - PIOn_0."]
-    #[inline]
-    pub fn isense0(&self) -> ISENSE0R {
-        ISENSE0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn isense0(&self) -> ISENSE0_R {
+        ISENSE0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - PIOn_1."]
-    #[inline]
-    pub fn isense1(&self) -> ISENSE1R {
-        ISENSE1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn isense1(&self) -> ISENSE1_R {
+        ISENSE1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - PIOn_2."]
-    #[inline]
-    pub fn isense2(&self) -> ISENSE2R {
-        ISENSE2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn isense2(&self) -> ISENSE2_R {
+        ISENSE2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - PIOn_3."]
-    #[inline]
-    pub fn isense3(&self) -> ISENSE3R {
-        ISENSE3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn isense3(&self) -> ISENSE3_R {
+        ISENSE3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - PIOn_4."]
-    #[inline]
-    pub fn isense4(&self) -> ISENSE4R {
-        ISENSE4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn isense4(&self) -> ISENSE4_R {
+        ISENSE4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - PIOn_5."]
-    #[inline]
-    pub fn isense5(&self) -> ISENSE5R {
-        ISENSE5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn isense5(&self) -> ISENSE5_R {
+        ISENSE5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - PIOn_6."]
-    #[inline]
-    pub fn isense6(&self) -> ISENSE6R {
-        ISENSE6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn isense6(&self) -> ISENSE6_R {
+        ISENSE6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - PIOn_7."]
-    #[inline]
-    pub fn isense7(&self) -> ISENSE7R {
-        ISENSE7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn isense7(&self) -> ISENSE7_R {
+        ISENSE7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - PIOn_8."]
-    #[inline]
-    pub fn isense8(&self) -> ISENSE8R {
-        ISENSE8R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn isense8(&self) -> ISENSE8_R {
+        ISENSE8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - PIOn_9."]
-    #[inline]
-    pub fn isense9(&self) -> ISENSE9R {
-        ISENSE9R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn isense9(&self) -> ISENSE9_R {
+        ISENSE9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - PIOn_10."]
-    #[inline]
-    pub fn isense10(&self) -> ISENSE10R {
-        ISENSE10R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn isense10(&self) -> ISENSE10_R {
+        ISENSE10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - PIOn_11."]
-    #[inline]
-    pub fn isense11(&self) -> ISENSE11R {
-        ISENSE11R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn isense11(&self) -> ISENSE11_R {
+        ISENSE11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - PIOn_0."]
-    #[inline]
-    pub fn isense0(&mut self) -> _ISENSE0W {
-        _ISENSE0W { w: self }
+    #[inline(always)]
+    pub fn isense0(&mut self) -> ISENSE0_W {
+        ISENSE0_W { w: self }
     }
     #[doc = "Bit 1 - PIOn_1."]
-    #[inline]
-    pub fn isense1(&mut self) -> _ISENSE1W {
-        _ISENSE1W { w: self }
+    #[inline(always)]
+    pub fn isense1(&mut self) -> ISENSE1_W {
+        ISENSE1_W { w: self }
     }
     #[doc = "Bit 2 - PIOn_2."]
-    #[inline]
-    pub fn isense2(&mut self) -> _ISENSE2W {
-        _ISENSE2W { w: self }
+    #[inline(always)]
+    pub fn isense2(&mut self) -> ISENSE2_W {
+        ISENSE2_W { w: self }
     }
     #[doc = "Bit 3 - PIOn_3."]
-    #[inline]
-    pub fn isense3(&mut self) -> _ISENSE3W {
-        _ISENSE3W { w: self }
+    #[inline(always)]
+    pub fn isense3(&mut self) -> ISENSE3_W {
+        ISENSE3_W { w: self }
     }
     #[doc = "Bit 4 - PIOn_4."]
-    #[inline]
-    pub fn isense4(&mut self) -> _ISENSE4W {
-        _ISENSE4W { w: self }
+    #[inline(always)]
+    pub fn isense4(&mut self) -> ISENSE4_W {
+        ISENSE4_W { w: self }
     }
     #[doc = "Bit 5 - PIOn_5."]
-    #[inline]
-    pub fn isense5(&mut self) -> _ISENSE5W {
-        _ISENSE5W { w: self }
+    #[inline(always)]
+    pub fn isense5(&mut self) -> ISENSE5_W {
+        ISENSE5_W { w: self }
     }
     #[doc = "Bit 6 - PIOn_6."]
-    #[inline]
-    pub fn isense6(&mut self) -> _ISENSE6W {
-        _ISENSE6W { w: self }
+    #[inline(always)]
+    pub fn isense6(&mut self) -> ISENSE6_W {
+        ISENSE6_W { w: self }
     }
     #[doc = "Bit 7 - PIOn_7."]
-    #[inline]
-    pub fn isense7(&mut self) -> _ISENSE7W {
-        _ISENSE7W { w: self }
+    #[inline(always)]
+    pub fn isense7(&mut self) -> ISENSE7_W {
+        ISENSE7_W { w: self }
     }
     #[doc = "Bit 8 - PIOn_8."]
-    #[inline]
-    pub fn isense8(&mut self) -> _ISENSE8W {
-        _ISENSE8W { w: self }
+    #[inline(always)]
+    pub fn isense8(&mut self) -> ISENSE8_W {
+        ISENSE8_W { w: self }
     }
     #[doc = "Bit 9 - PIOn_9."]
-    #[inline]
-    pub fn isense9(&mut self) -> _ISENSE9W {
-        _ISENSE9W { w: self }
+    #[inline(always)]
+    pub fn isense9(&mut self) -> ISENSE9_W {
+        ISENSE9_W { w: self }
     }
     #[doc = "Bit 10 - PIOn_10."]
-    #[inline]
-    pub fn isense10(&mut self) -> _ISENSE10W {
-        _ISENSE10W { w: self }
+    #[inline(always)]
+    pub fn isense10(&mut self) -> ISENSE10_W {
+        ISENSE10_W { w: self }
     }
     #[doc = "Bit 11 - PIOn_11."]
-    #[inline]
-    pub fn isense11(&mut self) -> _ISENSE11W {
-        _ISENSE11W { w: self }
+    #[inline(always)]
+    pub fn isense11(&mut self) -> ISENSE11_W {
+        ISENSE11_W { w: self }
     }
 }

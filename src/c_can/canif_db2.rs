@@ -1,146 +1,64 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CANIF_DB2 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CANIF%s_DB2"]
+pub type R = crate::R<u32, super::CANIF_DB2>;
+#[doc = "Writer for register CANIF%s_DB2"]
+pub type W = crate::W<u32, super::CANIF_DB2>;
+#[doc = "Register CANIF%s_DB2 `reset()`'s with value 0"]
+impl crate::ResetValue for super::CANIF_DB2 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct DATA6R {
-    bits: u8,
-}
-impl DATA6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct DATA7R {
-    bits: u8,
-}
-impl DATA7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DATA6W<'a> {
+#[doc = "Reader of field `DATA6`"]
+pub type DATA6_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DATA6`"]
+pub struct DATA6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DATA6W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DATA6_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xff) | ((value as u32) & 0xff);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _DATA7W<'a> {
+#[doc = "Reader of field `DATA7`"]
+pub type DATA7_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `DATA7`"]
+pub struct DATA7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DATA7W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> DATA7_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 255;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0xff << 8)) | (((value as u32) & 0xff) << 8);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:7 - Data byte 6."]
-    #[inline]
-    pub fn data6(&self) -> DATA6R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DATA6R { bits }
+    #[inline(always)]
+    pub fn data6(&self) -> DATA6_R {
+        DATA6_R::new((self.bits & 0xff) as u8)
     }
     #[doc = "Bits 8:15 - Data byte 7."]
-    #[inline]
-    pub fn data7(&self) -> DATA7R {
-        let bits = {
-            const MASK: u8 = 255;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        DATA7R { bits }
+    #[inline(always)]
+    pub fn data7(&self) -> DATA7_R {
+        DATA7_R::new(((self.bits >> 8) & 0xff) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:7 - Data byte 6."]
-    #[inline]
-    pub fn data6(&mut self) -> _DATA6W {
-        _DATA6W { w: self }
+    #[inline(always)]
+    pub fn data6(&mut self) -> DATA6_W {
+        DATA6_W { w: self }
     }
     #[doc = "Bits 8:15 - Data byte 7."]
-    #[inline]
-    pub fn data7(&mut self) -> _DATA7W {
-        _DATA7W { w: self }
+    #[inline(always)]
+    pub fn data7(&mut self) -> DATA7_W {
+        DATA7_W { w: self }
     }
 }

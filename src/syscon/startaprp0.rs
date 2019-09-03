@@ -1,831 +1,458 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::STARTAPRP0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register STARTAPRP0"]
+pub type R = crate::R<u32, super::STARTAPRP0>;
+#[doc = "Writer for register STARTAPRP0"]
+pub type W = crate::W<u32, super::STARTAPRP0>;
+#[doc = "Register STARTAPRP0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::STARTAPRP0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct APRPIO0_0R {
-    bits: bool,
-}
-impl APRPIO0_0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APRPIO0_1R {
-    bits: bool,
-}
-impl APRPIO0_1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APRPIO0_2R {
-    bits: bool,
-}
-impl APRPIO0_2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APRPIO0_3R {
-    bits: bool,
-}
-impl APRPIO0_3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APRPIO0_4R {
-    bits: bool,
-}
-impl APRPIO0_4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APRPIO0_5R {
-    bits: bool,
-}
-impl APRPIO0_5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APRPIO0_6R {
-    bits: bool,
-}
-impl APRPIO0_6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APRPIO0_7R {
-    bits: bool,
-}
-impl APRPIO0_7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APRPIO0_8R {
-    bits: bool,
-}
-impl APRPIO0_8R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APRPIO0_9R {
-    bits: bool,
-}
-impl APRPIO0_9R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APRPIO0_10R {
-    bits: bool,
-}
-impl APRPIO0_10R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APRPIO0_11R {
-    bits: bool,
-}
-impl APRPIO0_11R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct APRPIO1_0R {
-    bits: bool,
-}
-impl APRPIO1_0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _APRPIO0_0W<'a> {
+#[doc = "Reader of field `APRPIO0_0`"]
+pub type APRPIO0_0_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APRPIO0_0`"]
+pub struct APRPIO0_0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APRPIO0_0W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> APRPIO0_0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _APRPIO0_1W<'a> {
+#[doc = "Reader of field `APRPIO0_1`"]
+pub type APRPIO0_1_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APRPIO0_1`"]
+pub struct APRPIO0_1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APRPIO0_1W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> APRPIO0_1_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _APRPIO0_2W<'a> {
+#[doc = "Reader of field `APRPIO0_2`"]
+pub type APRPIO0_2_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APRPIO0_2`"]
+pub struct APRPIO0_2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APRPIO0_2W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> APRPIO0_2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _APRPIO0_3W<'a> {
+#[doc = "Reader of field `APRPIO0_3`"]
+pub type APRPIO0_3_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APRPIO0_3`"]
+pub struct APRPIO0_3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APRPIO0_3W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> APRPIO0_3_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _APRPIO0_4W<'a> {
+#[doc = "Reader of field `APRPIO0_4`"]
+pub type APRPIO0_4_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APRPIO0_4`"]
+pub struct APRPIO0_4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APRPIO0_4W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> APRPIO0_4_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _APRPIO0_5W<'a> {
+#[doc = "Reader of field `APRPIO0_5`"]
+pub type APRPIO0_5_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APRPIO0_5`"]
+pub struct APRPIO0_5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APRPIO0_5W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> APRPIO0_5_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _APRPIO0_6W<'a> {
+#[doc = "Reader of field `APRPIO0_6`"]
+pub type APRPIO0_6_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APRPIO0_6`"]
+pub struct APRPIO0_6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APRPIO0_6W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> APRPIO0_6_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _APRPIO0_7W<'a> {
+#[doc = "Reader of field `APRPIO0_7`"]
+pub type APRPIO0_7_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APRPIO0_7`"]
+pub struct APRPIO0_7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APRPIO0_7W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> APRPIO0_7_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _APRPIO0_8W<'a> {
+#[doc = "Reader of field `APRPIO0_8`"]
+pub type APRPIO0_8_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APRPIO0_8`"]
+pub struct APRPIO0_8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APRPIO0_8W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> APRPIO0_8_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _APRPIO0_9W<'a> {
+#[doc = "Reader of field `APRPIO0_9`"]
+pub type APRPIO0_9_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APRPIO0_9`"]
+pub struct APRPIO0_9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APRPIO0_9W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> APRPIO0_9_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _APRPIO0_10W<'a> {
+#[doc = "Reader of field `APRPIO0_10`"]
+pub type APRPIO0_10_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APRPIO0_10`"]
+pub struct APRPIO0_10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APRPIO0_10W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> APRPIO0_10_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _APRPIO0_11W<'a> {
+#[doc = "Reader of field `APRPIO0_11`"]
+pub type APRPIO0_11_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APRPIO0_11`"]
+pub struct APRPIO0_11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APRPIO0_11W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> APRPIO0_11_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _APRPIO1_0W<'a> {
+#[doc = "Reader of field `APRPIO1_0`"]
+pub type APRPIO1_0_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `APRPIO1_0`"]
+pub struct APRPIO1_0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _APRPIO1_0W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> APRPIO1_0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_0(&self) -> APRPIO0_0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APRPIO0_0R { bits }
+    #[inline(always)]
+    pub fn aprpio0_0(&self) -> APRPIO0_0_R {
+        APRPIO0_0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_1(&self) -> APRPIO0_1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APRPIO0_1R { bits }
+    #[inline(always)]
+    pub fn aprpio0_1(&self) -> APRPIO0_1_R {
+        APRPIO0_1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_2(&self) -> APRPIO0_2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APRPIO0_2R { bits }
+    #[inline(always)]
+    pub fn aprpio0_2(&self) -> APRPIO0_2_R {
+        APRPIO0_2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_3(&self) -> APRPIO0_3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APRPIO0_3R { bits }
+    #[inline(always)]
+    pub fn aprpio0_3(&self) -> APRPIO0_3_R {
+        APRPIO0_3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_4(&self) -> APRPIO0_4R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APRPIO0_4R { bits }
+    #[inline(always)]
+    pub fn aprpio0_4(&self) -> APRPIO0_4_R {
+        APRPIO0_4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_5(&self) -> APRPIO0_5R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APRPIO0_5R { bits }
+    #[inline(always)]
+    pub fn aprpio0_5(&self) -> APRPIO0_5_R {
+        APRPIO0_5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_6(&self) -> APRPIO0_6R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APRPIO0_6R { bits }
+    #[inline(always)]
+    pub fn aprpio0_6(&self) -> APRPIO0_6_R {
+        APRPIO0_6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_7(&self) -> APRPIO0_7R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APRPIO0_7R { bits }
+    #[inline(always)]
+    pub fn aprpio0_7(&self) -> APRPIO0_7_R {
+        APRPIO0_7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_8(&self) -> APRPIO0_8R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APRPIO0_8R { bits }
+    #[inline(always)]
+    pub fn aprpio0_8(&self) -> APRPIO0_8_R {
+        APRPIO0_8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_9(&self) -> APRPIO0_9R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APRPIO0_9R { bits }
+    #[inline(always)]
+    pub fn aprpio0_9(&self) -> APRPIO0_9_R {
+        APRPIO0_9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_10(&self) -> APRPIO0_10R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APRPIO0_10R { bits }
+    #[inline(always)]
+    pub fn aprpio0_10(&self) -> APRPIO0_10_R {
+        APRPIO0_10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_11(&self) -> APRPIO0_11R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APRPIO0_11R { bits }
+    #[inline(always)]
+    pub fn aprpio0_11(&self) -> APRPIO0_11_R {
+        APRPIO0_11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Edge select for start logic input PIO1_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio1_0(&self) -> APRPIO1_0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        APRPIO1_0R { bits }
+    #[inline(always)]
+    pub fn aprpio1_0(&self) -> APRPIO1_0_R {
+        APRPIO1_0_R::new(((self.bits >> 12) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_0(&mut self) -> _APRPIO0_0W {
-        _APRPIO0_0W { w: self }
+    #[inline(always)]
+    pub fn aprpio0_0(&mut self) -> APRPIO0_0_W {
+        APRPIO0_0_W { w: self }
     }
     #[doc = "Bit 1 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_1(&mut self) -> _APRPIO0_1W {
-        _APRPIO0_1W { w: self }
+    #[inline(always)]
+    pub fn aprpio0_1(&mut self) -> APRPIO0_1_W {
+        APRPIO0_1_W { w: self }
     }
     #[doc = "Bit 2 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_2(&mut self) -> _APRPIO0_2W {
-        _APRPIO0_2W { w: self }
+    #[inline(always)]
+    pub fn aprpio0_2(&mut self) -> APRPIO0_2_W {
+        APRPIO0_2_W { w: self }
     }
     #[doc = "Bit 3 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_3(&mut self) -> _APRPIO0_3W {
-        _APRPIO0_3W { w: self }
+    #[inline(always)]
+    pub fn aprpio0_3(&mut self) -> APRPIO0_3_W {
+        APRPIO0_3_W { w: self }
     }
     #[doc = "Bit 4 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_4(&mut self) -> _APRPIO0_4W {
-        _APRPIO0_4W { w: self }
+    #[inline(always)]
+    pub fn aprpio0_4(&mut self) -> APRPIO0_4_W {
+        APRPIO0_4_W { w: self }
     }
     #[doc = "Bit 5 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_5(&mut self) -> _APRPIO0_5W {
-        _APRPIO0_5W { w: self }
+    #[inline(always)]
+    pub fn aprpio0_5(&mut self) -> APRPIO0_5_W {
+        APRPIO0_5_W { w: self }
     }
     #[doc = "Bit 6 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_6(&mut self) -> _APRPIO0_6W {
-        _APRPIO0_6W { w: self }
+    #[inline(always)]
+    pub fn aprpio0_6(&mut self) -> APRPIO0_6_W {
+        APRPIO0_6_W { w: self }
     }
     #[doc = "Bit 7 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_7(&mut self) -> _APRPIO0_7W {
-        _APRPIO0_7W { w: self }
+    #[inline(always)]
+    pub fn aprpio0_7(&mut self) -> APRPIO0_7_W {
+        APRPIO0_7_W { w: self }
     }
     #[doc = "Bit 8 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_8(&mut self) -> _APRPIO0_8W {
-        _APRPIO0_8W { w: self }
+    #[inline(always)]
+    pub fn aprpio0_8(&mut self) -> APRPIO0_8_W {
+        APRPIO0_8_W { w: self }
     }
     #[doc = "Bit 9 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_9(&mut self) -> _APRPIO0_9W {
-        _APRPIO0_9W { w: self }
+    #[inline(always)]
+    pub fn aprpio0_9(&mut self) -> APRPIO0_9_W {
+        APRPIO0_9_W { w: self }
     }
     #[doc = "Bit 10 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_10(&mut self) -> _APRPIO0_10W {
-        _APRPIO0_10W { w: self }
+    #[inline(always)]
+    pub fn aprpio0_10(&mut self) -> APRPIO0_10_W {
+        APRPIO0_10_W { w: self }
     }
     #[doc = "Bit 11 - Edge select for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio0_11(&mut self) -> _APRPIO0_11W {
-        _APRPIO0_11W { w: self }
+    #[inline(always)]
+    pub fn aprpio0_11(&mut self) -> APRPIO0_11_W {
+        APRPIO0_11_W { w: self }
     }
     #[doc = "Bit 12 - Edge select for start logic input PIO1_0 0 = Falling edge 1 = Rising edge."]
-    #[inline]
-    pub fn aprpio1_0(&mut self) -> _APRPIO1_0W {
-        _APRPIO1_0W { w: self }
+    #[inline(always)]
+    pub fn aprpio1_0(&mut self) -> APRPIO1_0_W {
+        APRPIO1_0_W { w: self }
     }
 }

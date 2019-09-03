@@ -1,421 +1,280 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PCON {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PCON"]
+pub type R = crate::R<u32, super::PCON>;
+#[doc = "Writer for register PCON"]
+pub type W = crate::W<u32, super::PCON>;
+#[doc = "Register PCON `reset()`'s with value 0"]
+impl crate::ResetValue for super::PCON {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `DPDEN`"]
+#[doc = "Deep power-down mode enable.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DPDENR {
-    #[doc = "ARM WFI will enter Sleep or Deep-sleep mode (clock to ARM Cortex-M0 core turned off)"]
+pub enum DPDEN_A {
+    #[doc = "0: ARM WFI will enter Sleep or Deep-sleep mode (clock to ARM Cortex-M0 core turned off)"]
     SLEEPMODE,
-    #[doc = "ARM WFI will enter Deep-power down mode (ARM Cortex-M0 core powered-down)"]
+    #[doc = "1: ARM WFI will enter Deep-power down mode (ARM Cortex-M0 core powered-down)"]
     DEEPPOWERDOWN,
 }
-impl DPDENR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DPDENR::SLEEPMODE => false,
-            DPDENR::DEEPPOWERDOWN => true,
+impl From<DPDEN_A> for bool {
+    #[inline(always)]
+    fn from(variant: DPDEN_A) -> Self {
+        match variant {
+            DPDEN_A::SLEEPMODE => false,
+            DPDEN_A::DEEPPOWERDOWN => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DPDENR {
-        match value {
-            false => DPDENR::SLEEPMODE,
-            true => DPDENR::DEEPPOWERDOWN,
+}
+#[doc = "Reader of field `DPDEN`"]
+pub type DPDEN_R = crate::R<bool, DPDEN_A>;
+impl DPDEN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DPDEN_A {
+        match self.bits {
+            false => DPDEN_A::SLEEPMODE,
+            true => DPDEN_A::DEEPPOWERDOWN,
         }
     }
     #[doc = "Checks if the value of the field is `SLEEPMODE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_sleepmode(&self) -> bool {
-        *self == DPDENR::SLEEPMODE
+        *self == DPDEN_A::SLEEPMODE
     }
     #[doc = "Checks if the value of the field is `DEEPPOWERDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_deeppowerdown(&self) -> bool {
-        *self == DPDENR::DEEPPOWERDOWN
+        *self == DPDEN_A::DEEPPOWERDOWN
     }
 }
-#[doc = "Possible values of the field `SLEEPFLAG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SLEEPFLAGR {
-    #[doc = "Read: No power-down mode entered. LPC111x/LPC11C1x is in Active mode. Write: No effect"]
-    NOPOWERDOWN,
-    #[doc = "Read: Sleep/Deep-sleep or Deep power-down mode entered. Write: Writing a 1 clears the SLEEPFLAG bit to 0"]
-    POWERDOWN,
+#[doc = "Write proxy for field `DPDEN`"]
+pub struct DPDEN_W<'a> {
+    w: &'a mut W,
 }
-impl SLEEPFLAGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SLEEPFLAGR::NOPOWERDOWN => false,
-            SLEEPFLAGR::POWERDOWN => true,
+impl<'a> DPDEN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DPDEN_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SLEEPFLAGR {
-        match value {
-            false => SLEEPFLAGR::NOPOWERDOWN,
-            true => SLEEPFLAGR::POWERDOWN,
+    #[doc = "ARM WFI will enter Sleep or Deep-sleep mode (clock to ARM Cortex-M0 core turned off)"]
+    #[inline(always)]
+    pub fn sleepmode(self) -> &'a mut W {
+        self.variant(DPDEN_A::SLEEPMODE)
+    }
+    #[doc = "ARM WFI will enter Deep-power down mode (ARM Cortex-M0 core powered-down)"]
+    #[inline(always)]
+    pub fn deeppowerdown(self) -> &'a mut W {
+        self.variant(DPDEN_A::DEEPPOWERDOWN)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "Sleep mode flag.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SLEEPFLAG_A {
+    #[doc = "0: Read: No power-down mode entered. LPC111x/LPC11C1x is in Active mode. Write: No effect"]
+    NOPOWERDOWN,
+    #[doc = "1: Read: Sleep/Deep-sleep or Deep power-down mode entered. Write: Writing a 1 clears the SLEEPFLAG bit to 0"]
+    POWERDOWN,
+}
+impl From<SLEEPFLAG_A> for bool {
+    #[inline(always)]
+    fn from(variant: SLEEPFLAG_A) -> Self {
+        match variant {
+            SLEEPFLAG_A::NOPOWERDOWN => false,
+            SLEEPFLAG_A::POWERDOWN => true,
+        }
+    }
+}
+#[doc = "Reader of field `SLEEPFLAG`"]
+pub type SLEEPFLAG_R = crate::R<bool, SLEEPFLAG_A>;
+impl SLEEPFLAG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SLEEPFLAG_A {
+        match self.bits {
+            false => SLEEPFLAG_A::NOPOWERDOWN,
+            true => SLEEPFLAG_A::POWERDOWN,
         }
     }
     #[doc = "Checks if the value of the field is `NOPOWERDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_nopowerdown(&self) -> bool {
-        *self == SLEEPFLAGR::NOPOWERDOWN
+        *self == SLEEPFLAG_A::NOPOWERDOWN
     }
     #[doc = "Checks if the value of the field is `POWERDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_powerdown(&self) -> bool {
-        *self == SLEEPFLAGR::POWERDOWN
+        *self == SLEEPFLAG_A::POWERDOWN
     }
 }
-#[doc = "Possible values of the field `DPDFLAG`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DPDFLAGR {
-    #[doc = "Read: Deep power-down mode not entered. Write: No effect"]
-    NODEEPPOWERDOWN,
-    #[doc = "Read: Deep power-down mode entered. Write: Clear the Deep power-down flag"]
-    DEEPPOWERDOWN,
+#[doc = "Write proxy for field `SLEEPFLAG`"]
+pub struct SLEEPFLAG_W<'a> {
+    w: &'a mut W,
 }
-impl DPDFLAGR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DPDFLAGR::NODEEPPOWERDOWN => false,
-            DPDFLAGR::DEEPPOWERDOWN => true,
+impl<'a> SLEEPFLAG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SLEEPFLAG_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DPDFLAGR {
-        match value {
-            false => DPDFLAGR::NODEEPPOWERDOWN,
-            true => DPDFLAGR::DEEPPOWERDOWN,
+    #[doc = "Read: No power-down mode entered. LPC111x/LPC11C1x is in Active mode. Write: No effect"]
+    #[inline(always)]
+    pub fn nopowerdown(self) -> &'a mut W {
+        self.variant(SLEEPFLAG_A::NOPOWERDOWN)
+    }
+    #[doc = "Read: Sleep/Deep-sleep or Deep power-down mode entered. Write: Writing a 1 clears the SLEEPFLAG bit to 0"]
+    #[inline(always)]
+    pub fn powerdown(self) -> &'a mut W {
+        self.variant(SLEEPFLAG_A::POWERDOWN)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
+        self.w
+    }
+}
+#[doc = "Deep power-down flag.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DPDFLAG_A {
+    #[doc = "0: Read: Deep power-down mode not entered. Write: No effect"]
+    NODEEPPOWERDOWN,
+    #[doc = "1: Read: Deep power-down mode entered. Write: Clear the Deep power-down flag"]
+    DEEPPOWERDOWN,
+}
+impl From<DPDFLAG_A> for bool {
+    #[inline(always)]
+    fn from(variant: DPDFLAG_A) -> Self {
+        match variant {
+            DPDFLAG_A::NODEEPPOWERDOWN => false,
+            DPDFLAG_A::DEEPPOWERDOWN => true,
+        }
+    }
+}
+#[doc = "Reader of field `DPDFLAG`"]
+pub type DPDFLAG_R = crate::R<bool, DPDFLAG_A>;
+impl DPDFLAG_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DPDFLAG_A {
+        match self.bits {
+            false => DPDFLAG_A::NODEEPPOWERDOWN,
+            true => DPDFLAG_A::DEEPPOWERDOWN,
         }
     }
     #[doc = "Checks if the value of the field is `NODEEPPOWERDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_nodeeppowerdown(&self) -> bool {
-        *self == DPDFLAGR::NODEEPPOWERDOWN
+        *self == DPDFLAG_A::NODEEPPOWERDOWN
     }
     #[doc = "Checks if the value of the field is `DEEPPOWERDOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_deeppowerdown(&self) -> bool {
-        *self == DPDFLAGR::DEEPPOWERDOWN
+        *self == DPDFLAG_A::DEEPPOWERDOWN
     }
 }
-#[doc = "Values that can be written to the field `DPDEN`"]
-pub enum DPDENW {
-    #[doc = "ARM WFI will enter Sleep or Deep-sleep mode (clock to ARM Cortex-M0 core turned off)"]
-    SLEEPMODE,
-    #[doc = "ARM WFI will enter Deep-power down mode (ARM Cortex-M0 core powered-down)"]
-    DEEPPOWERDOWN,
-}
-impl DPDENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DPDENW::SLEEPMODE => false,
-            DPDENW::DEEPPOWERDOWN => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DPDENW<'a> {
+#[doc = "Write proxy for field `DPDFLAG`"]
+pub struct DPDFLAG_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DPDENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DPDENW) -> &'a mut W {
+impl<'a> DPDFLAG_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DPDFLAG_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "ARM WFI will enter Sleep or Deep-sleep mode (clock to ARM Cortex-M0 core turned off)"]
-    #[inline]
-    pub fn sleepmode(self) -> &'a mut W {
-        self.variant(DPDENW::SLEEPMODE)
-    }
-    #[doc = "ARM WFI will enter Deep-power down mode (ARM Cortex-M0 core powered-down)"]
-    #[inline]
-    pub fn deeppowerdown(self) -> &'a mut W {
-        self.variant(DPDENW::DEEPPOWERDOWN)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SLEEPFLAG`"]
-pub enum SLEEPFLAGW {
-    #[doc = "Read: No power-down mode entered. LPC111x/LPC11C1x is in Active mode. Write: No effect"]
-    NOPOWERDOWN,
-    #[doc = "Read: Sleep/Deep-sleep or Deep power-down mode entered. Write: Writing a 1 clears the SLEEPFLAG bit to 0"]
-    POWERDOWN,
-}
-impl SLEEPFLAGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SLEEPFLAGW::NOPOWERDOWN => false,
-            SLEEPFLAGW::POWERDOWN => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SLEEPFLAGW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SLEEPFLAGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SLEEPFLAGW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Read: No power-down mode entered. LPC111x/LPC11C1x is in Active mode. Write: No effect"]
-    #[inline]
-    pub fn nopowerdown(self) -> &'a mut W {
-        self.variant(SLEEPFLAGW::NOPOWERDOWN)
-    }
-    #[doc = "Read: Sleep/Deep-sleep or Deep power-down mode entered. Write: Writing a 1 clears the SLEEPFLAG bit to 0"]
-    #[inline]
-    pub fn powerdown(self) -> &'a mut W {
-        self.variant(SLEEPFLAGW::POWERDOWN)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DPDFLAG`"]
-pub enum DPDFLAGW {
-    #[doc = "Read: Deep power-down mode not entered. Write: No effect"]
-    NODEEPPOWERDOWN,
-    #[doc = "Read: Deep power-down mode entered. Write: Clear the Deep power-down flag"]
-    DEEPPOWERDOWN,
-}
-impl DPDFLAGW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DPDFLAGW::NODEEPPOWERDOWN => false,
-            DPDFLAGW::DEEPPOWERDOWN => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DPDFLAGW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DPDFLAGW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DPDFLAGW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Read: Deep power-down mode not entered. Write: No effect"]
-    #[inline]
+    #[inline(always)]
     pub fn nodeeppowerdown(self) -> &'a mut W {
-        self.variant(DPDFLAGW::NODEEPPOWERDOWN)
+        self.variant(DPDFLAG_A::NODEEPPOWERDOWN)
     }
     #[doc = "Read: Deep power-down mode entered. Write: Clear the Deep power-down flag"]
-    #[inline]
+    #[inline(always)]
     pub fn deeppowerdown(self) -> &'a mut W {
-        self.variant(DPDFLAGW::DEEPPOWERDOWN)
+        self.variant(DPDFLAG_A::DEEPPOWERDOWN)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 1 - Deep power-down mode enable."]
-    #[inline]
-    pub fn dpden(&self) -> DPDENR {
-        DPDENR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dpden(&self) -> DPDEN_R {
+        DPDEN_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Sleep mode flag."]
-    #[inline]
-    pub fn sleepflag(&self) -> SLEEPFLAGR {
-        SLEEPFLAGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sleepflag(&self) -> SLEEPFLAG_R {
+        SLEEPFLAG_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Deep power-down flag."]
-    #[inline]
-    pub fn dpdflag(&self) -> DPDFLAGR {
-        DPDFLAGR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dpdflag(&self) -> DPDFLAG_R {
+        DPDFLAG_R::new(((self.bits >> 11) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 1 - Deep power-down mode enable."]
-    #[inline]
-    pub fn dpden(&mut self) -> _DPDENW {
-        _DPDENW { w: self }
+    #[inline(always)]
+    pub fn dpden(&mut self) -> DPDEN_W {
+        DPDEN_W { w: self }
     }
     #[doc = "Bit 8 - Sleep mode flag."]
-    #[inline]
-    pub fn sleepflag(&mut self) -> _SLEEPFLAGW {
-        _SLEEPFLAGW { w: self }
+    #[inline(always)]
+    pub fn sleepflag(&mut self) -> SLEEPFLAG_W {
+        SLEEPFLAG_W { w: self }
     }
     #[doc = "Bit 11 - Deep power-down flag."]
-    #[inline]
-    pub fn dpdflag(&mut self) -> _DPDFLAGW {
-        _DPDFLAGW { w: self }
+    #[inline(always)]
+    pub fn dpdflag(&mut self) -> DPDFLAG_W {
+        DPDFLAG_W { w: self }
     }
 }

@@ -1,1492 +1,1072 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::IEV {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register IEV"]
+pub type R = crate::R<u32, super::IEV>;
+#[doc = "Writer for register IEV"]
+pub type W = crate::W<u32, super::IEV>;
+#[doc = "Register IEV `reset()`'s with value 0"]
+impl crate::ResetValue for super::IEV {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `IEV0`"]
+#[doc = "PIOn_0.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IEV0R {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
+pub enum IEV0_A {
+    #[doc = "0: Pin interrupt is triggered on falling edges (if edge-sensitive)"]
     FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
+    #[doc = "1: Pin interrupt is triggered on rising edges (if edge-sensitive)"]
     RISING,
 }
-impl IEV0R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IEV0R::FALLING => false,
-            IEV0R::RISING => true,
+impl From<IEV0_A> for bool {
+    #[inline(always)]
+    fn from(variant: IEV0_A) -> Self {
+        match variant {
+            IEV0_A::FALLING => false,
+            IEV0_A::RISING => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IEV0R {
-        match value {
-            false => IEV0R::FALLING,
-            true => IEV0R::RISING,
+}
+#[doc = "Reader of field `IEV0`"]
+pub type IEV0_R = crate::R<bool, IEV0_A>;
+impl IEV0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IEV0_A {
+        match self.bits {
+            false => IEV0_A::FALLING,
+            true => IEV0_A::RISING,
         }
     }
     #[doc = "Checks if the value of the field is `FALLING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_falling(&self) -> bool {
-        *self == IEV0R::FALLING
+        *self == IEV0_A::FALLING
     }
     #[doc = "Checks if the value of the field is `RISING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rising(&self) -> bool {
-        *self == IEV0R::RISING
+        *self == IEV0_A::RISING
     }
 }
-#[doc = "Possible values of the field `IEV1`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IEV1R {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    RISING,
-}
-impl IEV1R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IEV1R::FALLING => false,
-            IEV1R::RISING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IEV1R {
-        match value {
-            false => IEV1R::FALLING,
-            true => IEV1R::RISING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `FALLING`"]
-    #[inline]
-    pub fn is_falling(&self) -> bool {
-        *self == IEV1R::FALLING
-    }
-    #[doc = "Checks if the value of the field is `RISING`"]
-    #[inline]
-    pub fn is_rising(&self) -> bool {
-        *self == IEV1R::RISING
-    }
-}
-#[doc = "Possible values of the field `IEV2`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IEV2R {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    RISING,
-}
-impl IEV2R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IEV2R::FALLING => false,
-            IEV2R::RISING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IEV2R {
-        match value {
-            false => IEV2R::FALLING,
-            true => IEV2R::RISING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `FALLING`"]
-    #[inline]
-    pub fn is_falling(&self) -> bool {
-        *self == IEV2R::FALLING
-    }
-    #[doc = "Checks if the value of the field is `RISING`"]
-    #[inline]
-    pub fn is_rising(&self) -> bool {
-        *self == IEV2R::RISING
-    }
-}
-#[doc = "Possible values of the field `IEV3`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IEV3R {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    RISING,
-}
-impl IEV3R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IEV3R::FALLING => false,
-            IEV3R::RISING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IEV3R {
-        match value {
-            false => IEV3R::FALLING,
-            true => IEV3R::RISING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `FALLING`"]
-    #[inline]
-    pub fn is_falling(&self) -> bool {
-        *self == IEV3R::FALLING
-    }
-    #[doc = "Checks if the value of the field is `RISING`"]
-    #[inline]
-    pub fn is_rising(&self) -> bool {
-        *self == IEV3R::RISING
-    }
-}
-#[doc = "Possible values of the field `IEV4`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IEV4R {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    RISING,
-}
-impl IEV4R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IEV4R::FALLING => false,
-            IEV4R::RISING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IEV4R {
-        match value {
-            false => IEV4R::FALLING,
-            true => IEV4R::RISING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `FALLING`"]
-    #[inline]
-    pub fn is_falling(&self) -> bool {
-        *self == IEV4R::FALLING
-    }
-    #[doc = "Checks if the value of the field is `RISING`"]
-    #[inline]
-    pub fn is_rising(&self) -> bool {
-        *self == IEV4R::RISING
-    }
-}
-#[doc = "Possible values of the field `IEV5`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IEV5R {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    RISING,
-}
-impl IEV5R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IEV5R::FALLING => false,
-            IEV5R::RISING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IEV5R {
-        match value {
-            false => IEV5R::FALLING,
-            true => IEV5R::RISING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `FALLING`"]
-    #[inline]
-    pub fn is_falling(&self) -> bool {
-        *self == IEV5R::FALLING
-    }
-    #[doc = "Checks if the value of the field is `RISING`"]
-    #[inline]
-    pub fn is_rising(&self) -> bool {
-        *self == IEV5R::RISING
-    }
-}
-#[doc = "Possible values of the field `IEV6`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IEV6R {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    RISING,
-}
-impl IEV6R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IEV6R::FALLING => false,
-            IEV6R::RISING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IEV6R {
-        match value {
-            false => IEV6R::FALLING,
-            true => IEV6R::RISING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `FALLING`"]
-    #[inline]
-    pub fn is_falling(&self) -> bool {
-        *self == IEV6R::FALLING
-    }
-    #[doc = "Checks if the value of the field is `RISING`"]
-    #[inline]
-    pub fn is_rising(&self) -> bool {
-        *self == IEV6R::RISING
-    }
-}
-#[doc = "Possible values of the field `IEV7`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IEV7R {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    RISING,
-}
-impl IEV7R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IEV7R::FALLING => false,
-            IEV7R::RISING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IEV7R {
-        match value {
-            false => IEV7R::FALLING,
-            true => IEV7R::RISING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `FALLING`"]
-    #[inline]
-    pub fn is_falling(&self) -> bool {
-        *self == IEV7R::FALLING
-    }
-    #[doc = "Checks if the value of the field is `RISING`"]
-    #[inline]
-    pub fn is_rising(&self) -> bool {
-        *self == IEV7R::RISING
-    }
-}
-#[doc = "Possible values of the field `IEV8`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IEV8R {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    RISING,
-}
-impl IEV8R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IEV8R::FALLING => false,
-            IEV8R::RISING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IEV8R {
-        match value {
-            false => IEV8R::FALLING,
-            true => IEV8R::RISING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `FALLING`"]
-    #[inline]
-    pub fn is_falling(&self) -> bool {
-        *self == IEV8R::FALLING
-    }
-    #[doc = "Checks if the value of the field is `RISING`"]
-    #[inline]
-    pub fn is_rising(&self) -> bool {
-        *self == IEV8R::RISING
-    }
-}
-#[doc = "Possible values of the field `IEV9`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IEV9R {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    RISING,
-}
-impl IEV9R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IEV9R::FALLING => false,
-            IEV9R::RISING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IEV9R {
-        match value {
-            false => IEV9R::FALLING,
-            true => IEV9R::RISING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `FALLING`"]
-    #[inline]
-    pub fn is_falling(&self) -> bool {
-        *self == IEV9R::FALLING
-    }
-    #[doc = "Checks if the value of the field is `RISING`"]
-    #[inline]
-    pub fn is_rising(&self) -> bool {
-        *self == IEV9R::RISING
-    }
-}
-#[doc = "Possible values of the field `IEV10`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IEV10R {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    RISING,
-}
-impl IEV10R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IEV10R::FALLING => false,
-            IEV10R::RISING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IEV10R {
-        match value {
-            false => IEV10R::FALLING,
-            true => IEV10R::RISING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `FALLING`"]
-    #[inline]
-    pub fn is_falling(&self) -> bool {
-        *self == IEV10R::FALLING
-    }
-    #[doc = "Checks if the value of the field is `RISING`"]
-    #[inline]
-    pub fn is_rising(&self) -> bool {
-        *self == IEV10R::RISING
-    }
-}
-#[doc = "Possible values of the field `IEV11`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum IEV11R {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    RISING,
-}
-impl IEV11R {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            IEV11R::FALLING => false,
-            IEV11R::RISING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> IEV11R {
-        match value {
-            false => IEV11R::FALLING,
-            true => IEV11R::RISING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `FALLING`"]
-    #[inline]
-    pub fn is_falling(&self) -> bool {
-        *self == IEV11R::FALLING
-    }
-    #[doc = "Checks if the value of the field is `RISING`"]
-    #[inline]
-    pub fn is_rising(&self) -> bool {
-        *self == IEV11R::RISING
-    }
-}
-#[doc = "Values that can be written to the field `IEV0`"]
-pub enum IEV0W {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    RISING,
-}
-impl IEV0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IEV0W::FALLING => false,
-            IEV0W::RISING => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _IEV0W<'a> {
+#[doc = "Write proxy for field `IEV0`"]
+pub struct IEV0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IEV0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IEV0W) -> &'a mut W {
+impl<'a> IEV0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IEV0_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(IEV0W::FALLING)
+        self.variant(IEV0_A::FALLING)
     }
     #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(IEV0W::RISING)
+        self.variant(IEV0_A::RISING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IEV1`"]
-pub enum IEV1W {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
+#[doc = "PIOn_1.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IEV1_A {
+    #[doc = "0: Pin interrupt is triggered on falling edges (if edge-sensitive)"]
     FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
+    #[doc = "1: Pin interrupt is triggered on rising edges (if edge-sensitive)"]
     RISING,
 }
-impl IEV1W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IEV1W::FALLING => false,
-            IEV1W::RISING => true,
+impl From<IEV1_A> for bool {
+    #[inline(always)]
+    fn from(variant: IEV1_A) -> Self {
+        match variant {
+            IEV1_A::FALLING => false,
+            IEV1_A::RISING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IEV1W<'a> {
+#[doc = "Reader of field `IEV1`"]
+pub type IEV1_R = crate::R<bool, IEV1_A>;
+impl IEV1_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IEV1_A {
+        match self.bits {
+            false => IEV1_A::FALLING,
+            true => IEV1_A::RISING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[inline(always)]
+    pub fn is_falling(&self) -> bool {
+        *self == IEV1_A::FALLING
+    }
+    #[doc = "Checks if the value of the field is `RISING`"]
+    #[inline(always)]
+    pub fn is_rising(&self) -> bool {
+        *self == IEV1_A::RISING
+    }
+}
+#[doc = "Write proxy for field `IEV1`"]
+pub struct IEV1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IEV1W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IEV1W) -> &'a mut W {
+impl<'a> IEV1_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IEV1_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(IEV1W::FALLING)
+        self.variant(IEV1_A::FALLING)
     }
     #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(IEV1W::RISING)
+        self.variant(IEV1_A::RISING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IEV2`"]
-pub enum IEV2W {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
+#[doc = "PIOn_2.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IEV2_A {
+    #[doc = "0: Pin interrupt is triggered on falling edges (if edge-sensitive)"]
     FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
+    #[doc = "1: Pin interrupt is triggered on rising edges (if edge-sensitive)"]
     RISING,
 }
-impl IEV2W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IEV2W::FALLING => false,
-            IEV2W::RISING => true,
+impl From<IEV2_A> for bool {
+    #[inline(always)]
+    fn from(variant: IEV2_A) -> Self {
+        match variant {
+            IEV2_A::FALLING => false,
+            IEV2_A::RISING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IEV2W<'a> {
+#[doc = "Reader of field `IEV2`"]
+pub type IEV2_R = crate::R<bool, IEV2_A>;
+impl IEV2_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IEV2_A {
+        match self.bits {
+            false => IEV2_A::FALLING,
+            true => IEV2_A::RISING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[inline(always)]
+    pub fn is_falling(&self) -> bool {
+        *self == IEV2_A::FALLING
+    }
+    #[doc = "Checks if the value of the field is `RISING`"]
+    #[inline(always)]
+    pub fn is_rising(&self) -> bool {
+        *self == IEV2_A::RISING
+    }
+}
+#[doc = "Write proxy for field `IEV2`"]
+pub struct IEV2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IEV2W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IEV2W) -> &'a mut W {
+impl<'a> IEV2_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IEV2_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(IEV2W::FALLING)
+        self.variant(IEV2_A::FALLING)
     }
     #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(IEV2W::RISING)
+        self.variant(IEV2_A::RISING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IEV3`"]
-pub enum IEV3W {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
+#[doc = "PIOn_3.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IEV3_A {
+    #[doc = "0: Pin interrupt is triggered on falling edges (if edge-sensitive)"]
     FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
+    #[doc = "1: Pin interrupt is triggered on rising edges (if edge-sensitive)"]
     RISING,
 }
-impl IEV3W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IEV3W::FALLING => false,
-            IEV3W::RISING => true,
+impl From<IEV3_A> for bool {
+    #[inline(always)]
+    fn from(variant: IEV3_A) -> Self {
+        match variant {
+            IEV3_A::FALLING => false,
+            IEV3_A::RISING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IEV3W<'a> {
+#[doc = "Reader of field `IEV3`"]
+pub type IEV3_R = crate::R<bool, IEV3_A>;
+impl IEV3_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IEV3_A {
+        match self.bits {
+            false => IEV3_A::FALLING,
+            true => IEV3_A::RISING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[inline(always)]
+    pub fn is_falling(&self) -> bool {
+        *self == IEV3_A::FALLING
+    }
+    #[doc = "Checks if the value of the field is `RISING`"]
+    #[inline(always)]
+    pub fn is_rising(&self) -> bool {
+        *self == IEV3_A::RISING
+    }
+}
+#[doc = "Write proxy for field `IEV3`"]
+pub struct IEV3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IEV3W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IEV3W) -> &'a mut W {
+impl<'a> IEV3_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IEV3_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(IEV3W::FALLING)
+        self.variant(IEV3_A::FALLING)
     }
     #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(IEV3W::RISING)
+        self.variant(IEV3_A::RISING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IEV4`"]
-pub enum IEV4W {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
+#[doc = "PIOn_4.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IEV4_A {
+    #[doc = "0: Pin interrupt is triggered on falling edges (if edge-sensitive)"]
     FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
+    #[doc = "1: Pin interrupt is triggered on rising edges (if edge-sensitive)"]
     RISING,
 }
-impl IEV4W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IEV4W::FALLING => false,
-            IEV4W::RISING => true,
+impl From<IEV4_A> for bool {
+    #[inline(always)]
+    fn from(variant: IEV4_A) -> Self {
+        match variant {
+            IEV4_A::FALLING => false,
+            IEV4_A::RISING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IEV4W<'a> {
+#[doc = "Reader of field `IEV4`"]
+pub type IEV4_R = crate::R<bool, IEV4_A>;
+impl IEV4_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IEV4_A {
+        match self.bits {
+            false => IEV4_A::FALLING,
+            true => IEV4_A::RISING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[inline(always)]
+    pub fn is_falling(&self) -> bool {
+        *self == IEV4_A::FALLING
+    }
+    #[doc = "Checks if the value of the field is `RISING`"]
+    #[inline(always)]
+    pub fn is_rising(&self) -> bool {
+        *self == IEV4_A::RISING
+    }
+}
+#[doc = "Write proxy for field `IEV4`"]
+pub struct IEV4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IEV4W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IEV4W) -> &'a mut W {
+impl<'a> IEV4_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IEV4_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(IEV4W::FALLING)
+        self.variant(IEV4_A::FALLING)
     }
     #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(IEV4W::RISING)
+        self.variant(IEV4_A::RISING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IEV5`"]
-pub enum IEV5W {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
+#[doc = "PIOn_5.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IEV5_A {
+    #[doc = "0: Pin interrupt is triggered on falling edges (if edge-sensitive)"]
     FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
+    #[doc = "1: Pin interrupt is triggered on rising edges (if edge-sensitive)"]
     RISING,
 }
-impl IEV5W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IEV5W::FALLING => false,
-            IEV5W::RISING => true,
+impl From<IEV5_A> for bool {
+    #[inline(always)]
+    fn from(variant: IEV5_A) -> Self {
+        match variant {
+            IEV5_A::FALLING => false,
+            IEV5_A::RISING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IEV5W<'a> {
+#[doc = "Reader of field `IEV5`"]
+pub type IEV5_R = crate::R<bool, IEV5_A>;
+impl IEV5_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IEV5_A {
+        match self.bits {
+            false => IEV5_A::FALLING,
+            true => IEV5_A::RISING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[inline(always)]
+    pub fn is_falling(&self) -> bool {
+        *self == IEV5_A::FALLING
+    }
+    #[doc = "Checks if the value of the field is `RISING`"]
+    #[inline(always)]
+    pub fn is_rising(&self) -> bool {
+        *self == IEV5_A::RISING
+    }
+}
+#[doc = "Write proxy for field `IEV5`"]
+pub struct IEV5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IEV5W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IEV5W) -> &'a mut W {
+impl<'a> IEV5_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IEV5_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(IEV5W::FALLING)
+        self.variant(IEV5_A::FALLING)
     }
     #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(IEV5W::RISING)
+        self.variant(IEV5_A::RISING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IEV6`"]
-pub enum IEV6W {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
+#[doc = "PIOn_6.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IEV6_A {
+    #[doc = "0: Pin interrupt is triggered on falling edges (if edge-sensitive)"]
     FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
+    #[doc = "1: Pin interrupt is triggered on rising edges (if edge-sensitive)"]
     RISING,
 }
-impl IEV6W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IEV6W::FALLING => false,
-            IEV6W::RISING => true,
+impl From<IEV6_A> for bool {
+    #[inline(always)]
+    fn from(variant: IEV6_A) -> Self {
+        match variant {
+            IEV6_A::FALLING => false,
+            IEV6_A::RISING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IEV6W<'a> {
+#[doc = "Reader of field `IEV6`"]
+pub type IEV6_R = crate::R<bool, IEV6_A>;
+impl IEV6_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IEV6_A {
+        match self.bits {
+            false => IEV6_A::FALLING,
+            true => IEV6_A::RISING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[inline(always)]
+    pub fn is_falling(&self) -> bool {
+        *self == IEV6_A::FALLING
+    }
+    #[doc = "Checks if the value of the field is `RISING`"]
+    #[inline(always)]
+    pub fn is_rising(&self) -> bool {
+        *self == IEV6_A::RISING
+    }
+}
+#[doc = "Write proxy for field `IEV6`"]
+pub struct IEV6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IEV6W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IEV6W) -> &'a mut W {
+impl<'a> IEV6_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IEV6_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(IEV6W::FALLING)
+        self.variant(IEV6_A::FALLING)
     }
     #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(IEV6W::RISING)
+        self.variant(IEV6_A::RISING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IEV7`"]
-pub enum IEV7W {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
+#[doc = "PIOn_7.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IEV7_A {
+    #[doc = "0: Pin interrupt is triggered on falling edges (if edge-sensitive)"]
     FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
+    #[doc = "1: Pin interrupt is triggered on rising edges (if edge-sensitive)"]
     RISING,
 }
-impl IEV7W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IEV7W::FALLING => false,
-            IEV7W::RISING => true,
+impl From<IEV7_A> for bool {
+    #[inline(always)]
+    fn from(variant: IEV7_A) -> Self {
+        match variant {
+            IEV7_A::FALLING => false,
+            IEV7_A::RISING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IEV7W<'a> {
+#[doc = "Reader of field `IEV7`"]
+pub type IEV7_R = crate::R<bool, IEV7_A>;
+impl IEV7_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IEV7_A {
+        match self.bits {
+            false => IEV7_A::FALLING,
+            true => IEV7_A::RISING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[inline(always)]
+    pub fn is_falling(&self) -> bool {
+        *self == IEV7_A::FALLING
+    }
+    #[doc = "Checks if the value of the field is `RISING`"]
+    #[inline(always)]
+    pub fn is_rising(&self) -> bool {
+        *self == IEV7_A::RISING
+    }
+}
+#[doc = "Write proxy for field `IEV7`"]
+pub struct IEV7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IEV7W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IEV7W) -> &'a mut W {
+impl<'a> IEV7_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IEV7_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(IEV7W::FALLING)
+        self.variant(IEV7_A::FALLING)
     }
     #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(IEV7W::RISING)
+        self.variant(IEV7_A::RISING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IEV8`"]
-pub enum IEV8W {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
+#[doc = "PIOn_8.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IEV8_A {
+    #[doc = "0: Pin interrupt is triggered on falling edges (if edge-sensitive)"]
     FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
+    #[doc = "1: Pin interrupt is triggered on rising edges (if edge-sensitive)"]
     RISING,
 }
-impl IEV8W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IEV8W::FALLING => false,
-            IEV8W::RISING => true,
+impl From<IEV8_A> for bool {
+    #[inline(always)]
+    fn from(variant: IEV8_A) -> Self {
+        match variant {
+            IEV8_A::FALLING => false,
+            IEV8_A::RISING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IEV8W<'a> {
+#[doc = "Reader of field `IEV8`"]
+pub type IEV8_R = crate::R<bool, IEV8_A>;
+impl IEV8_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IEV8_A {
+        match self.bits {
+            false => IEV8_A::FALLING,
+            true => IEV8_A::RISING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[inline(always)]
+    pub fn is_falling(&self) -> bool {
+        *self == IEV8_A::FALLING
+    }
+    #[doc = "Checks if the value of the field is `RISING`"]
+    #[inline(always)]
+    pub fn is_rising(&self) -> bool {
+        *self == IEV8_A::RISING
+    }
+}
+#[doc = "Write proxy for field `IEV8`"]
+pub struct IEV8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IEV8W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IEV8W) -> &'a mut W {
+impl<'a> IEV8_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IEV8_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(IEV8W::FALLING)
+        self.variant(IEV8_A::FALLING)
     }
     #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(IEV8W::RISING)
+        self.variant(IEV8_A::RISING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IEV9`"]
-pub enum IEV9W {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
+#[doc = "PIOn_9.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IEV9_A {
+    #[doc = "0: Pin interrupt is triggered on falling edges (if edge-sensitive)"]
     FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
+    #[doc = "1: Pin interrupt is triggered on rising edges (if edge-sensitive)"]
     RISING,
 }
-impl IEV9W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IEV9W::FALLING => false,
-            IEV9W::RISING => true,
+impl From<IEV9_A> for bool {
+    #[inline(always)]
+    fn from(variant: IEV9_A) -> Self {
+        match variant {
+            IEV9_A::FALLING => false,
+            IEV9_A::RISING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IEV9W<'a> {
+#[doc = "Reader of field `IEV9`"]
+pub type IEV9_R = crate::R<bool, IEV9_A>;
+impl IEV9_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IEV9_A {
+        match self.bits {
+            false => IEV9_A::FALLING,
+            true => IEV9_A::RISING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[inline(always)]
+    pub fn is_falling(&self) -> bool {
+        *self == IEV9_A::FALLING
+    }
+    #[doc = "Checks if the value of the field is `RISING`"]
+    #[inline(always)]
+    pub fn is_rising(&self) -> bool {
+        *self == IEV9_A::RISING
+    }
+}
+#[doc = "Write proxy for field `IEV9`"]
+pub struct IEV9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IEV9W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IEV9W) -> &'a mut W {
+impl<'a> IEV9_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IEV9_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(IEV9W::FALLING)
+        self.variant(IEV9_A::FALLING)
     }
     #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(IEV9W::RISING)
+        self.variant(IEV9_A::RISING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IEV10`"]
-pub enum IEV10W {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
+#[doc = "PIOn_10.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IEV10_A {
+    #[doc = "0: Pin interrupt is triggered on falling edges (if edge-sensitive)"]
     FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
+    #[doc = "1: Pin interrupt is triggered on rising edges (if edge-sensitive)"]
     RISING,
 }
-impl IEV10W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IEV10W::FALLING => false,
-            IEV10W::RISING => true,
+impl From<IEV10_A> for bool {
+    #[inline(always)]
+    fn from(variant: IEV10_A) -> Self {
+        match variant {
+            IEV10_A::FALLING => false,
+            IEV10_A::RISING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IEV10W<'a> {
+#[doc = "Reader of field `IEV10`"]
+pub type IEV10_R = crate::R<bool, IEV10_A>;
+impl IEV10_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IEV10_A {
+        match self.bits {
+            false => IEV10_A::FALLING,
+            true => IEV10_A::RISING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[inline(always)]
+    pub fn is_falling(&self) -> bool {
+        *self == IEV10_A::FALLING
+    }
+    #[doc = "Checks if the value of the field is `RISING`"]
+    #[inline(always)]
+    pub fn is_rising(&self) -> bool {
+        *self == IEV10_A::RISING
+    }
+}
+#[doc = "Write proxy for field `IEV10`"]
+pub struct IEV10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IEV10W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IEV10W) -> &'a mut W {
+impl<'a> IEV10_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IEV10_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(IEV10W::FALLING)
+        self.variant(IEV10_A::FALLING)
     }
     #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(IEV10W::RISING)
+        self.variant(IEV10_A::RISING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `IEV11`"]
-pub enum IEV11W {
-    #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
+#[doc = "PIOn_11.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum IEV11_A {
+    #[doc = "0: Pin interrupt is triggered on falling edges (if edge-sensitive)"]
     FALLING,
-    #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
+    #[doc = "1: Pin interrupt is triggered on rising edges (if edge-sensitive)"]
     RISING,
 }
-impl IEV11W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            IEV11W::FALLING => false,
-            IEV11W::RISING => true,
+impl From<IEV11_A> for bool {
+    #[inline(always)]
+    fn from(variant: IEV11_A) -> Self {
+        match variant {
+            IEV11_A::FALLING => false,
+            IEV11_A::RISING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _IEV11W<'a> {
+#[doc = "Reader of field `IEV11`"]
+pub type IEV11_R = crate::R<bool, IEV11_A>;
+impl IEV11_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> IEV11_A {
+        match self.bits {
+            false => IEV11_A::FALLING,
+            true => IEV11_A::RISING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `FALLING`"]
+    #[inline(always)]
+    pub fn is_falling(&self) -> bool {
+        *self == IEV11_A::FALLING
+    }
+    #[doc = "Checks if the value of the field is `RISING`"]
+    #[inline(always)]
+    pub fn is_rising(&self) -> bool {
+        *self == IEV11_A::RISING
+    }
+}
+#[doc = "Write proxy for field `IEV11`"]
+pub struct IEV11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _IEV11W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: IEV11W) -> &'a mut W {
+impl<'a> IEV11_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: IEV11_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Pin interrupt is triggered on falling edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling(self) -> &'a mut W {
-        self.variant(IEV11W::FALLING)
+        self.variant(IEV11_A::FALLING)
     }
     #[doc = "Pin interrupt is triggered on rising edges (if edge-sensitive)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising(self) -> &'a mut W {
-        self.variant(IEV11W::RISING)
+        self.variant(IEV11_A::RISING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - PIOn_0."]
-    #[inline]
-    pub fn iev0(&self) -> IEV0R {
-        IEV0R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iev0(&self) -> IEV0_R {
+        IEV0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - PIOn_1."]
-    #[inline]
-    pub fn iev1(&self) -> IEV1R {
-        IEV1R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iev1(&self) -> IEV1_R {
+        IEV1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - PIOn_2."]
-    #[inline]
-    pub fn iev2(&self) -> IEV2R {
-        IEV2R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iev2(&self) -> IEV2_R {
+        IEV2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - PIOn_3."]
-    #[inline]
-    pub fn iev3(&self) -> IEV3R {
-        IEV3R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iev3(&self) -> IEV3_R {
+        IEV3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - PIOn_4."]
-    #[inline]
-    pub fn iev4(&self) -> IEV4R {
-        IEV4R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iev4(&self) -> IEV4_R {
+        IEV4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - PIOn_5."]
-    #[inline]
-    pub fn iev5(&self) -> IEV5R {
-        IEV5R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iev5(&self) -> IEV5_R {
+        IEV5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - PIOn_6."]
-    #[inline]
-    pub fn iev6(&self) -> IEV6R {
-        IEV6R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iev6(&self) -> IEV6_R {
+        IEV6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - PIOn_7."]
-    #[inline]
-    pub fn iev7(&self) -> IEV7R {
-        IEV7R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iev7(&self) -> IEV7_R {
+        IEV7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - PIOn_8."]
-    #[inline]
-    pub fn iev8(&self) -> IEV8R {
-        IEV8R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iev8(&self) -> IEV8_R {
+        IEV8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - PIOn_9."]
-    #[inline]
-    pub fn iev9(&self) -> IEV9R {
-        IEV9R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iev9(&self) -> IEV9_R {
+        IEV9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - PIOn_10."]
-    #[inline]
-    pub fn iev10(&self) -> IEV10R {
-        IEV10R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iev10(&self) -> IEV10_R {
+        IEV10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - PIOn_11."]
-    #[inline]
-    pub fn iev11(&self) -> IEV11R {
-        IEV11R::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn iev11(&self) -> IEV11_R {
+        IEV11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - PIOn_0."]
-    #[inline]
-    pub fn iev0(&mut self) -> _IEV0W {
-        _IEV0W { w: self }
+    #[inline(always)]
+    pub fn iev0(&mut self) -> IEV0_W {
+        IEV0_W { w: self }
     }
     #[doc = "Bit 1 - PIOn_1."]
-    #[inline]
-    pub fn iev1(&mut self) -> _IEV1W {
-        _IEV1W { w: self }
+    #[inline(always)]
+    pub fn iev1(&mut self) -> IEV1_W {
+        IEV1_W { w: self }
     }
     #[doc = "Bit 2 - PIOn_2."]
-    #[inline]
-    pub fn iev2(&mut self) -> _IEV2W {
-        _IEV2W { w: self }
+    #[inline(always)]
+    pub fn iev2(&mut self) -> IEV2_W {
+        IEV2_W { w: self }
     }
     #[doc = "Bit 3 - PIOn_3."]
-    #[inline]
-    pub fn iev3(&mut self) -> _IEV3W {
-        _IEV3W { w: self }
+    #[inline(always)]
+    pub fn iev3(&mut self) -> IEV3_W {
+        IEV3_W { w: self }
     }
     #[doc = "Bit 4 - PIOn_4."]
-    #[inline]
-    pub fn iev4(&mut self) -> _IEV4W {
-        _IEV4W { w: self }
+    #[inline(always)]
+    pub fn iev4(&mut self) -> IEV4_W {
+        IEV4_W { w: self }
     }
     #[doc = "Bit 5 - PIOn_5."]
-    #[inline]
-    pub fn iev5(&mut self) -> _IEV5W {
-        _IEV5W { w: self }
+    #[inline(always)]
+    pub fn iev5(&mut self) -> IEV5_W {
+        IEV5_W { w: self }
     }
     #[doc = "Bit 6 - PIOn_6."]
-    #[inline]
-    pub fn iev6(&mut self) -> _IEV6W {
-        _IEV6W { w: self }
+    #[inline(always)]
+    pub fn iev6(&mut self) -> IEV6_W {
+        IEV6_W { w: self }
     }
     #[doc = "Bit 7 - PIOn_7."]
-    #[inline]
-    pub fn iev7(&mut self) -> _IEV7W {
-        _IEV7W { w: self }
+    #[inline(always)]
+    pub fn iev7(&mut self) -> IEV7_W {
+        IEV7_W { w: self }
     }
     #[doc = "Bit 8 - PIOn_8."]
-    #[inline]
-    pub fn iev8(&mut self) -> _IEV8W {
-        _IEV8W { w: self }
+    #[inline(always)]
+    pub fn iev8(&mut self) -> IEV8_W {
+        IEV8_W { w: self }
     }
     #[doc = "Bit 9 - PIOn_9."]
-    #[inline]
-    pub fn iev9(&mut self) -> _IEV9W {
-        _IEV9W { w: self }
+    #[inline(always)]
+    pub fn iev9(&mut self) -> IEV9_W {
+        IEV9_W { w: self }
     }
     #[doc = "Bit 10 - PIOn_10."]
-    #[inline]
-    pub fn iev10(&mut self) -> _IEV10W {
-        _IEV10W { w: self }
+    #[inline(always)]
+    pub fn iev10(&mut self) -> IEV10_W {
+        IEV10_W { w: self }
     }
     #[doc = "Bit 11 - PIOn_11."]
-    #[inline]
-    pub fn iev11(&mut self) -> _IEV11W {
-        _IEV11W { w: self }
+    #[inline(always)]
+    pub fn iev11(&mut self) -> IEV11_W {
+        IEV11_W { w: self }
     }
 }

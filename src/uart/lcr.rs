@@ -1,812 +1,582 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::LCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register LCR"]
+pub type R = crate::R<u32, super::LCR>;
+#[doc = "Writer for register LCR"]
+pub type W = crate::W<u32, super::LCR>;
+#[doc = "Register LCR `reset()`'s with value 0"]
+impl crate::ResetValue for super::LCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `WLS`"]
+#[doc = "Word Length Select.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WLSR {
-    #[doc = "5-bit character length"]
+pub enum WLS_A {
+    #[doc = "0: 5-bit character length"]
     FIVE,
-    #[doc = "6-bit character length"]
+    #[doc = "1: 6-bit character length"]
     SIX,
-    #[doc = "7-bit character length"]
+    #[doc = "2: 7-bit character length"]
     SEVEN,
-    #[doc = "8-bit character length"]
+    #[doc = "3: 8-bit character length"]
     EIGHT,
 }
-impl WLSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            WLSR::FIVE => 0,
-            WLSR::SIX => 1,
-            WLSR::SEVEN => 2,
-            WLSR::EIGHT => 3,
+impl From<WLS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: WLS_A) -> Self {
+        match variant {
+            WLS_A::FIVE => 0,
+            WLS_A::SIX => 1,
+            WLS_A::SEVEN => 2,
+            WLS_A::EIGHT => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> WLSR {
-        match value {
-            0 => WLSR::FIVE,
-            1 => WLSR::SIX,
-            2 => WLSR::SEVEN,
-            3 => WLSR::EIGHT,
+}
+#[doc = "Reader of field `WLS`"]
+pub type WLS_R = crate::R<u8, WLS_A>;
+impl WLS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WLS_A {
+        match self.bits {
+            0 => WLS_A::FIVE,
+            1 => WLS_A::SIX,
+            2 => WLS_A::SEVEN,
+            3 => WLS_A::EIGHT,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `FIVE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_five(&self) -> bool {
-        *self == WLSR::FIVE
+        *self == WLS_A::FIVE
     }
     #[doc = "Checks if the value of the field is `SIX`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_six(&self) -> bool {
-        *self == WLSR::SIX
+        *self == WLS_A::SIX
     }
     #[doc = "Checks if the value of the field is `SEVEN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_seven(&self) -> bool {
-        *self == WLSR::SEVEN
+        *self == WLS_A::SEVEN
     }
     #[doc = "Checks if the value of the field is `EIGHT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_eight(&self) -> bool {
-        *self == WLSR::EIGHT
+        *self == WLS_A::EIGHT
     }
 }
-#[doc = "Possible values of the field `SBS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SBSR {
-    #[doc = "1 stop bit"]
-    ONE,
-    #[doc = "2 stop bits, or 1.5 if using 5-bit words"]
-    TWO,
+#[doc = "Write proxy for field `WLS`"]
+pub struct WLS_W<'a> {
+    w: &'a mut W,
 }
-impl SBSR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SBSR::ONE => false,
-            SBSR::TWO => true,
+impl<'a> WLS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WLS_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SBSR {
-        match value {
-            false => SBSR::ONE,
-            true => SBSR::TWO,
+    #[doc = "5-bit character length"]
+    #[inline(always)]
+    pub fn five(self) -> &'a mut W {
+        self.variant(WLS_A::FIVE)
+    }
+    #[doc = "6-bit character length"]
+    #[inline(always)]
+    pub fn six(self) -> &'a mut W {
+        self.variant(WLS_A::SIX)
+    }
+    #[doc = "7-bit character length"]
+    #[inline(always)]
+    pub fn seven(self) -> &'a mut W {
+        self.variant(WLS_A::SEVEN)
+    }
+    #[doc = "8-bit character length"]
+    #[inline(always)]
+    pub fn eight(self) -> &'a mut W {
+        self.variant(WLS_A::EIGHT)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w
+    }
+}
+#[doc = "Stop Bit Select.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SBS_A {
+    #[doc = "0: 1 stop bit"]
+    ONE,
+    #[doc = "1: 2 stop bits, or 1.5 if using 5-bit words"]
+    TWO,
+}
+impl From<SBS_A> for bool {
+    #[inline(always)]
+    fn from(variant: SBS_A) -> Self {
+        match variant {
+            SBS_A::ONE => false,
+            SBS_A::TWO => true,
+        }
+    }
+}
+#[doc = "Reader of field `SBS`"]
+pub type SBS_R = crate::R<bool, SBS_A>;
+impl SBS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SBS_A {
+        match self.bits {
+            false => SBS_A::ONE,
+            true => SBS_A::TWO,
         }
     }
     #[doc = "Checks if the value of the field is `ONE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_one(&self) -> bool {
-        *self == SBSR::ONE
+        *self == SBS_A::ONE
     }
     #[doc = "Checks if the value of the field is `TWO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_two(&self) -> bool {
-        *self == SBSR::TWO
+        *self == SBS_A::TWO
     }
 }
-#[doc = "Possible values of the field `PE`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PER {
-    #[doc = "Disable parity generation and checking"]
-    DISABLE,
-    #[doc = "Enable parity generation and checking"]
-    ENABLE,
+#[doc = "Write proxy for field `SBS`"]
+pub struct SBS_W<'a> {
+    w: &'a mut W,
 }
-impl PER {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            PER::DISABLE => false,
-            PER::ENABLE => true,
+impl<'a> SBS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SBS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> PER {
-        match value {
-            false => PER::DISABLE,
-            true => PER::ENABLE,
+    #[doc = "1 stop bit"]
+    #[inline(always)]
+    pub fn one(self) -> &'a mut W {
+        self.variant(SBS_A::ONE)
+    }
+    #[doc = "2 stop bits, or 1.5 if using 5-bit words"]
+    #[inline(always)]
+    pub fn two(self) -> &'a mut W {
+        self.variant(SBS_A::TWO)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Parity Enable.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PE_A {
+    #[doc = "0: Disable parity generation and checking"]
+    DISABLE,
+    #[doc = "1: Enable parity generation and checking"]
+    ENABLE,
+}
+impl From<PE_A> for bool {
+    #[inline(always)]
+    fn from(variant: PE_A) -> Self {
+        match variant {
+            PE_A::DISABLE => false,
+            PE_A::ENABLE => true,
+        }
+    }
+}
+#[doc = "Reader of field `PE`"]
+pub type PE_R = crate::R<bool, PE_A>;
+impl PE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PE_A {
+        match self.bits {
+            false => PE_A::DISABLE,
+            true => PE_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == PER::DISABLE
+        *self == PE_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == PER::ENABLE
+        *self == PE_A::ENABLE
     }
 }
-#[doc = "Possible values of the field `PS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum PSR {
-    #[doc = "Odd parity. Number of 1s in the transmitted character and the attached parity bit will be odd"]
-    ODD,
-    #[doc = "Even Parity. Number of 1s in the transmitted character and the attached parity bit will be even"]
-    EVEN,
-    #[doc = "Forced 1 stick parity"]
-    FORCED_1_STICK,
-    #[doc = "Forced 0 stick parity"]
-    FORCED_0_STICK,
+#[doc = "Write proxy for field `PE`"]
+pub struct PE_W<'a> {
+    w: &'a mut W,
 }
-impl PSR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            PSR::ODD => 0,
-            PSR::EVEN => 1,
-            PSR::FORCED_1_STICK => 2,
-            PSR::FORCED_0_STICK => 3,
+impl<'a> PE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PE_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> PSR {
-        match value {
-            0 => PSR::ODD,
-            1 => PSR::EVEN,
-            2 => PSR::FORCED_1_STICK,
-            3 => PSR::FORCED_0_STICK,
+    #[doc = "Disable parity generation and checking"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(PE_A::DISABLE)
+    }
+    #[doc = "Enable parity generation and checking"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(PE_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
+    }
+}
+#[doc = "Parity Select.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum PS_A {
+    #[doc = "0: Odd parity. Number of 1s in the transmitted character and the attached parity bit will be odd"]
+    ODD,
+    #[doc = "1: Even Parity. Number of 1s in the transmitted character and the attached parity bit will be even"]
+    EVEN,
+    #[doc = "2: Forced 1 stick parity"]
+    FORCED_1_STICK,
+    #[doc = "3: Forced 0 stick parity"]
+    FORCED_0_STICK,
+}
+impl From<PS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: PS_A) -> Self {
+        match variant {
+            PS_A::ODD => 0,
+            PS_A::EVEN => 1,
+            PS_A::FORCED_1_STICK => 2,
+            PS_A::FORCED_0_STICK => 3,
+        }
+    }
+}
+#[doc = "Reader of field `PS`"]
+pub type PS_R = crate::R<u8, PS_A>;
+impl PS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> PS_A {
+        match self.bits {
+            0 => PS_A::ODD,
+            1 => PS_A::EVEN,
+            2 => PS_A::FORCED_1_STICK,
+            3 => PS_A::FORCED_0_STICK,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `ODD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_odd(&self) -> bool {
-        *self == PSR::ODD
+        *self == PS_A::ODD
     }
     #[doc = "Checks if the value of the field is `EVEN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_even(&self) -> bool {
-        *self == PSR::EVEN
+        *self == PS_A::EVEN
     }
     #[doc = "Checks if the value of the field is `FORCED_1_STICK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_forced_1_stick(&self) -> bool {
-        *self == PSR::FORCED_1_STICK
+        *self == PS_A::FORCED_1_STICK
     }
     #[doc = "Checks if the value of the field is `FORCED_0_STICK`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_forced_0_stick(&self) -> bool {
-        *self == PSR::FORCED_0_STICK
+        *self == PS_A::FORCED_0_STICK
     }
 }
-#[doc = "Possible values of the field `BC`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BCR {
-    #[doc = "Disable break transmission"]
-    DISABLE,
-    #[doc = "Enable break transmission. Output pin UART TXD is forced to logic 0 when LCR\\[6\\] is active high"]
-    ENABLE,
-}
-impl BCR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BCR::DISABLE => false,
-            BCR::ENABLE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BCR {
-        match value {
-            false => BCR::DISABLE,
-            true => BCR::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
-    pub fn is_disable(&self) -> bool {
-        *self == BCR::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
-    pub fn is_enable(&self) -> bool {
-        *self == BCR::ENABLE
-    }
-}
-#[doc = "Possible values of the field `DLAB`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DLABR {
-    #[doc = "Disable access to Divisor Latches"]
-    DISABLE,
-    #[doc = "Enable access to Divisor Latches"]
-    ENABLE,
-}
-impl DLABR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DLABR::DISABLE => false,
-            DLABR::ENABLE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DLABR {
-        match value {
-            false => DLABR::DISABLE,
-            true => DLABR::ENABLE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
-    pub fn is_disable(&self) -> bool {
-        *self == DLABR::DISABLE
-    }
-    #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
-    pub fn is_enable(&self) -> bool {
-        *self == DLABR::ENABLE
-    }
-}
-#[doc = "Values that can be written to the field `WLS`"]
-pub enum WLSW {
-    #[doc = "5-bit character length"]
-    FIVE,
-    #[doc = "6-bit character length"]
-    SIX,
-    #[doc = "7-bit character length"]
-    SEVEN,
-    #[doc = "8-bit character length"]
-    EIGHT,
-}
-impl WLSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            WLSW::FIVE => 0,
-            WLSW::SIX => 1,
-            WLSW::SEVEN => 2,
-            WLSW::EIGHT => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WLSW<'a> {
+#[doc = "Write proxy for field `PS`"]
+pub struct PS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WLSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WLSW) -> &'a mut W {
+impl<'a> PS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: PS_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "5-bit character length"]
-    #[inline]
-    pub fn five(self) -> &'a mut W {
-        self.variant(WLSW::FIVE)
-    }
-    #[doc = "6-bit character length"]
-    #[inline]
-    pub fn six(self) -> &'a mut W {
-        self.variant(WLSW::SIX)
-    }
-    #[doc = "7-bit character length"]
-    #[inline]
-    pub fn seven(self) -> &'a mut W {
-        self.variant(WLSW::SEVEN)
-    }
-    #[doc = "8-bit character length"]
-    #[inline]
-    pub fn eight(self) -> &'a mut W {
-        self.variant(WLSW::EIGHT)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SBS`"]
-pub enum SBSW {
-    #[doc = "1 stop bit"]
-    ONE,
-    #[doc = "2 stop bits, or 1.5 if using 5-bit words"]
-    TWO,
-}
-impl SBSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SBSW::ONE => false,
-            SBSW::TWO => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SBSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SBSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SBSW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "1 stop bit"]
-    #[inline]
-    pub fn one(self) -> &'a mut W {
-        self.variant(SBSW::ONE)
-    }
-    #[doc = "2 stop bits, or 1.5 if using 5-bit words"]
-    #[inline]
-    pub fn two(self) -> &'a mut W {
-        self.variant(SBSW::TWO)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PE`"]
-pub enum PEW {
-    #[doc = "Disable parity generation and checking"]
-    DISABLE,
-    #[doc = "Enable parity generation and checking"]
-    ENABLE,
-}
-impl PEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            PEW::DISABLE => false,
-            PEW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PEW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disable parity generation and checking"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(PEW::DISABLE)
-    }
-    #[doc = "Enable parity generation and checking"]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(PEW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `PS`"]
-pub enum PSW {
-    #[doc = "Odd parity. Number of 1s in the transmitted character and the attached parity bit will be odd"]
-    ODD,
-    #[doc = "Even Parity. Number of 1s in the transmitted character and the attached parity bit will be even"]
-    EVEN,
-    #[doc = "Forced 1 stick parity"]
-    FORCED_1_STICK,
-    #[doc = "Forced 0 stick parity"]
-    FORCED_0_STICK,
-}
-impl PSW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            PSW::ODD => 0,
-            PSW::EVEN => 1,
-            PSW::FORCED_1_STICK => 2,
-            PSW::FORCED_0_STICK => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _PSW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _PSW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: PSW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
+            self.bits(variant.into())
         }
     }
     #[doc = "Odd parity. Number of 1s in the transmitted character and the attached parity bit will be odd"]
-    #[inline]
+    #[inline(always)]
     pub fn odd(self) -> &'a mut W {
-        self.variant(PSW::ODD)
+        self.variant(PS_A::ODD)
     }
     #[doc = "Even Parity. Number of 1s in the transmitted character and the attached parity bit will be even"]
-    #[inline]
+    #[inline(always)]
     pub fn even(self) -> &'a mut W {
-        self.variant(PSW::EVEN)
+        self.variant(PS_A::EVEN)
     }
     #[doc = "Forced 1 stick parity"]
-    #[inline]
+    #[inline(always)]
     pub fn forced_1_stick(self) -> &'a mut W {
-        self.variant(PSW::FORCED_1_STICK)
+        self.variant(PS_A::FORCED_1_STICK)
     }
     #[doc = "Forced 0 stick parity"]
-    #[inline]
+    #[inline(always)]
     pub fn forced_0_stick(self) -> &'a mut W {
-        self.variant(PSW::FORCED_0_STICK)
+        self.variant(PS_A::FORCED_0_STICK)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BC`"]
-pub enum BCW {
-    #[doc = "Disable break transmission"]
+#[doc = "Break Control.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BC_A {
+    #[doc = "0: Disable break transmission"]
     DISABLE,
-    #[doc = "Enable break transmission. Output pin UART TXD is forced to logic 0 when LCR\\[6\\] is active high"]
+    #[doc = "1: Enable break transmission. Output pin UART TXD is forced to logic 0 when LCR\\[6\\] is active high"]
     ENABLE,
 }
-impl BCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BCW::DISABLE => false,
-            BCW::ENABLE => true,
+impl From<BC_A> for bool {
+    #[inline(always)]
+    fn from(variant: BC_A) -> Self {
+        match variant {
+            BC_A::DISABLE => false,
+            BC_A::ENABLE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BCW<'a> {
+#[doc = "Reader of field `BC`"]
+pub type BC_R = crate::R<bool, BC_A>;
+impl BC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BC_A {
+        match self.bits {
+            false => BC_A::DISABLE,
+            true => BC_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == BC_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == BC_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `BC`"]
+pub struct BC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BCW) -> &'a mut W {
+impl<'a> BC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BC_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable break transmission"]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(BCW::DISABLE)
+        self.variant(BC_A::DISABLE)
     }
     #[doc = "Enable break transmission. Output pin UART TXD is forced to logic 0 when LCR\\[6\\] is active high"]
-    #[inline]
+    #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(BCW::ENABLE)
+        self.variant(BC_A::ENABLE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `DLAB`"]
-pub enum DLABW {
-    #[doc = "Disable access to Divisor Latches"]
+#[doc = "Divisor Latch Access Bit.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DLAB_A {
+    #[doc = "0: Disable access to Divisor Latches"]
     DISABLE,
-    #[doc = "Enable access to Divisor Latches"]
+    #[doc = "1: Enable access to Divisor Latches"]
     ENABLE,
 }
-impl DLABW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DLABW::DISABLE => false,
-            DLABW::ENABLE => true,
+impl From<DLAB_A> for bool {
+    #[inline(always)]
+    fn from(variant: DLAB_A) -> Self {
+        match variant {
+            DLAB_A::DISABLE => false,
+            DLAB_A::ENABLE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _DLABW<'a> {
+#[doc = "Reader of field `DLAB`"]
+pub type DLAB_R = crate::R<bool, DLAB_A>;
+impl DLAB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DLAB_A {
+        match self.bits {
+            false => DLAB_A::DISABLE,
+            true => DLAB_A::ENABLE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `DISABLE`"]
+    #[inline(always)]
+    pub fn is_disable(&self) -> bool {
+        *self == DLAB_A::DISABLE
+    }
+    #[doc = "Checks if the value of the field is `ENABLE`"]
+    #[inline(always)]
+    pub fn is_enable(&self) -> bool {
+        *self == DLAB_A::ENABLE
+    }
+}
+#[doc = "Write proxy for field `DLAB`"]
+pub struct DLAB_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DLABW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DLABW) -> &'a mut W {
+impl<'a> DLAB_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DLAB_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable access to Divisor Latches"]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(DLABW::DISABLE)
+        self.variant(DLAB_A::DISABLE)
     }
     #[doc = "Enable access to Divisor Latches"]
-    #[inline]
+    #[inline(always)]
     pub fn enable(self) -> &'a mut W {
-        self.variant(DLABW::ENABLE)
+        self.variant(DLAB_A::ENABLE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Word Length Select."]
-    #[inline]
-    pub fn wls(&self) -> WLSR {
-        WLSR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn wls(&self) -> WLS_R {
+        WLS_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bit 2 - Stop Bit Select."]
-    #[inline]
-    pub fn sbs(&self) -> SBSR {
-        SBSR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn sbs(&self) -> SBS_R {
+        SBS_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Parity Enable."]
-    #[inline]
-    pub fn pe(&self) -> PER {
-        PER::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn pe(&self) -> PE_R {
+        PE_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bits 4:5 - Parity Select."]
-    #[inline]
-    pub fn ps(&self) -> PSR {
-        PSR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ps(&self) -> PS_R {
+        PS_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bit 6 - Break Control."]
-    #[inline]
-    pub fn bc(&self) -> BCR {
-        BCR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bc(&self) -> BC_R {
+        BC_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Divisor Latch Access Bit."]
-    #[inline]
-    pub fn dlab(&self) -> DLABR {
-        DLABR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn dlab(&self) -> DLAB_R {
+        DLAB_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Word Length Select."]
-    #[inline]
-    pub fn wls(&mut self) -> _WLSW {
-        _WLSW { w: self }
+    #[inline(always)]
+    pub fn wls(&mut self) -> WLS_W {
+        WLS_W { w: self }
     }
     #[doc = "Bit 2 - Stop Bit Select."]
-    #[inline]
-    pub fn sbs(&mut self) -> _SBSW {
-        _SBSW { w: self }
+    #[inline(always)]
+    pub fn sbs(&mut self) -> SBS_W {
+        SBS_W { w: self }
     }
     #[doc = "Bit 3 - Parity Enable."]
-    #[inline]
-    pub fn pe(&mut self) -> _PEW {
-        _PEW { w: self }
+    #[inline(always)]
+    pub fn pe(&mut self) -> PE_W {
+        PE_W { w: self }
     }
     #[doc = "Bits 4:5 - Parity Select."]
-    #[inline]
-    pub fn ps(&mut self) -> _PSW {
-        _PSW { w: self }
+    #[inline(always)]
+    pub fn ps(&mut self) -> PS_W {
+        PS_W { w: self }
     }
     #[doc = "Bit 6 - Break Control."]
-    #[inline]
-    pub fn bc(&mut self) -> _BCW {
-        _BCW { w: self }
+    #[inline(always)]
+    pub fn bc(&mut self) -> BC_W {
+        BC_W { w: self }
     }
     #[doc = "Bit 7 - Divisor Latch Access Bit."]
-    #[inline]
-    pub fn dlab(&mut self) -> _DLABW {
-        _DLABW { w: self }
+    #[inline(always)]
+    pub fn dlab(&mut self) -> DLAB_W {
+        DLAB_W { w: self }
     }
 }

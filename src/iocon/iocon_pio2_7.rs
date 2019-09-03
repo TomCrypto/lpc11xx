@@ -1,558 +1,391 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::IOCON_PIO2_7 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register IOCON_PIO2_7"]
+pub type R = crate::R<u32, super::IOCON_PIO2_7>;
+#[doc = "Writer for register IOCON_PIO2_7"]
+pub type W = crate::W<u32, super::IOCON_PIO2_7>;
+#[doc = "Register IOCON_PIO2_7 `reset()`'s with value 0xd0"]
+impl crate::ResetValue for super::IOCON_PIO2_7 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xd0
     }
 }
-#[doc = "Possible values of the field `FUNC`"]
+#[doc = "Configure pin function.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum FUNCR {
-    #[doc = "Pin function PIO2_7"]
+pub enum FUNC_A {
+    #[doc = "0: Pin function PIO2_7"]
     PIO2_7,
-    #[doc = "Pin function CT32B0_MAT2"]
+    #[doc = "1: Pin function CT32B0_MAT2"]
     CT32B0_MAT2,
-    #[doc = "Pin function RXD"]
+    #[doc = "2: Pin function RXD"]
     RXD,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
 }
-impl FUNCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            FUNCR::PIO2_7 => 0,
-            FUNCR::CT32B0_MAT2 => 1,
-            FUNCR::RXD => 2,
-            FUNCR::_Reserved(bits) => bits,
+impl From<FUNC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: FUNC_A) -> Self {
+        match variant {
+            FUNC_A::PIO2_7 => 0,
+            FUNC_A::CT32B0_MAT2 => 1,
+            FUNC_A::RXD => 2,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> FUNCR {
-        match value {
-            0 => FUNCR::PIO2_7,
-            1 => FUNCR::CT32B0_MAT2,
-            2 => FUNCR::RXD,
-            i => FUNCR::_Reserved(i),
+}
+#[doc = "Reader of field `FUNC`"]
+pub type FUNC_R = crate::R<u8, FUNC_A>;
+impl FUNC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, FUNC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(FUNC_A::PIO2_7),
+            1 => Val(FUNC_A::CT32B0_MAT2),
+            2 => Val(FUNC_A::RXD),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `PIO2_7`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pio2_7(&self) -> bool {
-        *self == FUNCR::PIO2_7
+        *self == FUNC_A::PIO2_7
     }
     #[doc = "Checks if the value of the field is `CT32B0_MAT2`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ct32b0_mat2(&self) -> bool {
-        *self == FUNCR::CT32B0_MAT2
+        *self == FUNC_A::CT32B0_MAT2
     }
     #[doc = "Checks if the value of the field is `RXD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_rxd(&self) -> bool {
-        *self == FUNCR::RXD
+        *self == FUNC_A::RXD
     }
 }
-#[doc = "Possible values of the field `MODE`"]
+#[doc = "Write proxy for field `FUNC`"]
+pub struct FUNC_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> FUNC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: FUNC_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
+    }
+    #[doc = "Pin function PIO2_7"]
+    #[inline(always)]
+    pub fn pio2_7(self) -> &'a mut W {
+        self.variant(FUNC_A::PIO2_7)
+    }
+    #[doc = "Pin function CT32B0_MAT2"]
+    #[inline(always)]
+    pub fn ct32b0_mat2(self) -> &'a mut W {
+        self.variant(FUNC_A::CT32B0_MAT2)
+    }
+    #[doc = "Pin function RXD"]
+    #[inline(always)]
+    pub fn rxd(self) -> &'a mut W {
+        self.variant(FUNC_A::RXD)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w
+    }
+}
+#[doc = "Pin function mode (on-chip pull-up/pull-down resistor control).\n\nValue on reset: 2"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MODER {
-    #[doc = "Inactive (no pull-down/pull-up resistor enabled)"]
+pub enum MODE_A {
+    #[doc = "0: Inactive (no pull-down/pull-up resistor enabled)"]
     INACTIVE_NO_PULL_DO,
-    #[doc = "Pull-down resistor enabled"]
+    #[doc = "1: Pull-down resistor enabled"]
     PULL_DOWN_RESISTOR_E,
-    #[doc = "Pull-up resistor enabled"]
+    #[doc = "2: Pull-up resistor enabled"]
     PULL_UP_RESISTOR_ENA,
-    #[doc = "Repeater mode"]
+    #[doc = "3: Repeater mode"]
     REPEATER_MODE_,
 }
-impl MODER {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            MODER::INACTIVE_NO_PULL_DO => 0,
-            MODER::PULL_DOWN_RESISTOR_E => 1,
-            MODER::PULL_UP_RESISTOR_ENA => 2,
-            MODER::REPEATER_MODE_ => 3,
+impl From<MODE_A> for u8 {
+    #[inline(always)]
+    fn from(variant: MODE_A) -> Self {
+        match variant {
+            MODE_A::INACTIVE_NO_PULL_DO => 0,
+            MODE_A::PULL_DOWN_RESISTOR_E => 1,
+            MODE_A::PULL_UP_RESISTOR_ENA => 2,
+            MODE_A::REPEATER_MODE_ => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> MODER {
-        match value {
-            0 => MODER::INACTIVE_NO_PULL_DO,
-            1 => MODER::PULL_DOWN_RESISTOR_E,
-            2 => MODER::PULL_UP_RESISTOR_ENA,
-            3 => MODER::REPEATER_MODE_,
+}
+#[doc = "Reader of field `MODE`"]
+pub type MODE_R = crate::R<u8, MODE_A>;
+impl MODE_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MODE_A {
+        match self.bits {
+            0 => MODE_A::INACTIVE_NO_PULL_DO,
+            1 => MODE_A::PULL_DOWN_RESISTOR_E,
+            2 => MODE_A::PULL_UP_RESISTOR_ENA,
+            3 => MODE_A::REPEATER_MODE_,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `INACTIVE_NO_PULL_DO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_inactive_no_pull_do(&self) -> bool {
-        *self == MODER::INACTIVE_NO_PULL_DO
+        *self == MODE_A::INACTIVE_NO_PULL_DO
     }
     #[doc = "Checks if the value of the field is `PULL_DOWN_RESISTOR_E`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pull_down_resistor_e(&self) -> bool {
-        *self == MODER::PULL_DOWN_RESISTOR_E
+        *self == MODE_A::PULL_DOWN_RESISTOR_E
     }
     #[doc = "Checks if the value of the field is `PULL_UP_RESISTOR_ENA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_pull_up_resistor_ena(&self) -> bool {
-        *self == MODER::PULL_UP_RESISTOR_ENA
+        *self == MODE_A::PULL_UP_RESISTOR_ENA
     }
     #[doc = "Checks if the value of the field is `REPEATER_MODE_`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_repeater_mode_(&self) -> bool {
-        *self == MODER::REPEATER_MODE_
+        *self == MODE_A::REPEATER_MODE_
     }
 }
-#[doc = "Possible values of the field `HYSTERESIS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum HYSTERESISR {
-    #[doc = "Disable"]
-    DISABLE,
-    #[doc = "Enable"]
-    ENABLE,
+#[doc = "Write proxy for field `MODE`"]
+pub struct MODE_W<'a> {
+    w: &'a mut W,
 }
-impl HYSTERESISR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            HYSTERESISR::DISABLE => false,
-            HYSTERESISR::ENABLE => true,
+impl<'a> MODE_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MODE_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> HYSTERESISR {
-        match value {
-            false => HYSTERESISR::DISABLE,
-            true => HYSTERESISR::ENABLE,
+    #[doc = "Inactive (no pull-down/pull-up resistor enabled)"]
+    #[inline(always)]
+    pub fn inactive_no_pull_do(self) -> &'a mut W {
+        self.variant(MODE_A::INACTIVE_NO_PULL_DO)
+    }
+    #[doc = "Pull-down resistor enabled"]
+    #[inline(always)]
+    pub fn pull_down_resistor_e(self) -> &'a mut W {
+        self.variant(MODE_A::PULL_DOWN_RESISTOR_E)
+    }
+    #[doc = "Pull-up resistor enabled"]
+    #[inline(always)]
+    pub fn pull_up_resistor_ena(self) -> &'a mut W {
+        self.variant(MODE_A::PULL_UP_RESISTOR_ENA)
+    }
+    #[doc = "Repeater mode"]
+    #[inline(always)]
+    pub fn repeater_mode_(self) -> &'a mut W {
+        self.variant(MODE_A::REPEATER_MODE_)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 3)) | (((value as u32) & 0x03) << 3);
+        self.w
+    }
+}
+#[doc = "Hysteresis.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum HYSTERESIS_A {
+    #[doc = "0: Disable"]
+    DISABLE,
+    #[doc = "1: Enable"]
+    ENABLE,
+}
+impl From<HYSTERESIS_A> for bool {
+    #[inline(always)]
+    fn from(variant: HYSTERESIS_A) -> Self {
+        match variant {
+            HYSTERESIS_A::DISABLE => false,
+            HYSTERESIS_A::ENABLE => true,
+        }
+    }
+}
+#[doc = "Reader of field `HYSTERESIS`"]
+pub type HYSTERESIS_R = crate::R<bool, HYSTERESIS_A>;
+impl HYSTERESIS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> HYSTERESIS_A {
+        match self.bits {
+            false => HYSTERESIS_A::DISABLE,
+            true => HYSTERESIS_A::ENABLE,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disable(&self) -> bool {
-        *self == HYSTERESISR::DISABLE
+        *self == HYSTERESIS_A::DISABLE
     }
     #[doc = "Checks if the value of the field is `ENABLE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enable(&self) -> bool {
-        *self == HYSTERESISR::ENABLE
+        *self == HYSTERESIS_A::ENABLE
     }
 }
-#[doc = "Possible values of the field `OPEN_DRAIN`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum OPEN_DRAINR {
-    #[doc = "Standard GPIO output"]
-    GPIO_OUTPUT,
-    #[doc = "Open-drain output"]
-    OPEN_DRAIN_OUTPUT,
+#[doc = "Write proxy for field `HYSTERESIS`"]
+pub struct HYSTERESIS_W<'a> {
+    w: &'a mut W,
 }
-impl OPEN_DRAINR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            OPEN_DRAINR::GPIO_OUTPUT => false,
-            OPEN_DRAINR::OPEN_DRAIN_OUTPUT => true,
+impl<'a> HYSTERESIS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: HYSTERESIS_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> OPEN_DRAINR {
-        match value {
-            false => OPEN_DRAINR::GPIO_OUTPUT,
-            true => OPEN_DRAINR::OPEN_DRAIN_OUTPUT,
+    #[doc = "Disable"]
+    #[inline(always)]
+    pub fn disable(self) -> &'a mut W {
+        self.variant(HYSTERESIS_A::DISABLE)
+    }
+    #[doc = "Enable"]
+    #[inline(always)]
+    pub fn enable(self) -> &'a mut W {
+        self.variant(HYSTERESIS_A::ENABLE)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
+    }
+}
+#[doc = "Selects pseudo open-drain mode.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum OPEN_DRAIN_A {
+    #[doc = "0: Standard GPIO output"]
+    GPIO_OUTPUT,
+    #[doc = "1: Open-drain output"]
+    OPEN_DRAIN_OUTPUT,
+}
+impl From<OPEN_DRAIN_A> for bool {
+    #[inline(always)]
+    fn from(variant: OPEN_DRAIN_A) -> Self {
+        match variant {
+            OPEN_DRAIN_A::GPIO_OUTPUT => false,
+            OPEN_DRAIN_A::OPEN_DRAIN_OUTPUT => true,
+        }
+    }
+}
+#[doc = "Reader of field `OPEN_DRAIN`"]
+pub type OPEN_DRAIN_R = crate::R<bool, OPEN_DRAIN_A>;
+impl OPEN_DRAIN_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> OPEN_DRAIN_A {
+        match self.bits {
+            false => OPEN_DRAIN_A::GPIO_OUTPUT,
+            true => OPEN_DRAIN_A::OPEN_DRAIN_OUTPUT,
         }
     }
     #[doc = "Checks if the value of the field is `GPIO_OUTPUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_gpio_output(&self) -> bool {
-        *self == OPEN_DRAINR::GPIO_OUTPUT
+        *self == OPEN_DRAIN_A::GPIO_OUTPUT
     }
     #[doc = "Checks if the value of the field is `OPEN_DRAIN_OUTPUT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_open_drain_output(&self) -> bool {
-        *self == OPEN_DRAINR::OPEN_DRAIN_OUTPUT
+        *self == OPEN_DRAIN_A::OPEN_DRAIN_OUTPUT
     }
 }
-#[doc = "Values that can be written to the field `FUNC`"]
-pub enum FUNCW {
-    #[doc = "Pin function PIO2_7"]
-    PIO2_7,
-    #[doc = "Pin function CT32B0_MAT2"]
-    CT32B0_MAT2,
-    #[doc = "Pin function RXD"]
-    RXD,
-}
-impl FUNCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            FUNCW::PIO2_7 => 0,
-            FUNCW::CT32B0_MAT2 => 1,
-            FUNCW::RXD => 2,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _FUNCW<'a> {
+#[doc = "Write proxy for field `OPEN_DRAIN`"]
+pub struct OPEN_DRAIN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _FUNCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: FUNCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
-    }
-    #[doc = "Pin function PIO2_7"]
-    #[inline]
-    pub fn pio2_7(self) -> &'a mut W {
-        self.variant(FUNCW::PIO2_7)
-    }
-    #[doc = "Pin function CT32B0_MAT2"]
-    #[inline]
-    pub fn ct32b0_mat2(self) -> &'a mut W {
-        self.variant(FUNCW::CT32B0_MAT2)
-    }
-    #[doc = "Pin function RXD"]
-    #[inline]
-    pub fn rxd(self) -> &'a mut W {
-        self.variant(FUNCW::RXD)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MODE`"]
-pub enum MODEW {
-    #[doc = "Inactive (no pull-down/pull-up resistor enabled)"]
-    INACTIVE_NO_PULL_DO,
-    #[doc = "Pull-down resistor enabled"]
-    PULL_DOWN_RESISTOR_E,
-    #[doc = "Pull-up resistor enabled"]
-    PULL_UP_RESISTOR_ENA,
-    #[doc = "Repeater mode"]
-    REPEATER_MODE_,
-}
-impl MODEW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            MODEW::INACTIVE_NO_PULL_DO => 0,
-            MODEW::PULL_DOWN_RESISTOR_E => 1,
-            MODEW::PULL_UP_RESISTOR_ENA => 2,
-            MODEW::REPEATER_MODE_ => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MODEW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MODEW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MODEW) -> &'a mut W {
+impl<'a> OPEN_DRAIN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: OPEN_DRAIN_A) -> &'a mut W {
         {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Inactive (no pull-down/pull-up resistor enabled)"]
-    #[inline]
-    pub fn inactive_no_pull_do(self) -> &'a mut W {
-        self.variant(MODEW::INACTIVE_NO_PULL_DO)
-    }
-    #[doc = "Pull-down resistor enabled"]
-    #[inline]
-    pub fn pull_down_resistor_e(self) -> &'a mut W {
-        self.variant(MODEW::PULL_DOWN_RESISTOR_E)
-    }
-    #[doc = "Pull-up resistor enabled"]
-    #[inline]
-    pub fn pull_up_resistor_ena(self) -> &'a mut W {
-        self.variant(MODEW::PULL_UP_RESISTOR_ENA)
-    }
-    #[doc = "Repeater mode"]
-    #[inline]
-    pub fn repeater_mode_(self) -> &'a mut W {
-        self.variant(MODEW::REPEATER_MODE_)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `HYSTERESIS`"]
-pub enum HYSTERESISW {
-    #[doc = "Disable"]
-    DISABLE,
-    #[doc = "Enable"]
-    ENABLE,
-}
-impl HYSTERESISW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            HYSTERESISW::DISABLE => false,
-            HYSTERESISW::ENABLE => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _HYSTERESISW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _HYSTERESISW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: HYSTERESISW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Disable"]
-    #[inline]
-    pub fn disable(self) -> &'a mut W {
-        self.variant(HYSTERESISW::DISABLE)
-    }
-    #[doc = "Enable"]
-    #[inline]
-    pub fn enable(self) -> &'a mut W {
-        self.variant(HYSTERESISW::ENABLE)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `OPEN_DRAIN`"]
-pub enum OPEN_DRAINW {
-    #[doc = "Standard GPIO output"]
-    GPIO_OUTPUT,
-    #[doc = "Open-drain output"]
-    OPEN_DRAIN_OUTPUT,
-}
-impl OPEN_DRAINW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            OPEN_DRAINW::GPIO_OUTPUT => false,
-            OPEN_DRAINW::OPEN_DRAIN_OUTPUT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _OPEN_DRAINW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _OPEN_DRAINW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: OPEN_DRAINW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Standard GPIO output"]
-    #[inline]
+    #[inline(always)]
     pub fn gpio_output(self) -> &'a mut W {
-        self.variant(OPEN_DRAINW::GPIO_OUTPUT)
+        self.variant(OPEN_DRAIN_A::GPIO_OUTPUT)
     }
     #[doc = "Open-drain output"]
-    #[inline]
+    #[inline(always)]
     pub fn open_drain_output(self) -> &'a mut W {
-        self.variant(OPEN_DRAINW::OPEN_DRAIN_OUTPUT)
+        self.variant(OPEN_DRAIN_A::OPEN_DRAIN_OUTPUT)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Configure pin function."]
-    #[inline]
-    pub fn func(&self) -> FUNCR {
-        FUNCR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn func(&self) -> FUNC_R {
+        FUNC_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bits 3:4 - Pin function mode (on-chip pull-up/pull-down resistor control)."]
-    #[inline]
-    pub fn mode(&self) -> MODER {
-        MODER::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn mode(&self) -> MODE_R {
+        MODE_R::new(((self.bits >> 3) & 0x03) as u8)
     }
     #[doc = "Bit 5 - Hysteresis."]
-    #[inline]
-    pub fn hysteresis(&self) -> HYSTERESISR {
-        HYSTERESISR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn hysteresis(&self) -> HYSTERESIS_R {
+        HYSTERESIS_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Selects pseudo open-drain mode."]
-    #[inline]
-    pub fn open_drain(&self) -> OPEN_DRAINR {
-        OPEN_DRAINR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn open_drain(&self) -> OPEN_DRAIN_R {
+        OPEN_DRAIN_R::new(((self.bits >> 10) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 208 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Configure pin function."]
-    #[inline]
-    pub fn func(&mut self) -> _FUNCW {
-        _FUNCW { w: self }
+    #[inline(always)]
+    pub fn func(&mut self) -> FUNC_W {
+        FUNC_W { w: self }
     }
     #[doc = "Bits 3:4 - Pin function mode (on-chip pull-up/pull-down resistor control)."]
-    #[inline]
-    pub fn mode(&mut self) -> _MODEW {
-        _MODEW { w: self }
+    #[inline(always)]
+    pub fn mode(&mut self) -> MODE_W {
+        MODE_W { w: self }
     }
     #[doc = "Bit 5 - Hysteresis."]
-    #[inline]
-    pub fn hysteresis(&mut self) -> _HYSTERESISW {
-        _HYSTERESISW { w: self }
+    #[inline(always)]
+    pub fn hysteresis(&mut self) -> HYSTERESIS_W {
+        HYSTERESIS_W { w: self }
     }
     #[doc = "Bit 10 - Selects pseudo open-drain mode."]
-    #[inline]
-    pub fn open_drain(&mut self) -> _OPEN_DRAINW {
-        _OPEN_DRAINW { w: self }
+    #[inline(always)]
+    pub fn open_drain(&mut self) -> OPEN_DRAIN_W {
+        OPEN_DRAIN_W { w: self }
     }
 }

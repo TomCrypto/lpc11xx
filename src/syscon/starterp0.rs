@@ -1,831 +1,458 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::STARTERP0 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register STARTERP0"]
+pub type R = crate::R<u32, super::STARTERP0>;
+#[doc = "Writer for register STARTERP0"]
+pub type W = crate::W<u32, super::STARTERP0>;
+#[doc = "Register STARTERP0 `reset()`'s with value 0"]
+impl crate::ResetValue for super::STARTERP0 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct ERPIO0_0R {
-    bits: bool,
-}
-impl ERPIO0_0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERPIO0_1R {
-    bits: bool,
-}
-impl ERPIO0_1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERPIO0_2R {
-    bits: bool,
-}
-impl ERPIO0_2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERPIO0_3R {
-    bits: bool,
-}
-impl ERPIO0_3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERPIO0_4R {
-    bits: bool,
-}
-impl ERPIO0_4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERPIO0_5R {
-    bits: bool,
-}
-impl ERPIO0_5R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERPIO0_6R {
-    bits: bool,
-}
-impl ERPIO0_6R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERPIO0_7R {
-    bits: bool,
-}
-impl ERPIO0_7R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERPIO0_8R {
-    bits: bool,
-}
-impl ERPIO0_8R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERPIO0_9R {
-    bits: bool,
-}
-impl ERPIO0_9R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERPIO0_10R {
-    bits: bool,
-}
-impl ERPIO0_10R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERPIO0_11R {
-    bits: bool,
-}
-impl ERPIO0_11R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct ERPIO1_0R {
-    bits: bool,
-}
-impl ERPIO1_0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ERPIO0_0W<'a> {
+#[doc = "Reader of field `ERPIO0_0`"]
+pub type ERPIO0_0_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERPIO0_0`"]
+pub struct ERPIO0_0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERPIO0_0W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERPIO0_0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERPIO0_1W<'a> {
+#[doc = "Reader of field `ERPIO0_1`"]
+pub type ERPIO0_1_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERPIO0_1`"]
+pub struct ERPIO0_1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERPIO0_1W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERPIO0_1_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERPIO0_2W<'a> {
+#[doc = "Reader of field `ERPIO0_2`"]
+pub type ERPIO0_2_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERPIO0_2`"]
+pub struct ERPIO0_2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERPIO0_2W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERPIO0_2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERPIO0_3W<'a> {
+#[doc = "Reader of field `ERPIO0_3`"]
+pub type ERPIO0_3_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERPIO0_3`"]
+pub struct ERPIO0_3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERPIO0_3W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERPIO0_3_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERPIO0_4W<'a> {
+#[doc = "Reader of field `ERPIO0_4`"]
+pub type ERPIO0_4_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERPIO0_4`"]
+pub struct ERPIO0_4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERPIO0_4W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERPIO0_4_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERPIO0_5W<'a> {
+#[doc = "Reader of field `ERPIO0_5`"]
+pub type ERPIO0_5_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERPIO0_5`"]
+pub struct ERPIO0_5_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERPIO0_5W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERPIO0_5_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERPIO0_6W<'a> {
+#[doc = "Reader of field `ERPIO0_6`"]
+pub type ERPIO0_6_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERPIO0_6`"]
+pub struct ERPIO0_6_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERPIO0_6W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERPIO0_6_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERPIO0_7W<'a> {
+#[doc = "Reader of field `ERPIO0_7`"]
+pub type ERPIO0_7_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERPIO0_7`"]
+pub struct ERPIO0_7_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERPIO0_7W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERPIO0_7_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERPIO0_8W<'a> {
+#[doc = "Reader of field `ERPIO0_8`"]
+pub type ERPIO0_8_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERPIO0_8`"]
+pub struct ERPIO0_8_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERPIO0_8W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERPIO0_8_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 8)) | (((value as u32) & 0x01) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERPIO0_9W<'a> {
+#[doc = "Reader of field `ERPIO0_9`"]
+pub type ERPIO0_9_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERPIO0_9`"]
+pub struct ERPIO0_9_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERPIO0_9W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERPIO0_9_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 9;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 9)) | (((value as u32) & 0x01) << 9);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERPIO0_10W<'a> {
+#[doc = "Reader of field `ERPIO0_10`"]
+pub type ERPIO0_10_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERPIO0_10`"]
+pub struct ERPIO0_10_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERPIO0_10W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERPIO0_10_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 10;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 10)) | (((value as u32) & 0x01) << 10);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERPIO0_11W<'a> {
+#[doc = "Reader of field `ERPIO0_11`"]
+pub type ERPIO0_11_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERPIO0_11`"]
+pub struct ERPIO0_11_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERPIO0_11W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERPIO0_11_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 11)) | (((value as u32) & 0x01) << 11);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ERPIO1_0W<'a> {
+#[doc = "Reader of field `ERPIO1_0`"]
+pub type ERPIO1_0_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ERPIO1_0`"]
+pub struct ERPIO1_0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ERPIO1_0W<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ERPIO1_0_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 12)) | (((value as u32) & 0x01) << 12);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_0(&self) -> ERPIO0_0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERPIO0_0R { bits }
+    #[inline(always)]
+    pub fn erpio0_0(&self) -> ERPIO0_0_R {
+        ERPIO0_0_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_1(&self) -> ERPIO0_1R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERPIO0_1R { bits }
+    #[inline(always)]
+    pub fn erpio0_1(&self) -> ERPIO0_1_R {
+        ERPIO0_1_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_2(&self) -> ERPIO0_2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERPIO0_2R { bits }
+    #[inline(always)]
+    pub fn erpio0_2(&self) -> ERPIO0_2_R {
+        ERPIO0_2_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_3(&self) -> ERPIO0_3R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERPIO0_3R { bits }
+    #[inline(always)]
+    pub fn erpio0_3(&self) -> ERPIO0_3_R {
+        ERPIO0_3_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_4(&self) -> ERPIO0_4R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERPIO0_4R { bits }
+    #[inline(always)]
+    pub fn erpio0_4(&self) -> ERPIO0_4_R {
+        ERPIO0_4_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_5(&self) -> ERPIO0_5R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERPIO0_5R { bits }
+    #[inline(always)]
+    pub fn erpio0_5(&self) -> ERPIO0_5_R {
+        ERPIO0_5_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_6(&self) -> ERPIO0_6R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERPIO0_6R { bits }
+    #[inline(always)]
+    pub fn erpio0_6(&self) -> ERPIO0_6_R {
+        ERPIO0_6_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_7(&self) -> ERPIO0_7R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERPIO0_7R { bits }
+    #[inline(always)]
+    pub fn erpio0_7(&self) -> ERPIO0_7_R {
+        ERPIO0_7_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bit 8 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_8(&self) -> ERPIO0_8R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERPIO0_8R { bits }
+    #[inline(always)]
+    pub fn erpio0_8(&self) -> ERPIO0_8_R {
+        ERPIO0_8_R::new(((self.bits >> 8) & 0x01) != 0)
     }
     #[doc = "Bit 9 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_9(&self) -> ERPIO0_9R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 9;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERPIO0_9R { bits }
+    #[inline(always)]
+    pub fn erpio0_9(&self) -> ERPIO0_9_R {
+        ERPIO0_9_R::new(((self.bits >> 9) & 0x01) != 0)
     }
     #[doc = "Bit 10 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_10(&self) -> ERPIO0_10R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 10;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERPIO0_10R { bits }
+    #[inline(always)]
+    pub fn erpio0_10(&self) -> ERPIO0_10_R {
+        ERPIO0_10_R::new(((self.bits >> 10) & 0x01) != 0)
     }
     #[doc = "Bit 11 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_11(&self) -> ERPIO0_11R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERPIO0_11R { bits }
+    #[inline(always)]
+    pub fn erpio0_11(&self) -> ERPIO0_11_R {
+        ERPIO0_11_R::new(((self.bits >> 11) & 0x01) != 0)
     }
     #[doc = "Bit 12 - Enable start signal for start logic input PIO1_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio1_0(&self) -> ERPIO1_0R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ERPIO1_0R { bits }
+    #[inline(always)]
+    pub fn erpio1_0(&self) -> ERPIO1_0_R {
+        ERPIO1_0_R::new(((self.bits >> 12) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_0(&mut self) -> _ERPIO0_0W {
-        _ERPIO0_0W { w: self }
+    #[inline(always)]
+    pub fn erpio0_0(&mut self) -> ERPIO0_0_W {
+        ERPIO0_0_W { w: self }
     }
     #[doc = "Bit 1 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_1(&mut self) -> _ERPIO0_1W {
-        _ERPIO0_1W { w: self }
+    #[inline(always)]
+    pub fn erpio0_1(&mut self) -> ERPIO0_1_W {
+        ERPIO0_1_W { w: self }
     }
     #[doc = "Bit 2 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_2(&mut self) -> _ERPIO0_2W {
-        _ERPIO0_2W { w: self }
+    #[inline(always)]
+    pub fn erpio0_2(&mut self) -> ERPIO0_2_W {
+        ERPIO0_2_W { w: self }
     }
     #[doc = "Bit 3 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_3(&mut self) -> _ERPIO0_3W {
-        _ERPIO0_3W { w: self }
+    #[inline(always)]
+    pub fn erpio0_3(&mut self) -> ERPIO0_3_W {
+        ERPIO0_3_W { w: self }
     }
     #[doc = "Bit 4 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_4(&mut self) -> _ERPIO0_4W {
-        _ERPIO0_4W { w: self }
+    #[inline(always)]
+    pub fn erpio0_4(&mut self) -> ERPIO0_4_W {
+        ERPIO0_4_W { w: self }
     }
     #[doc = "Bit 5 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_5(&mut self) -> _ERPIO0_5W {
-        _ERPIO0_5W { w: self }
+    #[inline(always)]
+    pub fn erpio0_5(&mut self) -> ERPIO0_5_W {
+        ERPIO0_5_W { w: self }
     }
     #[doc = "Bit 6 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_6(&mut self) -> _ERPIO0_6W {
-        _ERPIO0_6W { w: self }
+    #[inline(always)]
+    pub fn erpio0_6(&mut self) -> ERPIO0_6_W {
+        ERPIO0_6_W { w: self }
     }
     #[doc = "Bit 7 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_7(&mut self) -> _ERPIO0_7W {
-        _ERPIO0_7W { w: self }
+    #[inline(always)]
+    pub fn erpio0_7(&mut self) -> ERPIO0_7_W {
+        ERPIO0_7_W { w: self }
     }
     #[doc = "Bit 8 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_8(&mut self) -> _ERPIO0_8W {
-        _ERPIO0_8W { w: self }
+    #[inline(always)]
+    pub fn erpio0_8(&mut self) -> ERPIO0_8_W {
+        ERPIO0_8_W { w: self }
     }
     #[doc = "Bit 9 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_9(&mut self) -> _ERPIO0_9W {
-        _ERPIO0_9W { w: self }
+    #[inline(always)]
+    pub fn erpio0_9(&mut self) -> ERPIO0_9_W {
+        ERPIO0_9_W { w: self }
     }
     #[doc = "Bit 10 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_10(&mut self) -> _ERPIO0_10W {
-        _ERPIO0_10W { w: self }
+    #[inline(always)]
+    pub fn erpio0_10(&mut self) -> ERPIO0_10_W {
+        ERPIO0_10_W { w: self }
     }
     #[doc = "Bit 11 - Enable start signal for start logic input PIO0_n: PIO0_11 to PIO0_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio0_11(&mut self) -> _ERPIO0_11W {
-        _ERPIO0_11W { w: self }
+    #[inline(always)]
+    pub fn erpio0_11(&mut self) -> ERPIO0_11_W {
+        ERPIO0_11_W { w: self }
     }
     #[doc = "Bit 12 - Enable start signal for start logic input PIO1_0 0 = Disabled 1 = Enabled."]
-    #[inline]
-    pub fn erpio1_0(&mut self) -> _ERPIO1_0W {
-        _ERPIO1_0W { w: self }
+    #[inline(always)]
+    pub fn erpio1_0(&mut self) -> ERPIO1_0_W {
+        ERPIO1_0_W { w: self }
     }
 }

@@ -1,956 +1,666 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CANIF_CMDMSK_R {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
+#[doc = "Reader of register CANIF%s_CMDMSK_R"]
+pub type R = crate::R<u32, super::CANIF_CMDMSK_R>;
+#[doc = "Writer for register CANIF%s_CMDMSK_R"]
+pub type W = crate::W<u32, super::CANIF_CMDMSK_R>;
+#[doc = "Register CANIF%s_CMDMSK_R `reset()`'s with value 0"]
+impl crate::ResetValue for super::CANIF_CMDMSK_R {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
+}
+#[doc = "Access data bytes 4-7.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DATA_B_A {
+    #[doc = "0: Data bytes 4-7 unchanged"]
+    UNCHANGED,
+    #[doc = "1: Transfer data bytes 4-7 to IFx message buffer register"]
+    TRANSFER_DATA_BYTES_,
+}
+impl From<DATA_B_A> for bool {
+    #[inline(always)]
+    fn from(variant: DATA_B_A) -> Self {
+        match variant {
+            DATA_B_A::UNCHANGED => false,
+            DATA_B_A::TRANSFER_DATA_BYTES_ => true,
         }
     }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+}
+#[doc = "Reader of field `DATA_B`"]
+pub type DATA_B_R = crate::R<bool, DATA_B_A>;
+impl DATA_B_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DATA_B_A {
+        match self.bits {
+            false => DATA_B_A::UNCHANGED,
+            true => DATA_B_A::TRANSFER_DATA_BYTES_,
+        }
     }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+    #[doc = "Checks if the value of the field is `UNCHANGED`"]
+    #[inline(always)]
+    pub fn is_unchanged(&self) -> bool {
+        *self == DATA_B_A::UNCHANGED
+    }
+    #[doc = "Checks if the value of the field is `TRANSFER_DATA_BYTES_`"]
+    #[inline(always)]
+    pub fn is_transfer_data_bytes_(&self) -> bool {
+        *self == DATA_B_A::TRANSFER_DATA_BYTES_
     }
 }
-#[doc = "Possible values of the field `DATA_B`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DATA_BR {
+#[doc = "Write proxy for field `DATA_B`"]
+pub struct DATA_B_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DATA_B_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DATA_B_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Data bytes 4-7 unchanged"]
-    UNCHANGED,
+    #[inline(always)]
+    pub fn unchanged(self) -> &'a mut W {
+        self.variant(DATA_B_A::UNCHANGED)
+    }
     #[doc = "Transfer data bytes 4-7 to IFx message buffer register"]
+    #[inline(always)]
+    pub fn transfer_data_bytes_(self) -> &'a mut W {
+        self.variant(DATA_B_A::TRANSFER_DATA_BYTES_)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "Access data bytes 0-3.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DATA_A_A {
+    #[doc = "0: Data bytes 0-3 unchanged"]
+    UNCHANGED,
+    #[doc = "1: Transfer data bytes 0-3 to IFx message buffer"]
     TRANSFER_DATA_BYTES_,
 }
-impl DATA_BR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DATA_BR::UNCHANGED => false,
-            DATA_BR::TRANSFER_DATA_BYTES_ => true,
+impl From<DATA_A_A> for bool {
+    #[inline(always)]
+    fn from(variant: DATA_A_A) -> Self {
+        match variant {
+            DATA_A_A::UNCHANGED => false,
+            DATA_A_A::TRANSFER_DATA_BYTES_ => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DATA_BR {
-        match value {
-            false => DATA_BR::UNCHANGED,
-            true => DATA_BR::TRANSFER_DATA_BYTES_,
+}
+#[doc = "Reader of field `DATA_A`"]
+pub type DATA_A_R = crate::R<bool, DATA_A_A>;
+impl DATA_A_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DATA_A_A {
+        match self.bits {
+            false => DATA_A_A::UNCHANGED,
+            true => DATA_A_A::TRANSFER_DATA_BYTES_,
         }
     }
     #[doc = "Checks if the value of the field is `UNCHANGED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unchanged(&self) -> bool {
-        *self == DATA_BR::UNCHANGED
+        *self == DATA_A_A::UNCHANGED
     }
     #[doc = "Checks if the value of the field is `TRANSFER_DATA_BYTES_`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_transfer_data_bytes_(&self) -> bool {
-        *self == DATA_BR::TRANSFER_DATA_BYTES_
+        *self == DATA_A_A::TRANSFER_DATA_BYTES_
     }
 }
-#[doc = "Possible values of the field `DATA_A`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DATA_AR {
+#[doc = "Write proxy for field `DATA_A`"]
+pub struct DATA_A_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> DATA_A_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DATA_A_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
+        }
+    }
     #[doc = "Data bytes 0-3 unchanged"]
-    UNCHANGED,
+    #[inline(always)]
+    pub fn unchanged(self) -> &'a mut W {
+        self.variant(DATA_A_A::UNCHANGED)
+    }
     #[doc = "Transfer data bytes 0-3 to IFx message buffer"]
-    TRANSFER_DATA_BYTES_,
-}
-impl DATA_AR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
+    #[inline(always)]
+    pub fn transfer_data_bytes_(self) -> &'a mut W {
+        self.variant(DATA_A_A::TRANSFER_DATA_BYTES_)
     }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
     }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DATA_AR::UNCHANGED => false,
-            DATA_AR::TRANSFER_DATA_BYTES_ => true,
-        }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DATA_AR {
-        match value {
-            false => DATA_AR::UNCHANGED,
-            true => DATA_AR::TRANSFER_DATA_BYTES_,
-        }
-    }
-    #[doc = "Checks if the value of the field is `UNCHANGED`"]
-    #[inline]
-    pub fn is_unchanged(&self) -> bool {
-        *self == DATA_AR::UNCHANGED
-    }
-    #[doc = "Checks if the value of the field is `TRANSFER_DATA_BYTES_`"]
-    #[inline]
-    pub fn is_transfer_data_bytes_(&self) -> bool {
-        *self == DATA_AR::TRANSFER_DATA_BYTES_
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
     }
 }
-#[doc = "Possible values of the field `NEWDAT`"]
+#[doc = "Access new data bit.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum NEWDATR {
-    #[doc = "NEWDAT bit remains unchanged. A read access to a message object can be combined with the reset of the control bits INTPND and NEWDAT in IF1/2_MCTRL. The values of these bits transferred to the IFx Message Control Register always reflect the status before resetting these bits"]
+pub enum NEWDAT_A {
+    #[doc = "0: NEWDAT bit remains unchanged. A read access to a message object can be combined with the reset of the control bits INTPND and NEWDAT in IF1/2_MCTRL. The values of these bits transferred to the IFx Message Control Register always reflect the status before resetting these bits"]
     UNCHANGED,
-    #[doc = "Clear NEWDAT bit in the message object"]
+    #[doc = "1: Clear NEWDAT bit in the message object"]
     CLEAR_NEWDAT_BIT_IN_,
 }
-impl NEWDATR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            NEWDATR::UNCHANGED => false,
-            NEWDATR::CLEAR_NEWDAT_BIT_IN_ => true,
+impl From<NEWDAT_A> for bool {
+    #[inline(always)]
+    fn from(variant: NEWDAT_A) -> Self {
+        match variant {
+            NEWDAT_A::UNCHANGED => false,
+            NEWDAT_A::CLEAR_NEWDAT_BIT_IN_ => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> NEWDATR {
-        match value {
-            false => NEWDATR::UNCHANGED,
-            true => NEWDATR::CLEAR_NEWDAT_BIT_IN_,
+}
+#[doc = "Reader of field `NEWDAT`"]
+pub type NEWDAT_R = crate::R<bool, NEWDAT_A>;
+impl NEWDAT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> NEWDAT_A {
+        match self.bits {
+            false => NEWDAT_A::UNCHANGED,
+            true => NEWDAT_A::CLEAR_NEWDAT_BIT_IN_,
         }
     }
     #[doc = "Checks if the value of the field is `UNCHANGED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unchanged(&self) -> bool {
-        *self == NEWDATR::UNCHANGED
+        *self == NEWDAT_A::UNCHANGED
     }
     #[doc = "Checks if the value of the field is `CLEAR_NEWDAT_BIT_IN_`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_clear_newdat_bit_in_(&self) -> bool {
-        *self == NEWDATR::CLEAR_NEWDAT_BIT_IN_
+        *self == NEWDAT_A::CLEAR_NEWDAT_BIT_IN_
     }
 }
-#[doc = "Possible values of the field `CLRINTPND`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CLRINTPNDR {
-    #[doc = "INTPND bit remains unchanged"]
-    UNCHANGED,
-    #[doc = "Clear INTPND bit in the message object"]
-    CLEAR_INTPND_BIT_IN_,
+#[doc = "Write proxy for field `NEWDAT`"]
+pub struct NEWDAT_W<'a> {
+    w: &'a mut W,
 }
-impl CLRINTPNDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CLRINTPNDR::UNCHANGED => false,
-            CLRINTPNDR::CLEAR_INTPND_BIT_IN_ => true,
+impl<'a> NEWDAT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: NEWDAT_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CLRINTPNDR {
-        match value {
-            false => CLRINTPNDR::UNCHANGED,
-            true => CLRINTPNDR::CLEAR_INTPND_BIT_IN_,
+    #[doc = "NEWDAT bit remains unchanged. A read access to a message object can be combined with the reset of the control bits INTPND and NEWDAT in IF1/2_MCTRL. The values of these bits transferred to the IFx Message Control Register always reflect the status before resetting these bits"]
+    #[inline(always)]
+    pub fn unchanged(self) -> &'a mut W {
+        self.variant(NEWDAT_A::UNCHANGED)
+    }
+    #[doc = "Clear NEWDAT bit in the message object"]
+    #[inline(always)]
+    pub fn clear_newdat_bit_in_(self) -> &'a mut W {
+        self.variant(NEWDAT_A::CLEAR_NEWDAT_BIT_IN_)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Clear interrupt pending bit.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CLRINTPND_A {
+    #[doc = "0: INTPND bit remains unchanged"]
+    UNCHANGED,
+    #[doc = "1: Clear INTPND bit in the message object"]
+    CLEAR_INTPND_BIT_IN_,
+}
+impl From<CLRINTPND_A> for bool {
+    #[inline(always)]
+    fn from(variant: CLRINTPND_A) -> Self {
+        match variant {
+            CLRINTPND_A::UNCHANGED => false,
+            CLRINTPND_A::CLEAR_INTPND_BIT_IN_ => true,
+        }
+    }
+}
+#[doc = "Reader of field `CLRINTPND`"]
+pub type CLRINTPND_R = crate::R<bool, CLRINTPND_A>;
+impl CLRINTPND_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CLRINTPND_A {
+        match self.bits {
+            false => CLRINTPND_A::UNCHANGED,
+            true => CLRINTPND_A::CLEAR_INTPND_BIT_IN_,
         }
     }
     #[doc = "Checks if the value of the field is `UNCHANGED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unchanged(&self) -> bool {
-        *self == CLRINTPNDR::UNCHANGED
+        *self == CLRINTPND_A::UNCHANGED
     }
     #[doc = "Checks if the value of the field is `CLEAR_INTPND_BIT_IN_`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_clear_intpnd_bit_in_(&self) -> bool {
-        *self == CLRINTPNDR::CLEAR_INTPND_BIT_IN_
+        *self == CLRINTPND_A::CLEAR_INTPND_BIT_IN_
     }
 }
-#[doc = "Possible values of the field `CTRL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CTRLR {
-    #[doc = "Control bits unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer control bits to IFx message buffer"]
-    TRANSFER_CONTROL_BIT,
+#[doc = "Write proxy for field `CLRINTPND`"]
+pub struct CLRINTPND_W<'a> {
+    w: &'a mut W,
 }
-impl CTRLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CTRLR::UNCHANGED => false,
-            CTRLR::TRANSFER_CONTROL_BIT => true,
+impl<'a> CLRINTPND_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CLRINTPND_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CTRLR {
-        match value {
-            false => CTRLR::UNCHANGED,
-            true => CTRLR::TRANSFER_CONTROL_BIT,
+    #[doc = "INTPND bit remains unchanged"]
+    #[inline(always)]
+    pub fn unchanged(self) -> &'a mut W {
+        self.variant(CLRINTPND_A::UNCHANGED)
+    }
+    #[doc = "Clear INTPND bit in the message object"]
+    #[inline(always)]
+    pub fn clear_intpnd_bit_in_(self) -> &'a mut W {
+        self.variant(CLRINTPND_A::CLEAR_INTPND_BIT_IN_)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
+    }
+}
+#[doc = "Access control bits.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CTRL_A {
+    #[doc = "0: Control bits unchanged"]
+    UNCHANGED,
+    #[doc = "1: Transfer control bits to IFx message buffer"]
+    TRANSFER_CONTROL_BIT,
+}
+impl From<CTRL_A> for bool {
+    #[inline(always)]
+    fn from(variant: CTRL_A) -> Self {
+        match variant {
+            CTRL_A::UNCHANGED => false,
+            CTRL_A::TRANSFER_CONTROL_BIT => true,
+        }
+    }
+}
+#[doc = "Reader of field `CTRL`"]
+pub type CTRL_R = crate::R<bool, CTRL_A>;
+impl CTRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CTRL_A {
+        match self.bits {
+            false => CTRL_A::UNCHANGED,
+            true => CTRL_A::TRANSFER_CONTROL_BIT,
         }
     }
     #[doc = "Checks if the value of the field is `UNCHANGED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unchanged(&self) -> bool {
-        *self == CTRLR::UNCHANGED
+        *self == CTRL_A::UNCHANGED
     }
     #[doc = "Checks if the value of the field is `TRANSFER_CONTROL_BIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_transfer_control_bit(&self) -> bool {
-        *self == CTRLR::TRANSFER_CONTROL_BIT
+        *self == CTRL_A::TRANSFER_CONTROL_BIT
     }
 }
-#[doc = "Possible values of the field `ARB`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ARBR {
-    #[doc = "Arbitration bits unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer Identifier, DIR, XTD, and MSGVAL bits to IFx message buffer register"]
-    TRANSFER_IDENTIFIER,
+#[doc = "Write proxy for field `CTRL`"]
+pub struct CTRL_W<'a> {
+    w: &'a mut W,
 }
-impl ARBR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ARBR::UNCHANGED => false,
-            ARBR::TRANSFER_IDENTIFIER => true,
+impl<'a> CTRL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CTRL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ARBR {
-        match value {
-            false => ARBR::UNCHANGED,
-            true => ARBR::TRANSFER_IDENTIFIER,
+    #[doc = "Control bits unchanged"]
+    #[inline(always)]
+    pub fn unchanged(self) -> &'a mut W {
+        self.variant(CTRL_A::UNCHANGED)
+    }
+    #[doc = "Transfer control bits to IFx message buffer"]
+    #[inline(always)]
+    pub fn transfer_control_bit(self) -> &'a mut W {
+        self.variant(CTRL_A::TRANSFER_CONTROL_BIT)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
+    }
+}
+#[doc = "Access arbitration bits.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ARB_A {
+    #[doc = "0: Arbitration bits unchanged"]
+    UNCHANGED,
+    #[doc = "1: Transfer Identifier, DIR, XTD, and MSGVAL bits to IFx message buffer register"]
+    TRANSFER_IDENTIFIER,
+}
+impl From<ARB_A> for bool {
+    #[inline(always)]
+    fn from(variant: ARB_A) -> Self {
+        match variant {
+            ARB_A::UNCHANGED => false,
+            ARB_A::TRANSFER_IDENTIFIER => true,
+        }
+    }
+}
+#[doc = "Reader of field `ARB`"]
+pub type ARB_R = crate::R<bool, ARB_A>;
+impl ARB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ARB_A {
+        match self.bits {
+            false => ARB_A::UNCHANGED,
+            true => ARB_A::TRANSFER_IDENTIFIER,
         }
     }
     #[doc = "Checks if the value of the field is `UNCHANGED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unchanged(&self) -> bool {
-        *self == ARBR::UNCHANGED
+        *self == ARB_A::UNCHANGED
     }
     #[doc = "Checks if the value of the field is `TRANSFER_IDENTIFIER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_transfer_identifier(&self) -> bool {
-        *self == ARBR::TRANSFER_IDENTIFIER
+        *self == ARB_A::TRANSFER_IDENTIFIER
     }
 }
-#[doc = "Possible values of the field `MASK`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MASKR {
-    #[doc = "Mask bits unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer Identifier MASK + MDIR + MXTD to IFx message buffer register"]
-    TRANSFER_IDENTIFIER_,
+#[doc = "Write proxy for field `ARB`"]
+pub struct ARB_W<'a> {
+    w: &'a mut W,
 }
-impl MASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MASKR::UNCHANGED => false,
-            MASKR::TRANSFER_IDENTIFIER_ => true,
+impl<'a> ARB_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ARB_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MASKR {
-        match value {
-            false => MASKR::UNCHANGED,
-            true => MASKR::TRANSFER_IDENTIFIER_,
+    #[doc = "Arbitration bits unchanged"]
+    #[inline(always)]
+    pub fn unchanged(self) -> &'a mut W {
+        self.variant(ARB_A::UNCHANGED)
+    }
+    #[doc = "Transfer Identifier, DIR, XTD, and MSGVAL bits to IFx message buffer register"]
+    #[inline(always)]
+    pub fn transfer_identifier(self) -> &'a mut W {
+        self.variant(ARB_A::TRANSFER_IDENTIFIER)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
+    }
+}
+#[doc = "Access mask bits.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MASK_A {
+    #[doc = "0: Mask bits unchanged"]
+    UNCHANGED,
+    #[doc = "1: Transfer Identifier MASK + MDIR + MXTD to IFx message buffer register"]
+    TRANSFER_IDENTIFIER_,
+}
+impl From<MASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: MASK_A) -> Self {
+        match variant {
+            MASK_A::UNCHANGED => false,
+            MASK_A::TRANSFER_IDENTIFIER_ => true,
+        }
+    }
+}
+#[doc = "Reader of field `MASK`"]
+pub type MASK_R = crate::R<bool, MASK_A>;
+impl MASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MASK_A {
+        match self.bits {
+            false => MASK_A::UNCHANGED,
+            true => MASK_A::TRANSFER_IDENTIFIER_,
         }
     }
     #[doc = "Checks if the value of the field is `UNCHANGED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unchanged(&self) -> bool {
-        *self == MASKR::UNCHANGED
+        *self == MASK_A::UNCHANGED
     }
     #[doc = "Checks if the value of the field is `TRANSFER_IDENTIFIER_`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_transfer_identifier_(&self) -> bool {
-        *self == MASKR::TRANSFER_IDENTIFIER_
+        *self == MASK_A::TRANSFER_IDENTIFIER_
     }
 }
-#[doc = r" Value of the field"]
-pub struct WR_RDR {
-    bits: bool,
-}
-impl WR_RDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `DATA_B`"]
-pub enum DATA_BW {
-    #[doc = "Data bytes 4-7 unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer data bytes 4-7 to IFx message buffer register"]
-    TRANSFER_DATA_BYTES_,
-}
-impl DATA_BW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DATA_BW::UNCHANGED => false,
-            DATA_BW::TRANSFER_DATA_BYTES_ => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DATA_BW<'a> {
+#[doc = "Write proxy for field `MASK`"]
+pub struct MASK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DATA_BW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DATA_BW) -> &'a mut W {
+impl<'a> MASK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MASK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Data bytes 4-7 unchanged"]
-    #[inline]
-    pub fn unchanged(self) -> &'a mut W {
-        self.variant(DATA_BW::UNCHANGED)
-    }
-    #[doc = "Transfer data bytes 4-7 to IFx message buffer register"]
-    #[inline]
-    pub fn transfer_data_bytes_(self) -> &'a mut W {
-        self.variant(DATA_BW::TRANSFER_DATA_BYTES_)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DATA_A`"]
-pub enum DATA_AW {
-    #[doc = "Data bytes 0-3 unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer data bytes 0-3 to IFx message buffer"]
-    TRANSFER_DATA_BYTES_,
-}
-impl DATA_AW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DATA_AW::UNCHANGED => false,
-            DATA_AW::TRANSFER_DATA_BYTES_ => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DATA_AW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DATA_AW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DATA_AW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Data bytes 0-3 unchanged"]
-    #[inline]
-    pub fn unchanged(self) -> &'a mut W {
-        self.variant(DATA_AW::UNCHANGED)
-    }
-    #[doc = "Transfer data bytes 0-3 to IFx message buffer"]
-    #[inline]
-    pub fn transfer_data_bytes_(self) -> &'a mut W {
-        self.variant(DATA_AW::TRANSFER_DATA_BYTES_)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `NEWDAT`"]
-pub enum NEWDATW {
-    #[doc = "NEWDAT bit remains unchanged. A read access to a message object can be combined with the reset of the control bits INTPND and NEWDAT in IF1/2_MCTRL. The values of these bits transferred to the IFx Message Control Register always reflect the status before resetting these bits"]
-    UNCHANGED,
-    #[doc = "Clear NEWDAT bit in the message object"]
-    CLEAR_NEWDAT_BIT_IN_,
-}
-impl NEWDATW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            NEWDATW::UNCHANGED => false,
-            NEWDATW::CLEAR_NEWDAT_BIT_IN_ => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NEWDATW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _NEWDATW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: NEWDATW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "NEWDAT bit remains unchanged. A read access to a message object can be combined with the reset of the control bits INTPND and NEWDAT in IF1/2_MCTRL. The values of these bits transferred to the IFx Message Control Register always reflect the status before resetting these bits"]
-    #[inline]
-    pub fn unchanged(self) -> &'a mut W {
-        self.variant(NEWDATW::UNCHANGED)
-    }
-    #[doc = "Clear NEWDAT bit in the message object"]
-    #[inline]
-    pub fn clear_newdat_bit_in_(self) -> &'a mut W {
-        self.variant(NEWDATW::CLEAR_NEWDAT_BIT_IN_)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CLRINTPND`"]
-pub enum CLRINTPNDW {
-    #[doc = "INTPND bit remains unchanged"]
-    UNCHANGED,
-    #[doc = "Clear INTPND bit in the message object"]
-    CLEAR_INTPND_BIT_IN_,
-}
-impl CLRINTPNDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CLRINTPNDW::UNCHANGED => false,
-            CLRINTPNDW::CLEAR_INTPND_BIT_IN_ => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CLRINTPNDW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CLRINTPNDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CLRINTPNDW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "INTPND bit remains unchanged"]
-    #[inline]
-    pub fn unchanged(self) -> &'a mut W {
-        self.variant(CLRINTPNDW::UNCHANGED)
-    }
-    #[doc = "Clear INTPND bit in the message object"]
-    #[inline]
-    pub fn clear_intpnd_bit_in_(self) -> &'a mut W {
-        self.variant(CLRINTPNDW::CLEAR_INTPND_BIT_IN_)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CTRL`"]
-pub enum CTRLW {
-    #[doc = "Control bits unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer control bits to IFx message buffer"]
-    TRANSFER_CONTROL_BIT,
-}
-impl CTRLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CTRLW::UNCHANGED => false,
-            CTRLW::TRANSFER_CONTROL_BIT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CTRLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CTRLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CTRLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Control bits unchanged"]
-    #[inline]
-    pub fn unchanged(self) -> &'a mut W {
-        self.variant(CTRLW::UNCHANGED)
-    }
-    #[doc = "Transfer control bits to IFx message buffer"]
-    #[inline]
-    pub fn transfer_control_bit(self) -> &'a mut W {
-        self.variant(CTRLW::TRANSFER_CONTROL_BIT)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ARB`"]
-pub enum ARBW {
-    #[doc = "Arbitration bits unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer Identifier, DIR, XTD, and MSGVAL bits to IFx message buffer register"]
-    TRANSFER_IDENTIFIER,
-}
-impl ARBW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ARBW::UNCHANGED => false,
-            ARBW::TRANSFER_IDENTIFIER => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ARBW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ARBW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ARBW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Arbitration bits unchanged"]
-    #[inline]
-    pub fn unchanged(self) -> &'a mut W {
-        self.variant(ARBW::UNCHANGED)
-    }
-    #[doc = "Transfer Identifier, DIR, XTD, and MSGVAL bits to IFx message buffer register"]
-    #[inline]
-    pub fn transfer_identifier(self) -> &'a mut W {
-        self.variant(ARBW::TRANSFER_IDENTIFIER)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MASK`"]
-pub enum MASKW {
-    #[doc = "Mask bits unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer Identifier MASK + MDIR + MXTD to IFx message buffer register"]
-    TRANSFER_IDENTIFIER_,
-}
-impl MASKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MASKW::UNCHANGED => false,
-            MASKW::TRANSFER_IDENTIFIER_ => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MASKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MASKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MASKW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Mask bits unchanged"]
-    #[inline]
+    #[inline(always)]
     pub fn unchanged(self) -> &'a mut W {
-        self.variant(MASKW::UNCHANGED)
+        self.variant(MASK_A::UNCHANGED)
     }
     #[doc = "Transfer Identifier MASK + MDIR + MXTD to IFx message buffer register"]
-    #[inline]
+    #[inline(always)]
     pub fn transfer_identifier_(self) -> &'a mut W {
-        self.variant(MASKW::TRANSFER_IDENTIFIER_)
+        self.variant(MASK_A::TRANSFER_IDENTIFIER_)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _WR_RDW<'a> {
+#[doc = "Reader of field `WR_RD`"]
+pub type WR_RD_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `WR_RD`"]
+pub struct WR_RD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WR_RDW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> WR_RD_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Access data bytes 4-7."]
-    #[inline]
-    pub fn data_b(&self) -> DATA_BR {
-        DATA_BR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn data_b(&self) -> DATA_B_R {
+        DATA_B_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Access data bytes 0-3."]
-    #[inline]
-    pub fn data_a(&self) -> DATA_AR {
-        DATA_AR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn data_a(&self) -> DATA_A_R {
+        DATA_A_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Access new data bit."]
-    #[inline]
-    pub fn newdat(&self) -> NEWDATR {
-        NEWDATR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn newdat(&self) -> NEWDAT_R {
+        NEWDAT_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Clear interrupt pending bit."]
-    #[inline]
-    pub fn clrintpnd(&self) -> CLRINTPNDR {
-        CLRINTPNDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn clrintpnd(&self) -> CLRINTPND_R {
+        CLRINTPND_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Access control bits."]
-    #[inline]
-    pub fn ctrl(&self) -> CTRLR {
-        CTRLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ctrl(&self) -> CTRL_R {
+        CTRL_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Access arbitration bits."]
-    #[inline]
-    pub fn arb(&self) -> ARBR {
-        ARBR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn arb(&self) -> ARB_R {
+        ARB_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Access mask bits."]
-    #[inline]
-    pub fn mask(&self) -> MASKR {
-        MASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mask(&self) -> MASK_R {
+        MASK_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Read transfer Transfer data from the message object addressed by the command request register to the selected message buffer registers CANIFn_CMDREQ."]
-    #[inline]
-    pub fn wr_rd(&self) -> WR_RDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WR_RDR { bits }
+    #[inline(always)]
+    pub fn wr_rd(&self) -> WR_RD_R {
+        WR_RD_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Access data bytes 4-7."]
-    #[inline]
-    pub fn data_b(&mut self) -> _DATA_BW {
-        _DATA_BW { w: self }
+    #[inline(always)]
+    pub fn data_b(&mut self) -> DATA_B_W {
+        DATA_B_W { w: self }
     }
     #[doc = "Bit 1 - Access data bytes 0-3."]
-    #[inline]
-    pub fn data_a(&mut self) -> _DATA_AW {
-        _DATA_AW { w: self }
+    #[inline(always)]
+    pub fn data_a(&mut self) -> DATA_A_W {
+        DATA_A_W { w: self }
     }
     #[doc = "Bit 2 - Access new data bit."]
-    #[inline]
-    pub fn newdat(&mut self) -> _NEWDATW {
-        _NEWDATW { w: self }
+    #[inline(always)]
+    pub fn newdat(&mut self) -> NEWDAT_W {
+        NEWDAT_W { w: self }
     }
     #[doc = "Bit 3 - Clear interrupt pending bit."]
-    #[inline]
-    pub fn clrintpnd(&mut self) -> _CLRINTPNDW {
-        _CLRINTPNDW { w: self }
+    #[inline(always)]
+    pub fn clrintpnd(&mut self) -> CLRINTPND_W {
+        CLRINTPND_W { w: self }
     }
     #[doc = "Bit 4 - Access control bits."]
-    #[inline]
-    pub fn ctrl(&mut self) -> _CTRLW {
-        _CTRLW { w: self }
+    #[inline(always)]
+    pub fn ctrl(&mut self) -> CTRL_W {
+        CTRL_W { w: self }
     }
     #[doc = "Bit 5 - Access arbitration bits."]
-    #[inline]
-    pub fn arb(&mut self) -> _ARBW {
-        _ARBW { w: self }
+    #[inline(always)]
+    pub fn arb(&mut self) -> ARB_W {
+        ARB_W { w: self }
     }
     #[doc = "Bit 6 - Access mask bits."]
-    #[inline]
-    pub fn mask(&mut self) -> _MASKW {
-        _MASKW { w: self }
+    #[inline(always)]
+    pub fn mask(&mut self) -> MASK_W {
+        MASK_W { w: self }
     }
     #[doc = "Bit 7 - Read transfer Transfer data from the message object addressed by the command request register to the selected message buffer registers CANIFn_CMDREQ."]
-    #[inline]
-    pub fn wr_rd(&mut self) -> _WR_RDW {
-        _WR_RDW { w: self }
+    #[inline(always)]
+    pub fn wr_rd(&mut self) -> WR_RD_W {
+        WR_RD_W { w: self }
     }
 }

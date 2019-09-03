@@ -1,676 +1,475 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CANTEST {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CANTEST"]
+pub type R = crate::R<u32, super::CANTEST>;
+#[doc = "Writer for register CANTEST"]
+pub type W = crate::W<u32, super::CANTEST>;
+#[doc = "Register CANTEST `reset()`'s with value 0"]
+impl crate::ResetValue for super::CANTEST {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `BASIC`"]
+#[doc = "Basic mode.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BASICR {
-    #[doc = "Basic mode disabled"]
+pub enum BASIC_A {
+    #[doc = "0: Basic mode disabled"]
     BASIC_MODE_DISABLED_,
-    #[doc = "IF1 registers used as TX buffer, IF2 registers used as RX buffer"]
+    #[doc = "1: IF1 registers used as TX buffer, IF2 registers used as RX buffer"]
     TXRX,
 }
-impl BASICR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BASICR::BASIC_MODE_DISABLED_ => false,
-            BASICR::TXRX => true,
+impl From<BASIC_A> for bool {
+    #[inline(always)]
+    fn from(variant: BASIC_A) -> Self {
+        match variant {
+            BASIC_A::BASIC_MODE_DISABLED_ => false,
+            BASIC_A::TXRX => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BASICR {
-        match value {
-            false => BASICR::BASIC_MODE_DISABLED_,
-            true => BASICR::TXRX,
+}
+#[doc = "Reader of field `BASIC`"]
+pub type BASIC_R = crate::R<bool, BASIC_A>;
+impl BASIC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BASIC_A {
+        match self.bits {
+            false => BASIC_A::BASIC_MODE_DISABLED_,
+            true => BASIC_A::TXRX,
         }
     }
     #[doc = "Checks if the value of the field is `BASIC_MODE_DISABLED_`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_basic_mode_disabled_(&self) -> bool {
-        *self == BASICR::BASIC_MODE_DISABLED_
+        *self == BASIC_A::BASIC_MODE_DISABLED_
     }
     #[doc = "Checks if the value of the field is `TXRX`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_txrx(&self) -> bool {
-        *self == BASICR::TXRX
+        *self == BASIC_A::TXRX
     }
 }
-#[doc = "Possible values of the field `SILENT`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SILENTR {
-    #[doc = "Normal operation"]
-    NORMAL_OPERATION_,
-    #[doc = "The module is in silent mode"]
-    SILENT,
+#[doc = "Write proxy for field `BASIC`"]
+pub struct BASIC_W<'a> {
+    w: &'a mut W,
 }
-impl SILENTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SILENTR::NORMAL_OPERATION_ => false,
-            SILENTR::SILENT => true,
+impl<'a> BASIC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BASIC_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SILENTR {
-        match value {
-            false => SILENTR::NORMAL_OPERATION_,
-            true => SILENTR::SILENT,
+    #[doc = "Basic mode disabled"]
+    #[inline(always)]
+    pub fn basic_mode_disabled_(self) -> &'a mut W {
+        self.variant(BASIC_A::BASIC_MODE_DISABLED_)
+    }
+    #[doc = "IF1 registers used as TX buffer, IF2 registers used as RX buffer"]
+    #[inline(always)]
+    pub fn txrx(self) -> &'a mut W {
+        self.variant(BASIC_A::TXRX)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Silent mode.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SILENT_A {
+    #[doc = "0: Normal operation"]
+    NORMAL_OPERATION_,
+    #[doc = "1: The module is in silent mode"]
+    SILENT,
+}
+impl From<SILENT_A> for bool {
+    #[inline(always)]
+    fn from(variant: SILENT_A) -> Self {
+        match variant {
+            SILENT_A::NORMAL_OPERATION_ => false,
+            SILENT_A::SILENT => true,
+        }
+    }
+}
+#[doc = "Reader of field `SILENT`"]
+pub type SILENT_R = crate::R<bool, SILENT_A>;
+impl SILENT_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SILENT_A {
+        match self.bits {
+            false => SILENT_A::NORMAL_OPERATION_,
+            true => SILENT_A::SILENT,
         }
     }
     #[doc = "Checks if the value of the field is `NORMAL_OPERATION_`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_normal_operation_(&self) -> bool {
-        *self == SILENTR::NORMAL_OPERATION_
+        *self == SILENT_A::NORMAL_OPERATION_
     }
     #[doc = "Checks if the value of the field is `SILENT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_silent(&self) -> bool {
-        *self == SILENTR::SILENT
+        *self == SILENT_A::SILENT
     }
 }
-#[doc = "Possible values of the field `LBACK`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum LBACKR {
-    #[doc = "Loop back mode is disabled"]
-    DISABLED,
-    #[doc = "Loop back mode is enabled"]
-    ENABLED,
+#[doc = "Write proxy for field `SILENT`"]
+pub struct SILENT_W<'a> {
+    w: &'a mut W,
 }
-impl LBACKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            LBACKR::DISABLED => false,
-            LBACKR::ENABLED => true,
+impl<'a> SILENT_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SILENT_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> LBACKR {
-        match value {
-            false => LBACKR::DISABLED,
-            true => LBACKR::ENABLED,
+    #[doc = "Normal operation"]
+    #[inline(always)]
+    pub fn normal_operation_(self) -> &'a mut W {
+        self.variant(SILENT_A::NORMAL_OPERATION_)
+    }
+    #[doc = "The module is in silent mode"]
+    #[inline(always)]
+    pub fn silent(self) -> &'a mut W {
+        self.variant(SILENT_A::SILENT)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
+    }
+}
+#[doc = "Loop back mode.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum LBACK_A {
+    #[doc = "0: Loop back mode is disabled"]
+    DISABLED,
+    #[doc = "1: Loop back mode is enabled"]
+    ENABLED,
+}
+impl From<LBACK_A> for bool {
+    #[inline(always)]
+    fn from(variant: LBACK_A) -> Self {
+        match variant {
+            LBACK_A::DISABLED => false,
+            LBACK_A::ENABLED => true,
+        }
+    }
+}
+#[doc = "Reader of field `LBACK`"]
+pub type LBACK_R = crate::R<bool, LBACK_A>;
+impl LBACK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> LBACK_A {
+        match self.bits {
+            false => LBACK_A::DISABLED,
+            true => LBACK_A::ENABLED,
         }
     }
     #[doc = "Checks if the value of the field is `DISABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_disabled(&self) -> bool {
-        *self == LBACKR::DISABLED
+        *self == LBACK_A::DISABLED
     }
     #[doc = "Checks if the value of the field is `ENABLED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_enabled(&self) -> bool {
-        *self == LBACKR::ENABLED
+        *self == LBACK_A::ENABLED
     }
 }
-#[doc = "Possible values of the field `TX`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXR {
-    #[doc = "Level at the CAN_TXD pin is controlled by the CAN controller. This is the value at reset"]
-    LEVEL,
-    #[doc = "The sample point can be monitored at the CAN_TXD pin"]
-    TXD,
-    #[doc = "CAN_TXD pin is driven LOW/dominant"]
-    LOW,
-    #[doc = "CAN_TXD pin is driven HIGH/recessive"]
-    HIGH,
+#[doc = "Write proxy for field `LBACK`"]
+pub struct LBACK_W<'a> {
+    w: &'a mut W,
 }
-impl TXR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            TXR::LEVEL => 0,
-            TXR::TXD => 1,
-            TXR::LOW => 2,
-            TXR::HIGH => 3,
+impl<'a> LBACK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: LBACK_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> TXR {
-        match value {
-            0 => TXR::LEVEL,
-            1 => TXR::TXD,
-            2 => TXR::LOW,
-            3 => TXR::HIGH,
+    #[doc = "Loop back mode is disabled"]
+    #[inline(always)]
+    pub fn disabled(self) -> &'a mut W {
+        self.variant(LBACK_A::DISABLED)
+    }
+    #[doc = "Loop back mode is enabled"]
+    #[inline(always)]
+    pub fn enabled(self) -> &'a mut W {
+        self.variant(LBACK_A::ENABLED)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
+    }
+}
+#[doc = "Control of CAN_TXD pins.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TX_A {
+    #[doc = "0: Level at the CAN_TXD pin is controlled by the CAN controller. This is the value at reset"]
+    LEVEL,
+    #[doc = "1: The sample point can be monitored at the CAN_TXD pin"]
+    TXD,
+    #[doc = "2: CAN_TXD pin is driven LOW/dominant"]
+    LOW,
+    #[doc = "3: CAN_TXD pin is driven HIGH/recessive"]
+    HIGH,
+}
+impl From<TX_A> for u8 {
+    #[inline(always)]
+    fn from(variant: TX_A) -> Self {
+        match variant {
+            TX_A::LEVEL => 0,
+            TX_A::TXD => 1,
+            TX_A::LOW => 2,
+            TX_A::HIGH => 3,
+        }
+    }
+}
+#[doc = "Reader of field `TX`"]
+pub type TX_R = crate::R<u8, TX_A>;
+impl TX_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TX_A {
+        match self.bits {
+            0 => TX_A::LEVEL,
+            1 => TX_A::TXD,
+            2 => TX_A::LOW,
+            3 => TX_A::HIGH,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `LEVEL`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_level(&self) -> bool {
-        *self == TXR::LEVEL
+        *self == TX_A::LEVEL
     }
     #[doc = "Checks if the value of the field is `TXD`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_txd(&self) -> bool {
-        *self == TXR::TXD
+        *self == TX_A::TXD
     }
     #[doc = "Checks if the value of the field is `LOW`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_low(&self) -> bool {
-        *self == TXR::LOW
+        *self == TX_A::LOW
     }
     #[doc = "Checks if the value of the field is `HIGH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_high(&self) -> bool {
-        *self == TXR::HIGH
+        *self == TX_A::HIGH
     }
 }
-#[doc = "Possible values of the field `RX`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum RXR {
-    #[doc = "The CAN bus is recessive (CAN_RXD = 1)"]
-    RECESSIVE,
-    #[doc = "The CAN bus is dominant (CAN_RXD = 0)"]
-    DORMANT,
+#[doc = "Write proxy for field `TX`"]
+pub struct TX_W<'a> {
+    w: &'a mut W,
 }
-impl RXR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            RXR::RECESSIVE => false,
-            RXR::DORMANT => true,
+impl<'a> TX_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TX_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> RXR {
-        match value {
-            false => RXR::RECESSIVE,
-            true => RXR::DORMANT,
+    #[doc = "Level at the CAN_TXD pin is controlled by the CAN controller. This is the value at reset"]
+    #[inline(always)]
+    pub fn level(self) -> &'a mut W {
+        self.variant(TX_A::LEVEL)
+    }
+    #[doc = "The sample point can be monitored at the CAN_TXD pin"]
+    #[inline(always)]
+    pub fn txd(self) -> &'a mut W {
+        self.variant(TX_A::TXD)
+    }
+    #[doc = "CAN_TXD pin is driven LOW/dominant"]
+    #[inline(always)]
+    pub fn low(self) -> &'a mut W {
+        self.variant(TX_A::LOW)
+    }
+    #[doc = "CAN_TXD pin is driven HIGH/recessive"]
+    #[inline(always)]
+    pub fn high(self) -> &'a mut W {
+        self.variant(TX_A::HIGH)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 5)) | (((value as u32) & 0x03) << 5);
+        self.w
+    }
+}
+#[doc = "Monitors the actual value of the CAN_RXD pin.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum RX_A {
+    #[doc = "0: The CAN bus is recessive (CAN_RXD = 1)"]
+    RECESSIVE,
+    #[doc = "1: The CAN bus is dominant (CAN_RXD = 0)"]
+    DORMANT,
+}
+impl From<RX_A> for bool {
+    #[inline(always)]
+    fn from(variant: RX_A) -> Self {
+        match variant {
+            RX_A::RECESSIVE => false,
+            RX_A::DORMANT => true,
+        }
+    }
+}
+#[doc = "Reader of field `RX`"]
+pub type RX_R = crate::R<bool, RX_A>;
+impl RX_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> RX_A {
+        match self.bits {
+            false => RX_A::RECESSIVE,
+            true => RX_A::DORMANT,
         }
     }
     #[doc = "Checks if the value of the field is `RECESSIVE`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_recessive(&self) -> bool {
-        *self == RXR::RECESSIVE
+        *self == RX_A::RECESSIVE
     }
     #[doc = "Checks if the value of the field is `DORMANT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_dormant(&self) -> bool {
-        *self == RXR::DORMANT
+        *self == RX_A::DORMANT
     }
 }
-#[doc = "Values that can be written to the field `BASIC`"]
-pub enum BASICW {
-    #[doc = "Basic mode disabled"]
-    BASIC_MODE_DISABLED_,
-    #[doc = "IF1 registers used as TX buffer, IF2 registers used as RX buffer"]
-    TXRX,
-}
-impl BASICW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BASICW::BASIC_MODE_DISABLED_ => false,
-            BASICW::TXRX => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BASICW<'a> {
+#[doc = "Write proxy for field `RX`"]
+pub struct RX_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BASICW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BASICW) -> &'a mut W {
+impl<'a> RX_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: RX_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Basic mode disabled"]
-    #[inline]
-    pub fn basic_mode_disabled_(self) -> &'a mut W {
-        self.variant(BASICW::BASIC_MODE_DISABLED_)
-    }
-    #[doc = "IF1 registers used as TX buffer, IF2 registers used as RX buffer"]
-    #[inline]
-    pub fn txrx(self) -> &'a mut W {
-        self.variant(BASICW::TXRX)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SILENT`"]
-pub enum SILENTW {
-    #[doc = "Normal operation"]
-    NORMAL_OPERATION_,
-    #[doc = "The module is in silent mode"]
-    SILENT,
-}
-impl SILENTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SILENTW::NORMAL_OPERATION_ => false,
-            SILENTW::SILENT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SILENTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SILENTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SILENTW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Normal operation"]
-    #[inline]
-    pub fn normal_operation_(self) -> &'a mut W {
-        self.variant(SILENTW::NORMAL_OPERATION_)
-    }
-    #[doc = "The module is in silent mode"]
-    #[inline]
-    pub fn silent(self) -> &'a mut W {
-        self.variant(SILENTW::SILENT)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `LBACK`"]
-pub enum LBACKW {
-    #[doc = "Loop back mode is disabled"]
-    DISABLED,
-    #[doc = "Loop back mode is enabled"]
-    ENABLED,
-}
-impl LBACKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            LBACKW::DISABLED => false,
-            LBACKW::ENABLED => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _LBACKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _LBACKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: LBACKW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Loop back mode is disabled"]
-    #[inline]
-    pub fn disabled(self) -> &'a mut W {
-        self.variant(LBACKW::DISABLED)
-    }
-    #[doc = "Loop back mode is enabled"]
-    #[inline]
-    pub fn enabled(self) -> &'a mut W {
-        self.variant(LBACKW::ENABLED)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TX`"]
-pub enum TXW {
-    #[doc = "Level at the CAN_TXD pin is controlled by the CAN controller. This is the value at reset"]
-    LEVEL,
-    #[doc = "The sample point can be monitored at the CAN_TXD pin"]
-    TXD,
-    #[doc = "CAN_TXD pin is driven LOW/dominant"]
-    LOW,
-    #[doc = "CAN_TXD pin is driven HIGH/recessive"]
-    HIGH,
-}
-impl TXW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            TXW::LEVEL => 0,
-            TXW::TXD => 1,
-            TXW::LOW => 2,
-            TXW::HIGH => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TXW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TXW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Level at the CAN_TXD pin is controlled by the CAN controller. This is the value at reset"]
-    #[inline]
-    pub fn level(self) -> &'a mut W {
-        self.variant(TXW::LEVEL)
-    }
-    #[doc = "The sample point can be monitored at the CAN_TXD pin"]
-    #[inline]
-    pub fn txd(self) -> &'a mut W {
-        self.variant(TXW::TXD)
-    }
-    #[doc = "CAN_TXD pin is driven LOW/dominant"]
-    #[inline]
-    pub fn low(self) -> &'a mut W {
-        self.variant(TXW::LOW)
-    }
-    #[doc = "CAN_TXD pin is driven HIGH/recessive"]
-    #[inline]
-    pub fn high(self) -> &'a mut W {
-        self.variant(TXW::HIGH)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `RX`"]
-pub enum RXW {
-    #[doc = "The CAN bus is recessive (CAN_RXD = 1)"]
-    RECESSIVE,
-    #[doc = "The CAN bus is dominant (CAN_RXD = 0)"]
-    DORMANT,
-}
-impl RXW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            RXW::RECESSIVE => false,
-            RXW::DORMANT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _RXW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _RXW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: RXW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The CAN bus is recessive (CAN_RXD = 1)"]
-    #[inline]
+    #[inline(always)]
     pub fn recessive(self) -> &'a mut W {
-        self.variant(RXW::RECESSIVE)
+        self.variant(RX_A::RECESSIVE)
     }
     #[doc = "The CAN bus is dominant (CAN_RXD = 0)"]
-    #[inline]
+    #[inline(always)]
     pub fn dormant(self) -> &'a mut W {
-        self.variant(RXW::DORMANT)
+        self.variant(RX_A::DORMANT)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 2 - Basic mode."]
-    #[inline]
-    pub fn basic(&self) -> BASICR {
-        BASICR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn basic(&self) -> BASIC_R {
+        BASIC_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - Silent mode."]
-    #[inline]
-    pub fn silent(&self) -> SILENTR {
-        SILENTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn silent(&self) -> SILENT_R {
+        SILENT_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Loop back mode."]
-    #[inline]
-    pub fn lback(&self) -> LBACKR {
-        LBACKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn lback(&self) -> LBACK_R {
+        LBACK_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bits 5:6 - Control of CAN_TXD pins."]
-    #[inline]
-    pub fn tx(&self) -> TXR {
-        TXR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn tx(&self) -> TX_R {
+        TX_R::new(((self.bits >> 5) & 0x03) as u8)
     }
     #[doc = "Bit 7 - Monitors the actual value of the CAN_RXD pin."]
-    #[inline]
-    pub fn rx(&self) -> RXR {
-        RXR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn rx(&self) -> RX_R {
+        RX_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 2 - Basic mode."]
-    #[inline]
-    pub fn basic(&mut self) -> _BASICW {
-        _BASICW { w: self }
+    #[inline(always)]
+    pub fn basic(&mut self) -> BASIC_W {
+        BASIC_W { w: self }
     }
     #[doc = "Bit 3 - Silent mode."]
-    #[inline]
-    pub fn silent(&mut self) -> _SILENTW {
-        _SILENTW { w: self }
+    #[inline(always)]
+    pub fn silent(&mut self) -> SILENT_W {
+        SILENT_W { w: self }
     }
     #[doc = "Bit 4 - Loop back mode."]
-    #[inline]
-    pub fn lback(&mut self) -> _LBACKW {
-        _LBACKW { w: self }
+    #[inline(always)]
+    pub fn lback(&mut self) -> LBACK_W {
+        LBACK_W { w: self }
     }
     #[doc = "Bits 5:6 - Control of CAN_TXD pins."]
-    #[inline]
-    pub fn tx(&mut self) -> _TXW {
-        _TXW { w: self }
+    #[inline(always)]
+    pub fn tx(&mut self) -> TX_W {
+        TX_W { w: self }
     }
     #[doc = "Bit 7 - Monitors the actual value of the CAN_RXD pin."]
-    #[inline]
-    pub fn rx(&mut self) -> _RXW {
-        _RXW { w: self }
+    #[inline(always)]
+    pub fn rx(&mut self) -> RX_W {
+        RX_W { w: self }
     }
 }

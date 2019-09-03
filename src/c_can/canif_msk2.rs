@@ -1,405 +1,270 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CANIF_MSK2 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CANIF%s_MSK2"]
+pub type R = crate::R<u32, super::CANIF_MSK2>;
+#[doc = "Writer for register CANIF%s_MSK2"]
+pub type W = crate::W<u32, super::CANIF_MSK2>;
+#[doc = "Register CANIF%s_MSK2 `reset()`'s with value 0xffff"]
+impl crate::ResetValue for super::CANIF_MSK2 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xffff
     }
 }
-#[doc = "Possible values of the field `MSK_28_16`"]
+#[doc = "Identifier mask.\n\nValue on reset: 8191"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSK_28_16R {
-    #[doc = "The corresponding bit in the identifier of the message can not inhibit the match in the acceptance filtering"]
+pub enum MSK_28_16_A {
+    #[doc = "0: The corresponding bit in the identifier of the message can not inhibit the match in the acceptance filtering"]
     NOINHIBIT,
-    #[doc = "The corresponding identifier bit is used for acceptance filtering"]
+    #[doc = "1: The corresponding identifier bit is used for acceptance filtering"]
     ACCEPTANCEFILTERING,
-    #[doc = r" Reserved"]
-    _Reserved(u16),
 }
-impl MSK_28_16R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        match *self {
-            MSK_28_16R::NOINHIBIT => 0,
-            MSK_28_16R::ACCEPTANCEFILTERING => 1,
-            MSK_28_16R::_Reserved(bits) => bits,
+impl From<MSK_28_16_A> for u16 {
+    #[inline(always)]
+    fn from(variant: MSK_28_16_A) -> Self {
+        match variant {
+            MSK_28_16_A::NOINHIBIT => 0,
+            MSK_28_16_A::ACCEPTANCEFILTERING => 1,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u16) -> MSK_28_16R {
-        match value {
-            0 => MSK_28_16R::NOINHIBIT,
-            1 => MSK_28_16R::ACCEPTANCEFILTERING,
-            i => MSK_28_16R::_Reserved(i),
+}
+#[doc = "Reader of field `MSK_28_16`"]
+pub type MSK_28_16_R = crate::R<u16, MSK_28_16_A>;
+impl MSK_28_16_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u16, MSK_28_16_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MSK_28_16_A::NOINHIBIT),
+            1 => Val(MSK_28_16_A::ACCEPTANCEFILTERING),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `NOINHIBIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_noinhibit(&self) -> bool {
-        *self == MSK_28_16R::NOINHIBIT
+        *self == MSK_28_16_A::NOINHIBIT
     }
     #[doc = "Checks if the value of the field is `ACCEPTANCEFILTERING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_acceptancefiltering(&self) -> bool {
-        *self == MSK_28_16R::ACCEPTANCEFILTERING
+        *self == MSK_28_16_A::ACCEPTANCEFILTERING
     }
 }
-#[doc = "Possible values of the field `MDIR`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MDIRR {
-    #[doc = "The message direction bit (DIR) has no effect on acceptance filtering"]
-    NOEFFECT,
-    #[doc = "The message direction bit (DIR) is used for acceptance filtering"]
-    ACCEPTANCEFILTERING,
-}
-impl MDIRR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MDIRR::NOEFFECT => false,
-            MDIRR::ACCEPTANCEFILTERING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MDIRR {
-        match value {
-            false => MDIRR::NOEFFECT,
-            true => MDIRR::ACCEPTANCEFILTERING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NOEFFECT`"]
-    #[inline]
-    pub fn is_noeffect(&self) -> bool {
-        *self == MDIRR::NOEFFECT
-    }
-    #[doc = "Checks if the value of the field is `ACCEPTANCEFILTERING`"]
-    #[inline]
-    pub fn is_acceptancefiltering(&self) -> bool {
-        *self == MDIRR::ACCEPTANCEFILTERING
-    }
-}
-#[doc = "Possible values of the field `MXTD`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MXTDR {
-    #[doc = "The extended identifier bit (XTD) has no effect on acceptance filtering"]
-    NOEFFECT,
-    #[doc = "The extended identifier bit (XTD) is used for acceptance filtering"]
-    ACCEPTANCEFILTERING,
-}
-impl MXTDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MXTDR::NOEFFECT => false,
-            MXTDR::ACCEPTANCEFILTERING => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MXTDR {
-        match value {
-            false => MXTDR::NOEFFECT,
-            true => MXTDR::ACCEPTANCEFILTERING,
-        }
-    }
-    #[doc = "Checks if the value of the field is `NOEFFECT`"]
-    #[inline]
-    pub fn is_noeffect(&self) -> bool {
-        *self == MXTDR::NOEFFECT
-    }
-    #[doc = "Checks if the value of the field is `ACCEPTANCEFILTERING`"]
-    #[inline]
-    pub fn is_acceptancefiltering(&self) -> bool {
-        *self == MXTDR::ACCEPTANCEFILTERING
-    }
-}
-#[doc = "Values that can be written to the field `MSK_28_16`"]
-pub enum MSK_28_16W {
-    #[doc = "The corresponding bit in the identifier of the message can not inhibit the match in the acceptance filtering"]
-    NOINHIBIT,
-    #[doc = "The corresponding identifier bit is used for acceptance filtering"]
-    ACCEPTANCEFILTERING,
-}
-impl MSK_28_16W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u16 {
-        match *self {
-            MSK_28_16W::NOINHIBIT => 0,
-            MSK_28_16W::ACCEPTANCEFILTERING => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MSK_28_16W<'a> {
+#[doc = "Write proxy for field `MSK_28_16`"]
+pub struct MSK_28_16_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MSK_28_16W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MSK_28_16W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> MSK_28_16_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MSK_28_16_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "The corresponding bit in the identifier of the message can not inhibit the match in the acceptance filtering"]
-    #[inline]
+    #[inline(always)]
     pub fn noinhibit(self) -> &'a mut W {
-        self.variant(MSK_28_16W::NOINHIBIT)
+        self.variant(MSK_28_16_A::NOINHIBIT)
     }
     #[doc = "The corresponding identifier bit is used for acceptance filtering"]
-    #[inline]
+    #[inline(always)]
     pub fn acceptancefiltering(self) -> &'a mut W {
-        self.variant(MSK_28_16W::ACCEPTANCEFILTERING)
+        self.variant(MSK_28_16_A::ACCEPTANCEFILTERING)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 8191;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x1fff) | ((value as u32) & 0x1fff);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MDIR`"]
-pub enum MDIRW {
-    #[doc = "The message direction bit (DIR) has no effect on acceptance filtering"]
+#[doc = "Mask message direction.\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MDIR_A {
+    #[doc = "0: The message direction bit (DIR) has no effect on acceptance filtering"]
     NOEFFECT,
-    #[doc = "The message direction bit (DIR) is used for acceptance filtering"]
+    #[doc = "1: The message direction bit (DIR) is used for acceptance filtering"]
     ACCEPTANCEFILTERING,
 }
-impl MDIRW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MDIRW::NOEFFECT => false,
-            MDIRW::ACCEPTANCEFILTERING => true,
+impl From<MDIR_A> for bool {
+    #[inline(always)]
+    fn from(variant: MDIR_A) -> Self {
+        match variant {
+            MDIR_A::NOEFFECT => false,
+            MDIR_A::ACCEPTANCEFILTERING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MDIRW<'a> {
+#[doc = "Reader of field `MDIR`"]
+pub type MDIR_R = crate::R<bool, MDIR_A>;
+impl MDIR_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MDIR_A {
+        match self.bits {
+            false => MDIR_A::NOEFFECT,
+            true => MDIR_A::ACCEPTANCEFILTERING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOEFFECT`"]
+    #[inline(always)]
+    pub fn is_noeffect(&self) -> bool {
+        *self == MDIR_A::NOEFFECT
+    }
+    #[doc = "Checks if the value of the field is `ACCEPTANCEFILTERING`"]
+    #[inline(always)]
+    pub fn is_acceptancefiltering(&self) -> bool {
+        *self == MDIR_A::ACCEPTANCEFILTERING
+    }
+}
+#[doc = "Write proxy for field `MDIR`"]
+pub struct MDIR_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MDIRW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MDIRW) -> &'a mut W {
+impl<'a> MDIR_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MDIR_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The message direction bit (DIR) has no effect on acceptance filtering"]
-    #[inline]
+    #[inline(always)]
     pub fn noeffect(self) -> &'a mut W {
-        self.variant(MDIRW::NOEFFECT)
+        self.variant(MDIR_A::NOEFFECT)
     }
     #[doc = "The message direction bit (DIR) is used for acceptance filtering"]
-    #[inline]
+    #[inline(always)]
     pub fn acceptancefiltering(self) -> &'a mut W {
-        self.variant(MDIRW::ACCEPTANCEFILTERING)
+        self.variant(MDIR_A::ACCEPTANCEFILTERING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 14;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 14)) | (((value as u32) & 0x01) << 14);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `MXTD`"]
-pub enum MXTDW {
-    #[doc = "The extended identifier bit (XTD) has no effect on acceptance filtering"]
+#[doc = "Mask extend identifier.\n\nValue on reset: 1"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MXTD_A {
+    #[doc = "0: The extended identifier bit (XTD) has no effect on acceptance filtering"]
     NOEFFECT,
-    #[doc = "The extended identifier bit (XTD) is used for acceptance filtering"]
+    #[doc = "1: The extended identifier bit (XTD) is used for acceptance filtering"]
     ACCEPTANCEFILTERING,
 }
-impl MXTDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MXTDW::NOEFFECT => false,
-            MXTDW::ACCEPTANCEFILTERING => true,
+impl From<MXTD_A> for bool {
+    #[inline(always)]
+    fn from(variant: MXTD_A) -> Self {
+        match variant {
+            MXTD_A::NOEFFECT => false,
+            MXTD_A::ACCEPTANCEFILTERING => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _MXTDW<'a> {
+#[doc = "Reader of field `MXTD`"]
+pub type MXTD_R = crate::R<bool, MXTD_A>;
+impl MXTD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MXTD_A {
+        match self.bits {
+            false => MXTD_A::NOEFFECT,
+            true => MXTD_A::ACCEPTANCEFILTERING,
+        }
+    }
+    #[doc = "Checks if the value of the field is `NOEFFECT`"]
+    #[inline(always)]
+    pub fn is_noeffect(&self) -> bool {
+        *self == MXTD_A::NOEFFECT
+    }
+    #[doc = "Checks if the value of the field is `ACCEPTANCEFILTERING`"]
+    #[inline(always)]
+    pub fn is_acceptancefiltering(&self) -> bool {
+        *self == MXTD_A::ACCEPTANCEFILTERING
+    }
+}
+#[doc = "Write proxy for field `MXTD`"]
+pub struct MXTD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MXTDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MXTDW) -> &'a mut W {
+impl<'a> MXTD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MXTD_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "The extended identifier bit (XTD) has no effect on acceptance filtering"]
-    #[inline]
+    #[inline(always)]
     pub fn noeffect(self) -> &'a mut W {
-        self.variant(MXTDW::NOEFFECT)
+        self.variant(MXTD_A::NOEFFECT)
     }
     #[doc = "The extended identifier bit (XTD) is used for acceptance filtering"]
-    #[inline]
+    #[inline(always)]
     pub fn acceptancefiltering(self) -> &'a mut W {
-        self.variant(MXTDW::ACCEPTANCEFILTERING)
+        self.variant(MXTD_A::ACCEPTANCEFILTERING)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:12 - Identifier mask."]
-    #[inline]
-    pub fn msk_28_16(&self) -> MSK_28_16R {
-        MSK_28_16R::_from({
-            const MASK: u16 = 8191;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        })
+    #[inline(always)]
+    pub fn msk_28_16(&self) -> MSK_28_16_R {
+        MSK_28_16_R::new((self.bits & 0x1fff) as u16)
     }
     #[doc = "Bit 14 - Mask message direction."]
-    #[inline]
-    pub fn mdir(&self) -> MDIRR {
-        MDIRR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 14;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mdir(&self) -> MDIR_R {
+        MDIR_R::new(((self.bits >> 14) & 0x01) != 0)
     }
     #[doc = "Bit 15 - Mask extend identifier."]
-    #[inline]
-    pub fn mxtd(&self) -> MXTDR {
-        MXTDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mxtd(&self) -> MXTD_R {
+        MXTD_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 65535 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:12 - Identifier mask."]
-    #[inline]
-    pub fn msk_28_16(&mut self) -> _MSK_28_16W {
-        _MSK_28_16W { w: self }
+    #[inline(always)]
+    pub fn msk_28_16(&mut self) -> MSK_28_16_W {
+        MSK_28_16_W { w: self }
     }
     #[doc = "Bit 14 - Mask message direction."]
-    #[inline]
-    pub fn mdir(&mut self) -> _MDIRW {
-        _MDIRW { w: self }
+    #[inline(always)]
+    pub fn mdir(&mut self) -> MDIR_W {
+        MDIR_W { w: self }
     }
     #[doc = "Bit 15 - Mask extend identifier."]
-    #[inline]
-    pub fn mxtd(&mut self) -> _MXTDW {
-        _MXTDW { w: self }
+    #[inline(always)]
+    pub fn mxtd(&mut self) -> MXTD_W {
+        MXTD_W { w: self }
     }
 }

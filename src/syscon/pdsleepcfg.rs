@@ -1,525 +1,322 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PDSLEEPCFG {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PDSLEEPCFG"]
+pub type R = crate::R<u32, super::PDSLEEPCFG>;
+#[doc = "Writer for register PDSLEEPCFG"]
+pub type W = crate::W<u32, super::PDSLEEPCFG>;
+#[doc = "Register PDSLEEPCFG `reset()`'s with value 0"]
+impl crate::ResetValue for super::PDSLEEPCFG {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = r" Value of the field"]
-pub struct NOTUSED0R {
-    bits: u8,
+#[doc = "Reader of field `NOTUSED0`"]
+pub type NOTUSED0_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NOTUSED0`"]
+pub struct NOTUSED0_W<'a> {
+    w: &'a mut W,
 }
-impl NOTUSED0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
+impl<'a> NOTUSED0_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x07) | ((value as u32) & 0x07);
+        self.w
     }
 }
-#[doc = "Possible values of the field `BOD_PD`"]
+#[doc = "BOD power-down control in Deep-sleep mode, see Table 40.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BOD_PDR {
-    #[doc = "Powered"]
+pub enum BOD_PD_A {
+    #[doc = "0: Powered"]
     POWERED,
-    #[doc = "Powered down"]
+    #[doc = "1: Powered down"]
     POWERED_DOWN,
 }
-impl BOD_PDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BOD_PDR::POWERED => false,
-            BOD_PDR::POWERED_DOWN => true,
+impl From<BOD_PD_A> for bool {
+    #[inline(always)]
+    fn from(variant: BOD_PD_A) -> Self {
+        match variant {
+            BOD_PD_A::POWERED => false,
+            BOD_PD_A::POWERED_DOWN => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BOD_PDR {
-        match value {
-            false => BOD_PDR::POWERED,
-            true => BOD_PDR::POWERED_DOWN,
+}
+#[doc = "Reader of field `BOD_PD`"]
+pub type BOD_PD_R = crate::R<bool, BOD_PD_A>;
+impl BOD_PD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BOD_PD_A {
+        match self.bits {
+            false => BOD_PD_A::POWERED,
+            true => BOD_PD_A::POWERED_DOWN,
         }
     }
     #[doc = "Checks if the value of the field is `POWERED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_powered(&self) -> bool {
-        *self == BOD_PDR::POWERED
+        *self == BOD_PD_A::POWERED
     }
     #[doc = "Checks if the value of the field is `POWERED_DOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_powered_down(&self) -> bool {
-        *self == BOD_PDR::POWERED_DOWN
+        *self == BOD_PD_A::POWERED_DOWN
     }
 }
-#[doc = r" Value of the field"]
-pub struct NOTUSED1R {
-    bits: u8,
+#[doc = "Write proxy for field `BOD_PD`"]
+pub struct BOD_PD_W<'a> {
+    w: &'a mut W,
 }
-impl NOTUSED1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `WDTOSC_PD`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum WDTOSC_PDR {
-    #[doc = "Powered"]
-    POWERED,
-    #[doc = "Powered down"]
-    POWERED_DOWN,
-}
-impl WDTOSC_PDR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            WDTOSC_PDR::POWERED => false,
-            WDTOSC_PDR::POWERED_DOWN => true,
+impl<'a> BOD_PD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BOD_PD_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> WDTOSC_PDR {
-        match value {
-            false => WDTOSC_PDR::POWERED,
-            true => WDTOSC_PDR::POWERED_DOWN,
+    #[doc = "Powered"]
+    #[inline(always)]
+    pub fn powered(self) -> &'a mut W {
+        self.variant(BOD_PD_A::POWERED)
+    }
+    #[doc = "Powered down"]
+    #[inline(always)]
+    pub fn powered_down(self) -> &'a mut W {
+        self.variant(BOD_PD_A::POWERED_DOWN)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
+    }
+}
+#[doc = "Reader of field `NOTUSED1`"]
+pub type NOTUSED1_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NOTUSED1`"]
+pub struct NOTUSED1_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> NOTUSED1_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub unsafe fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x03 << 4)) | (((value as u32) & 0x03) << 4);
+        self.w
+    }
+}
+#[doc = "Watchdog oscillator power control in Deep-sleep mode, see Table 40.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum WDTOSC_PD_A {
+    #[doc = "0: Powered"]
+    POWERED,
+    #[doc = "1: Powered down"]
+    POWERED_DOWN,
+}
+impl From<WDTOSC_PD_A> for bool {
+    #[inline(always)]
+    fn from(variant: WDTOSC_PD_A) -> Self {
+        match variant {
+            WDTOSC_PD_A::POWERED => false,
+            WDTOSC_PD_A::POWERED_DOWN => true,
+        }
+    }
+}
+#[doc = "Reader of field `WDTOSC_PD`"]
+pub type WDTOSC_PD_R = crate::R<bool, WDTOSC_PD_A>;
+impl WDTOSC_PD_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> WDTOSC_PD_A {
+        match self.bits {
+            false => WDTOSC_PD_A::POWERED,
+            true => WDTOSC_PD_A::POWERED_DOWN,
         }
     }
     #[doc = "Checks if the value of the field is `POWERED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_powered(&self) -> bool {
-        *self == WDTOSC_PDR::POWERED
+        *self == WDTOSC_PD_A::POWERED
     }
     #[doc = "Checks if the value of the field is `POWERED_DOWN`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_powered_down(&self) -> bool {
-        *self == WDTOSC_PDR::POWERED_DOWN
+        *self == WDTOSC_PD_A::POWERED_DOWN
     }
 }
-#[doc = r" Value of the field"]
-pub struct NOTUSED2R {
-    bits: bool,
-}
-impl NOTUSED2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NOTUSED3R {
-    bits: u8,
-}
-impl NOTUSED3R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct NOTUSED4R {
-    bits: u8,
-}
-impl NOTUSED4R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NOTUSED0W<'a> {
+#[doc = "Write proxy for field `WDTOSC_PD`"]
+pub struct WDTOSC_PD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NOTUSED0W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `BOD_PD`"]
-pub enum BOD_PDW {
-    #[doc = "Powered"]
-    POWERED,
-    #[doc = "Powered down"]
-    POWERED_DOWN,
-}
-impl BOD_PDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BOD_PDW::POWERED => false,
-            BOD_PDW::POWERED_DOWN => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BOD_PDW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _BOD_PDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BOD_PDW) -> &'a mut W {
+impl<'a> WDTOSC_PD_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: WDTOSC_PD_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Powered"]
-    #[inline]
+    #[inline(always)]
     pub fn powered(self) -> &'a mut W {
-        self.variant(BOD_PDW::POWERED)
+        self.variant(WDTOSC_PD_A::POWERED)
     }
     #[doc = "Powered down"]
-    #[inline]
+    #[inline(always)]
     pub fn powered_down(self) -> &'a mut W {
-        self.variant(BOD_PDW::POWERED_DOWN)
+        self.variant(WDTOSC_PD_A::POWERED_DOWN)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _NOTUSED1W<'a> {
+#[doc = "Reader of field `NOTUSED2`"]
+pub type NOTUSED2_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `NOTUSED2`"]
+pub struct NOTUSED2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NOTUSED1W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `WDTOSC_PD`"]
-pub enum WDTOSC_PDW {
-    #[doc = "Powered"]
-    POWERED,
-    #[doc = "Powered down"]
-    POWERED_DOWN,
-}
-impl WDTOSC_PDW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            WDTOSC_PDW::POWERED => false,
-            WDTOSC_PDW::POWERED_DOWN => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _WDTOSC_PDW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _WDTOSC_PDW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: WDTOSC_PDW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Powered"]
-    #[inline]
-    pub fn powered(self) -> &'a mut W {
-        self.variant(WDTOSC_PDW::POWERED)
-    }
-    #[doc = "Powered down"]
-    #[inline]
-    pub fn powered_down(self) -> &'a mut W {
-        self.variant(WDTOSC_PDW::POWERED_DOWN)
-    }
-    #[doc = r" Sets the field bit"]
+impl<'a> NOTUSED2_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _NOTUSED2W<'a> {
+#[doc = "Reader of field `NOTUSED3`"]
+pub type NOTUSED3_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NOTUSED3`"]
+pub struct NOTUSED3_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NOTUSED2W<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _NOTUSED3W<'a> {
-    w: &'a mut W,
-}
-impl<'a> _NOTUSED3W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> NOTUSED3_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 8)) | (((value as u32) & 0x07) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _NOTUSED4W<'a> {
+#[doc = "Reader of field `NOTUSED4`"]
+pub type NOTUSED4_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `NOTUSED4`"]
+pub struct NOTUSED4_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _NOTUSED4W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> NOTUSED4_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 11;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 11)) | (((value as u32) & 0x03) << 11);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:2 - Reserved. Always write these bits as 111."]
-    #[inline]
-    pub fn notused0(&self) -> NOTUSED0R {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NOTUSED0R { bits }
+    #[inline(always)]
+    pub fn notused0(&self) -> NOTUSED0_R {
+        NOTUSED0_R::new((self.bits & 0x07) as u8)
     }
     #[doc = "Bit 3 - BOD power-down control in Deep-sleep mode, see Table 40."]
-    #[inline]
-    pub fn bod_pd(&self) -> BOD_PDR {
-        BOD_PDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn bod_pd(&self) -> BOD_PD_R {
+        BOD_PD_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bits 4:5 - Reserved. Always write these bits as 11."]
-    #[inline]
-    pub fn notused1(&self) -> NOTUSED1R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NOTUSED1R { bits }
+    #[inline(always)]
+    pub fn notused1(&self) -> NOTUSED1_R {
+        NOTUSED1_R::new(((self.bits >> 4) & 0x03) as u8)
     }
     #[doc = "Bit 6 - Watchdog oscillator power control in Deep-sleep mode, see Table 40."]
-    #[inline]
-    pub fn wdtosc_pd(&self) -> WDTOSC_PDR {
-        WDTOSC_PDR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn wdtosc_pd(&self) -> WDTOSC_PD_R {
+        WDTOSC_PD_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Reserved. Always write this bit as 1."]
-    #[inline]
-    pub fn notused2(&self) -> NOTUSED2R {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        NOTUSED2R { bits }
+    #[inline(always)]
+    pub fn notused2(&self) -> NOTUSED2_R {
+        NOTUSED2_R::new(((self.bits >> 7) & 0x01) != 0)
     }
     #[doc = "Bits 8:10 - Reserved. Always write these bits as 000."]
-    #[inline]
-    pub fn notused3(&self) -> NOTUSED3R {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NOTUSED3R { bits }
+    #[inline(always)]
+    pub fn notused3(&self) -> NOTUSED3_R {
+        NOTUSED3_R::new(((self.bits >> 8) & 0x07) as u8)
     }
     #[doc = "Bits 11:12 - Reserved. Always write these bits as 11."]
-    #[inline]
-    pub fn notused4(&self) -> NOTUSED4R {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 11;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        NOTUSED4R { bits }
+    #[inline(always)]
+    pub fn notused4(&self) -> NOTUSED4_R {
+        NOTUSED4_R::new(((self.bits >> 11) & 0x03) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:2 - Reserved. Always write these bits as 111."]
-    #[inline]
-    pub fn notused0(&mut self) -> _NOTUSED0W {
-        _NOTUSED0W { w: self }
+    #[inline(always)]
+    pub fn notused0(&mut self) -> NOTUSED0_W {
+        NOTUSED0_W { w: self }
     }
     #[doc = "Bit 3 - BOD power-down control in Deep-sleep mode, see Table 40."]
-    #[inline]
-    pub fn bod_pd(&mut self) -> _BOD_PDW {
-        _BOD_PDW { w: self }
+    #[inline(always)]
+    pub fn bod_pd(&mut self) -> BOD_PD_W {
+        BOD_PD_W { w: self }
     }
     #[doc = "Bits 4:5 - Reserved. Always write these bits as 11."]
-    #[inline]
-    pub fn notused1(&mut self) -> _NOTUSED1W {
-        _NOTUSED1W { w: self }
+    #[inline(always)]
+    pub fn notused1(&mut self) -> NOTUSED1_W {
+        NOTUSED1_W { w: self }
     }
     #[doc = "Bit 6 - Watchdog oscillator power control in Deep-sleep mode, see Table 40."]
-    #[inline]
-    pub fn wdtosc_pd(&mut self) -> _WDTOSC_PDW {
-        _WDTOSC_PDW { w: self }
+    #[inline(always)]
+    pub fn wdtosc_pd(&mut self) -> WDTOSC_PD_W {
+        WDTOSC_PD_W { w: self }
     }
     #[doc = "Bit 7 - Reserved. Always write this bit as 1."]
-    #[inline]
-    pub fn notused2(&mut self) -> _NOTUSED2W {
-        _NOTUSED2W { w: self }
+    #[inline(always)]
+    pub fn notused2(&mut self) -> NOTUSED2_W {
+        NOTUSED2_W { w: self }
     }
     #[doc = "Bits 8:10 - Reserved. Always write these bits as 000."]
-    #[inline]
-    pub fn notused3(&mut self) -> _NOTUSED3W {
-        _NOTUSED3W { w: self }
+    #[inline(always)]
+    pub fn notused3(&mut self) -> NOTUSED3_W {
+        NOTUSED3_W { w: self }
     }
     #[doc = "Bits 11:12 - Reserved. Always write these bits as 11."]
-    #[inline]
-    pub fn notused4(&mut self) -> _NOTUSED4W {
-        _NOTUSED4W { w: self }
+    #[inline(always)]
+    pub fn notused4(&mut self) -> NOTUSED4_W {
+        NOTUSED4_W { w: self }
     }
 }

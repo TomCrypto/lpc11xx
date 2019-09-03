@@ -1,896 +1,612 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CANIF_CMDMSK_W {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CANIF%s_CMDMSK_W"]
+pub type R = crate::R<u32, super::CANIF_CMDMSK_W>;
+#[doc = "Writer for register CANIF%s_CMDMSK_W"]
+pub type W = crate::W<u32, super::CANIF_CMDMSK_W>;
+#[doc = "Register CANIF%s_CMDMSK_W `reset()`'s with value 0"]
+impl crate::ResetValue for super::CANIF_CMDMSK_W {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `DATA_B`"]
+#[doc = "Access data bytes 4-7.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DATA_BR {
-    #[doc = "Data bytes 4-7 unchanged"]
+pub enum DATA_B_A {
+    #[doc = "0: Data bytes 4-7 unchanged"]
     DATA_BYTES_4_7_UNCHA,
-    #[doc = "Transfer data bytes 4-7 to message object"]
+    #[doc = "1: Transfer data bytes 4-7 to message object"]
     TRANSFER_DATA_BYTES_,
 }
-impl DATA_BR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DATA_BR::DATA_BYTES_4_7_UNCHA => false,
-            DATA_BR::TRANSFER_DATA_BYTES_ => true,
+impl From<DATA_B_A> for bool {
+    #[inline(always)]
+    fn from(variant: DATA_B_A) -> Self {
+        match variant {
+            DATA_B_A::DATA_BYTES_4_7_UNCHA => false,
+            DATA_B_A::TRANSFER_DATA_BYTES_ => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DATA_BR {
-        match value {
-            false => DATA_BR::DATA_BYTES_4_7_UNCHA,
-            true => DATA_BR::TRANSFER_DATA_BYTES_,
+}
+#[doc = "Reader of field `DATA_B`"]
+pub type DATA_B_R = crate::R<bool, DATA_B_A>;
+impl DATA_B_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DATA_B_A {
+        match self.bits {
+            false => DATA_B_A::DATA_BYTES_4_7_UNCHA,
+            true => DATA_B_A::TRANSFER_DATA_BYTES_,
         }
     }
     #[doc = "Checks if the value of the field is `DATA_BYTES_4_7_UNCHA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_data_bytes_4_7_uncha(&self) -> bool {
-        *self == DATA_BR::DATA_BYTES_4_7_UNCHA
+        *self == DATA_B_A::DATA_BYTES_4_7_UNCHA
     }
     #[doc = "Checks if the value of the field is `TRANSFER_DATA_BYTES_`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_transfer_data_bytes_(&self) -> bool {
-        *self == DATA_BR::TRANSFER_DATA_BYTES_
+        *self == DATA_B_A::TRANSFER_DATA_BYTES_
     }
 }
-#[doc = "Possible values of the field `DATA_A`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum DATA_AR {
-    #[doc = "Data bytes 0-3 unchanged"]
-    DATA_BYTES_0_3_UNCHA,
-    #[doc = "Transfer data bytes 0-3 to message object"]
-    TRANSFER_DATA_BYTES_,
+#[doc = "Write proxy for field `DATA_B`"]
+pub struct DATA_B_W<'a> {
+    w: &'a mut W,
 }
-impl DATA_AR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            DATA_AR::DATA_BYTES_0_3_UNCHA => false,
-            DATA_AR::TRANSFER_DATA_BYTES_ => true,
+impl<'a> DATA_B_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DATA_B_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> DATA_AR {
-        match value {
-            false => DATA_AR::DATA_BYTES_0_3_UNCHA,
-            true => DATA_AR::TRANSFER_DATA_BYTES_,
+    #[doc = "Data bytes 4-7 unchanged"]
+    #[inline(always)]
+    pub fn data_bytes_4_7_uncha(self) -> &'a mut W {
+        self.variant(DATA_B_A::DATA_BYTES_4_7_UNCHA)
+    }
+    #[doc = "Transfer data bytes 4-7 to message object"]
+    #[inline(always)]
+    pub fn transfer_data_bytes_(self) -> &'a mut W {
+        self.variant(DATA_B_A::TRANSFER_DATA_BYTES_)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "Access data bytes 0-3.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum DATA_A_A {
+    #[doc = "0: Data bytes 0-3 unchanged"]
+    DATA_BYTES_0_3_UNCHA,
+    #[doc = "1: Transfer data bytes 0-3 to message object"]
+    TRANSFER_DATA_BYTES_,
+}
+impl From<DATA_A_A> for bool {
+    #[inline(always)]
+    fn from(variant: DATA_A_A) -> Self {
+        match variant {
+            DATA_A_A::DATA_BYTES_0_3_UNCHA => false,
+            DATA_A_A::TRANSFER_DATA_BYTES_ => true,
+        }
+    }
+}
+#[doc = "Reader of field `DATA_A`"]
+pub type DATA_A_R = crate::R<bool, DATA_A_A>;
+impl DATA_A_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> DATA_A_A {
+        match self.bits {
+            false => DATA_A_A::DATA_BYTES_0_3_UNCHA,
+            true => DATA_A_A::TRANSFER_DATA_BYTES_,
         }
     }
     #[doc = "Checks if the value of the field is `DATA_BYTES_0_3_UNCHA`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_data_bytes_0_3_uncha(&self) -> bool {
-        *self == DATA_AR::DATA_BYTES_0_3_UNCHA
+        *self == DATA_A_A::DATA_BYTES_0_3_UNCHA
     }
     #[doc = "Checks if the value of the field is `TRANSFER_DATA_BYTES_`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_transfer_data_bytes_(&self) -> bool {
-        *self == DATA_AR::TRANSFER_DATA_BYTES_
+        *self == DATA_A_A::TRANSFER_DATA_BYTES_
     }
 }
-#[doc = "Possible values of the field `TXRQST`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum TXRQSTR {
-    #[doc = "No transmission request. TXRQSRT bit unchanged in IF1/2_MCTRL. If a transmission is requested by programming this bit, the TXRQST bit in the CANIFn_MCTRL register is ignored"]
-    NO_TRANSMISSION_REQU,
-    #[doc = "Request a transmission. Set the TXRQST bit IF1/2_MCTRL"]
-    REQUEST_A_TRANSMISSI,
+#[doc = "Write proxy for field `DATA_A`"]
+pub struct DATA_A_W<'a> {
+    w: &'a mut W,
 }
-impl TXRQSTR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            TXRQSTR::NO_TRANSMISSION_REQU => false,
-            TXRQSTR::REQUEST_A_TRANSMISSI => true,
+impl<'a> DATA_A_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: DATA_A_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> TXRQSTR {
-        match value {
-            false => TXRQSTR::NO_TRANSMISSION_REQU,
-            true => TXRQSTR::REQUEST_A_TRANSMISSI,
+    #[doc = "Data bytes 0-3 unchanged"]
+    #[inline(always)]
+    pub fn data_bytes_0_3_uncha(self) -> &'a mut W {
+        self.variant(DATA_A_A::DATA_BYTES_0_3_UNCHA)
+    }
+    #[doc = "Transfer data bytes 0-3 to message object"]
+    #[inline(always)]
+    pub fn transfer_data_bytes_(self) -> &'a mut W {
+        self.variant(DATA_A_A::TRANSFER_DATA_BYTES_)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "Access transmission request bit.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum TXRQST_A {
+    #[doc = "0: No transmission request. TXRQSRT bit unchanged in IF1/2_MCTRL. If a transmission is requested by programming this bit, the TXRQST bit in the CANIFn_MCTRL register is ignored"]
+    NO_TRANSMISSION_REQU,
+    #[doc = "1: Request a transmission. Set the TXRQST bit IF1/2_MCTRL"]
+    REQUEST_A_TRANSMISSI,
+}
+impl From<TXRQST_A> for bool {
+    #[inline(always)]
+    fn from(variant: TXRQST_A) -> Self {
+        match variant {
+            TXRQST_A::NO_TRANSMISSION_REQU => false,
+            TXRQST_A::REQUEST_A_TRANSMISSI => true,
+        }
+    }
+}
+#[doc = "Reader of field `TXRQST`"]
+pub type TXRQST_R = crate::R<bool, TXRQST_A>;
+impl TXRQST_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> TXRQST_A {
+        match self.bits {
+            false => TXRQST_A::NO_TRANSMISSION_REQU,
+            true => TXRQST_A::REQUEST_A_TRANSMISSI,
         }
     }
     #[doc = "Checks if the value of the field is `NO_TRANSMISSION_REQU`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_no_transmission_requ(&self) -> bool {
-        *self == TXRQSTR::NO_TRANSMISSION_REQU
+        *self == TXRQST_A::NO_TRANSMISSION_REQU
     }
     #[doc = "Checks if the value of the field is `REQUEST_A_TRANSMISSI`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_request_a_transmissi(&self) -> bool {
-        *self == TXRQSTR::REQUEST_A_TRANSMISSI
+        *self == TXRQST_A::REQUEST_A_TRANSMISSI
     }
 }
-#[doc = r" Value of the field"]
-pub struct CLRINTPNDR {
-    bits: bool,
+#[doc = "Write proxy for field `TXRQST`"]
+pub struct TXRQST_W<'a> {
+    w: &'a mut W,
 }
-impl CLRINTPNDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `CTRL`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CTRLR {
-    #[doc = "Control bits unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer control bits to message object"]
-    TRANSFER_CONTROL_BIT,
-}
-impl CTRLR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CTRLR::UNCHANGED => false,
-            CTRLR::TRANSFER_CONTROL_BIT => true,
+impl<'a> TXRQST_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: TXRQST_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CTRLR {
-        match value {
-            false => CTRLR::UNCHANGED,
-            true => CTRLR::TRANSFER_CONTROL_BIT,
+    #[doc = "No transmission request. TXRQSRT bit unchanged in IF1/2_MCTRL. If a transmission is requested by programming this bit, the TXRQST bit in the CANIFn_MCTRL register is ignored"]
+    #[inline(always)]
+    pub fn no_transmission_requ(self) -> &'a mut W {
+        self.variant(TXRQST_A::NO_TRANSMISSION_REQU)
+    }
+    #[doc = "Request a transmission. Set the TXRQST bit IF1/2_MCTRL"]
+    #[inline(always)]
+    pub fn request_a_transmissi(self) -> &'a mut W {
+        self.variant(TXRQST_A::REQUEST_A_TRANSMISSI)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "Reader of field `CLRINTPND`"]
+pub type CLRINTPND_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `CLRINTPND`"]
+pub struct CLRINTPND_W<'a> {
+    w: &'a mut W,
+}
+impl<'a> CLRINTPND_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
+        self.w
+    }
+}
+#[doc = "Access control bits.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CTRL_A {
+    #[doc = "0: Control bits unchanged"]
+    UNCHANGED,
+    #[doc = "1: Transfer control bits to message object"]
+    TRANSFER_CONTROL_BIT,
+}
+impl From<CTRL_A> for bool {
+    #[inline(always)]
+    fn from(variant: CTRL_A) -> Self {
+        match variant {
+            CTRL_A::UNCHANGED => false,
+            CTRL_A::TRANSFER_CONTROL_BIT => true,
+        }
+    }
+}
+#[doc = "Reader of field `CTRL`"]
+pub type CTRL_R = crate::R<bool, CTRL_A>;
+impl CTRL_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CTRL_A {
+        match self.bits {
+            false => CTRL_A::UNCHANGED,
+            true => CTRL_A::TRANSFER_CONTROL_BIT,
         }
     }
     #[doc = "Checks if the value of the field is `UNCHANGED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unchanged(&self) -> bool {
-        *self == CTRLR::UNCHANGED
+        *self == CTRL_A::UNCHANGED
     }
     #[doc = "Checks if the value of the field is `TRANSFER_CONTROL_BIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_transfer_control_bit(&self) -> bool {
-        *self == CTRLR::TRANSFER_CONTROL_BIT
+        *self == CTRL_A::TRANSFER_CONTROL_BIT
     }
 }
-#[doc = "Possible values of the field `ARB`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum ARBR {
-    #[doc = "Arbitration bits unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer Identifier, DIR, XTD, and MSGVAL bits to message object"]
-    TRANSFER_IDENTIFIER,
+#[doc = "Write proxy for field `CTRL`"]
+pub struct CTRL_W<'a> {
+    w: &'a mut W,
 }
-impl ARBR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            ARBR::UNCHANGED => false,
-            ARBR::TRANSFER_IDENTIFIER => true,
+impl<'a> CTRL_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CTRL_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> ARBR {
-        match value {
-            false => ARBR::UNCHANGED,
-            true => ARBR::TRANSFER_IDENTIFIER,
+    #[doc = "Control bits unchanged"]
+    #[inline(always)]
+    pub fn unchanged(self) -> &'a mut W {
+        self.variant(CTRL_A::UNCHANGED)
+    }
+    #[doc = "Transfer control bits to message object"]
+    #[inline(always)]
+    pub fn transfer_control_bit(self) -> &'a mut W {
+        self.variant(CTRL_A::TRANSFER_CONTROL_BIT)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
+        self.w
+    }
+}
+#[doc = "Access arbitration bits.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum ARB_A {
+    #[doc = "0: Arbitration bits unchanged"]
+    UNCHANGED,
+    #[doc = "1: Transfer Identifier, DIR, XTD, and MSGVAL bits to message object"]
+    TRANSFER_IDENTIFIER,
+}
+impl From<ARB_A> for bool {
+    #[inline(always)]
+    fn from(variant: ARB_A) -> Self {
+        match variant {
+            ARB_A::UNCHANGED => false,
+            ARB_A::TRANSFER_IDENTIFIER => true,
+        }
+    }
+}
+#[doc = "Reader of field `ARB`"]
+pub type ARB_R = crate::R<bool, ARB_A>;
+impl ARB_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> ARB_A {
+        match self.bits {
+            false => ARB_A::UNCHANGED,
+            true => ARB_A::TRANSFER_IDENTIFIER,
         }
     }
     #[doc = "Checks if the value of the field is `UNCHANGED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unchanged(&self) -> bool {
-        *self == ARBR::UNCHANGED
+        *self == ARB_A::UNCHANGED
     }
     #[doc = "Checks if the value of the field is `TRANSFER_IDENTIFIER`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_transfer_identifier(&self) -> bool {
-        *self == ARBR::TRANSFER_IDENTIFIER
+        *self == ARB_A::TRANSFER_IDENTIFIER
     }
 }
-#[doc = "Possible values of the field `MASK`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MASKR {
-    #[doc = "Mask bits unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer Identifier MASK + MDIR + MXTD to message object"]
-    TRANSFER_IDENTIFIER_,
+#[doc = "Write proxy for field `ARB`"]
+pub struct ARB_W<'a> {
+    w: &'a mut W,
 }
-impl MASKR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            MASKR::UNCHANGED => false,
-            MASKR::TRANSFER_IDENTIFIER_ => true,
+impl<'a> ARB_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: ARB_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> MASKR {
-        match value {
-            false => MASKR::UNCHANGED,
-            true => MASKR::TRANSFER_IDENTIFIER_,
+    #[doc = "Arbitration bits unchanged"]
+    #[inline(always)]
+    pub fn unchanged(self) -> &'a mut W {
+        self.variant(ARB_A::UNCHANGED)
+    }
+    #[doc = "Transfer Identifier, DIR, XTD, and MSGVAL bits to message object"]
+    #[inline(always)]
+    pub fn transfer_identifier(self) -> &'a mut W {
+        self.variant(ARB_A::TRANSFER_IDENTIFIER)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
+        self.w
+    }
+}
+#[doc = "Access mask bits.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum MASK_A {
+    #[doc = "0: Mask bits unchanged"]
+    UNCHANGED,
+    #[doc = "1: Transfer Identifier MASK + MDIR + MXTD to message object"]
+    TRANSFER_IDENTIFIER_,
+}
+impl From<MASK_A> for bool {
+    #[inline(always)]
+    fn from(variant: MASK_A) -> Self {
+        match variant {
+            MASK_A::UNCHANGED => false,
+            MASK_A::TRANSFER_IDENTIFIER_ => true,
+        }
+    }
+}
+#[doc = "Reader of field `MASK`"]
+pub type MASK_R = crate::R<bool, MASK_A>;
+impl MASK_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> MASK_A {
+        match self.bits {
+            false => MASK_A::UNCHANGED,
+            true => MASK_A::TRANSFER_IDENTIFIER_,
         }
     }
     #[doc = "Checks if the value of the field is `UNCHANGED`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_unchanged(&self) -> bool {
-        *self == MASKR::UNCHANGED
+        *self == MASK_A::UNCHANGED
     }
     #[doc = "Checks if the value of the field is `TRANSFER_IDENTIFIER_`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_transfer_identifier_(&self) -> bool {
-        *self == MASKR::TRANSFER_IDENTIFIER_
+        *self == MASK_A::TRANSFER_IDENTIFIER_
     }
 }
-#[doc = r" Value of the field"]
-pub struct WR_RDR {
-    bits: bool,
-}
-impl WR_RDR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Values that can be written to the field `DATA_B`"]
-pub enum DATA_BW {
-    #[doc = "Data bytes 4-7 unchanged"]
-    DATA_BYTES_4_7_UNCHA,
-    #[doc = "Transfer data bytes 4-7 to message object"]
-    TRANSFER_DATA_BYTES_,
-}
-impl DATA_BW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DATA_BW::DATA_BYTES_4_7_UNCHA => false,
-            DATA_BW::TRANSFER_DATA_BYTES_ => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DATA_BW<'a> {
+#[doc = "Write proxy for field `MASK`"]
+pub struct MASK_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _DATA_BW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DATA_BW) -> &'a mut W {
+impl<'a> MASK_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MASK_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Data bytes 4-7 unchanged"]
-    #[inline]
-    pub fn data_bytes_4_7_uncha(self) -> &'a mut W {
-        self.variant(DATA_BW::DATA_BYTES_4_7_UNCHA)
-    }
-    #[doc = "Transfer data bytes 4-7 to message object"]
-    #[inline]
-    pub fn transfer_data_bytes_(self) -> &'a mut W {
-        self.variant(DATA_BW::TRANSFER_DATA_BYTES_)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `DATA_A`"]
-pub enum DATA_AW {
-    #[doc = "Data bytes 0-3 unchanged"]
-    DATA_BYTES_0_3_UNCHA,
-    #[doc = "Transfer data bytes 0-3 to message object"]
-    TRANSFER_DATA_BYTES_,
-}
-impl DATA_AW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            DATA_AW::DATA_BYTES_0_3_UNCHA => false,
-            DATA_AW::TRANSFER_DATA_BYTES_ => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _DATA_AW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _DATA_AW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: DATA_AW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Data bytes 0-3 unchanged"]
-    #[inline]
-    pub fn data_bytes_0_3_uncha(self) -> &'a mut W {
-        self.variant(DATA_AW::DATA_BYTES_0_3_UNCHA)
-    }
-    #[doc = "Transfer data bytes 0-3 to message object"]
-    #[inline]
-    pub fn transfer_data_bytes_(self) -> &'a mut W {
-        self.variant(DATA_AW::TRANSFER_DATA_BYTES_)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `TXRQST`"]
-pub enum TXRQSTW {
-    #[doc = "No transmission request. TXRQSRT bit unchanged in IF1/2_MCTRL. If a transmission is requested by programming this bit, the TXRQST bit in the CANIFn_MCTRL register is ignored"]
-    NO_TRANSMISSION_REQU,
-    #[doc = "Request a transmission. Set the TXRQST bit IF1/2_MCTRL"]
-    REQUEST_A_TRANSMISSI,
-}
-impl TXRQSTW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            TXRQSTW::NO_TRANSMISSION_REQU => false,
-            TXRQSTW::REQUEST_A_TRANSMISSI => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _TXRQSTW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _TXRQSTW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: TXRQSTW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "No transmission request. TXRQSRT bit unchanged in IF1/2_MCTRL. If a transmission is requested by programming this bit, the TXRQST bit in the CANIFn_MCTRL register is ignored"]
-    #[inline]
-    pub fn no_transmission_requ(self) -> &'a mut W {
-        self.variant(TXRQSTW::NO_TRANSMISSION_REQU)
-    }
-    #[doc = "Request a transmission. Set the TXRQST bit IF1/2_MCTRL"]
-    #[inline]
-    pub fn request_a_transmissi(self) -> &'a mut W {
-        self.variant(TXRQSTW::REQUEST_A_TRANSMISSI)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CLRINTPNDW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CLRINTPNDW<'a> {
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CTRL`"]
-pub enum CTRLW {
-    #[doc = "Control bits unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer control bits to message object"]
-    TRANSFER_CONTROL_BIT,
-}
-impl CTRLW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CTRLW::UNCHANGED => false,
-            CTRLW::TRANSFER_CONTROL_BIT => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CTRLW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CTRLW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CTRLW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Control bits unchanged"]
-    #[inline]
-    pub fn unchanged(self) -> &'a mut W {
-        self.variant(CTRLW::UNCHANGED)
-    }
-    #[doc = "Transfer control bits to message object"]
-    #[inline]
-    pub fn transfer_control_bit(self) -> &'a mut W {
-        self.variant(CTRLW::TRANSFER_CONTROL_BIT)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `ARB`"]
-pub enum ARBW {
-    #[doc = "Arbitration bits unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer Identifier, DIR, XTD, and MSGVAL bits to message object"]
-    TRANSFER_IDENTIFIER,
-}
-impl ARBW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            ARBW::UNCHANGED => false,
-            ARBW::TRANSFER_IDENTIFIER => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _ARBW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _ARBW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: ARBW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Arbitration bits unchanged"]
-    #[inline]
-    pub fn unchanged(self) -> &'a mut W {
-        self.variant(ARBW::UNCHANGED)
-    }
-    #[doc = "Transfer Identifier, DIR, XTD, and MSGVAL bits to message object"]
-    #[inline]
-    pub fn transfer_identifier(self) -> &'a mut W {
-        self.variant(ARBW::TRANSFER_IDENTIFIER)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `MASK`"]
-pub enum MASKW {
-    #[doc = "Mask bits unchanged"]
-    UNCHANGED,
-    #[doc = "Transfer Identifier MASK + MDIR + MXTD to message object"]
-    TRANSFER_IDENTIFIER_,
-}
-impl MASKW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            MASKW::UNCHANGED => false,
-            MASKW::TRANSFER_IDENTIFIER_ => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MASKW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _MASKW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MASKW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Mask bits unchanged"]
-    #[inline]
+    #[inline(always)]
     pub fn unchanged(self) -> &'a mut W {
-        self.variant(MASKW::UNCHANGED)
+        self.variant(MASK_A::UNCHANGED)
     }
     #[doc = "Transfer Identifier MASK + MDIR + MXTD to message object"]
-    #[inline]
+    #[inline(always)]
     pub fn transfer_identifier_(self) -> &'a mut W {
-        self.variant(MASKW::TRANSFER_IDENTIFIER_)
+        self.variant(MASK_A::TRANSFER_IDENTIFIER_)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _WR_RDW<'a> {
+#[doc = "Reader of field `WR_RD`"]
+pub type WR_RD_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `WR_RD`"]
+pub struct WR_RD_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _WR_RDW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> WR_RD_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 7;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 7)) | (((value as u32) & 0x01) << 7);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - Access data bytes 4-7."]
-    #[inline]
-    pub fn data_b(&self) -> DATA_BR {
-        DATA_BR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn data_b(&self) -> DATA_B_R {
+        DATA_B_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - Access data bytes 0-3."]
-    #[inline]
-    pub fn data_a(&self) -> DATA_AR {
-        DATA_AR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn data_a(&self) -> DATA_A_R {
+        DATA_A_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - Access transmission request bit."]
-    #[inline]
-    pub fn txrqst(&self) -> TXRQSTR {
-        TXRQSTR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn txrqst(&self) -> TXRQST_R {
+        TXRQST_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - This bit is ignored in the write direction."]
-    #[inline]
-    pub fn clrintpnd(&self) -> CLRINTPNDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        CLRINTPNDR { bits }
+    #[inline(always)]
+    pub fn clrintpnd(&self) -> CLRINTPND_R {
+        CLRINTPND_R::new(((self.bits >> 3) & 0x01) != 0)
     }
     #[doc = "Bit 4 - Access control bits."]
-    #[inline]
-    pub fn ctrl(&self) -> CTRLR {
-        CTRLR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ctrl(&self) -> CTRL_R {
+        CTRL_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bit 5 - Access arbitration bits."]
-    #[inline]
-    pub fn arb(&self) -> ARBR {
-        ARBR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn arb(&self) -> ARB_R {
+        ARB_R::new(((self.bits >> 5) & 0x01) != 0)
     }
     #[doc = "Bit 6 - Access mask bits."]
-    #[inline]
-    pub fn mask(&self) -> MASKR {
-        MASKR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn mask(&self) -> MASK_R {
+        MASK_R::new(((self.bits >> 6) & 0x01) != 0)
     }
     #[doc = "Bit 7 - Write transfer Transfer data from the selected message buffer registers to the message object addressed by the command request register CANIFn_CMDREQ."]
-    #[inline]
-    pub fn wr_rd(&self) -> WR_RDR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 7;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        WR_RDR { bits }
+    #[inline(always)]
+    pub fn wr_rd(&self) -> WR_RD_R {
+        WR_RD_R::new(((self.bits >> 7) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - Access data bytes 4-7."]
-    #[inline]
-    pub fn data_b(&mut self) -> _DATA_BW {
-        _DATA_BW { w: self }
+    #[inline(always)]
+    pub fn data_b(&mut self) -> DATA_B_W {
+        DATA_B_W { w: self }
     }
     #[doc = "Bit 1 - Access data bytes 0-3."]
-    #[inline]
-    pub fn data_a(&mut self) -> _DATA_AW {
-        _DATA_AW { w: self }
+    #[inline(always)]
+    pub fn data_a(&mut self) -> DATA_A_W {
+        DATA_A_W { w: self }
     }
     #[doc = "Bit 2 - Access transmission request bit."]
-    #[inline]
-    pub fn txrqst(&mut self) -> _TXRQSTW {
-        _TXRQSTW { w: self }
+    #[inline(always)]
+    pub fn txrqst(&mut self) -> TXRQST_W {
+        TXRQST_W { w: self }
     }
     #[doc = "Bit 3 - This bit is ignored in the write direction."]
-    #[inline]
-    pub fn clrintpnd(&mut self) -> _CLRINTPNDW {
-        _CLRINTPNDW { w: self }
+    #[inline(always)]
+    pub fn clrintpnd(&mut self) -> CLRINTPND_W {
+        CLRINTPND_W { w: self }
     }
     #[doc = "Bit 4 - Access control bits."]
-    #[inline]
-    pub fn ctrl(&mut self) -> _CTRLW {
-        _CTRLW { w: self }
+    #[inline(always)]
+    pub fn ctrl(&mut self) -> CTRL_W {
+        CTRL_W { w: self }
     }
     #[doc = "Bit 5 - Access arbitration bits."]
-    #[inline]
-    pub fn arb(&mut self) -> _ARBW {
-        _ARBW { w: self }
+    #[inline(always)]
+    pub fn arb(&mut self) -> ARB_W {
+        ARB_W { w: self }
     }
     #[doc = "Bit 6 - Access mask bits."]
-    #[inline]
-    pub fn mask(&mut self) -> _MASKW {
-        _MASKW { w: self }
+    #[inline(always)]
+    pub fn mask(&mut self) -> MASK_W {
+        MASK_W { w: self }
     }
     #[doc = "Bit 7 - Write transfer Transfer data from the selected message buffer registers to the message object addressed by the command request register CANIFn_CMDREQ."]
-    #[inline]
-    pub fn wr_rd(&mut self) -> _WR_RDW {
-        _WR_RDW { w: self }
+    #[inline(always)]
+    pub fn wr_rd(&mut self) -> WR_RD_W {
+        WR_RD_W { w: self }
     }
 }

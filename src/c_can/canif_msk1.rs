@@ -1,167 +1,94 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CANIF_MSK1 {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CANIF%s_MSK1"]
+pub type R = crate::R<u32, super::CANIF_MSK1>;
+#[doc = "Writer for register CANIF%s_MSK1"]
+pub type W = crate::W<u32, super::CANIF_MSK1>;
+#[doc = "Register CANIF%s_MSK1 `reset()`'s with value 0xffff"]
+impl crate::ResetValue for super::CANIF_MSK1 {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0xffff
     }
 }
-#[doc = "Possible values of the field `MSK_15_0`"]
+#[doc = "Identifier mask.\n\nValue on reset: 65535"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum MSK_15_0R {
-    #[doc = "The corresponding bit in the identifier of the message can not inhibit the match in the acceptance filtering"]
+pub enum MSK_15_0_A {
+    #[doc = "0: The corresponding bit in the identifier of the message can not inhibit the match in the acceptance filtering"]
     NOINHIBIT,
-    #[doc = "The corresponding identifier bit is used for acceptance filtering"]
+    #[doc = "1: The corresponding identifier bit is used for acceptance filtering"]
     ACCEPTANCEFILTERING,
-    #[doc = r" Reserved"]
-    _Reserved(u16),
 }
-impl MSK_15_0R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u16 {
-        match *self {
-            MSK_15_0R::NOINHIBIT => 0,
-            MSK_15_0R::ACCEPTANCEFILTERING => 1,
-            MSK_15_0R::_Reserved(bits) => bits,
+impl From<MSK_15_0_A> for u16 {
+    #[inline(always)]
+    fn from(variant: MSK_15_0_A) -> Self {
+        match variant {
+            MSK_15_0_A::NOINHIBIT => 0,
+            MSK_15_0_A::ACCEPTANCEFILTERING => 1,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u16) -> MSK_15_0R {
-        match value {
-            0 => MSK_15_0R::NOINHIBIT,
-            1 => MSK_15_0R::ACCEPTANCEFILTERING,
-            i => MSK_15_0R::_Reserved(i),
+}
+#[doc = "Reader of field `MSK_15_0`"]
+pub type MSK_15_0_R = crate::R<u16, MSK_15_0_A>;
+impl MSK_15_0_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u16, MSK_15_0_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(MSK_15_0_A::NOINHIBIT),
+            1 => Val(MSK_15_0_A::ACCEPTANCEFILTERING),
+            i => Res(i),
         }
     }
     #[doc = "Checks if the value of the field is `NOINHIBIT`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_noinhibit(&self) -> bool {
-        *self == MSK_15_0R::NOINHIBIT
+        *self == MSK_15_0_A::NOINHIBIT
     }
     #[doc = "Checks if the value of the field is `ACCEPTANCEFILTERING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_acceptancefiltering(&self) -> bool {
-        *self == MSK_15_0R::ACCEPTANCEFILTERING
+        *self == MSK_15_0_A::ACCEPTANCEFILTERING
     }
 }
-#[doc = "Values that can be written to the field `MSK_15_0`"]
-pub enum MSK_15_0W {
-    #[doc = "The corresponding bit in the identifier of the message can not inhibit the match in the acceptance filtering"]
-    NOINHIBIT,
-    #[doc = "The corresponding identifier bit is used for acceptance filtering"]
-    ACCEPTANCEFILTERING,
-}
-impl MSK_15_0W {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u16 {
-        match *self {
-            MSK_15_0W::NOINHIBIT => 0,
-            MSK_15_0W::ACCEPTANCEFILTERING => 1,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MSK_15_0W<'a> {
+#[doc = "Write proxy for field `MSK_15_0`"]
+pub struct MSK_15_0_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MSK_15_0W<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: MSK_15_0W) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> MSK_15_0_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: MSK_15_0_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "The corresponding bit in the identifier of the message can not inhibit the match in the acceptance filtering"]
-    #[inline]
+    #[inline(always)]
     pub fn noinhibit(self) -> &'a mut W {
-        self.variant(MSK_15_0W::NOINHIBIT)
+        self.variant(MSK_15_0_A::NOINHIBIT)
     }
     #[doc = "The corresponding identifier bit is used for acceptance filtering"]
-    #[inline]
+    #[inline(always)]
     pub fn acceptancefiltering(self) -> &'a mut W {
-        self.variant(MSK_15_0W::ACCEPTANCEFILTERING)
+        self.variant(MSK_15_0_A::ACCEPTANCEFILTERING)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u16) -> &'a mut W {
-        const MASK: u16 = 65535;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0xffff) | ((value as u32) & 0xffff);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:15 - Identifier mask."]
-    #[inline]
-    pub fn msk_15_0(&self) -> MSK_15_0R {
-        MSK_15_0R::_from({
-            const MASK: u16 = 65535;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u16
-        })
+    #[inline(always)]
+    pub fn msk_15_0(&self) -> MSK_15_0_R {
+        MSK_15_0_R::new((self.bits & 0xffff) as u16)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 65535 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:15 - Identifier mask."]
-    #[inline]
-    pub fn msk_15_0(&mut self) -> _MSK_15_0W {
-        _MSK_15_0W { w: self }
+    #[inline(always)]
+    pub fn msk_15_0(&mut self) -> MSK_15_0_W {
+        MSK_15_0_W { w: self }
     }
 }

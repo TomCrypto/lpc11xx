@@ -1,540 +1,368 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::PRESETCTRL {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register PRESETCTRL"]
+pub type R = crate::R<u32, super::PRESETCTRL>;
+#[doc = "Writer for register PRESETCTRL"]
+pub type W = crate::W<u32, super::PRESETCTRL>;
+#[doc = "Register PRESETCTRL `reset()`'s with value 0"]
+impl crate::ResetValue for super::PRESETCTRL {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `SSP0_RST_N`"]
+#[doc = "SPI0 reset control.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SSP0_RST_NR {
-    #[doc = "Resets the SPI0 peripheral"]
+pub enum SSP0_RST_N_A {
+    #[doc = "0: Resets the SPI0 peripheral"]
     SPIO0RESET,
-    #[doc = "SPI0 reset de-asserted"]
+    #[doc = "1: SPI0 reset de-asserted"]
     SPIO0NORESET,
 }
-impl SSP0_RST_NR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SSP0_RST_NR::SPIO0RESET => false,
-            SSP0_RST_NR::SPIO0NORESET => true,
+impl From<SSP0_RST_N_A> for bool {
+    #[inline(always)]
+    fn from(variant: SSP0_RST_N_A) -> Self {
+        match variant {
+            SSP0_RST_N_A::SPIO0RESET => false,
+            SSP0_RST_N_A::SPIO0NORESET => true,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SSP0_RST_NR {
-        match value {
-            false => SSP0_RST_NR::SPIO0RESET,
-            true => SSP0_RST_NR::SPIO0NORESET,
+}
+#[doc = "Reader of field `SSP0_RST_N`"]
+pub type SSP0_RST_N_R = crate::R<bool, SSP0_RST_N_A>;
+impl SSP0_RST_N_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SSP0_RST_N_A {
+        match self.bits {
+            false => SSP0_RST_N_A::SPIO0RESET,
+            true => SSP0_RST_N_A::SPIO0NORESET,
         }
     }
     #[doc = "Checks if the value of the field is `SPIO0RESET`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_spio0reset(&self) -> bool {
-        *self == SSP0_RST_NR::SPIO0RESET
+        *self == SSP0_RST_N_A::SPIO0RESET
     }
     #[doc = "Checks if the value of the field is `SPIO0NORESET`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_spio0noreset(&self) -> bool {
-        *self == SSP0_RST_NR::SPIO0NORESET
+        *self == SSP0_RST_N_A::SPIO0NORESET
     }
 }
-#[doc = "Possible values of the field `I2C_RST_N`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum I2C_RST_NR {
-    #[doc = "Resets the I2C peripheral"]
-    I2CRESET,
-    #[doc = "I2C reset de-asserted"]
-    I2CNORESET,
+#[doc = "Write proxy for field `SSP0_RST_N`"]
+pub struct SSP0_RST_N_W<'a> {
+    w: &'a mut W,
 }
-impl I2C_RST_NR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            I2C_RST_NR::I2CRESET => false,
-            I2C_RST_NR::I2CNORESET => true,
+impl<'a> SSP0_RST_N_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SSP0_RST_N_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> I2C_RST_NR {
-        match value {
-            false => I2C_RST_NR::I2CRESET,
-            true => I2C_RST_NR::I2CNORESET,
+    #[doc = "Resets the SPI0 peripheral"]
+    #[inline(always)]
+    pub fn spio0reset(self) -> &'a mut W {
+        self.variant(SSP0_RST_N_A::SPIO0RESET)
+    }
+    #[doc = "SPI0 reset de-asserted"]
+    #[inline(always)]
+    pub fn spio0noreset(self) -> &'a mut W {
+        self.variant(SSP0_RST_N_A::SPIO0NORESET)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x01) | ((value as u32) & 0x01);
+        self.w
+    }
+}
+#[doc = "I2C reset control.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum I2C_RST_N_A {
+    #[doc = "0: Resets the I2C peripheral"]
+    I2CRESET,
+    #[doc = "1: I2C reset de-asserted"]
+    I2CNORESET,
+}
+impl From<I2C_RST_N_A> for bool {
+    #[inline(always)]
+    fn from(variant: I2C_RST_N_A) -> Self {
+        match variant {
+            I2C_RST_N_A::I2CRESET => false,
+            I2C_RST_N_A::I2CNORESET => true,
+        }
+    }
+}
+#[doc = "Reader of field `I2C_RST_N`"]
+pub type I2C_RST_N_R = crate::R<bool, I2C_RST_N_A>;
+impl I2C_RST_N_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> I2C_RST_N_A {
+        match self.bits {
+            false => I2C_RST_N_A::I2CRESET,
+            true => I2C_RST_N_A::I2CNORESET,
         }
     }
     #[doc = "Checks if the value of the field is `I2CRESET`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_i2creset(&self) -> bool {
-        *self == I2C_RST_NR::I2CRESET
+        *self == I2C_RST_N_A::I2CRESET
     }
     #[doc = "Checks if the value of the field is `I2CNORESET`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_i2cnoreset(&self) -> bool {
-        *self == I2C_RST_NR::I2CNORESET
+        *self == I2C_RST_N_A::I2CNORESET
     }
 }
-#[doc = "Possible values of the field `SSP1_RST_N`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SSP1_RST_NR {
-    #[doc = "Resets the SPI1 peripheral"]
-    SPI1RESET,
-    #[doc = "SPI1 reset de-asserted"]
-    SPI2NORESET,
+#[doc = "Write proxy for field `I2C_RST_N`"]
+pub struct I2C_RST_N_W<'a> {
+    w: &'a mut W,
 }
-impl SSP1_RST_NR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            SSP1_RST_NR::SPI1RESET => false,
-            SSP1_RST_NR::SPI2NORESET => true,
+impl<'a> I2C_RST_N_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: I2C_RST_N_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> SSP1_RST_NR {
-        match value {
-            false => SSP1_RST_NR::SPI1RESET,
-            true => SSP1_RST_NR::SPI2NORESET,
+    #[doc = "Resets the I2C peripheral"]
+    #[inline(always)]
+    pub fn i2creset(self) -> &'a mut W {
+        self.variant(I2C_RST_N_A::I2CRESET)
+    }
+    #[doc = "I2C reset de-asserted"]
+    #[inline(always)]
+    pub fn i2cnoreset(self) -> &'a mut W {
+        self.variant(I2C_RST_N_A::I2CNORESET)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 1)) | (((value as u32) & 0x01) << 1);
+        self.w
+    }
+}
+#[doc = "SPI1 reset control.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SSP1_RST_N_A {
+    #[doc = "0: Resets the SPI1 peripheral"]
+    SPI1RESET,
+    #[doc = "1: SPI1 reset de-asserted"]
+    SPI2NORESET,
+}
+impl From<SSP1_RST_N_A> for bool {
+    #[inline(always)]
+    fn from(variant: SSP1_RST_N_A) -> Self {
+        match variant {
+            SSP1_RST_N_A::SPI1RESET => false,
+            SSP1_RST_N_A::SPI2NORESET => true,
+        }
+    }
+}
+#[doc = "Reader of field `SSP1_RST_N`"]
+pub type SSP1_RST_N_R = crate::R<bool, SSP1_RST_N_A>;
+impl SSP1_RST_N_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> SSP1_RST_N_A {
+        match self.bits {
+            false => SSP1_RST_N_A::SPI1RESET,
+            true => SSP1_RST_N_A::SPI2NORESET,
         }
     }
     #[doc = "Checks if the value of the field is `SPI1RESET`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_spi1reset(&self) -> bool {
-        *self == SSP1_RST_NR::SPI1RESET
+        *self == SSP1_RST_N_A::SPI1RESET
     }
     #[doc = "Checks if the value of the field is `SPI2NORESET`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_spi2noreset(&self) -> bool {
-        *self == SSP1_RST_NR::SPI2NORESET
+        *self == SSP1_RST_N_A::SPI2NORESET
     }
 }
-#[doc = "Possible values of the field `CAN_RST_N`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CAN_RST_NR {
-    #[doc = "Resets the C_CAN peripheral"]
-    CANRESET,
-    #[doc = "C_CAN reset de-asserted"]
-    CANNORESET,
+#[doc = "Write proxy for field `SSP1_RST_N`"]
+pub struct SSP1_RST_N_W<'a> {
+    w: &'a mut W,
 }
-impl CAN_RST_NR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            CAN_RST_NR::CANRESET => false,
-            CAN_RST_NR::CANNORESET => true,
+impl<'a> SSP1_RST_N_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SSP1_RST_N_A) -> &'a mut W {
+        {
+            self.bit(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> CAN_RST_NR {
-        match value {
-            false => CAN_RST_NR::CANRESET,
-            true => CAN_RST_NR::CANNORESET,
+    #[doc = "Resets the SPI1 peripheral"]
+    #[inline(always)]
+    pub fn spi1reset(self) -> &'a mut W {
+        self.variant(SSP1_RST_N_A::SPI1RESET)
+    }
+    #[doc = "SPI1 reset de-asserted"]
+    #[inline(always)]
+    pub fn spi2noreset(self) -> &'a mut W {
+        self.variant(SSP1_RST_N_A::SPI2NORESET)
+    }
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
+    pub fn set_bit(self) -> &'a mut W {
+        self.bit(true)
+    }
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
+    pub fn clear_bit(self) -> &'a mut W {
+        self.bit(false)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bit(self, value: bool) -> &'a mut W {
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
+        self.w
+    }
+}
+#[doc = "C_CAN reset control. See Section 3.1 for part specific details.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CAN_RST_N_A {
+    #[doc = "0: Resets the C_CAN peripheral"]
+    CANRESET,
+    #[doc = "1: C_CAN reset de-asserted"]
+    CANNORESET,
+}
+impl From<CAN_RST_N_A> for bool {
+    #[inline(always)]
+    fn from(variant: CAN_RST_N_A) -> Self {
+        match variant {
+            CAN_RST_N_A::CANRESET => false,
+            CAN_RST_N_A::CANNORESET => true,
+        }
+    }
+}
+#[doc = "Reader of field `CAN_RST_N`"]
+pub type CAN_RST_N_R = crate::R<bool, CAN_RST_N_A>;
+impl CAN_RST_N_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CAN_RST_N_A {
+        match self.bits {
+            false => CAN_RST_N_A::CANRESET,
+            true => CAN_RST_N_A::CANNORESET,
         }
     }
     #[doc = "Checks if the value of the field is `CANRESET`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_canreset(&self) -> bool {
-        *self == CAN_RST_NR::CANRESET
+        *self == CAN_RST_N_A::CANRESET
     }
     #[doc = "Checks if the value of the field is `CANNORESET`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_cannoreset(&self) -> bool {
-        *self == CAN_RST_NR::CANNORESET
+        *self == CAN_RST_N_A::CANNORESET
     }
 }
-#[doc = "Values that can be written to the field `SSP0_RST_N`"]
-pub enum SSP0_RST_NW {
-    #[doc = "Resets the SPI0 peripheral"]
-    SPIO0RESET,
-    #[doc = "SPI0 reset de-asserted"]
-    SPIO0NORESET,
-}
-impl SSP0_RST_NW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SSP0_RST_NW::SPIO0RESET => false,
-            SSP0_RST_NW::SPIO0NORESET => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SSP0_RST_NW<'a> {
+#[doc = "Write proxy for field `CAN_RST_N`"]
+pub struct CAN_RST_N_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SSP0_RST_NW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SSP0_RST_NW) -> &'a mut W {
+impl<'a> CAN_RST_N_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CAN_RST_N_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Resets the SPI0 peripheral"]
-    #[inline]
-    pub fn spio0reset(self) -> &'a mut W {
-        self.variant(SSP0_RST_NW::SPIO0RESET)
-    }
-    #[doc = "SPI0 reset de-asserted"]
-    #[inline]
-    pub fn spio0noreset(self) -> &'a mut W {
-        self.variant(SSP0_RST_NW::SPIO0NORESET)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `I2C_RST_N`"]
-pub enum I2C_RST_NW {
-    #[doc = "Resets the I2C peripheral"]
-    I2CRESET,
-    #[doc = "I2C reset de-asserted"]
-    I2CNORESET,
-}
-impl I2C_RST_NW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            I2C_RST_NW::I2CRESET => false,
-            I2C_RST_NW::I2CNORESET => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _I2C_RST_NW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _I2C_RST_NW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: I2C_RST_NW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Resets the I2C peripheral"]
-    #[inline]
-    pub fn i2creset(self) -> &'a mut W {
-        self.variant(I2C_RST_NW::I2CRESET)
-    }
-    #[doc = "I2C reset de-asserted"]
-    #[inline]
-    pub fn i2cnoreset(self) -> &'a mut W {
-        self.variant(I2C_RST_NW::I2CNORESET)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 1;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `SSP1_RST_N`"]
-pub enum SSP1_RST_NW {
-    #[doc = "Resets the SPI1 peripheral"]
-    SPI1RESET,
-    #[doc = "SPI1 reset de-asserted"]
-    SPI2NORESET,
-}
-impl SSP1_RST_NW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SSP1_RST_NW::SPI1RESET => false,
-            SSP1_RST_NW::SPI2NORESET => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _SSP1_RST_NW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _SSP1_RST_NW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SSP1_RST_NW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
-        }
-    }
-    #[doc = "Resets the SPI1 peripheral"]
-    #[inline]
-    pub fn spi1reset(self) -> &'a mut W {
-        self.variant(SSP1_RST_NW::SPI1RESET)
-    }
-    #[doc = "SPI1 reset de-asserted"]
-    #[inline]
-    pub fn spi2noreset(self) -> &'a mut W {
-        self.variant(SSP1_RST_NW::SPI2NORESET)
-    }
-    #[doc = r" Sets the field bit"]
-    pub fn set_bit(self) -> &'a mut W {
-        self.bit(true)
-    }
-    #[doc = r" Clears the field bit"]
-    pub fn clear_bit(self) -> &'a mut W {
-        self.bit(false)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CAN_RST_N`"]
-pub enum CAN_RST_NW {
-    #[doc = "Resets the C_CAN peripheral"]
-    CANRESET,
-    #[doc = "C_CAN reset de-asserted"]
-    CANNORESET,
-}
-impl CAN_RST_NW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            CAN_RST_NW::CANRESET => false,
-            CAN_RST_NW::CANNORESET => true,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CAN_RST_NW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CAN_RST_NW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CAN_RST_NW) -> &'a mut W {
-        {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Resets the C_CAN peripheral"]
-    #[inline]
+    #[inline(always)]
     pub fn canreset(self) -> &'a mut W {
-        self.variant(CAN_RST_NW::CANRESET)
+        self.variant(CAN_RST_N_A::CANRESET)
     }
     #[doc = "C_CAN reset de-asserted"]
-    #[inline]
+    #[inline(always)]
     pub fn cannoreset(self) -> &'a mut W {
-        self.variant(CAN_RST_NW::CANNORESET)
+        self.variant(CAN_RST_N_A::CANNORESET)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bit 0 - SPI0 reset control."]
-    #[inline]
-    pub fn ssp0_rst_n(&self) -> SSP0_RST_NR {
-        SSP0_RST_NR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ssp0_rst_n(&self) -> SSP0_RST_N_R {
+        SSP0_RST_N_R::new((self.bits & 0x01) != 0)
     }
     #[doc = "Bit 1 - I2C reset control."]
-    #[inline]
-    pub fn i2c_rst_n(&self) -> I2C_RST_NR {
-        I2C_RST_NR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 1;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn i2c_rst_n(&self) -> I2C_RST_N_R {
+        I2C_RST_N_R::new(((self.bits >> 1) & 0x01) != 0)
     }
     #[doc = "Bit 2 - SPI1 reset control."]
-    #[inline]
-    pub fn ssp1_rst_n(&self) -> SSP1_RST_NR {
-        SSP1_RST_NR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn ssp1_rst_n(&self) -> SSP1_RST_N_R {
+        SSP1_RST_N_R::new(((self.bits >> 2) & 0x01) != 0)
     }
     #[doc = "Bit 3 - C_CAN reset control. See Section 3.1 for part specific details."]
-    #[inline]
-    pub fn can_rst_n(&self) -> CAN_RST_NR {
-        CAN_RST_NR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 3;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn can_rst_n(&self) -> CAN_RST_N_R {
+        CAN_RST_N_R::new(((self.bits >> 3) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 0 - SPI0 reset control."]
-    #[inline]
-    pub fn ssp0_rst_n(&mut self) -> _SSP0_RST_NW {
-        _SSP0_RST_NW { w: self }
+    #[inline(always)]
+    pub fn ssp0_rst_n(&mut self) -> SSP0_RST_N_W {
+        SSP0_RST_N_W { w: self }
     }
     #[doc = "Bit 1 - I2C reset control."]
-    #[inline]
-    pub fn i2c_rst_n(&mut self) -> _I2C_RST_NW {
-        _I2C_RST_NW { w: self }
+    #[inline(always)]
+    pub fn i2c_rst_n(&mut self) -> I2C_RST_N_W {
+        I2C_RST_N_W { w: self }
     }
     #[doc = "Bit 2 - SPI1 reset control."]
-    #[inline]
-    pub fn ssp1_rst_n(&mut self) -> _SSP1_RST_NW {
-        _SSP1_RST_NW { w: self }
+    #[inline(always)]
+    pub fn ssp1_rst_n(&mut self) -> SSP1_RST_N_W {
+        SSP1_RST_N_W { w: self }
     }
     #[doc = "Bit 3 - C_CAN reset control. See Section 3.1 for part specific details."]
-    #[inline]
-    pub fn can_rst_n(&mut self) -> _CAN_RST_NW {
-        _CAN_RST_NW { w: self }
+    #[inline(always)]
+    pub fn can_rst_n(&mut self) -> CAN_RST_N_W {
+        CAN_RST_N_W { w: self }
     }
 }

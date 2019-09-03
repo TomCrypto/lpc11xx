@@ -1,224 +1,128 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CANIF_CMDREQ {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CANIF%s_CMDREQ"]
+pub type R = crate::R<u32, super::CANIF_CMDREQ>;
+#[doc = "Writer for register CANIF%s_CMDREQ"]
+pub type W = crate::W<u32, super::CANIF_CMDREQ>;
+#[doc = "Register CANIF%s_CMDREQ `reset()`'s with value 0x01"]
+impl crate::ResetValue for super::CANIF_CMDREQ {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x01
     }
 }
-#[doc = r" Value of the field"]
-pub struct MNR {
-    bits: u8,
-}
-impl MNR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = "Possible values of the field `BUSY`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum BUSYR {
-    #[doc = "Set to zero by hardware when read/write action to this Command request register has finished"]
-    ZERO,
-    #[doc = "Set to one by hardware when writing to this Command request register"]
-    ONE,
-}
-impl BUSYR {
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        match *self {
-            BUSYR::ZERO => false,
-            BUSYR::ONE => true,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: bool) -> BUSYR {
-        match value {
-            false => BUSYR::ZERO,
-            true => BUSYR::ONE,
-        }
-    }
-    #[doc = "Checks if the value of the field is `ZERO`"]
-    #[inline]
-    pub fn is_zero(&self) -> bool {
-        *self == BUSYR::ZERO
-    }
-    #[doc = "Checks if the value of the field is `ONE`"]
-    #[inline]
-    pub fn is_one(&self) -> bool {
-        *self == BUSYR::ONE
-    }
-}
-#[doc = r" Proxy"]
-pub struct _MNW<'a> {
+#[doc = "Reader of field `MN`"]
+pub type MN_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `MN`"]
+pub struct MN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _MNW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> MN_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `BUSY`"]
-pub enum BUSYW {
-    #[doc = "Set to zero by hardware when read/write action to this Command request register has finished"]
+#[doc = "BUSY flag.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum BUSY_A {
+    #[doc = "0: Set to zero by hardware when read/write action to this Command request register has finished"]
     ZERO,
-    #[doc = "Set to one by hardware when writing to this Command request register"]
+    #[doc = "1: Set to one by hardware when writing to this Command request register"]
     ONE,
 }
-impl BUSYW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            BUSYW::ZERO => false,
-            BUSYW::ONE => true,
+impl From<BUSY_A> for bool {
+    #[inline(always)]
+    fn from(variant: BUSY_A) -> Self {
+        match variant {
+            BUSY_A::ZERO => false,
+            BUSY_A::ONE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _BUSYW<'a> {
+#[doc = "Reader of field `BUSY`"]
+pub type BUSY_R = crate::R<bool, BUSY_A>;
+impl BUSY_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> BUSY_A {
+        match self.bits {
+            false => BUSY_A::ZERO,
+            true => BUSY_A::ONE,
+        }
+    }
+    #[doc = "Checks if the value of the field is `ZERO`"]
+    #[inline(always)]
+    pub fn is_zero(&self) -> bool {
+        *self == BUSY_A::ZERO
+    }
+    #[doc = "Checks if the value of the field is `ONE`"]
+    #[inline(always)]
+    pub fn is_one(&self) -> bool {
+        *self == BUSY_A::ONE
+    }
+}
+#[doc = "Write proxy for field `BUSY`"]
+pub struct BUSY_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BUSYW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: BUSYW) -> &'a mut W {
+impl<'a> BUSY_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: BUSY_A) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Set to zero by hardware when read/write action to this Command request register has finished"]
-    #[inline]
+    #[inline(always)]
     pub fn zero(self) -> &'a mut W {
-        self.variant(BUSYW::ZERO)
+        self.variant(BUSY_A::ZERO)
     }
     #[doc = "Set to one by hardware when writing to this Command request register"]
-    #[inline]
+    #[inline(always)]
     pub fn one(self) -> &'a mut W {
-        self.variant(BUSYW::ONE)
+        self.variant(BUSY_A::ONE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 15;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 15)) | (((value as u32) & 0x01) << 15);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - Message number 0x01 - 0x20 = Valid message numbers. The message object in the message RAM is selected for data transfer. 0x00 = Not a valid message number. This value is interpreted as 0x20.\\[1\\] 0x21 - 0x3F = Not a valid message number. This value is interpreted as 0x01 - 0x1F."]
-    #[inline]
-    pub fn mn(&self) -> MNR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        MNR { bits }
+    #[inline(always)]
+    pub fn mn(&self) -> MN_R {
+        MN_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bit 15 - BUSY flag."]
-    #[inline]
-    pub fn busy(&self) -> BUSYR {
-        BUSYR::_from({
-            const MASK: bool = true;
-            const OFFSET: u8 = 15;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        })
+    #[inline(always)]
+    pub fn busy(&self) -> BUSY_R {
+        BUSY_R::new(((self.bits >> 15) & 0x01) != 0)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 1 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - Message number 0x01 - 0x20 = Valid message numbers. The message object in the message RAM is selected for data transfer. 0x00 = Not a valid message number. This value is interpreted as 0x20.\\[1\\] 0x21 - 0x3F = Not a valid message number. This value is interpreted as 0x01 - 0x1F."]
-    #[inline]
-    pub fn mn(&mut self) -> _MNW {
-        _MNW { w: self }
+    #[inline(always)]
+    pub fn mn(&mut self) -> MN_W {
+        MN_W { w: self }
     }
     #[doc = "Bit 15 - BUSY flag."]
-    #[inline]
-    pub fn busy(&mut self) -> _BUSYW {
-        _BUSYW { w: self }
+    #[inline(always)]
+    pub fn busy(&mut self) -> BUSY_W {
+        BUSY_W { w: self }
     }
 }

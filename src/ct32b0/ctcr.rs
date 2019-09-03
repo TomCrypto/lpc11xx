@@ -1,513 +1,354 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CTCR {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CTCR"]
+pub type R = crate::R<u32, super::CTCR>;
+#[doc = "Writer for register CTCR"]
+pub type W = crate::W<u32, super::CTCR>;
+#[doc = "Register CTCR `reset()`'s with value 0"]
+impl crate::ResetValue for super::CTCR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Possible values of the field `CTM`"]
+#[doc = "Counter/Timer Mode. This field selects which rising PCLK edges can increment Timer's Prescale Counter (PC), or clear PC and increment Timer Counter (TC). Timer Mode: every rising PCLK edge.\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CTMR {
-    #[doc = "Timer Mode: every rising PCLK edge"]
+pub enum CTM_A {
+    #[doc = "0: Timer Mode: every rising PCLK edge"]
     TIMER_MODE_EVERY_RI,
-    #[doc = "Counter Mode: TC is incremented on rising edges on the CAP input selected by bits 3:2"]
+    #[doc = "1: Counter Mode: TC is incremented on rising edges on the CAP input selected by bits 3:2"]
     COUNTER_MODE_TC_IS_RISING,
-    #[doc = "Counter Mode: TC is incremented on falling edges on the CAP input selected by bits 3:2"]
+    #[doc = "2: Counter Mode: TC is incremented on falling edges on the CAP input selected by bits 3:2"]
     COUNTER_MODE_TC_IS_FALLING,
-    #[doc = "Counter Mode: TC is incremented on both edges on the CAP input selected by bits 3:2"]
+    #[doc = "3: Counter Mode: TC is incremented on both edges on the CAP input selected by bits 3:2"]
     COUNTER_MODE_TC_IS_BOTH,
 }
-impl CTMR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CTMR::TIMER_MODE_EVERY_RI => 0,
-            CTMR::COUNTER_MODE_TC_IS_RISING => 1,
-            CTMR::COUNTER_MODE_TC_IS_FALLING => 2,
-            CTMR::COUNTER_MODE_TC_IS_BOTH => 3,
+impl From<CTM_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CTM_A) -> Self {
+        match variant {
+            CTM_A::TIMER_MODE_EVERY_RI => 0,
+            CTM_A::COUNTER_MODE_TC_IS_RISING => 1,
+            CTM_A::COUNTER_MODE_TC_IS_FALLING => 2,
+            CTM_A::COUNTER_MODE_TC_IS_BOTH => 3,
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CTMR {
-        match value {
-            0 => CTMR::TIMER_MODE_EVERY_RI,
-            1 => CTMR::COUNTER_MODE_TC_IS_RISING,
-            2 => CTMR::COUNTER_MODE_TC_IS_FALLING,
-            3 => CTMR::COUNTER_MODE_TC_IS_BOTH,
+}
+#[doc = "Reader of field `CTM`"]
+pub type CTM_R = crate::R<u8, CTM_A>;
+impl CTM_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CTM_A {
+        match self.bits {
+            0 => CTM_A::TIMER_MODE_EVERY_RI,
+            1 => CTM_A::COUNTER_MODE_TC_IS_RISING,
+            2 => CTM_A::COUNTER_MODE_TC_IS_FALLING,
+            3 => CTM_A::COUNTER_MODE_TC_IS_BOTH,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `TIMER_MODE_EVERY_RI`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_timer_mode_every_ri(&self) -> bool {
-        *self == CTMR::TIMER_MODE_EVERY_RI
+        *self == CTM_A::TIMER_MODE_EVERY_RI
     }
     #[doc = "Checks if the value of the field is `COUNTER_MODE_TC_IS_RISING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_counter_mode_tc_is_rising(&self) -> bool {
-        *self == CTMR::COUNTER_MODE_TC_IS_RISING
+        *self == CTM_A::COUNTER_MODE_TC_IS_RISING
     }
     #[doc = "Checks if the value of the field is `COUNTER_MODE_TC_IS_FALLING`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_counter_mode_tc_is_falling(&self) -> bool {
-        *self == CTMR::COUNTER_MODE_TC_IS_FALLING
+        *self == CTM_A::COUNTER_MODE_TC_IS_FALLING
     }
     #[doc = "Checks if the value of the field is `COUNTER_MODE_TC_IS_BOTH`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_counter_mode_tc_is_both(&self) -> bool {
-        *self == CTMR::COUNTER_MODE_TC_IS_BOTH
+        *self == CTM_A::COUNTER_MODE_TC_IS_BOTH
     }
 }
-#[doc = "Possible values of the field `CIS`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum CISR {
-    #[doc = "CT32Bn_CAP0"]
-    CT32BN_CAP0,
-    #[doc = "CT32Bn_CAP1"]
-    CT32BN_CAP1,
-    #[doc = "Reserved Note: If Counter mode is selected in the TnCTCR, the 3 bits for that input in the Capture Control Register (TnCCR) must be programmed as 000"]
-    RESERVED_NOTE_IF_CO,
+#[doc = "Write proxy for field `CTM`"]
+pub struct CTM_W<'a> {
+    w: &'a mut W,
 }
-impl CISR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            CISR::CT32BN_CAP0 => 0,
-            CISR::CT32BN_CAP1 => 1,
-            CISR::RESERVED_NOTE_IF_CO => 3,
+impl<'a> CTM_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CTM_A) -> &'a mut W {
+        {
+            self.bits(variant.into())
         }
     }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> CISR {
-        match value {
-            0 => CISR::CT32BN_CAP0,
-            1 => CISR::CT32BN_CAP1,
-            3 => CISR::RESERVED_NOTE_IF_CO,
+    #[doc = "Timer Mode: every rising PCLK edge"]
+    #[inline(always)]
+    pub fn timer_mode_every_ri(self) -> &'a mut W {
+        self.variant(CTM_A::TIMER_MODE_EVERY_RI)
+    }
+    #[doc = "Counter Mode: TC is incremented on rising edges on the CAP input selected by bits 3:2"]
+    #[inline(always)]
+    pub fn counter_mode_tc_is_rising(self) -> &'a mut W {
+        self.variant(CTM_A::COUNTER_MODE_TC_IS_RISING)
+    }
+    #[doc = "Counter Mode: TC is incremented on falling edges on the CAP input selected by bits 3:2"]
+    #[inline(always)]
+    pub fn counter_mode_tc_is_falling(self) -> &'a mut W {
+        self.variant(CTM_A::COUNTER_MODE_TC_IS_FALLING)
+    }
+    #[doc = "Counter Mode: TC is incremented on both edges on the CAP input selected by bits 3:2"]
+    #[inline(always)]
+    pub fn counter_mode_tc_is_both(self) -> &'a mut W {
+        self.variant(CTM_A::COUNTER_MODE_TC_IS_BOTH)
+    }
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
+    pub fn bits(self, value: u8) -> &'a mut W {
+        self.w.bits = (self.w.bits & !0x03) | ((value as u32) & 0x03);
+        self.w
+    }
+}
+#[doc = "Count Input Select. When bits 1:0 in this register are not 00, these bits select which CAP pin is sampled for clocking:.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum CIS_A {
+    #[doc = "0: CT32Bn_CAP0"]
+    CT32BN_CAP0,
+    #[doc = "1: CT32Bn_CAP1"]
+    CT32BN_CAP1,
+    #[doc = "3: Reserved Note: If Counter mode is selected in the TnCTCR, the 3 bits for that input in the Capture Control Register (TnCCR) must be programmed as 000"]
+    RESERVED_NOTE_IF_CO,
+}
+impl From<CIS_A> for u8 {
+    #[inline(always)]
+    fn from(variant: CIS_A) -> Self {
+        match variant {
+            CIS_A::CT32BN_CAP0 => 0,
+            CIS_A::CT32BN_CAP1 => 1,
+            CIS_A::RESERVED_NOTE_IF_CO => 3,
+        }
+    }
+}
+#[doc = "Reader of field `CIS`"]
+pub type CIS_R = crate::R<u8, CIS_A>;
+impl CIS_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> CIS_A {
+        match self.bits {
+            0 => CIS_A::CT32BN_CAP0,
+            1 => CIS_A::CT32BN_CAP1,
+            3 => CIS_A::RESERVED_NOTE_IF_CO,
             _ => unreachable!(),
         }
     }
     #[doc = "Checks if the value of the field is `CT32BN_CAP0`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ct32bn_cap0(&self) -> bool {
-        *self == CISR::CT32BN_CAP0
+        *self == CIS_A::CT32BN_CAP0
     }
     #[doc = "Checks if the value of the field is `CT32BN_CAP1`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_ct32bn_cap1(&self) -> bool {
-        *self == CISR::CT32BN_CAP1
+        *self == CIS_A::CT32BN_CAP1
     }
     #[doc = "Checks if the value of the field is `RESERVED_NOTE_IF_CO`"]
-    #[inline]
+    #[inline(always)]
     pub fn is_reserved_note_if_co(&self) -> bool {
-        *self == CISR::RESERVED_NOTE_IF_CO
+        *self == CIS_A::RESERVED_NOTE_IF_CO
     }
 }
-#[doc = r" Value of the field"]
-pub struct ENCCR {
-    bits: bool,
-}
-impl ENCCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bit(&self) -> bool {
-        self.bits
-    }
-    #[doc = r" Returns `true` if the bit is clear (0)"]
-    #[inline]
-    pub fn bit_is_clear(&self) -> bool {
-        !self.bit()
-    }
-    #[doc = r" Returns `true` if the bit is set (1)"]
-    #[inline]
-    pub fn bit_is_set(&self) -> bool {
-        self.bit()
-    }
-}
-#[doc = "Possible values of the field `SELCC`"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum SELCCR {
-    #[doc = "Rising Edge of CAP0 clears the timer (if bit 4 is set)"]
-    RISING_EDGE_OF_CAP0_,
-    #[doc = "Falling Edge of CAP0 clears the timer (if bit 4 is set)"]
-    FALLING_EDGE_OF_CAP0,
-    #[doc = "Rising Edge of CAP1 clears the timer (if bit 4 is set)"]
-    RISING_EDGE_OF_CAP1_,
-    #[doc = "Falling Edge of CAP1 clears the timer (if bit 4 is set)"]
-    FALLING_EDGE_OF_CAP1,
-    #[doc = r" Reserved"]
-    _Reserved(u8),
-}
-impl SELCCR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        match *self {
-            SELCCR::RISING_EDGE_OF_CAP0_ => 0,
-            SELCCR::FALLING_EDGE_OF_CAP0 => 1,
-            SELCCR::RISING_EDGE_OF_CAP1_ => 2,
-            SELCCR::FALLING_EDGE_OF_CAP1 => 3,
-            SELCCR::_Reserved(bits) => bits,
-        }
-    }
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _from(value: u8) -> SELCCR {
-        match value {
-            0 => SELCCR::RISING_EDGE_OF_CAP0_,
-            1 => SELCCR::FALLING_EDGE_OF_CAP0,
-            2 => SELCCR::RISING_EDGE_OF_CAP1_,
-            3 => SELCCR::FALLING_EDGE_OF_CAP1,
-            i => SELCCR::_Reserved(i),
-        }
-    }
-    #[doc = "Checks if the value of the field is `RISING_EDGE_OF_CAP0_`"]
-    #[inline]
-    pub fn is_rising_edge_of_cap0_(&self) -> bool {
-        *self == SELCCR::RISING_EDGE_OF_CAP0_
-    }
-    #[doc = "Checks if the value of the field is `FALLING_EDGE_OF_CAP0`"]
-    #[inline]
-    pub fn is_falling_edge_of_cap0(&self) -> bool {
-        *self == SELCCR::FALLING_EDGE_OF_CAP0
-    }
-    #[doc = "Checks if the value of the field is `RISING_EDGE_OF_CAP1_`"]
-    #[inline]
-    pub fn is_rising_edge_of_cap1_(&self) -> bool {
-        *self == SELCCR::RISING_EDGE_OF_CAP1_
-    }
-    #[doc = "Checks if the value of the field is `FALLING_EDGE_OF_CAP1`"]
-    #[inline]
-    pub fn is_falling_edge_of_cap1(&self) -> bool {
-        *self == SELCCR::FALLING_EDGE_OF_CAP1
-    }
-}
-#[doc = "Values that can be written to the field `CTM`"]
-pub enum CTMW {
-    #[doc = "Timer Mode: every rising PCLK edge"]
-    TIMER_MODE_EVERY_RI,
-    #[doc = "Counter Mode: TC is incremented on rising edges on the CAP input selected by bits 3:2"]
-    COUNTER_MODE_TC_IS_RISING,
-    #[doc = "Counter Mode: TC is incremented on falling edges on the CAP input selected by bits 3:2"]
-    COUNTER_MODE_TC_IS_FALLING,
-    #[doc = "Counter Mode: TC is incremented on both edges on the CAP input selected by bits 3:2"]
-    COUNTER_MODE_TC_IS_BOTH,
-}
-impl CTMW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CTMW::TIMER_MODE_EVERY_RI => 0,
-            CTMW::COUNTER_MODE_TC_IS_RISING => 1,
-            CTMW::COUNTER_MODE_TC_IS_FALLING => 2,
-            CTMW::COUNTER_MODE_TC_IS_BOTH => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CTMW<'a> {
+#[doc = "Write proxy for field `CIS`"]
+pub struct CIS_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _CTMW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CTMW) -> &'a mut W {
-        {
-            self.bits(variant._bits())
-        }
-    }
-    #[doc = "Timer Mode: every rising PCLK edge"]
-    #[inline]
-    pub fn timer_mode_every_ri(self) -> &'a mut W {
-        self.variant(CTMW::TIMER_MODE_EVERY_RI)
-    }
-    #[doc = "Counter Mode: TC is incremented on rising edges on the CAP input selected by bits 3:2"]
-    #[inline]
-    pub fn counter_mode_tc_is_rising(self) -> &'a mut W {
-        self.variant(CTMW::COUNTER_MODE_TC_IS_RISING)
-    }
-    #[doc = "Counter Mode: TC is incremented on falling edges on the CAP input selected by bits 3:2"]
-    #[inline]
-    pub fn counter_mode_tc_is_falling(self) -> &'a mut W {
-        self.variant(CTMW::COUNTER_MODE_TC_IS_FALLING)
-    }
-    #[doc = "Counter Mode: TC is incremented on both edges on the CAP input selected by bits 3:2"]
-    #[inline]
-    pub fn counter_mode_tc_is_both(self) -> &'a mut W {
-        self.variant(CTMW::COUNTER_MODE_TC_IS_BOTH)
-    }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
-    pub fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
-        self.w
-    }
-}
-#[doc = "Values that can be written to the field `CIS`"]
-pub enum CISW {
-    #[doc = "CT32Bn_CAP0"]
-    CT32BN_CAP0,
-    #[doc = "CT32Bn_CAP1"]
-    CT32BN_CAP1,
-    #[doc = "Reserved Note: If Counter mode is selected in the TnCTCR, the 3 bits for that input in the Capture Control Register (TnCCR) must be programmed as 000"]
-    RESERVED_NOTE_IF_CO,
-}
-impl CISW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            CISW::CT32BN_CAP0 => 0,
-            CISW::CT32BN_CAP1 => 1,
-            CISW::RESERVED_NOTE_IF_CO => 3,
-        }
-    }
-}
-#[doc = r" Proxy"]
-pub struct _CISW<'a> {
-    w: &'a mut W,
-}
-impl<'a> _CISW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: CISW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> CIS_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: CIS_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "CT32Bn_CAP0"]
-    #[inline]
+    #[inline(always)]
     pub fn ct32bn_cap0(self) -> &'a mut W {
-        self.variant(CISW::CT32BN_CAP0)
+        self.variant(CIS_A::CT32BN_CAP0)
     }
     #[doc = "CT32Bn_CAP1"]
-    #[inline]
+    #[inline(always)]
     pub fn ct32bn_cap1(self) -> &'a mut W {
-        self.variant(CISW::CT32BN_CAP1)
+        self.variant(CIS_A::CT32BN_CAP1)
     }
     #[doc = "Reserved Note: If Counter mode is selected in the TnCTCR, the 3 bits for that input in the Capture Control Register (TnCCR) must be programmed as 000"]
-    #[inline]
+    #[inline(always)]
     pub fn reserved_note_if_co(self) -> &'a mut W {
-        self.variant(CISW::RESERVED_NOTE_IF_CO)
+        self.variant(CIS_A::RESERVED_NOTE_IF_CO)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 2)) | (((value as u32) & 0x03) << 2);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _ENCCW<'a> {
+#[doc = "Reader of field `ENCC`"]
+pub type ENCC_R = crate::R<bool, bool>;
+#[doc = "Write proxy for field `ENCC`"]
+pub struct ENCC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _ENCCW<'a> {
-    #[doc = r" Sets the field bit"]
+impl<'a> ENCC_W<'a> {
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 4;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 4)) | (((value as u32) & 0x01) << 4);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SELCC`"]
-pub enum SELCCW {
-    #[doc = "Rising Edge of CAP0 clears the timer (if bit 4 is set)"]
+#[doc = "When bit 4 is one, these bits select which capture input edge will cause the timer and prescaler to be cleared. These bits have no effect when bit 4 is zero.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SELCC_A {
+    #[doc = "0: Rising Edge of CAP0 clears the timer (if bit 4 is set)"]
     RISING_EDGE_OF_CAP0_,
-    #[doc = "Falling Edge of CAP0 clears the timer (if bit 4 is set)"]
+    #[doc = "1: Falling Edge of CAP0 clears the timer (if bit 4 is set)"]
     FALLING_EDGE_OF_CAP0,
-    #[doc = "Rising Edge of CAP1 clears the timer (if bit 4 is set)"]
+    #[doc = "2: Rising Edge of CAP1 clears the timer (if bit 4 is set)"]
     RISING_EDGE_OF_CAP1_,
-    #[doc = "Falling Edge of CAP1 clears the timer (if bit 4 is set)"]
+    #[doc = "3: Falling Edge of CAP1 clears the timer (if bit 4 is set)"]
     FALLING_EDGE_OF_CAP1,
 }
-impl SELCCW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> u8 {
-        match *self {
-            SELCCW::RISING_EDGE_OF_CAP0_ => 0,
-            SELCCW::FALLING_EDGE_OF_CAP0 => 1,
-            SELCCW::RISING_EDGE_OF_CAP1_ => 2,
-            SELCCW::FALLING_EDGE_OF_CAP1 => 3,
+impl From<SELCC_A> for u8 {
+    #[inline(always)]
+    fn from(variant: SELCC_A) -> Self {
+        match variant {
+            SELCC_A::RISING_EDGE_OF_CAP0_ => 0,
+            SELCC_A::FALLING_EDGE_OF_CAP0 => 1,
+            SELCC_A::RISING_EDGE_OF_CAP1_ => 2,
+            SELCC_A::FALLING_EDGE_OF_CAP1 => 3,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SELCCW<'a> {
+#[doc = "Reader of field `SELCC`"]
+pub type SELCC_R = crate::R<u8, SELCC_A>;
+impl SELCC_R {
+    #[doc = r"Get enumerated values variant"]
+    #[inline(always)]
+    pub fn variant(&self) -> crate::Variant<u8, SELCC_A> {
+        use crate::Variant::*;
+        match self.bits {
+            0 => Val(SELCC_A::RISING_EDGE_OF_CAP0_),
+            1 => Val(SELCC_A::FALLING_EDGE_OF_CAP0),
+            2 => Val(SELCC_A::RISING_EDGE_OF_CAP1_),
+            3 => Val(SELCC_A::FALLING_EDGE_OF_CAP1),
+            i => Res(i),
+        }
+    }
+    #[doc = "Checks if the value of the field is `RISING_EDGE_OF_CAP0_`"]
+    #[inline(always)]
+    pub fn is_rising_edge_of_cap0_(&self) -> bool {
+        *self == SELCC_A::RISING_EDGE_OF_CAP0_
+    }
+    #[doc = "Checks if the value of the field is `FALLING_EDGE_OF_CAP0`"]
+    #[inline(always)]
+    pub fn is_falling_edge_of_cap0(&self) -> bool {
+        *self == SELCC_A::FALLING_EDGE_OF_CAP0
+    }
+    #[doc = "Checks if the value of the field is `RISING_EDGE_OF_CAP1_`"]
+    #[inline(always)]
+    pub fn is_rising_edge_of_cap1_(&self) -> bool {
+        *self == SELCC_A::RISING_EDGE_OF_CAP1_
+    }
+    #[doc = "Checks if the value of the field is `FALLING_EDGE_OF_CAP1`"]
+    #[inline(always)]
+    pub fn is_falling_edge_of_cap1(&self) -> bool {
+        *self == SELCC_A::FALLING_EDGE_OF_CAP1
+    }
+}
+#[doc = "Write proxy for field `SELCC`"]
+pub struct SELCC_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SELCCW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SELCCW) -> &'a mut W {
-        unsafe { self.bits(variant._bits()) }
+impl<'a> SELCC_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SELCC_A) -> &'a mut W {
+        unsafe { self.bits(variant.into()) }
     }
     #[doc = "Rising Edge of CAP0 clears the timer (if bit 4 is set)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising_edge_of_cap0_(self) -> &'a mut W {
-        self.variant(SELCCW::RISING_EDGE_OF_CAP0_)
+        self.variant(SELCC_A::RISING_EDGE_OF_CAP0_)
     }
     #[doc = "Falling Edge of CAP0 clears the timer (if bit 4 is set)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling_edge_of_cap0(self) -> &'a mut W {
-        self.variant(SELCCW::FALLING_EDGE_OF_CAP0)
+        self.variant(SELCC_A::FALLING_EDGE_OF_CAP0)
     }
     #[doc = "Rising Edge of CAP1 clears the timer (if bit 4 is set)"]
-    #[inline]
+    #[inline(always)]
     pub fn rising_edge_of_cap1_(self) -> &'a mut W {
-        self.variant(SELCCW::RISING_EDGE_OF_CAP1_)
+        self.variant(SELCC_A::RISING_EDGE_OF_CAP1_)
     }
     #[doc = "Falling Edge of CAP1 clears the timer (if bit 4 is set)"]
-    #[inline]
+    #[inline(always)]
     pub fn falling_edge_of_cap1(self) -> &'a mut W {
-        self.variant(SELCCW::FALLING_EDGE_OF_CAP1)
+        self.variant(SELCC_A::FALLING_EDGE_OF_CAP1)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 5)) | (((value as u32) & 0x07) << 5);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:1 - Counter/Timer Mode. This field selects which rising PCLK edges can increment Timer's Prescale Counter (PC), or clear PC and increment Timer Counter (TC). Timer Mode: every rising PCLK edge."]
-    #[inline]
-    pub fn ctm(&self) -> CTMR {
-        CTMR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn ctm(&self) -> CTM_R {
+        CTM_R::new((self.bits & 0x03) as u8)
     }
     #[doc = "Bits 2:3 - Count Input Select. When bits 1:0 in this register are not 00, these bits select which CAP pin is sampled for clocking:."]
-    #[inline]
-    pub fn cis(&self) -> CISR {
-        CISR::_from({
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 2;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn cis(&self) -> CIS_R {
+        CIS_R::new(((self.bits >> 2) & 0x03) as u8)
     }
     #[doc = "Bit 4 - Setting this bit to one enables clearing of the timer and the prescaler when the capture-edge event specified in bits 7:5 occurs."]
-    #[inline]
-    pub fn encc(&self) -> ENCCR {
-        let bits = {
-            const MASK: bool = true;
-            const OFFSET: u8 = 4;
-            ((self.bits >> OFFSET) & MASK as u32) != 0
-        };
-        ENCCR { bits }
+    #[inline(always)]
+    pub fn encc(&self) -> ENCC_R {
+        ENCC_R::new(((self.bits >> 4) & 0x01) != 0)
     }
     #[doc = "Bits 5:7 - When bit 4 is one, these bits select which capture input edge will cause the timer and prescaler to be cleared. These bits have no effect when bit 4 is zero."]
-    #[inline]
-    pub fn selcc(&self) -> SELCCR {
-        SELCCR::_from({
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 5;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        })
+    #[inline(always)]
+    pub fn selcc(&self) -> SELCC_R {
+        SELCC_R::new(((self.bits >> 5) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:1 - Counter/Timer Mode. This field selects which rising PCLK edges can increment Timer's Prescale Counter (PC), or clear PC and increment Timer Counter (TC). Timer Mode: every rising PCLK edge."]
-    #[inline]
-    pub fn ctm(&mut self) -> _CTMW {
-        _CTMW { w: self }
+    #[inline(always)]
+    pub fn ctm(&mut self) -> CTM_W {
+        CTM_W { w: self }
     }
     #[doc = "Bits 2:3 - Count Input Select. When bits 1:0 in this register are not 00, these bits select which CAP pin is sampled for clocking:."]
-    #[inline]
-    pub fn cis(&mut self) -> _CISW {
-        _CISW { w: self }
+    #[inline(always)]
+    pub fn cis(&mut self) -> CIS_W {
+        CIS_W { w: self }
     }
     #[doc = "Bit 4 - Setting this bit to one enables clearing of the timer and the prescaler when the capture-edge event specified in bits 7:5 occurs."]
-    #[inline]
-    pub fn encc(&mut self) -> _ENCCW {
-        _ENCCW { w: self }
+    #[inline(always)]
+    pub fn encc(&mut self) -> ENCC_W {
+        ENCC_W { w: self }
     }
     #[doc = "Bits 5:7 - When bit 4 is one, these bits select which capture input edge will cause the timer and prescaler to be cleared. These bits have no effect when bit 4 is zero."]
-    #[inline]
-    pub fn selcc(&mut self) -> _SELCCW {
-        _SELCCW { w: self }
+    #[inline(always)]
+    pub fn selcc(&mut self) -> SELCC_W {
+        SELCC_W { w: self }
     }
 }

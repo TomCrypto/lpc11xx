@@ -1,228 +1,112 @@
-#[doc = r" Value read from the register"]
-pub struct R {
-    bits: u32,
-}
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CANBT {
-    #[doc = r" Modifies the contents of the register"]
-    #[inline]
-    pub fn modify<F>(&self, f: F)
-    where
-        for<'w> F: FnOnce(&R, &'w mut W) -> &'w mut W,
-    {
-        let bits = self.register.get();
-        let r = R { bits: bits };
-        let mut w = W { bits: bits };
-        f(&r, &mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Reads the contents of the register"]
-    #[inline]
-    pub fn read(&self) -> R {
-        R {
-            bits: self.register.get(),
-        }
-    }
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
-    }
-    #[doc = r" Writes the reset value to the register"]
-    #[inline]
-    pub fn reset(&self) {
-        self.write(|w| w)
+#[doc = "Reader of register CANBT"]
+pub type R = crate::R<u32, super::CANBT>;
+#[doc = "Writer for register CANBT"]
+pub type W = crate::W<u32, super::CANBT>;
+#[doc = "Register CANBT `reset()`'s with value 0x2301"]
+impl crate::ResetValue for super::CANBT {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0x2301
     }
 }
-#[doc = r" Value of the field"]
-pub struct BRPR {
-    bits: u8,
-}
-impl BRPR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct SJWR {
-    bits: u8,
-}
-impl SJWR {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TSEG1R {
-    bits: u8,
-}
-impl TSEG1R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Value of the field"]
-pub struct TSEG2R {
-    bits: u8,
-}
-impl TSEG2R {
-    #[doc = r" Value of the field as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u8 {
-        self.bits
-    }
-}
-#[doc = r" Proxy"]
-pub struct _BRPW<'a> {
+#[doc = "Reader of field `BRP`"]
+pub type BRP_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `BRP`"]
+pub struct BRP_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _BRPW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> BRP_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 63;
-        const OFFSET: u8 = 0;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !0x3f) | ((value as u32) & 0x3f);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _SJWW<'a> {
+#[doc = "Reader of field `SJW`"]
+pub type SJW_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `SJW`"]
+pub struct SJW_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SJWW<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> SJW_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 3;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x03 << 6)) | (((value as u32) & 0x03) << 6);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TSEG1W<'a> {
+#[doc = "Reader of field `TSEG1`"]
+pub type TSEG1_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TSEG1`"]
+pub struct TSEG1_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TSEG1W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TSEG1_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 15;
-        const OFFSET: u8 = 8;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x0f << 8)) | (((value as u32) & 0x0f) << 8);
         self.w
     }
 }
-#[doc = r" Proxy"]
-pub struct _TSEG2W<'a> {
+#[doc = "Reader of field `TSEG2`"]
+pub type TSEG2_R = crate::R<u8, u8>;
+#[doc = "Write proxy for field `TSEG2`"]
+pub struct TSEG2_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _TSEG2W<'a> {
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+impl<'a> TSEG2_W<'a> {
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub unsafe fn bits(self, value: u8) -> &'a mut W {
-        const MASK: u8 = 7;
-        const OFFSET: u8 = 12;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x07 << 12)) | (((value as u32) & 0x07) << 12);
         self.w
     }
 }
 impl R {
-    #[doc = r" Value of the register as raw bits"]
-    #[inline]
-    pub fn bits(&self) -> u32 {
-        self.bits
-    }
     #[doc = "Bits 0:5 - Baud rate prescaler The value by which the oscillator frequency is divided for generating the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values for the Baud Rate Prescaler are 0 to 63."]
-    #[inline]
-    pub fn brp(&self) -> BRPR {
-        let bits = {
-            const MASK: u8 = 63;
-            const OFFSET: u8 = 0;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        BRPR { bits }
+    #[inline(always)]
+    pub fn brp(&self) -> BRP_R {
+        BRP_R::new((self.bits & 0x3f) as u8)
     }
     #[doc = "Bits 6:7 - (Re)synchronization jump width Valid programmed values are 0 to 3."]
-    #[inline]
-    pub fn sjw(&self) -> SJWR {
-        let bits = {
-            const MASK: u8 = 3;
-            const OFFSET: u8 = 6;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        SJWR { bits }
+    #[inline(always)]
+    pub fn sjw(&self) -> SJW_R {
+        SJW_R::new(((self.bits >> 6) & 0x03) as u8)
     }
     #[doc = "Bits 8:11 - Time segment before the sample point Valid values are 1 to 15."]
-    #[inline]
-    pub fn tseg1(&self) -> TSEG1R {
-        let bits = {
-            const MASK: u8 = 15;
-            const OFFSET: u8 = 8;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TSEG1R { bits }
+    #[inline(always)]
+    pub fn tseg1(&self) -> TSEG1_R {
+        TSEG1_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
     #[doc = "Bits 12:14 - Time segment after the sample point Valid values are 0 to 7."]
-    #[inline]
-    pub fn tseg2(&self) -> TSEG2R {
-        let bits = {
-            const MASK: u8 = 7;
-            const OFFSET: u8 = 12;
-            ((self.bits >> OFFSET) & MASK as u32) as u8
-        };
-        TSEG2R { bits }
+    #[inline(always)]
+    pub fn tseg2(&self) -> TSEG2_R {
+        TSEG2_R::new(((self.bits >> 12) & 0x07) as u8)
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 8961 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bits 0:5 - Baud rate prescaler The value by which the oscillator frequency is divided for generating the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values for the Baud Rate Prescaler are 0 to 63."]
-    #[inline]
-    pub fn brp(&mut self) -> _BRPW {
-        _BRPW { w: self }
+    #[inline(always)]
+    pub fn brp(&mut self) -> BRP_W {
+        BRP_W { w: self }
     }
     #[doc = "Bits 6:7 - (Re)synchronization jump width Valid programmed values are 0 to 3."]
-    #[inline]
-    pub fn sjw(&mut self) -> _SJWW {
-        _SJWW { w: self }
+    #[inline(always)]
+    pub fn sjw(&mut self) -> SJW_W {
+        SJW_W { w: self }
     }
     #[doc = "Bits 8:11 - Time segment before the sample point Valid values are 1 to 15."]
-    #[inline]
-    pub fn tseg1(&mut self) -> _TSEG1W {
-        _TSEG1W { w: self }
+    #[inline(always)]
+    pub fn tseg1(&mut self) -> TSEG1_W {
+        TSEG1_W { w: self }
     }
     #[doc = "Bits 12:14 - Time segment after the sample point Valid values are 0 to 7."]
-    #[inline]
-    pub fn tseg2(&mut self) -> _TSEG2W {
-        _TSEG2W { w: self }
+    #[inline(always)]
+    pub fn tseg2(&mut self) -> TSEG2_W {
+        TSEG2_W { w: self }
     }
 }

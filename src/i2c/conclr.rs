@@ -1,249 +1,224 @@
-#[doc = r" Value to write to the register"]
-pub struct W {
-    bits: u32,
-}
-impl super::CONCLR {
-    #[doc = r" Writes to the register"]
-    #[inline]
-    pub fn write<F>(&self, f: F)
-    where
-        F: FnOnce(&mut W) -> &mut W,
-    {
-        let mut w = W::reset_value();
-        f(&mut w);
-        self.register.set(w.bits);
+#[doc = "Writer for register CONCLR"]
+pub type W = crate::W<u32, super::CONCLR>;
+#[doc = "Register CONCLR `reset()`'s with value 0"]
+impl crate::ResetValue for super::CONCLR {
+    type Type = u32;
+    #[inline(always)]
+    fn reset_value() -> Self::Type {
+        0
     }
 }
-#[doc = "Values that can be written to the field `AA`"]
-pub enum AAW {
-    #[doc = "Clear the flag"]
+#[doc = "Assert Acknowledge flag.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum AA_AW {
+    #[doc = "1: Clear the flag"]
     CLEAR,
 }
-impl AAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            AAW::CLEAR => true,
+impl From<AA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: AA_AW) -> Self {
+        match variant {
+            AA_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _AAW<'a> {
+#[doc = "Write proxy for field `AA`"]
+pub struct AA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _AAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: AAW) -> &'a mut W {
+impl<'a> AA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: AA_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Clear the flag"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(AAW::CLEAR)
+        self.variant(AA_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 2;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 2)) | (((value as u32) & 0x01) << 2);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `SI`"]
-pub enum SIW {
-    #[doc = "Clear the flag"]
+#[doc = "Interrupt flag.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum SI_AW {
+    #[doc = "1: Clear the flag"]
     CLEAR,
 }
-impl SIW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            SIW::CLEAR => true,
+impl From<SI_AW> for bool {
+    #[inline(always)]
+    fn from(variant: SI_AW) -> Self {
+        match variant {
+            SI_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _SIW<'a> {
+#[doc = "Write proxy for field `SI`"]
+pub struct SI_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _SIW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: SIW) -> &'a mut W {
+impl<'a> SI_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: SI_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Clear the flag"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(SIW::CLEAR)
+        self.variant(SI_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 3;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 3)) | (((value as u32) & 0x01) << 3);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `STA`"]
-pub enum STAW {
-    #[doc = "Clear the flag"]
+#[doc = "START flag.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum STA_AW {
+    #[doc = "1: Clear the flag"]
     CLEAR,
 }
-impl STAW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            STAW::CLEAR => true,
+impl From<STA_AW> for bool {
+    #[inline(always)]
+    fn from(variant: STA_AW) -> Self {
+        match variant {
+            STA_AW::CLEAR => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _STAW<'a> {
+#[doc = "Write proxy for field `STA`"]
+pub struct STA_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _STAW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: STAW) -> &'a mut W {
+impl<'a> STA_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: STA_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Clear the flag"]
-    #[inline]
+    #[inline(always)]
     pub fn clear(self) -> &'a mut W {
-        self.variant(STAW::CLEAR)
+        self.variant(STA_AW::CLEAR)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 5;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 5)) | (((value as u32) & 0x01) << 5);
         self.w
     }
 }
-#[doc = "Values that can be written to the field `I2EN`"]
-pub enum I2ENW {
-    #[doc = "Disable the I2C interface"]
+#[doc = "I2C Interface Disable bit.\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum I2EN_AW {
+    #[doc = "1: Disable the I2C interface"]
     DISABLE,
 }
-impl I2ENW {
-    #[allow(missing_docs)]
-    #[doc(hidden)]
-    #[inline]
-    pub fn _bits(&self) -> bool {
-        match *self {
-            I2ENW::DISABLE => true,
+impl From<I2EN_AW> for bool {
+    #[inline(always)]
+    fn from(variant: I2EN_AW) -> Self {
+        match variant {
+            I2EN_AW::DISABLE => true,
         }
     }
 }
-#[doc = r" Proxy"]
-pub struct _I2ENW<'a> {
+#[doc = "Write proxy for field `I2EN`"]
+pub struct I2EN_W<'a> {
     w: &'a mut W,
 }
-impl<'a> _I2ENW<'a> {
-    #[doc = r" Writes `variant` to the field"]
-    #[inline]
-    pub fn variant(self, variant: I2ENW) -> &'a mut W {
+impl<'a> I2EN_W<'a> {
+    #[doc = r"Writes `variant` to the field"]
+    #[inline(always)]
+    pub fn variant(self, variant: I2EN_AW) -> &'a mut W {
         {
-            self.bit(variant._bits())
+            self.bit(variant.into())
         }
     }
     #[doc = "Disable the I2C interface"]
-    #[inline]
+    #[inline(always)]
     pub fn disable(self) -> &'a mut W {
-        self.variant(I2ENW::DISABLE)
+        self.variant(I2EN_AW::DISABLE)
     }
-    #[doc = r" Sets the field bit"]
+    #[doc = r"Sets the field bit"]
+    #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
         self.bit(true)
     }
-    #[doc = r" Clears the field bit"]
+    #[doc = r"Clears the field bit"]
+    #[inline(always)]
     pub fn clear_bit(self) -> &'a mut W {
         self.bit(false)
     }
-    #[doc = r" Writes raw bits to the field"]
-    #[inline]
+    #[doc = r"Writes raw bits to the field"]
+    #[inline(always)]
     pub fn bit(self, value: bool) -> &'a mut W {
-        const MASK: bool = true;
-        const OFFSET: u8 = 6;
-        self.w.bits &= !((MASK as u32) << OFFSET);
-        self.w.bits |= ((value & MASK) as u32) << OFFSET;
+        self.w.bits = (self.w.bits & !(0x01 << 6)) | (((value as u32) & 0x01) << 6);
         self.w
     }
 }
 impl W {
-    #[doc = r" Reset value of the register"]
-    #[inline]
-    pub fn reset_value() -> W {
-        W { bits: 0 }
-    }
-    #[doc = r" Writes raw bits to the register"]
-    #[inline]
-    pub unsafe fn bits(&mut self, bits: u32) -> &mut Self {
-        self.bits = bits;
-        self
-    }
     #[doc = "Bit 2 - Assert Acknowledge flag."]
-    #[inline]
-    pub fn aa(&mut self) -> _AAW {
-        _AAW { w: self }
+    #[inline(always)]
+    pub fn aa(&mut self) -> AA_W {
+        AA_W { w: self }
     }
     #[doc = "Bit 3 - Interrupt flag."]
-    #[inline]
-    pub fn si(&mut self) -> _SIW {
-        _SIW { w: self }
+    #[inline(always)]
+    pub fn si(&mut self) -> SI_W {
+        SI_W { w: self }
     }
     #[doc = "Bit 5 - START flag."]
-    #[inline]
-    pub fn sta(&mut self) -> _STAW {
-        _STAW { w: self }
+    #[inline(always)]
+    pub fn sta(&mut self) -> STA_W {
+        STA_W { w: self }
     }
     #[doc = "Bit 6 - I2C Interface Disable bit."]
-    #[inline]
-    pub fn i2en(&mut self) -> _I2ENW {
-        _I2ENW { w: self }
+    #[inline(always)]
+    pub fn i2en(&mut self) -> I2EN_W {
+        I2EN_W { w: self }
     }
 }
